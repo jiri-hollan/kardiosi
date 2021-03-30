@@ -11,7 +11,7 @@ if (x!="")
 
 {
 
- window.location="razpis/msofice/" + x +".xls";
+ window.location="razpis/msofice/" + x +".xlsx";
 
 
 }
