@@ -4,12 +4,9 @@
 
 <html  lang="sl-SI"> 
 <head>
- <meta http-equiv="cache-control" content="No-Cache">
- <meta name="generator" content="HTML Tidy for Windows (vers 13 April 2006), see www.w3.org"> 
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8_general_ci" > 
- <meta name="GENERATOR" content="OpenOffice.org 2.0 (Win32)"> 
- <meta name="CHANGEDBY" content="Jiri Hollan"> 
- <meta name="CHANGED" content="20080311;13163818"> 
+ <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
 <title>prikaz mese&#269nega razporeda v obliki PDF</title>
 <?php
