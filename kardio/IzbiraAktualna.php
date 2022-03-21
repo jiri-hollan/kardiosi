@@ -6,13 +6,11 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="IzbiraArhiva.js" type="text/javascript">
-  </script>
- 
+  <script src="js/razpis.js<?php echo time(); ?>" type="text/javascript"></script>
  <style type="text/css">
 
 
-  body {background-color: brown}
+  body {background-color: blue}
   form {color: Gainsboro}
   form {font-size:300%}
   input {color: Gainsboro}
@@ -34,8 +32,8 @@
 </head>
 
 <body>
-  <form class="pos_abs" action="letorazpis()">
-    <strong>LETNIK:</strong> <input type="year" id="letnikx" value="" size="1" maxlength="4" /> <input type="button" id="button1" onclick="letorazpis()" value="potrdi!" />
+  <form class="pos_abs">
+    <strong>LETNIK:</strong> <input type="year" id="letnikx" value="" size="1" maxlength="4" /> <input type="button" id="button1" onclick="aktualRazpis()" value="potrdi!" />
   </form>
 </body>
 </html>
