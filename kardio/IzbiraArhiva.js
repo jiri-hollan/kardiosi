@@ -8,7 +8,7 @@ x=(document.getElementById("letnikx").value);
 if (x!="")
 
 {
-window.location="razpis/openofice/" + x +".ods";
+window.location="razpis/msBackup/arhiv/" + x +".ods";
 
 }
 else
