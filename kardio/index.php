@@ -118,12 +118,12 @@ $p = $_GET['p'];
 	
 
 </head>
-
+<body>
 	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
 	<div id="cela">   <?php if (isset($m) and $m != "") {include($m); }?></div>
 	<!--<	<br><br><br><br>
 	p id="demo">Sem se prenese</p>-->
-
+</body>
 </html>
