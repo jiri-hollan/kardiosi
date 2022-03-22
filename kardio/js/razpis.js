@@ -19,6 +19,12 @@ function arhivRazpis() {
 if (x=="") {
    alert("Vpisi iskano letnico");
   } else {
-    window.location="razpis/msBackup/arhiv/" + x +".xlsx";//zdaj je window.location="skrita1.htm"
+	  oo="razpis/msBackup/arhiv/" + x +".ods";
+	  ms="razpis/msBackup/arhiv/" + x +".xlsx";
+	  window.location=ms;
+  
+	  
+	  //zdaj je window.location="skrita1.htm"
+
 }
 } //od function arhivRazpis
