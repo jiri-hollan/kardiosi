@@ -21,7 +21,14 @@ if (x=="") {
   } else {
 	  oo="razpis/msBackup/arhiv/" + x +".ods";
 	  ms="razpis/msBackup/arhiv/" + x +".xlsx";
-	  window.location=ms;
+try{
+window.location=ms;
+}
+catch{
+alert("to je catch");
+}
+
+
   
 	  
 	  //zdaj je window.location="skrita1.htm"
