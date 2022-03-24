@@ -1,13 +1,5 @@
-<html>
-   
-   <head>
-      <title>Sending HTML email using PHP</title>
-   </head>
-   
-   <body>
-
 <?php
-$to = "<jiri.hollan@gmail.com>";
+$to = "jiri.hollan@gmail.com";
 $subject = "My subject";
 $from = 'Sender <noreply@sender.com>';
 $message = "Hello world!";
@@ -17,11 +9,8 @@ $headers = 'From: '.$from ;
 //$retval = mail($to,$subject,$message,implode("\r\n", $headers));
 $retval = mail($to,$subject,$message, $headers);
 
-         
-         if( $retval == true ) {
-            echo "Message sent successfully...";
-         }else {
-            echo "Message could not be sent...";
-         }
-
+mail($to,$subject,$txt,$headers);
 ?>
+
+</body>
+</html>
