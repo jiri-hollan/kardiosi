@@ -1,16 +1,21 @@
-<?php
-$to = "jiri.hollan@gmail.com";
-$subject = "My subject";
-$from = 'Sender <noreply@sender.com>';
-$message = "Hello world!";
-//$headers[] = "From: " .($from);
-//$headers[] = "Reply-To: ".($from);
-$headers = 'From: '.$from ;
-//$retval = mail($to,$subject,$message,implode("\r\n", $headers));
-$retval = mail($to,$subject,$message, $headers);
-
-mail($to,$subject,$txt,$headers);
-?>
-
-</body>
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"> 
+</head> 
+<body> 
+ 
+<?php 
+echo 'na začetku'; 
+$to = "jiri.hollan@gmail.com"; 
+$subject = "My subject"; 
+$txt = "Hello world!"; 
+$headers = "From: webmaster@example.com" . "\r\n" . 
+"CC: jiri.hollan@gmail.com"; 
+ 
+mail($to,$subject,$txt,$headers); 
+echo "kao da je poslano"; 
+?> 
+ 
+</body> 
 </html>
