@@ -10,11 +10,11 @@ echo 'na začetku<br>';
 $to = "jiri.hollan@gmail.com"; 
 $subject = "My subject, posta.php"; 
 $txt = "Hello world!"; 
-
+$from = "noreply@example.com";
 //$headers = "From: webmaster@example.com" . "\r\n" . 
 //"CB: hocimin68@gmail.com"; 
 
- $headers[] = "From: webmaster@example.com";
+ $headers[] = "From: ".$from;
  $headers[] = $to;
  $headers[] = "X-Mailer: PHP". phpversion();
 //if (mail($to,$subject,$txt,$headers)) { 
