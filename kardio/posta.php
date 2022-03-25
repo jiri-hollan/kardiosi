@@ -11,10 +11,14 @@ $to = "jiri.hollan@gmail.com";
 $subject = "My subject"; 
 $txt = "Hello world!"; 
 $headers = "From: webmaster@example.com" . "\r\n" . 
-"CC: jiri.hollan@gmail.com"; 
+"CB: hocimin68@gmail.com"; 
  
-mail($to,$subject,$txt,$headers); 
+if (mail($to,$subject,$txt,$headers)) { 
 echo "kao da je poslano"; 
+} else {
+echo "pošiljanje ni uspelo"; 
+}
+
 ?> 
  
 </body> 

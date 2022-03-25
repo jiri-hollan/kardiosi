@@ -8,10 +8,10 @@
 
 <?php
 $to = "<jiri.hollan@gmail.com>";
-$subject = "My subject";
-$from = 'Sender <noreply@sender.com>';
+$subject = "To je subjekt";
+$from = '<noreply@sender.com>';
 $message = "Hello world!";
-$headers[] = "<jiri.hollan@gmail.com>";
+$headers[] = $to;
 $headers[] = "From: " .($from);
 $headers[] = "Reply-To: ".($from);
 $headers[] = "Return-Path: ".($from);
