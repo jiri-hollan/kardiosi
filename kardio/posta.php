@@ -10,10 +10,15 @@ echo 'na začetku<br>';
 $to = "jiri.hollan@gmail.com"; 
 $subject = "My subject"; 
 $txt = "Hello world!"; 
-$headers = "From: webmaster@example.com" . "\r\n" . 
-"CB: hocimin68@gmail.com"; 
+
+//$headers = "From: webmaster@example.com" . "\r\n" . 
+//"CB: hocimin68@gmail.com"; 
+ $headers[] = $to;
+ $headers[] = "From: webmaster@example.com";
  
-if (mail($to,$subject,$txt,$headers)) { 
+//if (mail($to,$subject,$txt,$headers)) { 
+  if  (mail($to,$subject,$txt,implode("\r\n", $headers))){
+
 echo "<br>izgleda, da je poslano"; 
 } else {
 echo "<br>pošiljanje ni uspelo"; 
