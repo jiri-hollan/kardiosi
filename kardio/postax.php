@@ -7,7 +7,7 @@
    <body>
 
 <?php
-$to = "<jiri.hollan@gmail.com><hocimin68@gmail.com>";
+$to = "<jiri.hollan@gmail.com>, <hocimin68@gmail.com>";
 $subject = "To je subjekt";
 $from = '<noreply@sender.com>';
 $message = "Hello world!Arrays";
