@@ -20,8 +20,8 @@ $headers[] = "Content-Type: text/html";
 $headers[] = "charset=ISO-8859-1";
 $headers[] = "X-Priority: 3";
 $headers[] = "X-Mailer: PHP". phpversion();
-//$retval = mail($to,$subject,$message,implode("\r\n", $headers));
-$retval = mail($to,$subject,$message,$headers);
+$retval = mail($to,$subject,$message,implode("\r\n", $headers));
+//$retval = mail($to,$subject,$message,$headers);
          
          if( $retval == true ) {
             echo "Message sent successfully...";
