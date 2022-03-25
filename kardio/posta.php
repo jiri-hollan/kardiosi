@@ -16,7 +16,7 @@ $headers = "From: webmaster@example.com" . "\r\n" .
 if (mail($to,$subject,$txt,$headers)) { 
 echo "kao da je poslano"; 
 } else {
-echo "pošiljanje ni uspelo"; 
+echo "<br>pošiljanje ni uspelo"; 
 }
 
 ?> 
