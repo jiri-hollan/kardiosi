@@ -8,6 +8,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 <html  lang="sl-SI"> 
 <head>
  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+ <meta http-equiv="Pragma" content="no-cache">
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
