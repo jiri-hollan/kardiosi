@@ -21,7 +21,7 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 </style>
 
 
-  <!--<script src="clani.js" type="text/javascript">
+  <!--<script src="clani.js?<?php echo time(); ?>" type="text/javascript">
   </script>-->
 </head>
 <body>
@@ -33,7 +33,7 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"clani.htm")';
+b += '"clani.htm?<?php echo time(); ?>")';
 b += "' > ";
 
 b += a;
@@ -47,7 +47,7 @@ b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
 
-b += '"clani1.htm")';
+b += '"clani1.htm?<?php echo time(); ?>")';
 b += "' > ";
 b += a;
 b += "</a>";
