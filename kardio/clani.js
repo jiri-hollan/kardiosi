@@ -9,11 +9,11 @@ this.email=email;
 
 clanZdravnik1=new person("1","Tatjana","Pintar","TatjanaPintar","pintart7@hotmail.com");
 clanZdravnik2=new person("1","Maja","&#352;o&#353;tari&#269;","MajaSostaric","maja.sos@siol.net");
-clanZdravnik3=new person("1","Nina","Kosma&#269;","NinaKosmac","kosmac.nina@siol.net");
+clanZdravnik3=new person("0","Nina","Kosma&#269;","NinaKosmac","kosmac.nina@siol.net");
 clanZdravnik4=new person("1","Bojan","Kontestabile","BojanKontestabile","kontestabile@gmail.com");
 clanZdravnik5=new person("2","Nenad","Danojevi&#263;","NenadDanojevic","ndanoj@gmail.com");
 clanZdravnik6=new person("1","&#352;pela","Mu&#353;i&#269;","SpelaMusic","spela.music@kclj.si");
-clanZdravnik7=new person("1","Gordan","Mijovski","GordanMijovski","gord@healthgrouper.com");
+clanZdravnik7=new person("1","Gordan","Mijovski","GordanMijovski","gordan.mijovski@outlok.com");
 clanZdravnik8=new person("1","Dominika","Oroszy","DominikaOroszy","dominika.oroszy@kclj.si");
 clanZdravnik9=new person("2","Karolina","Rode","LinaRode","karolina.rode@gmail.com");
 clanZdravnik10=new person("2","Ji&#345;&#237;","Hollan","JiriHollan","jiri.hollan@gmail.com");
