@@ -33,7 +33,7 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"clani.htm?<?php echo time(); ?>")';
+b += '"clani.php?<?php echo time(); ?>")';
 b += "' > ";
 
 b += a;
@@ -47,7 +47,7 @@ b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
 
-b += '"clani1.htm?<?php echo time(); ?>")';
+b += '"clani1.php?<?php echo time(); ?>")';
 b += "' > ";
 b += a;
 b += "</a>";
