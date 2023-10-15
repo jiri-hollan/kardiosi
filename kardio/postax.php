@@ -7,12 +7,13 @@
    <body>
 
 <?php
-$to = "<jiri.hollan@gmail.com>";
+$to = "<jiri.hollan@gmail.com>"; //, <hocimin68@gmail.com>";
 $subject = "To je subjekt";
 $from = '<noreply@sender.com>';
-$message = "Hello world!";
+$message = "Hello world!Arrays";
 $headers[] = "From: " .($from);
 $headers[] = $to;
+$headers[] = "Cc: hocimin68@gmail.com";
 $headers[] = "Reply-To: ".($from);
 $headers[] = "Return-Path: ".($from);
 $headers[] = "MIME-Version: 1.0"; 
