@@ -1,6 +1,7 @@
 <?php
+require_once('../skupne/sabloni/zahlavi.php');
 echo 'napredna manipulacija z bazo';
-require_once('sabloni/zahlavi.php');
+require_once('sabloni/vkladane/zahlavi.php');
 /*
 require_once('administrace.php');
 

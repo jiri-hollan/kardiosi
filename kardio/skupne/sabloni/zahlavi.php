@@ -18,7 +18,7 @@ if (isset($_GET['nazaj'])){
       $nazaj = test_input($_POST['nazaj']);	
   	//var_dump($nazaj); 
 }else {
-     $nazaj = "../kadrio/index.php";
+     $nazaj = "../index.php";
 }
 echo '
  <a class="active" href=' .$nazaj.'>Nazaj</a>
