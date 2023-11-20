@@ -1,7 +1,7 @@
 <?php
 require_once('../skupne/sabloni/zahlavi.php');
 echo 'napredna manipulacija z bazo';
-require_once('sabloni/vkladane/zahlavi.php');
+
 /*
 require_once('administrace.php');
 
@@ -14,10 +14,10 @@ $nazaj="databazeMenu.php";
 //-----------------nova koda-------------------
 */
 ?>
-<form>
-<input type="hidden" class="" name="nazaj" value="$mazaj">
+<!--<form>
+<input type="hidden" class="" name="nazaj" value="$nazaj">
 <input type="submit" name="" value="">
-</form>
+</form>-->
 <?php
 //-------------------------------------------------------
 echo '
