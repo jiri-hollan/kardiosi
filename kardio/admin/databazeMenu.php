@@ -30,6 +30,17 @@ echo '
 <li><a href="kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
 ';
+
+echo'
+<div id="manipulace">
+<h1>Menu servis</h1>
+<ul id="linky1">
+
+<li><a href="manipulaceObjektUniverzal.php?tabulka=uporabnikiTbl">upravljanje z pregledovalci</a></li>
+
+</ul>
+</div>
+';
   /*   } else {
 	echo	' <h2>za ta del niste pooblaščeni</h2>';
 
