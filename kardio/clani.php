@@ -38,7 +38,21 @@ for (i=0;i<zdrClan.length;i++)
 if (zdrClan[i].rang==1) 
 
 {
-c += "<p onclick=" + "'person(zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname,zdrClan[" + i + "].oznaka, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+	console.log(i);
+//c += "<p onclick=" + "'person(zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname,zdrClan[" + i + "].oznaka, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+
+c += "<p onclick="
+c += "'person("
+c += "zdrClan[" + i + "].firstname,"
+c += "zdrClan[" + i + "].lastname,"
+c += "zdrClan[" + i + "].oznaka,"
+c += "zdrClan[" + i + "].email)'"
+c += "class='obarvaj' >"
+c += zdrClan[i].firstname 
+c += '  '
+c += zdrClan[i].lastname
+c +=  "</p>"
+
 }
 
 }
