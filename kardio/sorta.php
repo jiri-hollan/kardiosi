@@ -21,8 +21,8 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 </style>
 
 
-  <!--<script src="clani.js?<?php echo time(); ?>" type="text/javascript">
-  </script>-->
+<script src="js/clani.js?<?php echo time(); ?>" type="text/javascript">
+  </script>
 </head>
 <body>
 <script>
