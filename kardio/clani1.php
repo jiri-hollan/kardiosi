@@ -31,6 +31,7 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
  <script type="text/javascript">
 
 var c = "";
+var uporabnik="uporabnik";
 for (i=0;i<zdrClan.length;i++)
 {
 
@@ -38,7 +39,21 @@ if (zdrClan[i].rang==2)
 
 {
 
-c += "<p onclick=" + "'person(zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname,zdrClan[" + i + "].oznaka, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+//c += "<p onclick=" + "'person(zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname,zdrClan[" + i + "].oznaka, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+
+c += "<p class='obarvaj' onclick="
+c += "'person("
+c += "zdrClan[" + i + "].firstname,"
+c += "zdrClan[" + i + "].lastname,"
+//c += "zdrClan[" + i + "].oznaka,"
+c += '"'+uporabnik + i +'"'+","
+c += "zdrClan[" + i + "].email)'"
+c += ">"
+c += zdrClan[i].firstname 
+c += '  '
+c += zdrClan[i].lastname
+c +=  "</p>"
+
 }
 
 }
