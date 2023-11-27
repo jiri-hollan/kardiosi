@@ -12,7 +12,6 @@ background-repeat:no-repeat;
 background-position:500px 30px;
 }
 
-
 p {color: black}
 p {background-color: wheat}
 a {text-decoration: none}
@@ -54,9 +53,7 @@ c += zdrClan[i].lastname
 c +=  "</p>"
 
 }
-
 }
-
 var p = ""
 var r = ""
 for (i=0;i<zdrClan.length;i++)
