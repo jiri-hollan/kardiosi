@@ -39,13 +39,13 @@ if (zdrClan[i].rang==1)
 
 {
 	console.log(i);
-//c += "<p onclick=" + "'person(zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname,zdrClan[" + i + "].oznaka, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+//c += "<p onclick=" + "'person(zdrClan[" + i + "].personId,zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
 
 c += "<p class='obarvaj' onclick="
 c += "'person("
+c += "zdrClan[" + i + "].personId,"
 c += "zdrClan[" + i + "].firstname,"
 c += "zdrClan[" + i + "].lastname,"
-c += "zdrClan[" + i + "].oznaka,"
 c += "zdrClan[" + i + "].email)'"
 c += ">"
 c += zdrClan[i].firstname 
@@ -73,12 +73,12 @@ document.getElementById('levo').innerHTML = c + "<br>" + r
 </script>
  
 <script>
-function person(firstname,lastname,oznaka,email)
+function person(personId,firstname,lastname,email)
 {
 var m = "";
 var n = "";
 var o = "";
-m += "<img src='podobe/" + oznaka + ".jpg' alt='---- ' width='200'/>"
+m += "<img src='podobe/personId" + personId + ".jpg' alt='---- ' width='200'/>"
 
 
 n += "<h2>" + firstname + " " + lastname  + "</h2>"
