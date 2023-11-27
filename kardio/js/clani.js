@@ -1,9 +1,9 @@
-function person(rang, firstname,lastname,oznaka,email)
+function person(personId, rang, firstname,lastname,email)
 {
+this.personId=personId;	
 this.rang=rang;
 this.firstname=firstname;
 this.lastname=lastname;
-this.oznaka=oznaka;
 this.email=email;
 }
 
