@@ -37,8 +37,8 @@ for (i=0;i<zdrClan.length;i++)
 if (zdrClan[i].rang==1) 
 
 {
-	//console.log(i);
-//c += "<p onclick=" + "'person(zdrClan[" + i + "].personId,zdrClan[" + i + "].firstname,zdrClan[" + i + "].lastname, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
+
+//c += "<p onclick=" + "'person(zdrClan[" + i + "].personId, zdrClan[" + i + "].firstname, zdrClan[" + i + "].lastname, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
 
 c += "<p class='obarvaj' onclick="
 c += "'person("
