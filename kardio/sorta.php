@@ -35,7 +35,6 @@ b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
 b += '"clani.php?<?php echo time(); ?>")';
 b += "' > ";
-
 b += a;
 b += "</a>";
 b +=  "</p>";
