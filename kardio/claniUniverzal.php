@@ -28,12 +28,12 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
 <script type="text/javascript">
 
 var c = "";
-var p = ""
-var r = ""
-
+var p = "";
+var r = "";
+var izbiraRanga = "1";
 for (i=0;i<zdrClan.length;i++)
 {
-if (zdrClan[i].rang==1) 
+if (zdrClan[i].rang==izbiraRanga) 
 {
 
 c += "<p class='obarvaj' onclick="
