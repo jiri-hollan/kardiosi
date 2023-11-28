@@ -28,6 +28,9 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
 <script type="text/javascript">
 
 var c = "";
+var p = ""
+var r = ""
+
 for (i=0;i<zdrClan.length;i++)
 {
 if (zdrClan[i].rang==1) 
@@ -45,14 +48,7 @@ c += '  '
 c += zdrClan[i].lastname
 c +=  "</p>"
 
-}
-}
-var p = ""
-var r = ""
-for (i=0;i<zdrClan.length;i++)
-{
-if (zdrClan[i].rang==1) 
-{
+
 p += zdrClan[i].email + ","
 }
 r = "<p class='obarvaj' >" + "<a href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" + "</p>"
