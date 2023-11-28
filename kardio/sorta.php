@@ -46,7 +46,6 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-
 b += '"clani1.php?<?php echo time(); ?>")';
 b += "' > ";
 b += a;
