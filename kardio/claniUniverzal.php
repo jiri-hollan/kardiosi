@@ -18,27 +18,20 @@ a {text-decoration: none}
 p.obarvaj:link {color:blue}
 p.obarvaj:hover {font-size: 120%;background-color:white}
 </style>
-  <script src="js/clani.js?v=<?=time();?>" type="text/javascript">
-  </script>
-
+<script src="js/clani.js?v=<?=time();?>" type="text/javascript">
+</script>
 
 </head>
 <body>
 <span id="levo" style="position:absolute; top:0; left:10px;width:200px"></span>
 <span id="desno" style="position:absolute; top:0; left:225px;"></span>
- 
- 
- <script type="text/javascript">
+<script type="text/javascript">
 
 var c = "";
 for (i=0;i<zdrClan.length;i++)
 {
-
 if (zdrClan[i].rang==1) 
-
 {
-
-//c += "<p onclick=" + "'person(zdrClan[" + i + "].personId, zdrClan[" + i + "].firstname, zdrClan[" + i + "].lastname, zdrClan[" + i + "].email)'" + "class='obarvaj' >" + zdrClan[i].firstname + '  ' + zdrClan[i].lastname + "</p>"
 
 c += "<p class='obarvaj' onclick="
 c += "'person("
@@ -68,7 +61,6 @@ r = "<p class='obarvaj' >" + "<a href='mailto:" + p + "'" + "target='_top'>" + "
 document.getElementById('levo').innerHTML = c + "<br>" + r 
 
 </script>
- 
 <script>
 function person(personId,firstname,lastname,email)
 {
@@ -76,13 +68,8 @@ var m = "";
 var n = "";
 var o = "";
 m += "<img src='podobe/personId" + personId + ".jpg' alt='---- ' width='200'/>"
-
-
 n += "<h2>" + firstname + " " + lastname  + "</h2>"
-
-
 o += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
-
 
 document.getElementById('desno').innerHTML = m + "<br>" + n + "<br>" + o
 }
