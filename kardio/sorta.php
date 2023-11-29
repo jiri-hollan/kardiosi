@@ -28,26 +28,26 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 <script>
 
 
-var rang = "&#268;LANI";
+var skupina = "&#268;LANI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
 b += '"claniUniverzal.php?<?php echo time(); ?>")';
 b += "' > ";
-b += rang;
+b += skupina;
 b += "</a>";
 b +=  "</p>";
 document.write(b);
 
-var rang = "PRIDRU&#381;ENI";
+var skupina = "PRIDRU&#381;ENI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
 b += '"clani1.php?<?php echo time(); ?>")';
 b += "' > ";
-b += rang;
+b += skupina;
 b += "</a>";
 b +=  "</p>";
 document.write(b);
