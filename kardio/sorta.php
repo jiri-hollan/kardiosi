@@ -33,7 +33,7 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"claniUniverzal.php?<?rang=1,php echo time(); ?>")';
+b += '"claniUniverzal.php?rang=1")';
 b += "' > ";
 b += skupina;
 b += "</a>";

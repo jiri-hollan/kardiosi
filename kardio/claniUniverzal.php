@@ -30,19 +30,19 @@ $izbiraRanga = "";
 
 if(isset($_GET['rang'])){
 $izbiraRanga = $_GET['rang'];
-echo'izbira ranga='.$izbiraRanga;
+//echo'izbira ranga='.$izbiraRanga;
 	}
-echo $izbiraRanga;	
+//echo $izbiraRanga;	
 	
 $izbira="izbiraRanga=".$izbiraRanga;	
-echo'<script>'.
-$izbira.';
-alert("izbira Ranga:"+izbiraRanga);
+echo'<script>'
+.$izbira.';'.
+'alert("izbira Ranga:"+izbiraRanga);
 </script>';
 ?>
 
 <script type="text/javascript">
-	alert("claniUniverzalNaZačetku");
+	//alert("claniUniverzalNaZačetku");
 var c = "";
 var p = "";
 var r = "";
@@ -76,7 +76,7 @@ document.getElementById('levo').innerHTML = c + "<br>" + r
 <script>
 function person(personId,firstname,lastname,email)
 {
-	alert("claniUniverzalFunctionPerson2");
+	//alert("claniUniverzalFunctionPerson2");
 var m = "";
 var n = "";
 var o = "";
