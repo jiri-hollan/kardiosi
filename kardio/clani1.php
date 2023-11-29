@@ -42,7 +42,7 @@ if (zdrClan[i].rang==2)
 
 c += "<p class='obarvaj' onclick="
 c += "'person("
-c += "zdrClan[" + i + "].personId,"
+c += "zdrClan[" + i + "].personaId,"
 c += "zdrClan[" + i + "].firstname,"
 c += "zdrClan[" + i + "].lastname,"
 c += "zdrClan[" + i + "].email)'"
@@ -70,12 +70,12 @@ document.getElementById('levo').innerHTML = c + "<br>" + r
 </script>
  
 <script>
-function person(personId,firstname,lastname,email)
+function person(personaId,firstname,lastname,email)
 {
 var m = "";
 var n = "";
 var o = "";
-m += "<img src='podobe/personId" + personId + ".jpg' alt='---- ' width='200'/>"
+m += "<img src='podobe/personId" + personaId + ".jpg' alt='---- ' width='200'/>"
 
 
 n += "<h2>" + firstname + " " + lastname  + "</h2>"
