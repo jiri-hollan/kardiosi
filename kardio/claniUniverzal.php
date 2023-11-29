@@ -25,12 +25,28 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
 <body>
 <span id="levo" style="position:absolute; top:0; left:10px;width:200px"></span>
 <span id="desno" style="position:absolute; top:0; left:225px;"></span>
+<?php
+$izbiraRanga = "";
+
+if(isset($_GET['rang'])){
+$izbiraRanga = $_GET['rang'];
+echo'izbira ranga='.$izbiraRanga;
+	}
+echo $izbiraRanga;	
+	
+$izbira="izbiraRanga=".$izbiraRanga;	
+echo'<script>'.
+$izbira.';
+alert("izbira Ranga:"+izbiraRanga);
+</script>';
+?>
+
 <script type="text/javascript">
 	alert("claniUniverzalNaZačetku");
 var c = "";
 var p = "";
 var r = "";
-var izbiraRanga = "1";
+//var izbiraRanga = "1";
 for (i=0;i<zdrClan.length;i++)
 {
 if (zdrClan[i].rang==izbiraRanga) 
