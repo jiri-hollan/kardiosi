@@ -26,7 +26,7 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
 <span id="levo" style="position:absolute; top:0; left:10px;width:200px"></span>
 <span id="desno" style="position:absolute; top:0; left:225px;"></span>
 <script type="text/javascript">
-
+	alert("claniUniverzalNaZačetku");
 var c = "";
 var p = "";
 var r = "";
@@ -60,6 +60,7 @@ document.getElementById('levo').innerHTML = c + "<br>" + r
 <script>
 function person(personId,firstname,lastname,email)
 {
+	alert("claniUniverzalFunctionPerson2");
 var m = "";
 var n = "";
 var o = "";

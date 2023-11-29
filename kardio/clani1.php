@@ -29,7 +29,7 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
  
  
  <script type="text/javascript">
-
+	alert("clani1PHP");	
 var c = "";
 for (i=0;i<zdrClan.length;i++)
 {
