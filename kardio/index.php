@@ -21,7 +21,7 @@ $p = $_GET['p'];
 	}
 	switch($p){
 		case "mespdf":
-		$m = "crna.htm";
+		$m = "crna.php";
 		$n = "mespdf.php";
 		$direktorij = "razpis/mespdf/";
 		$l= "";	
