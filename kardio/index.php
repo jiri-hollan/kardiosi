@@ -10,7 +10,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
-<title>prikaz mese&#269nega razporeda v obliki PDF</title>
+<title>prikaz mesečnega razporeda v obliki PDF</title>
 <?php
 $direktorij = "";
 $l="links.php";
