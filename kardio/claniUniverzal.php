@@ -37,7 +37,7 @@ $izbiraRanga = $_GET['rang'];
 $izbira="izbiraRanga=".$izbiraRanga;	
 echo'<script>'
 .$izbira.';'.
-'alert("izbira Ranga:"+izbiraRanga);
+'//alert("izbira Ranga:"+izbiraRanga);
 </script>';
 ?>
 

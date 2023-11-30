@@ -7,7 +7,7 @@ this.firstname=firstname;
 this.lastname=lastname;
 this.email=email;
 }
-	alert("clani.jsZunaj funkcije");	
+	//alert("clani.jsZunaj funkcije");	
 clanZdravnik0=new persona("0","1","Tatjana","Pintar","pintart7@hotmail.com");
 clanZdravnik1=new persona("1","1","Maja","&#352;o&#353;tari&#269;","maja.sos@siol.net");
 clanZdravnik2=new persona("2","0","Nina","Kosma&#269;","kosmac.nina@siol.net");
