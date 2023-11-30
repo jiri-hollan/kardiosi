@@ -1,4 +1,14 @@
 
+#glava1{
+	background-color: wheat;
+
+}
+
+#glava1 a.obarvaj:hover {
+	background-color:maroon; color:white;
+	}
+
+
 #sos{
     background: #ffff08;
 	color:#FFFF80;
@@ -6,33 +16,19 @@
 	hight: 30px;
     position:absolute;
 	top:0px;
-
-	
-	
-	
 }
-
-
 
 #cela{
 	max-width:2000px;
         position:absolute;
-	top:40px;
-
-	
-	
+	top:40px;	
 }
-
 
 #nav{
 	max-width:150px;
         position:absolute;
-	top:40px;
-
-	
-	
+	top:40px;	
 }
-
 
 #vsebina{
 	min-width:1000px;
@@ -40,11 +36,7 @@
 	top:40px;
 	bottom:0px;
 	left:160px;
-	
 }
-
-
-
 
 #links{
 	color:#FFFF80;
@@ -63,10 +55,7 @@
 	display:block;
 	padding:15px;
 	color:#FFFF80;
-	
 }
-
-
 
 .obarvaj{
 
@@ -80,13 +69,13 @@ left:+40px;
 
 
 }
-.obarvaj:visited {color: #ffffff}
-.obarvaj:hover {font-size: 100%;background-color: #780000}
-
-
-
+.obarvaj:visited {
+	color: #ffffff
+	}
+.obarvaj:hover {
+	font-size: 100%;background-color: #780000
+	}
 .akce{
-
   color: #ffffff;
   background: #190088;
   padding: 0.1cm;
@@ -94,22 +83,24 @@ left:+40px;
   font-size:80%;
   position:relative;
 left:+10px;
-
 }
-.akce:visited {color: #ffffff}
-.akce:hover {background-color: #00ff00}
-
+.akce:visited {
+	color: #ffffff
+	}
+.akce:hover {
+	background-color: #00ff00
+	}
 
 .izbira{
 	color: #FFFF80;
    background: #4444FF;
-   
    display:block;
   padding: 0.2cm;
- 
   font-size:80%;
-  
-
 }
-.izbira:visited {color: #ffffff}
-.izbira:hover {font-size: 110%;background-color: #780000}
+.izbira:visited {
+	color: #ffffff
+	}
+.izbira:hover {
+	font-size: 110%;background-color: #780000
+	}
