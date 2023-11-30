@@ -11,6 +11,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
   <link rel="stylesheet" href="css/index.css?<?php echo time(); ?>">
+  <link rel="stylesheet" type="text/css"  href="css/style.css?<?php echo time(); ?>" >
 <title>prikaz mesečnega razporeda v obliki PDF</title>
 <?php
 $direktorij = "";
@@ -63,7 +64,7 @@ $p = $_GET['p'];
 		$s = "main.php";
 	}
 ?>
-	<link rel="stylesheet" type="text/css"  href="style.css" >
+
 	<script type="text/javascript">
      var direktorij= "<?php echo $GLOBALS ['direktorij'] ?>";
 		
