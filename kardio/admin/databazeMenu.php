@@ -38,6 +38,9 @@ echo'
 
 <li><a href="manipulaceObjektUniverzal.php?tabulka=uporabnikiTbl">upravljanje z pregledovalci</a></li>
 
+<li><a href="manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
+
+
 </ul>
 </div>
 ';
