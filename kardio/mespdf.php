@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css"  href="style.css" >
+<link rel="stylesheet" type="text/css"  href="css/style.css" >
 <a class="akce" href="index.php?p=nic" >domov</a> 
   <button type="button" class="obarvaj" onclick="showPDF('januar')" >januar</button> 
   <button type="button" class="obarvaj" onclick="showPDF('februar')" >februar</button>  
