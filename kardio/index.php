@@ -22,7 +22,7 @@ $p = $_GET['p'];
 	}
 	switch($p){
 		case "mespdf":
-		$m = "crna.php";
+		//$m = "crna.php";
 		$n = "mespdf.php";
 		$direktorij = "razpis/mespdf/";
 		$l= "";	
@@ -91,7 +91,7 @@ $p = $_GET['p'];
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
 	 
-	<div id="tojePdf">   <?php if (isset($m) and $m != "") {include($m); }?>    </div>
+	<div id="tojePdf"><?php if (isset($m) and $m != "") {include($m); }?></div>
 
 </body>
 </html>

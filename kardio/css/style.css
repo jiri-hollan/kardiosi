@@ -1,10 +1,4 @@
 
-#tojePdf{ 
-top 40px;
-	background-color:maroon;
-	height:2000px;
-	max-width:2000px;
-}
 
 #glava1{
 	background-color: wheat;
@@ -19,7 +13,7 @@ top 40px;
 #sos{
     background: #ffff08;
 	color:#FFFF80;
-	max-width:2000px;
+	/*max-width:2000px;*/
 	hight: 30px;
     position:absolute;
 	top:0px;
