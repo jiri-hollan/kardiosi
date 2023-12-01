@@ -90,7 +90,6 @@ $p = $_GET['p'];
 	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
-	 
 	<div id="tojePdf"><?php if (isset($m) and $m != "") {include($m); }?></div>
 
 </body>
