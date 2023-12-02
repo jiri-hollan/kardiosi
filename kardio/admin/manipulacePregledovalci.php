@@ -16,36 +16,36 @@ require_once '../skupne/sabloni/zahlavi.php';
 require_once '../skupne/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
-  $bolnisnica = test_input($_POST["bolnisnica"]);
   echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
 //echo var_dump($status) .'<br>';
 switch ($akce) {
   case "vyber":
-// echo "to je vyber.<br>";
-   if ($bolnisnica == "") {
 	$podminka = NULL;
-} else {
-    $podminka = array("bolnisnica"=>$bolnisnica);
-}
     vyberFunction($podminka);
     break;
 case "vloz":
+    $status = test_input($_POST["status"]); 
     $ime = test_input($_POST["ime"]);
     $priimek = test_input($_POST["priimek"]);
-    $status = test_input($_POST["status"]);  
-    $data= array("bolnisnica"=>$bolnisnica, "ime"=>$ime, "priimek"=>$priimek, "status"=>$status);
+    $email = test_input($_POST["email"]);
+    $uname = test_input($_POST["uname"]); 
+    $geslo = test_input($_POST["geslo"]); 
+    $data= array("status"=>$status, "ime"=>$ime, "priimek"=>$priimek, "email"=>$email, "uname"=>$uname, "geslo"=>$geslo);	
+	
+	
     vlozFunction($data);
     break;
 case "uredi":
     $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
-    $bolnisnica=test_input($_POST["bolnisnica"]);
+	$status = test_input($_POST["status"]); 	
     $ime = test_input($_POST["ime"]);
-	$priimek = test_input($_POST["priimek"]);
-	$status = test_input($_POST["status"]); 
+	$priimek = test_input($_POST["priimek"]);	
+    $email=test_input($_POST["email"]);
+    $uname=test_input($_POST["uname"]);
+    $geslo=test_input($_POST["geslo"]);
 	$podminka = array("id"=>$id);
-    $data= array("bolnisnica"=>$bolnisnica, "ime"=>$ime, "priimek"=>$priimek, "status"=>$status);
+    $data= array("status"=>$status, "ime"=>$ime, "priimek"=>$priimek, "email"=>$email, "uname"=>$uname, "geslo"=>$geslo);	
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
@@ -114,7 +114,7 @@ function vyberFunction($podminka){
 }//od foreach
 }//od if(cout)
 else{
-echo "Za izbrano bolnisnico ni zapisa v bazi";	
+echo "v bazi ni zapisa";	
 }//od else
 }//od vyberFunction  
 
