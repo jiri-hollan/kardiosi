@@ -36,7 +36,7 @@ echo'
 <h1>Menu servis</h1>
 <ul id="linky1">
 
-<li><a href="manipulaceObjektUniverzal.php?nazaj='.$nazaj.'">uporabniki univerzal</a></li>
+<li><a href="manipulaceObjektUniverzal.php?tabulka=uporabnikiTbl">upravljanje z pregledovalci</a></li>
 <li><a href="manipulacePregledovalci.php?nazaj='.$nazaj.'">uporabniki</a></li>
 
 

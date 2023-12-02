@@ -8,7 +8,7 @@
 <!--<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">-->
 <link rel="stylesheet" href="../admin/css/zahlavi.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="../admin/css/menuFile.css?<?php echo time(); ?>">
-
+<link rel="stylesheet" href="../admin/css/pregledovalci.css?<?php echo time(); ?>">
 </head>
 <body>
 <div class="topnav">

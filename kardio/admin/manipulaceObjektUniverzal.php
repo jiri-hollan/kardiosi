@@ -60,7 +60,7 @@ if (isset($_REQUEST["akce"])) {
 	    $this->bolnisnica = $bolnisnica;
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
-	  case "pregledovalciTbl":
+	  case "uporabnikiTbl":
 	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "status"]';
 	  break;
 	  case "sklepiTbl":
@@ -184,8 +184,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
-		  case "pregledovalciTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>status</th></tr>";
+		  case "uporabnikiTbl":
+    echo "<tr><th>Id</th><th>status</><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr>";
     break;
 	case "sklepiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>status</th></tr>";
@@ -274,7 +274,7 @@ switch($_REQUEST["tabulka"]){
 case "sklepiTbl":
 echo '<script src="js/manipulaceSklepi.js?<?php echo time(); ?>"></script>'; 
 break;
-case "pregledovalciTbl":
+case "uporabnikiTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;
 
