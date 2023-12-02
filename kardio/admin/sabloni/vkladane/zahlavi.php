@@ -8,7 +8,6 @@
 <!--<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">-->
 <link rel="stylesheet" href="../admin/css/zahlavi.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="../admin/css/menuFile.css?<?php echo time(); ?>">
-<script src="../admin/js/uporabnikiVse.js?<?php echo time(); ?>"></script> 
 
 </head>
 <body>

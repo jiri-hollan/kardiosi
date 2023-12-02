@@ -89,7 +89,7 @@ function vyberFunction($podminka){
   echo "<br>";
  if(count($vybrano)>0){
   echo "<table id='osebe' style='border: solid 1px black;'>";
-  echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>status</th></tr>";
+  echo "<tr><th>Id</th><th>status</th><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr> ";
   class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
         parent::__construct($it, self::LEAVES_ONLY);
