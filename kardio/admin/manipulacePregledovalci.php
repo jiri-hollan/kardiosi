@@ -2,7 +2,7 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
-<h2>pregledovalci</h2>
+<h2>Uporabniki</h2>
 <button onclick="izborFunction('vyber')">izberi</button>
 <button onclick="izborFunction('vloz')">vlož</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
