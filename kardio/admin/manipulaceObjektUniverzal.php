@@ -9,13 +9,7 @@
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-  if (isset($_REQUEST["bolnisnica"])){
-	  $bolnisnica = new Test_input($_REQUEST['bolnisnica']); 
-      $bolnisnica = $bolnisnica->get_test();
-	  
-  }else {
 	 $bolnisnica = "";   
-  }
  if (isset($tabulka)){
 	  $tabulka= $tabulka; 
   }else if (isset($_REQUEST["tabulka"])){
@@ -61,7 +55,7 @@ if (isset($_REQUEST["akce"])) {
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
 	  case "uporabnikiTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "status"]';
+	  $this->dataPreg= '["status", "ime", "priimek", "email"], "uname", "geslo"]]';
 	  break;
 	  case "sklepiTbl":
 	  $this->dataPreg= '["bolnisnica", "sklep", "status"]';
