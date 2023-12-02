@@ -1,4 +1,4 @@
-var tabulka="pregledovalciTbl";
+var tabulka="uporabnikiTbl";
 function izborFunction(akce, tabulka) {
 	var tabulka=tabulka;
 	//alert(tabulka);
