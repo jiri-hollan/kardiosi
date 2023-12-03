@@ -40,7 +40,7 @@ case "vloz":
      echo "ni dovoljeno";
    break; 
 case "uredi":
-    $tabulka="uporabnikiTbl2";
+    $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"]);
     //$email=test_input($_POST["email"]);
     //$uname=test_input($_POST["uname"]);	
@@ -84,7 +84,7 @@ case "odstrani":
 }//od if
 
 function vyberFunction($podminka){
-   $tabulka="uporabnikiTbl2";
+   $tabulka="uporabnikiTbl";
    $stolpci=["*"];
    $vyber = new database();
    $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -129,7 +129,7 @@ else{
 }//od vyberFunction  
 
 function vlozFunction($data){
-   $tabulka="uporabnikiTbl2";
+   $tabulka="uporabnikiTbl";
    $vloz = new database($tabulka,$data);
    $vlozeno=$vloz->vloz($tabulka,$data );
 //echo $vlozeno[1];
@@ -142,7 +142,7 @@ function vlozFunction($data){
 
 function editFunction($podminka){
 //	echo 'editFunction pošalje podatke v urediFunction';
-   $tabulka="uporabnikiTbl2";
+   $tabulka="uporabnikiTbl";
    $stolpci=["*"];
    $vyber = new database($tabulka, $stolpci, $podminka );
    $vyber->vyber($tabulka, $stolpci, $podminka);
@@ -171,7 +171,7 @@ function editFunction($podminka){
 
 function odstraniFunction($podminka){
 //odstrani zapis
-	$tabulka="uporabnikiTbl2";
+	$tabulka="uporabnikiTbl";
 	$odstrani = new database();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
