@@ -2,7 +2,7 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
-<h2>Uporabniki</h2>
+<h2>Pregledovalci</h2>
 <button onclick="izborFunction('vyber')">izberi</button>
 <button onclick="izborFunction('vloz')">vlož</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -36,7 +36,7 @@ case "vloz":
     vlozFunction($data);
     break;
 case "uredi":
-    $tabulka="uporabnikiTbl";
+    $tabulka="pregledovalciTbl";
     $id=test_input($_POST["id"]);
 	$status = test_input($_POST["status"]); 	
     $ime = test_input($_POST["ime"]);
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
 }//od if
 
 function vyberFunction($podminka){
-  $tabulka="uporabnikiTbl";
+  $tabulka="pregledovalciTbl";
   $stolpci=["*"];
   $vyber = new database();
   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
@@ -119,7 +119,7 @@ echo "v bazi ni zapisa";
 }//od vyberFunction  
 
 function vlozFunction($data){
-  $tabulka="uporabnikiTbl";
+  $tabulka="pregledovalciTbl";
   $vloz = new database($tabulka,$data);
   $vlozeno=$vloz->vloz($tabulka,$data );
 //echo $vlozeno[1];
@@ -132,7 +132,7 @@ echo "<br>";
 
 function editFunction($podminka){
 //	echo 'editFunction opšalje podatke v urediFunction';
-  $tabulka="uporabnikiTbl";
+  $tabulka="pregledovalciTbl";
   $stolpci=["*"];
   $vyber = new database($tabulka, $stolpci, $podminka );
   $vyber->vyber($tabulka, $stolpci, $podminka);
@@ -156,7 +156,7 @@ echo "</form>";
 }//od editFunction
 
 function odstraniFunction($podminka){
-	$tabulka="uporabnikiTbl";
+	$tabulka="pregledovalciTbl";
 	$odstrani = new database();
 	$odstranjeno=$odstrani->odstrani($tabulka, $podminka );
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';

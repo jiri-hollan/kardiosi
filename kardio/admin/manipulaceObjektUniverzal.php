@@ -55,7 +55,8 @@ if (isset($_REQUEST["akce"])) {
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
-	  $this->dataPreg= '["status", "ime", "priimek", "email"], "uname", "geslo"]]';
+	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
+	  //var_dump($this->dataPreg);
 	  break;
 	  case "sklepiTbl":
 	  $this->dataPreg= '["bolnisnica", "sklep", "status"]';
@@ -90,6 +91,7 @@ echo "<br>";
 	$data=array();
  function array_push_assoc($data, $key, $value){
    $data[$key] = $value;
+  // var_dump ($data);
    return $data;
 }
 foreach (json_decode($this->dataPreg) as $key) {
