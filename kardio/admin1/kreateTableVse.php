@@ -11,24 +11,12 @@ echo '
 
   <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
   <input type="radio" id="uporabniki" name="name" value="uporabniki">
-  
-   <label for="limiti"><span class="imenaFilov">limiti</span></label>
-   <input type="radio" id="limiti" name="name" value="limiti">
-   
-    <label for="ocena"><span class="imenaFilov">ocena</span></label>
-   <input type="radio" id="ocena" name="name" value="ocena">
+
 
    <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
    <input type="radio" id="pregledovalci" name="name" value="pregledovalci">
-   
-   <label for="bolnisnice"><span class="imenaFilov">bolnisnice</span></label>
-   <input type="radio" id="bolnisnice" name="name" value="bolnisnice">  
-    
-   <label for="sklepi"><span class="imenaFilov">sklepi</span></label>
-   <input type="radio" id="sklepi" name="name" value="sklepi"> 
-      
-   <label for="bolnik"><span class="imenaFilov">bolnik</span></label>
-   <input type="radio" id="bolnik" name="name" value="bolnik"> 
+
+
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
   <input type="submit" name="submit" value="Submit">  

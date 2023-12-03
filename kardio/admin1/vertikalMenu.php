@@ -23,9 +23,8 @@ echo '
 </ul>
 <h1>Menu navodila</h1>
 <ul id="linky1">
-<li><a href="../admin1/manipulaceOmejitve.php?nazaj='.$nazaj.'">Omejitve</a></li>
+
 <li><a href="../admin1/manipulaceUporabniki.php?nazaj='.$nazaj.'">uporabniki</a></li>
-<li><a href="kreateBaseNavodila.php?nazaj='.$nazaj.'">naredi bazo: navodila</a></li>
 <li><a href="kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
 ';
