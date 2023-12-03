@@ -8,11 +8,13 @@ echo '
 
 
 
-  <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
-  <input type="radio" id="uporabniki" name="name" value="uporabniki">
+  <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
+  <input type="radio" id="pregledovalci" name="name" value="pregledovalci">
   
  
-   
+     <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
+  <input type="radio" id="uporabniki" name="name" value="uporabniki">
+  
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
@@ -35,7 +37,7 @@ $databaseGloboka=new DatabaseGloboka;
 switch ($ime) {	
 
 
-case "uporabniki":
+case "pregledovalci":
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `status` int(3) NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
@@ -44,9 +46,20 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`uname` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci ,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci ,	
 	UNIQUE (email, uname)";
+$databaseGloboka->naredi('pregledovalciTbl', $definice);
+break;
+case "uporabniki":
+$definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`email` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
+	`uname` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
+	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
+	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
+	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
+    `status` int(3) NOT NULL,
+    `pristop` int(3) NOT NULL,	
+	UNIQUE (email, uname)";
 $databaseGloboka->naredi('uporabnikiTbl', $definice);
 break;
-
 /*
 case "":
 $definice= "";
