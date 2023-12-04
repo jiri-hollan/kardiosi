@@ -59,7 +59,7 @@ if (isset($_REQUEST["akce"])) {
 	  //var_dump($this->dataPreg);
 	  break;
 	  case "uporabnikiTbl":
-	  $this->dataPreg= '["id", "email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
 ;
 	  default:
