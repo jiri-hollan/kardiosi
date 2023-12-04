@@ -41,7 +41,6 @@ echo'
 <li><a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">Vertikal Menu</a></li>
 
 </ul>
-<a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">.</a>
 </div>
 ';
   /*   } else {
