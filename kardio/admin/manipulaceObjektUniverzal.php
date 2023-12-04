@@ -221,7 +221,11 @@ foreach (json_decode($this->dataPreg) as $key) {
      for ($i = 0; $i < $dolzina; $i++) {
        foreach ($vybrano[$i] as $key => $value) {
 // echo "$key: $value\n";
+ if($key=="id"){
+	   echo " $key: <input name=$key value=$value readonly\n></input>";	
+}	else{ 
 	   echo " $key: <input id=$key name=$key value='".$value."'></input><br>";
+	   }
       }//od foreach	 
 	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
