@@ -58,8 +58,8 @@ if (isset($_REQUEST["akce"])) {
 	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
 	  //var_dump($this->dataPreg);
 	  break;
-	  case "uporanikiTbl":
-	  $this->dataPreg= '["Id", "e-mail", "uporabnik", "geslo", "ime", "priimek", "status", "pristop"]';
+	  case "uporabnikiTbl":
+	  $this->dataPreg= '["id", "email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
 ;
 	  default:
@@ -178,7 +178,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     break;
 	
 	case "uporabnikiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
+    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";
