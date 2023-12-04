@@ -37,7 +37,6 @@ echo'
 <ul id="linky1">
 
 <li><a href="manipulaceObjektUniverzal.php?tabulka=pregledovalciTbl">upravljanje z pregledovalci</a></li>
-<li><a href="manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
 <li><a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">Vertikal Menu</a></li>
 
 </ul>

@@ -6,6 +6,7 @@ function izborFunction(akce, tabulka) {
 switch(akce) {
   case "vyber":
 // omogoči izbiro bolnišnice 	
+/*
  document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onfocusout="bolnisnicaFunction()" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
 	var bolList  =[
 	"Izola",
@@ -18,6 +19,7 @@ for (i = 0; i < bolList.length; i++) {
   text += "<option value='" +  bolList[i] + "'>"  +"<br>";
 }
   document.getElementById("bolnisnice").innerHTML = text;
+  */
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
