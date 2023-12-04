@@ -25,7 +25,7 @@ echo '
 <ul id="linky1">
 
 <li><a href="../admin1/manipulaceUporabniki.php?nazaj='.$nazaj.'">uporabniki</a></li>
-<li><a href="kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
+<li><a href="../admin1/kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
 ';
   /*   } else {

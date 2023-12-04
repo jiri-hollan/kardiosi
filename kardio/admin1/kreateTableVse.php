@@ -63,11 +63,15 @@ break;
 
 /*...............................................................*/
 case "pregledovalci":
+echo"kreateTableVse v ADMIN 1";
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	`bolnisnica` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,	
+    `status` int(3) NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
-    `status` int(3) NOT NULL";
+	`email` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
+	`uname` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci ,
+	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci ,	
+	UNIQUE (email, uname)";
 $databaseGloboka->naredi('pregledovalciTbl', $definice);
 break;
 

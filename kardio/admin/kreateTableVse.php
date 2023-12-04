@@ -38,6 +38,7 @@ switch ($ime) {
 
 
 case "pregledovalci":
+echo"kreateTableVse v ADMIN";
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `status` int(3) NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
