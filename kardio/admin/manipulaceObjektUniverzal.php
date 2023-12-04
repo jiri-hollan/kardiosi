@@ -125,10 +125,11 @@ $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
 if(count($vybrano)>0){	
-	
+	//var_dump($vybrano);
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
-
+//	var_dump($v);
+	       // echo $v;
 }//od foreach
 }//od if(cout)
 else{
@@ -178,7 +179,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     break;
 	
 	case "uporabnikiTbl":
-    echo "<tr><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";
