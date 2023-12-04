@@ -58,17 +58,10 @@ if (isset($_REQUEST["akce"])) {
 	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
 	  //var_dump($this->dataPreg);
 	  break;
-	  case "sklepiTbl":
-	  $this->dataPreg= '["bolnisnica", "sklep", "status"]';
+	  case "uporanikiTbl":
+	  $this->dataPreg= '["Id", "e-mail", "uporabnik", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
-	  
-	  case "ocenaTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "ocena", "status"]';
-	  break;
-	  
-	  case "limitiTbl":
-	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
-	  break;
+;
 	  default:
 	  echo "tabulka ni določena";
   }
@@ -183,16 +176,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 		  case "pregledovalciTbl":
     echo "<tr><th>Id</th><th>status</><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr>";
     break;
-	case "sklepiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>status</th></tr>";
-    break;
 	
-	case "sklepiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>ocena</th><th>status</th></tr>";
-    break;
-	
-	
-	case "limitiTbl":
+	case "uporabnikiTbl":
     echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
     break;
 	default:
@@ -267,20 +252,15 @@ foreach (json_decode($this->dataPreg) as $key) {
 if (isset($_REQUEST["tabulka"])){
 
 switch($_REQUEST["tabulka"]){
-case "sklepiTbl":
-echo '<script src="js/manipulaceSklepi.js?<?php echo time(); ?>"></script>'; 
-break;
+
 case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;
-
-case "ocenaTbl":
-echo '<script src="js/manipulaceOcena.js?<?php echo time(); ?>"></script>'; 
+case "uporabnikiTbl":
+echo '<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>"></script>'; 
 break;
 
-case "limitiTbl":
-echo '<script src="js/manipulaceLimiti.js?<?php echo time(); ?>"></script>'; 
-break;
+
 }
 }
 ?>
