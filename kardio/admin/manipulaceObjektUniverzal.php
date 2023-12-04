@@ -178,7 +178,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     break;
 	
 	case "uporabnikiTbl":
-    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+    echo "<tr><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";
