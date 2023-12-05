@@ -6,7 +6,7 @@ function geslobiznis()
 x=(document.getElementById("password1").value);
 if (x=="sezame")
 {
-window.location="skrita1.htm";
+window.location="skrita1.php";
 
 }
 else
