@@ -105,7 +105,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 }// od class uredi
 //_____________________________________________________________________________________
 
-	class Vyber extends DostopPost{ //najde vse zapise v tabulki za določeno bolnišnico. Če ni določena, najde vse
+	class Vyber extends DostopPost{ 
+//najde vse zapise v tabulki za določeno bolnišnico. Če ni določena, najde vse
   public $stolpci;
   public $bolnisnica; 
   public $tabulka;
