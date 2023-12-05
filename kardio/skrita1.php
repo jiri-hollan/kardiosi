@@ -15,7 +15,7 @@
   <frame src="glava1.htm" name="glava" frameborder="0" scrolling="no" noresize="noresize"/>
 
   <frameset cols="150,*">
-    <frame src="skrite.htm" name="naslovi" frameborder="0" noresize="noresize"/>
+    <frame src="skrite.php" name="naslovi" frameborder="0" noresize="noresize"/>
     <frame src="genom.php" name="vsebina" frameborder="0" noresize="noresize"/>
 
     <noframes>
