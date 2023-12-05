@@ -2,6 +2,7 @@
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 $nazaj="../admin1/vertikalMenu.php";
+echo "nazaj= ".$nazaj;
 ?>
 
 <h2>kompetence uporabnikov</h2>
