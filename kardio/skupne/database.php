@@ -1,4 +1,5 @@
  <?php
+ echo "<script>alert('databaze PHP');</script>";
 class Database {
 	public $servername = '';
 	public $username = '';
