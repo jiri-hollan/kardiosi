@@ -1,7 +1,7 @@
  <?php 
+/* manipulacePogojUniverzal omogoči izbiro po pogojih zadanih kot array*/
  require_once('sabloni/vkladane/zahlavi.php');
  //require_once '../skupne/sabloni/zahlavi.php';
-/* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('sabloni/formBaze.php');
  require_once '../skupne/database.php';
 
@@ -9,12 +9,12 @@
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-  if (isset($_REQUEST["bolnisnica"])){
-	  $bolnisnica = new Test_input($_REQUEST['bolnisnica']); 
-      $bolnisnica = $bolnisnica->get_test();
+  if (isset($_REQUEST["pogoj"])){
+	  $pogoj = new Test_input($_REQUEST['pogoj']); 
+      $pogoj = $pogoj->get_test();
 	  
   }else {
-	 $bolnisnica = "";   
+	 $pogoj = "";   
   }
  if (isset($tabulka)){
 	  $tabulka= $tabulka; 
@@ -26,9 +26,9 @@ if (isset($_REQUEST["akce"])) {
   }
   //var_dump($akce);
     echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
+  echo strtoupper($pogoj) .'<br>';
  
-  new $akce($bolnisnica, $tabulka);
+  new $akce($pogoj, $tabulka);
 
 	  
 }//od if
@@ -52,22 +52,22 @@ if (isset($_REQUEST["akce"])) {
  ?>
 <?php 
  class DostopPost{
-  public $bolnisnica;		
+  public $pogoj;		
   public $tabulka;
-  function __construct($bolnisnica="", $tabulka="") {
-	    $bolnisnica=strtolower($bolnisnica); 
-        $bolnisnica=ucfirst($bolnisnica); 
-	    $this->bolnisnica = $bolnisnica;
+  function __construct($pogoj="", $tabulka="") {
+	    $pogoj=strtolower($pogoj); 
+        $pogoj=ucfirst($pogoj); 
+	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "status"]';
+	  $this->dataPreg= '["ime", "priimek", "status"]';
 	  break;
 	  case "sklepiTbl":
-	  $this->dataPreg= '["bolnisnica", "sklep", "status"]';
+	  $this->dataPreg= '["sklep", "status"]';
 	  break;
 	  case "limitiTbl":
-	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
+	  $this->dataPreg= '["skupina", "ime", "min", "max"]';
 	  break;
 	  default:
 	  echo "tabulka ni določena";
@@ -81,8 +81,8 @@ if (isset($_REQUEST["akce"])) {
   public $ime;
   public $priimek;
   public $status; 
-  public function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);	
+  public function __construct($pogoj, $tabulka) {
+	parent::__construct($pogoj, $tabulka);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
@@ -103,7 +103,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	
 	
     $this->podminka = array("id"=>$this->id);
-	//$this->data = array("bolnisnica"=>$this->bolnisnica, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
+	//$this->data = array("pogoj"=>$this->pogoj, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
 	    $this->data = $data;
     	$aktualizuj = new database();
 		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
@@ -113,17 +113,17 @@ foreach (json_decode($this->dataPreg) as $key) {
 
 	class Vyber extends DostopPost{
   public $stolpci;
-  public $bolnisnica; 
+  public $pogoj; 
   public $tabulka;
   public $poradi;
-  function __construct($bolnisnica, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($pogoj, $tabulka);
     $this->stolpci = $stolpci;	
 	//echo "v class vyber";
-	if ($this->bolnisnica == "") {
+	if ($this->pogoj == "") {
 	$this->podminka = NULL;
    } else {
-    $this->podminka = array("bolnisnica"=>$this->bolnisnica);
+    $this->podminka = array("pogoj"=>$this->pogoj);
    }//od else
    $this->poradi=$poradi;
    $this->tabulka=$tabulka;
@@ -146,8 +146,8 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
 //________________________________________________________________________________________	
 	class Vloz extends DostopPost {
 
-  function __construct($bolnisnica, $tabulka) {
-	parent::__construct($bolnisnica, $tabulka);
+  function __construct($pogoj, $tabulka) {
+	parent::__construct($pogoj, $tabulka);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
