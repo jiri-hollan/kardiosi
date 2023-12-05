@@ -24,16 +24,11 @@
   left:200px;
   top:300px
   }
-
-
-
   </style>
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 
 ?>
-
-
   <title></title>
 </head>
 
