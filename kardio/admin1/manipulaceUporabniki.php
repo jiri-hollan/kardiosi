@@ -1,25 +1,10 @@
-
 <?php
-require_once '../skupne/sabloni/zahlavi.php';
-$nazaj="../admin1/vertikalMenu.php";
-echo "nazaj= ".$nazaj;
-?>
-
-<h2>kompetence uporabnikov</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
- <input type="hidden" id="akceId" name="akce" value="">
- <input type="hidden" id="nazaj" name="nazaj" value="<?php echo $nazaj;?>">
- <p id="demo"></p>
- <p id="posli"></p><!--submit prek JS -->
-</form>
- <br>
-<p id="demo3"></p>
-<?php
- 
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
+require_once '../skupne/sabloni/zahlavi.php';
+require_once '../admin1/sabloni/kompetence.php';
 require_once '../skupne/database.php';
-
+//$nazaj="../admin1/vertikalMenu.php";
+//echo "manipulace nazaj= ".$nazaj;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $priimek = test_input($_POST["priimek"]);

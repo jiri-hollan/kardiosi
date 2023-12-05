@@ -7,10 +7,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/razpis.js?<?php echo time(); ?>" type="text/javascript"></script>
+ 
  <style type="text/css">
 
 
-  body {background-color: blue}
+  body {background-color: brown}
   form {color: Gainsboro}
   form {font-size:300%}
   input {color: Gainsboro}
@@ -27,13 +28,18 @@
 
 
   </style>
+<?php
+require_once '../skupne/sabloni/zahlavi.php';
+
+?>
+
 
   <title></title>
 </head>
 
 <body>
   <form class="pos_abs">
-    <strong>LETNIK:</strong> <input type="year" id="letnikx" value="" size="1" maxlength="4" /> <input type="button" id="button1" onclick="aktualRazpis()" value="potrdi!" />
+    <strong>LETNIK:</strong> <input type="year" id="letnikx" value="" size="1" maxlength="4" /> <input type="button" id="button1" onclick="arhivRazpis()" value="potrdi!" />
   </form>
 </body>
 </html>

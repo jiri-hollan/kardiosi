@@ -15,21 +15,25 @@ body {background-color: GoldenRod }
   h2 {background-color: GoldenRod ; color: #00ff00}
   td {background-color: GoldenRod }
   </style>
-</head>
-<body lang="sl-SI" dir="ltr">
+
+<?php
+
+
+$nazaj="../genom.php";
+echo'
 <table >
 <tr><td> <h2>RAZPIS:</h2> </td></tr>
-<tr><td><b><a class="obarvaj" href="IzbiraAktualna.php" target="vsebina"> 
+<tr><td><b><a class="obarvaj" href="frontend/IzbiraAktualna.php?nazaj='.$nazaj.'" target="vsebina"> 
 sedanji</a></b></td></tr>
 
-<tr><td><b><a class="obarvaj" href="IzbiraArhiva.php" target="vsebina"> 
+<tr><td><b><a class="obarvaj" href="frontend/IzbiraArhiva.php?nazaj='.$nazaj.'" target="vsebina"> 
 arhiv</a></b></td></tr>
 
-<tr><td><b><a class="obarvaj" href="servis/servis.php" target="vsebina"> 
+<tr><td><b><a class="obarvaj" href="servis/servis.php?nazaj='.$nazaj.'" target="vsebina"> 
 Servis</a></b></td></tr>
 
-<tr><td><b><a class="obarvaj" href="admin/databazeMenu.php" target="vsebina"> 
+<tr><td><b><a class="obarvaj" href="admin/databazeMenu.php?nazaj='.$nazaj.'" target="vsebina"> 
 databaze</a></b></td></tr>
 </table>
-</body>
-</html>
+';
+?>
