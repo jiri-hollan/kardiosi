@@ -43,7 +43,7 @@ echo'<script>'
 
 <script type="text/javascript">
 	//alert("claniUniverzalNaZačetku");
-	alert(zdrClan[0]);
+	alert(zdrClan[0].firstname);
 var c = "";
 var p = "";
 var r = "";
