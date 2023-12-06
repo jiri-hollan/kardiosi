@@ -302,19 +302,18 @@ foreach (json_decode($this->dataPreg) as $key) {
 //__________________________________________________________________________________ 
 	
 	 
-if (isset($_REQUEST["tabulka"])){
-
+if (isset($_REQUEST["tabulka"]) && !isset($_REQUEST["seznam"])){
+ echo" IF rekvest tabulka";
 switch($_REQUEST["tabulka"]){
-
 case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;
 case "uporabnikiTbl":
 echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
 break;
-
-
 }
+}else{
+	echo"v ELZE";
 }
 ?>
 <!--zapati-->
