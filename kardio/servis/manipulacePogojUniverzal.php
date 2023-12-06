@@ -134,6 +134,12 @@ echo "<br>";
 if(count($vybrano)>0){	
 	//var_dump($vybrano);
 	echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
+	echo '<script>';
+	echo 'var js_variable1= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
+	echo 'alert("variabla 1:" + js_variable1);';
+	echo'</script>';
+	
+	
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
 //	var_dump($v);
