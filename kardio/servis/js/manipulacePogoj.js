@@ -22,12 +22,18 @@ for (i = 0; i < bolList.length; i++) {
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
 
-  case "vloz":
-    bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
-    ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
-    priimek= '<input type="text" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-    status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
-    document.getElementById("demo").innerHTML = bolnisnica + ime + priimek + status;
+    case "vloz":
+
+    email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
+    uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" required>';
+    geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" required>';
+ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
+priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
+status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
+pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" required>';
+
+	
+    document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + status + pristop;
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;
