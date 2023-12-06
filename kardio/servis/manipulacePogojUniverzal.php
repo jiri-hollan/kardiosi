@@ -132,7 +132,7 @@ $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
 if(count($vybrano)>0){	
-	//var_dump($vybrano);
+	var_dump($vybrano);
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
 //	var_dump($v);
