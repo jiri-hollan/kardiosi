@@ -1,8 +1,8 @@
  <?php 
  /* V tom failu so funkcije za spreminjanje tabele databaze*/
- require_once('sabloni/vkladane/zahlavi.php');
+ require_once('../admin/sabloni/vkladane/zahlavi.php');
  //require_once '../skupne/sabloni/zahlavi.php';
- require_once('sabloni/formBaze.php');
+ require_once('../admin/sabloni/formBaze.php');
  require_once '../skupne/database.php';
 
 //_____________________________________________________________
@@ -269,7 +269,7 @@ case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;
 case "uporabnikiTbl":
-echo '<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>"></script>'; 
+echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
 break;
 
 
