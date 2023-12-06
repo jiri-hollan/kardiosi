@@ -1,6 +1,6 @@
 function persona(personId, rang, firstname,lastname,email)
 {
-console.log("clani.jsFunctionpersona");		
+//console.log("clani.jsFunctionpersona");		
 this.personaId=personId;	
 this.rang=rang;
 this.firstname=firstname;

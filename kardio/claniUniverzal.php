@@ -43,6 +43,7 @@ echo'<script>'
 
 <script type="text/javascript">
 	//alert("claniUniverzalNaZačetku");
+	alert(zdrClan);
 var c = "";
 var p = "";
 var r = "";
