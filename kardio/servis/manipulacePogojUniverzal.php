@@ -252,7 +252,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 
     class odstrani {
 	public $id;	
-	public $tabulka;,
+	public $tabulka;
 	 function __construct($tabulka, $id) {		 
 	 $tabulka = new test_input($_GET["tabulka"]);
 	 $this->tabulka = $tabulka->get_test();
@@ -270,48 +270,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 }//od construct
 	 }//od class odstrani
 //__________________________________________________________________________________ 
-	  class seznam {
-	  public $stolpci;
-  public $pogoj; 
-  public $tabulka;
-  public $poradi;
-  function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL, namena) {//namena določi,da gre za seznam zdravnikov, pogoj določi rang
-	parent::__construct($pogoj, $tabulka);
-    $this->stolpci = $stolpci;	
-	//echo "v class vyber";
-	if ($this->pogoj == "") {
-	$this->podminka = NULL;
-   } else {
-    $this->podminka = array("pogoj"=>$this->pogoj);
-   }//od else
-   $this->poradi=$poradi;
-   $this->tabulka=$tabulka;
-$vyber = new database();
-$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
-echo "<br>";
-if(count($vybrano)>0){	
-	//var_dump($vybrano);
-	echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
-	echo '<script>';
-	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
-	echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
-	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
-	echo'</script>';
 	
-	
-foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-        echo $v;
-//	var_dump($v);
-	       // echo $v;
-}//od foreach
-}//od if(cout)
-else{
-echo "Za izbrano bolnisnico ni zapisa v bazi";	
-}//od else
-}//od vyberFunction  
-
-
-	 }//od class seznam
 //__________________________________________________________________________________ 
 	 
 if (isset($_REQUEST["tabulka"])){
