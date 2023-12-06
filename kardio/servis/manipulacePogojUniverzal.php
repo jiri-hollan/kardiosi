@@ -137,7 +137,7 @@ if(count($vybrano)>0){
 	echo '<script>';
 	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
 	echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
-	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]);';
+	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
 	echo'</script>';
 	
 	
