@@ -1,5 +1,5 @@
  <?php 
-/* manipulacePogojUniverzal omogoči izbiro po pogojih zadanih kot array*/
+ /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('sabloni/vkladane/zahlavi.php');
  //require_once '../skupne/sabloni/zahlavi.php';
  require_once('sabloni/formBaze.php');
@@ -9,13 +9,13 @@
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
-  if (isset($_REQUEST["pogoj"])){
+if (isset($_REQUEST["pogoj"])){
 	  $pogoj = new Test_input($_REQUEST['pogoj']); 
       $pogoj = $pogoj->get_test();
 	  
   }else {
 	 $pogoj = "";   
-  }
+  } 
  if (isset($tabulka)){
 	  $tabulka= $tabulka; 
   }else if (isset($_REQUEST["tabulka"])){
@@ -61,14 +61,13 @@ if (isset($_REQUEST["akce"])) {
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
-	  $this->dataPreg= '["ime", "priimek", "status"]';
+	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
+	  //var_dump($this->dataPreg);
 	  break;
-	  case "sklepiTbl":
-	  $this->dataPreg= '["sklep", "status"]';
+	  case "uporabnikiTbl":
+	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
-	  case "limitiTbl":
-	  $this->dataPreg= '["skupina", "ime", "min", "max"]';
-	  break;
+;
 	  default:
 	  echo "tabulka ni določena";
   }
@@ -91,6 +90,7 @@ echo "<br>";
 	$data=array();
  function array_push_assoc($data, $key, $value){
    $data[$key] = $value;
+  // var_dump ($data);
    return $data;
 }
 foreach (json_decode($this->dataPreg) as $key) {
@@ -111,7 +111,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 }// od class uredi
 //_____________________________________________________________________________________
 
-	class Vyber extends DostopPost{
+	class Vyber extends DostopPost{ 
+//najde vse zapise v tabulki za določeno bolnišnico. Če ni določena, najde vse
   public $stolpci;
   public $pogoj; 
   public $tabulka;
@@ -131,10 +132,11 @@ $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
 if(count($vybrano)>0){	
-	
+	//var_dump($vybrano);
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
         echo $v;
-
+//	var_dump($v);
+	       // echo $v;
 }//od foreach
 }//od if(cout)
 else{
@@ -180,13 +182,11 @@ foreach (json_decode($this->dataPreg) as $key) {
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
 		  case "pregledovalciTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>status</th></tr>";
+    echo "<tr><th>Id</th><th>status</><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr>";
     break;
-	case "sklepiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>status</th></tr>";
-    break;
-	case "limitiTbl":
-    echo "<tr><th>Id</th><th>bolnišnica</><th>skupina</th><th>ime</th><th>min</th><th>max</th></tr>";
+	
+	case "uporabnikiTbl":
+    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";
@@ -229,7 +229,11 @@ foreach (json_decode($this->dataPreg) as $key) {
      for ($i = 0; $i < $dolzina; $i++) {
        foreach ($vybrano[$i] as $key => $value) {
 // echo "$key: $value\n";
-	   echo " $key:<br> <input id=$key name=$key value='".$value."'></input><br>";
+ if($key=="id"){
+	   echo " $key: <input name=$key value=$value readonly\n></input>";	
+}	else{ 
+	   echo " $key: <input id=$key name=$key value='".$value."'></input><br>";
+	   }
       }//od foreach	 
 	 echo "<input type='hidden' name='akce' value='uredi'></input><button class='submit' type='submit'>potrdi</button><button type='reset'>reset</button> ";
      echo "</form>";
@@ -260,15 +264,15 @@ foreach (json_decode($this->dataPreg) as $key) {
 if (isset($_REQUEST["tabulka"])){
 
 switch($_REQUEST["tabulka"]){
-case "sklepiTbl":
-echo '<script src="js/manipulaceSklepi.js?<?php echo time(); ?>"></script>'; 
-break;
+
 case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;
-case "limitiTbl":
-echo '<script src="js/manipulaceLimiti.js?<?php echo time(); ?>"></script>'; 
+case "uporabnikiTbl":
+echo '<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>"></script>'; 
 break;
+
+
 }
 }
 ?>
