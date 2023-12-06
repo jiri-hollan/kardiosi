@@ -68,40 +68,48 @@ if (isset($_REQUEST["pogoj"])){
   } //od construct
 }//od class dostopPost
 //____________________________________________________________________________________________
-	class Seznam extends DostopPost{
-  public $id;
-  public $ime;
-  public $priimek;
-  public $status; 
-  public function __construct($pogoj, $tabulka) {
-	parent::__construct($pogoj, $tabulka);	
-	echo "case uredi <br>";
-print_r($_POST);
+		class seznam extends DostopPost{ 
+//najde vse zapise v tabulki za določeno bolnišnico. Če ni določena, najde vse
+  public $stolpci;
+  public $pogoj; 
+  public $tabulka;
+  public $poradi;
+  function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($pogoj, $tabulka);
+    $this->stolpci = $stolpci;	
+	//echo "v class vyber";
+	if ($this->pogoj == "") {
+	$this->podminka = NULL;
+   } else {
+    $this->podminka = array("pogoj"=>$this->pogoj);
+   }//od else
+   $this->poradi=$poradi;
+   $this->tabulka=$tabulka;
+$vyber = new database();
+$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
-    $id= new test_input($_POST["id"]);
-	$this->id = $id->get_test();
-	$data=array();
- function array_push_assoc($data, $key, $value){
-   $data[$key] = $value;
-  // var_dump ($data);
-   return $data;
-}
-foreach (json_decode($this->dataPreg) as $key) {
- //echo "$key <br>";
-    $value= new Test_input($_REQUEST[$key]); 
-	$value= $value->get_test();	
-    $data =array_push_assoc($data, $key, $value);
-}
+if(count($vybrano)>0){	
+	//var_dump($vybrano);
+	echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
+	echo '<script>';
+	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
+	echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
+	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
+	echo'</script>';
+	
+	
+foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+        echo $v;
+//	var_dump($v);
+	       // echo $v;
+}//od foreach
+}//od if(cout)
+else{
+echo "Za izbrano bolnisnico ni zapisa v bazi";	
+}//od else
+}//od vyberFunction  
+}//od class seznam
 
-	
-	
-    $this->podminka = array("id"=>$this->id);
-	//$this->data = array("pogoj"=>$this->pogoj, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
-	    $this->data = $data;
-    	$aktualizuj = new database();
-		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
-}
-}// od class uredi
 //_____________________________________________________________________________________
 
 //____________________________________________________________________________________________
