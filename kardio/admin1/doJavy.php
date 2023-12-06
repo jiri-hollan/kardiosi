@@ -5,7 +5,7 @@
 $php_var1 ="Hello world";
 echo $php_var1;
 $php_var2 ="Jiří";
-echo $php_var2;
+echo '<br>'.$php_var2.'<br>';
 echo json_encode($php_var1, JSON_UNESCAPED_UNICODE);
 echo '<br>'.json_encode($php_var2, JSON_UNESCAPED_UNICODE);
 
