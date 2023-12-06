@@ -59,21 +59,51 @@ if (isset($_REQUEST["pogoj"])){
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
-		 switch($this->tabulka){
-	  case "pregledovalciTbl":
-	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
-	  //var_dump($this->dataPreg);
-	  break;
-	  case "uporabnikiTbl":
+
+	
+
 	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
-	  break;
-;
-	  default:
-	  echo "tabulka ni določena";
-  }
+
 		
   } //od construct
 }//od class dostopPost
+//____________________________________________________________________________________________
+	class Seznam extends DostopPost{
+  public $id;
+  public $ime;
+  public $priimek;
+  public $status; 
+  public function __construct($pogoj, $tabulka) {
+	parent::__construct($pogoj, $tabulka);	
+	echo "case uredi <br>";
+print_r($_POST);
+echo "<br>";
+    $id= new test_input($_POST["id"]);
+	$this->id = $id->get_test();
+	$data=array();
+ function array_push_assoc($data, $key, $value){
+   $data[$key] = $value;
+  // var_dump ($data);
+   return $data;
+}
+foreach (json_decode($this->dataPreg) as $key) {
+ //echo "$key <br>";
+    $value= new Test_input($_REQUEST[$key]); 
+	$value= $value->get_test();	
+    $data =array_push_assoc($data, $key, $value);
+}
+
+	
+	
+    $this->podminka = array("id"=>$this->id);
+	//$this->data = array("pogoj"=>$this->pogoj, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
+	    $this->data = $data;
+    	$aktualizuj = new database();
+		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
+}
+}// od class uredi
+//_____________________________________________________________________________________
+
 //____________________________________________________________________________________________
 	class Uredi extends DostopPost{
   public $id;
@@ -271,7 +301,6 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 }//od class odstrani
 //__________________________________________________________________________________ 
 	
-//__________________________________________________________________________________ 
 	 
 if (isset($_REQUEST["tabulka"])){
 
