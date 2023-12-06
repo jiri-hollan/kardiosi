@@ -11,6 +11,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
  <link rel="stylesheet"href="css/style.css?<?php echo time(); ?>" >
+ <link rel="shortcut icon" href="favicon.ico?<?php echo time(); ?>">
 <title>Anestezija za operacije srca</title>
 <?php
 $direktorij = "";
