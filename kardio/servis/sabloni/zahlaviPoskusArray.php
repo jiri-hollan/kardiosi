@@ -6,7 +6,7 @@
 <style type="text/css">
 body {
 background-color: wheat;
-background-image: url('ozadja/ZadnjaVecera.jpg');
+background-image: url('../ozadja/ZadnjaVecera.jpg');
 background-size:60%;
 background-repeat:no-repeat;
 background-position:500px 30px;
@@ -18,8 +18,7 @@ a {text-decoration: none}
 p.obarvaj:link {color:blue}
 p.obarvaj:hover {font-size: 120%;background-color:white}
 </style>
-<script src="js/clani.js?v=<?=time();?>" type="text/javascript">
-</script>
+
 
 </head>
 <body>
