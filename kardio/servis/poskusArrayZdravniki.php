@@ -66,7 +66,11 @@ $email = $vybrano[$key]["email"];
 }//od for
 $okroznica = "<p class='obarvaj' >" . "<a href='mailto:" . $emajly . "'" . "target='_top'>" . "okro&#382;nica" . "</a>" . "</p>";
     echo $okroznica;
-
+echo'
+<script>	
+	document.getElementById("levo").innerHTML = pragrafKlik + "<br>" + okroznica; 
+</script>
+';
 //var_dump($paragrafKlik);
 //echo $paragrafKlik;
 
