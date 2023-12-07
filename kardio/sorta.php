@@ -27,7 +27,7 @@ require_once('frontend/sabloni/zahlavi.php');
   </script>
 </head>
 <body id="sorta">
-<div id="clani">
+
 <script>
 var skupina = "&#268;LANI";
 var b ="";
@@ -76,6 +76,5 @@ r = "<a  class='okro' href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;n
 
 document.getElementById('okr').innerHTML = "<br>" + r;
 </script>
-</div>
 </body>
 </html>
