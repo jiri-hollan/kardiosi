@@ -6,7 +6,7 @@ echo"
 <script>
 function person(id,ime,priimek,email)
 {
-	alarm('function person');
+	alert('function person');
 }
 </script>
 ";
@@ -46,14 +46,14 @@ foreach ($vybrano[$key] as $key1=>$value1)
 {
 
 }	
-
-	$paragrafKlik = "<p class='obarvaj' onclick=";	
-	$paragrafKlik =$paragrafKlik."'person(";
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["id"].", ";	
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"].", ";
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"].", ";
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["email"].")";	
-	$paragrafKlik =$paragrafKlik."'>";
+$id = $vybrano[$key]["id"];
+$ime = $vybrano[$key]["ime"];
+$priimek = $vybrano[$key]["priimek"];
+$email = $vybrano[$key]["email"];
+	$function_name = "person($id, '$ime', '$priimek', '$email')";
+	$paragrafKlik = "<p class='obarvaj' onclick=\"";	
+	$paragrafKlik =$paragrafKlik.$function_name;	
+	$paragrafKlik =$paragrafKlik."\">";
 	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"]." ";
 	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"];
 	$paragrafKlik =$paragrafKlik. "</p>";
