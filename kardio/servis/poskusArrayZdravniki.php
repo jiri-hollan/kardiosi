@@ -15,6 +15,10 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 echo var_dump($vybrano);
 	echo'<br><br>';
+	
+var_dump($vybrano[0]);
+	
+	echo'<br><br>';
 echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
 	echo '<script>';
 	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
