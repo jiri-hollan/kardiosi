@@ -25,11 +25,11 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 	
 //	echo'<br><br>';
 //echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
-	echo '<script>';
-	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
+	//echo '<script>';
+	//echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
 	//echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
 	//echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
-	echo'</script>';
+	//echo'</script>';
 //echo'<br>----------------------------------------------------------------------------------------------------------<br>';	
 
 //echo$vybrano[0]["ime"]."<br>";
@@ -60,8 +60,13 @@ $email = $vybrano[$key]["email"];
 	
 	echo($paragrafKlik);
 	
-
+	$emajly = $emajly.$email.",";
+	//echo $emajly;
+	
 }//od for
+$okroznica = "<p class='obarvaj' >" . "<a href='mailto:" . $emajly . "'" . "target='_top'>" . "okro&#382;nica" . "</a>" . "</p>";
+    echo $okroznica;
+
 //var_dump($paragrafKlik);
 //echo $paragrafKlik;
 
