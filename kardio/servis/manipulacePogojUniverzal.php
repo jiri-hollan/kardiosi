@@ -133,12 +133,6 @@ $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->p
 echo "<br>";
 if(count($vybrano)>0){	
 	//var_dump($vybrano);
-	echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
-	echo '<script>';
-	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
-	echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
-	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
-	echo'</script>';
 	
 	
 foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
