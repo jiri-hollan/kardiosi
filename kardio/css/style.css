@@ -1,4 +1,20 @@
-
+#clani{
+background-color:: wheat;
+}
+#clani a{
+color: black;
+text-decoration: none;	
+}
+#clani a.zdrav:hover{
+font-size: 130%;
+background-color:maroon; 
+color:white	
+}
+#clani a.okro:hover {
+	font-size: 130%;
+	background-color:blue; 
+	color:yellow
+	}
 
 #glava1{
 	background-color: wheat;

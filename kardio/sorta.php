@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,16 +18,17 @@ a.zdrav:hover {font-size: 130%;background-color:maroon; color:white}
 a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 
-</style>
-
+</style>-->
+<?php
+require_once('frontend/sabloni/zahlavi.php');
+?>
 
 <script src="js/clani.js?<?php echo time(); ?>" type="text/javascript">
   </script>
 </head>
-<body>
+<body id="sorta">
+<div id="clani">
 <script>
-
-
 var skupina = "&#268;LANI";
 var b ="";
 b += "<p>";
@@ -56,7 +57,9 @@ document.write(b);
 
 
 </script>
+
 <b id= "okr"> to je mail </b>
+
 <SCRIPT>
 var c = "";
 for (i=0;i<zdrClan.length;i++)
@@ -73,5 +76,6 @@ r = "<a  class='okro' href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;n
 
 document.getElementById('okr').innerHTML = "<br>" + r;
 </script>
+</div>
 </body>
 </html>
