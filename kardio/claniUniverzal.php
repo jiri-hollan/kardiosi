@@ -78,14 +78,14 @@ document.getElementById('levo').innerHTML = c + "<br>" + r
 function person(personaId,firstname,lastname,email)
 {
 	//alert("claniUniverzalFunctionPerson2");
-var m = "";
-var n = "";
-var o = "";
-m += "<img src='podobe/personId" + personaId + ".jpg' alt='---- ' width='200'/>"
-n += "<h2>" + firstname + " " + lastname  + "</h2>"
-o += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
+var slika = "";
+var celoIme = "";
+var mail = "";
+slika += "<img src='podobe/personId" + personaId + ".jpg' alt='---- ' width='200'/>"
+celoIme += "<h2>" + firstname + " " + lastname  + "</h2>"
+mail += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
 
-document.getElementById('desno').innerHTML = m + "<br>" + n + "<br>" + o
+document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" + mail
 }
 </script>
 
