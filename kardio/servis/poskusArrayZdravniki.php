@@ -52,7 +52,3 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
 
 
 ?>
-
-<?php
-require_once '../skupne/sabloni/zapati.php';
-?>
