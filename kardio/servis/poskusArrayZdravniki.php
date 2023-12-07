@@ -2,6 +2,7 @@
 <?php
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
+require_once 'sabloni/zahlaviPoskusArray.php';
 echo"
 <script>
 function person(id,ime,priimek,email)
