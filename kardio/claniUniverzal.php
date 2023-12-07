@@ -44,34 +44,34 @@ echo'<script>'
 <script type="text/javascript">
 	//alert("claniUniverzalNaZačetku");
 	alert(zdrClan[0].firstname);
-var c = "";
-var p = "";
-var r = "";
+var pragrafKlik = "";
+var emajly = "";
+var okroznica = "";
 //var izbiraRanga = "1";
 for (i=0;i<zdrClan.length;i++)
 {
 if (zdrClan[i].rang==izbiraRanga) 
 {
 
-c += "<p class='obarvaj' onclick="
-c += "'person("
-c += "zdrClan[" + i + "].personaId,"
-c += "zdrClan[" + i + "].firstname,"
-c += "zdrClan[" + i + "].lastname,"
-c += "zdrClan[" + i + "].email)'"
-c += ">"
-c += zdrClan[i].firstname 
-c += '  '
-c += zdrClan[i].lastname
-c +=  "</p>"
+pragrafKlik += "<p class='obarvaj' onclick="
+pragrafKlik += "'person("
+pragrafKlik += "zdrClan[" + i + "].personaId,"
+pragrafKlik += "zdrClan[" + i + "].firstname,"
+pragrafKlik += "zdrClan[" + i + "].lastname,"
+pragrafKlik += "zdrClan[" + i + "].email)'"
+pragrafKlik += ">"
+pragrafKlik += zdrClan[i].firstname 
+pragrafKlik += '  '
+pragrafKlik += zdrClan[i].lastname
+pragrafKlik +=  "</p>"
 
 
-p += zdrClan[i].email + ","
+emajly += zdrClan[i].email + ","
 }
-r = "<p class='obarvaj' >" + "<a href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" + "</p>"
+okroznica = "<p class='obarvaj' >" + "<a href='mailto:" + emajly + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" + "</p>"
 }
 
-document.getElementById('levo').innerHTML = c + "<br>" + r 
+document.getElementById('levo').innerHTML = pragrafKlik + "<br>" + okroznica 
 
 </script>
 <script>
