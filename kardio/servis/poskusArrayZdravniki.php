@@ -26,6 +26,7 @@ echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
 	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
 	echo'</script>';
 echo'<br>----------------------------------------------------------------------------------------------------------<br>';	
-var_dump($vybrano[0][firstname]);
 
+echo$vybrano[0]["ime"];
+}//od vyberFunction 
 ?>
