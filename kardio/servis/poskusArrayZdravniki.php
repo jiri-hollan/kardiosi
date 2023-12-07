@@ -14,7 +14,14 @@ $vyber = new database();
 $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 echo var_dump($vybrano);
-
+	echo'<br><br>';
+echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
+	echo '<script>';
+	echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
+	echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
+	echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
+	echo'</script>';
+	
 //echo $vybrano[1];
 /*
 echo "<br>";
