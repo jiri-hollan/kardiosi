@@ -36,15 +36,27 @@ $okroznica = "";
 foreach ($vybrano as $key=>$value) 	
 {
 	//var_dump($key);
-	echo $key."<br>";
+	//echo $key."<br>";
 foreach ($vybrano[$key] as $key1=>$value1) 	
 {
-		echo $key1." ".$value1."<br>";
+		//echo $key1." ".$value1."<br>";
 	
 }	
-echo "I M E :".$vybrano[$key]["ime"]."<br>";
+//echo "I M E :".$vybrano[$key]["ime"]."<br>";
 
 
+	$paragrafKlik = "<p class='obarvaj' onclick=";	
+	$paragrafKlik =$paragrafKlik."'person(";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["id"].",";	
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"].",";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"].",";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["email"].")";	
+	$paragrafKlik =$paragrafKlik."'>";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"]." ";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"];
+	$paragrafKlik =$paragrafKlik. "</p>";
+	
+	echo($paragrafKlik);
 	
 	/*
 $paragrafKlik = "<p class='obarvaj' onclick=";	
@@ -61,8 +73,8 @@ $paragrafKlik =$paragrafKlik. "</p>";
 
 */
 }//od for
-var_dump($paragrafKlik);
-echo $paragrafKlik;
+//var_dump($paragrafKlik);
+//echo $paragrafKlik;
 
 }//od vyberFunction 
 ?>
