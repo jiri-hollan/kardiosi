@@ -1,15 +1,4 @@
-<?php
-require_once '../skupne/sabloni/zahlavi.php';
-?>
 
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<input type="hidden" id="akceId" name="akce" value="">
-<p id="demo"></p>
-<p id="posli"></p>
-</form>
- <br>
-<p id="demo3"></p>
 <?php
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
