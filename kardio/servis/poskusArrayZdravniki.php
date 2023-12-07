@@ -2,11 +2,16 @@
 <?php
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
-
-	$podminka = NULL;
-    vyberFunction($podminka);
-
-
+echo"
+<script>
+function person(id,ime,priimek,email)
+{
+	alarm('function person');
+}
+</script>
+";
+$podminka = NULL;
+vyberFunction($podminka);
 function vyberFunction($podminka){
 $tabulka="uporabnikiTbl";
 $stolpci=["*"];
@@ -32,24 +37,21 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 $paragrafKlik = "";
 $emajly = "";
 $okroznica = "";
-//for ($i=0;$i<$vybrano.length;$i++)
+
 foreach ($vybrano as $key=>$value) 	
 {
 	//var_dump($key);
 	//echo $key."<br>";
 foreach ($vybrano[$key] as $key1=>$value1) 	
 {
-		//echo $key1." ".$value1."<br>";
-	
-}	
-//echo "I M E :".$vybrano[$key]["ime"]."<br>";
 
+}	
 
 	$paragrafKlik = "<p class='obarvaj' onclick=";	
 	$paragrafKlik =$paragrafKlik."'person(";
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["id"].",";	
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"].",";
-	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"].",";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["id"].", ";	
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"].", ";
+	$paragrafKlik =$paragrafKlik.$vybrano[$key]["priimek"].", ";
 	$paragrafKlik =$paragrafKlik.$vybrano[$key]["email"].")";	
 	$paragrafKlik =$paragrafKlik."'>";
 	$paragrafKlik =$paragrafKlik.$vybrano[$key]["ime"]." ";
@@ -58,20 +60,7 @@ foreach ($vybrano[$key] as $key1=>$value1)
 	
 	echo($paragrafKlik);
 	
-	/*
-$paragrafKlik = "<p class='obarvaj' onclick=";	
-$paragrafKlik =$paragrafKlik."'person(";
-$paragrafKlik =$paragrafKlik.$vybrano[$key]."[" . $key . "]"."Id,";
-$paragrafKlik =$paragrafKlik.$vybrano[$key]."[". $key . "].ime,";
-$paragrafKlik =$paragrafKlik.$vybrano[$key]."[" . $key . "].priimek,";
-$paragrafKlik =$paragrafKlik.$vybrano[$key]."[". $key . "].email)'";
-$paragrafKlik =$paragrafKlik.">";
-$paragrafKlik =$paragrafKlik.$vybrano[$key].firstname ;
-$paragrafKlik =$paragrafKlik.'  ';
-$paragrafKlik =$paragrafKlik.$vybrano[$key].lastname;
-$paragrafKlik =$paragrafKlik. "</p>";
 
-*/
 }//od for
 //var_dump($paragrafKlik);
 //echo $paragrafKlik;
