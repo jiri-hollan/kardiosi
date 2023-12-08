@@ -29,7 +29,7 @@ require_once('frontend/sabloni/zahlavi.php');
 <body id="sorta">
 
 <script>
-var skupina = "&#268;LANI";
+var skupina = "ČLANI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
@@ -41,7 +41,7 @@ b += "</a>";
 b +=  "</p>";
 document.write(b);
 
-var skupina = "PRIDRU&#381;ENI";
+var skupina = "PRIDRUŽENI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
