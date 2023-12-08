@@ -1,16 +1,37 @@
+<script>
+function person(id,ime,priimek,email)
+{
+	//alert("poskusArrayZdravnik FunctionPerson2");
+var slika = "";
+var celoIme = "";
+var mail = "";
+slika += "<img src='../podobe/personId" + id + ".jpg' alt='---- ' width='200'/>"
+celoIme += "<h2>" + ime + " " + priimek  + "</h2>"
+mail += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
 
+document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" + mail
+}
+</script>
 <?php
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
 require_once 'sabloni/zahlaviPoskusArray.php';
-echo"
+/*echo'
 <script>
 function person(id,ime,priimek,email)
 {
-	alert('function person');
+	//alert("poskusArrayZdravnik FunctionPerson2");
+var slika = "";
+var celoIme = "";
+var mail = "";
+slika += "<img src='podobe/personId" + personaId + ".jpg' alt='---- ' width='200'/>"
+celoIme += "<h2>" + firstname + " " + lastname  + "</h2>"
+mail += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
+
+document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" + mail
 }
 </script>
-";
+';*/
 $podminka = NULL;
 vyberFunction($podminka);
 function vyberFunction($podminka){
