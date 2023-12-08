@@ -55,7 +55,7 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo'<br>----------------------------------------------------------------------------------------------------------<br>';	
 
 //echo$vybrano[0]["ime"]."<br>";
-
+echo"<div style='position:absolute; top:0; left:10px;width:200px'>";
 $paragrafKlik = "";
 $emajly = "";
 $okroznica = "";
@@ -85,10 +85,10 @@ $email = $vybrano[$key]["email"];
 	$emajly = $emajly.$email.",";
 	//echo $emajly;
 	
-}//od for
+}//od foreach
 $okroznica = "<p class='obarvaj' >" . "<a href='mailto:" . $emajly . "'" . "target='_top'>" . "okro&#382;nica" . "</a>" . "</p>";
     echo $okroznica;
-
+echo"</div>";
 //var_dump($paragrafKlik);
 //echo $paragrafKlik;
 
