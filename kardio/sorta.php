@@ -62,7 +62,6 @@ document.write(b);
 
 <SCRIPT>
 var c = "";
-for (i=0;i<zdrClan.length;i++)
 var p = ""
 var r = ""
 for (i=0;i<zdrClan.length;i++)
