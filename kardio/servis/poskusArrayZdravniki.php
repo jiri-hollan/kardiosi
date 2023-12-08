@@ -16,8 +16,8 @@ document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" +
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
 require_once 'sabloni/zahlaviPoskusArray.php';
-
-$podminka = NULL;
+$podminka = array("status"=>2);
+//$podminka = NULL;
 vyberFunction($podminka);
 function vyberFunction($podminka){
 $tabulka="uporabnikiTbl";

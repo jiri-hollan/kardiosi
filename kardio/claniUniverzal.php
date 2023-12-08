@@ -43,7 +43,7 @@ echo'<script>'
 
 <script type="text/javascript">
 	//alert("claniUniverzalNaZačetku");
-	alert(zdrClan[0].firstname);
+	alert("claniUniverzalNaZačetku "+zdrClan[0].firstname);
 var pragrafKlik = "";
 var emajly = "";
 var okroznica = "";
