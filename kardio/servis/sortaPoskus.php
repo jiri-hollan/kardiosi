@@ -20,15 +20,22 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 </style>-->
 <?php
-require_once('frontend/sabloni/zahlavi.php');
+require_once('../frontend/sabloni/zahlavi.php');
+//require_once('poskusArrayZdravniki.php');
+?>
+<?php
+
+echo'
+<p><a class="zdrav" href="javascript: showZDR(\"servis/poskusArrayZdravniki.php?pogoj=1\")">ČLANI</a></p>
+<p><a class="zdrav" href="javascript: showZDR(\"servis/poskusArrayZdravniki.php?pogoj=2\")">Pridruženi</a></p>
+<b id= "okr"> to je mail </b>
+';
 ?>
 
-<script src="js/clani.js?<?php echo time(); ?>" type="text/javascript">
-  </script>
 </head>
 <body id="sorta">
 
-<script>
+<script>/*
 var skupina = "ČLANI";
 var b ="";
 b += "<p>";
@@ -53,11 +60,11 @@ b += "</a>";
 b +=  "</p>";
 document.write(b);
 
-
+*/
 
 </script>
 
-<b id= "okr"> to je mail </b>
+
 
 <SCRIPT>
 var c = "";

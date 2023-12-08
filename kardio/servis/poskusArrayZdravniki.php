@@ -36,20 +36,7 @@ $tabulka="uporabnikiTbl";
 $stolpci=["*"];
 $vyber = new database();
 $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
-//echo $vybrano[1];
-//echo var_dump($vybrano);
-	//echo'<br><br>';
-	
-//var_dump($vybrano[0]);
-	
-//	echo'<br><br>';
-//echo json_encode($vybrano, JSON_UNESCAPED_UNICODE);
-	//echo '<script>';
-	//echo 'var vybranoDžejsn= ' . json_encode($vybrano, JSON_UNESCAPED_UNICODE) . ';';
-	//echo 'alert("vybranoDžejsn:" + vybranoDžejsn);';	
-	//echo 'alert("vybranoDžejsn[0]:" + vybranoDžejsn[0]["ime"]);';
-	//echo'</script>';
-//echo'<br>----------------------------------------------------------------------------------------------------------<br>';	
+
 
 //echo$vybrano[0]["ime"]."<br>";
 echo"<div style='position:absolute; top:0; left:10px;width:200px'>";
@@ -83,7 +70,7 @@ $email = $vybrano[$key]["email"];
 	//echo $emajly;
 	
 }//od foreach
-$okroznica = "<p class='obarvaj' >" . "<a href='mailto:" . $emajly . "'" . "target='_top'>" . "okro&#382;nica" . "</a>" . "</p>";
+$okroznica = "<p class='obarvaj' >" . "<a href='mailto:" . $emajly . "'" . "target='_top'>" . "okrožnica" . "</a>" . "</p>";
     echo $okroznica;
 echo"</div>";
 //var_dump($paragrafKlik);
