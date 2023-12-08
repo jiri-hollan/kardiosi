@@ -16,19 +16,19 @@ document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" +
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
 require_once 'sabloni/zahlaviPoskusArray.php';
-/*
+
 if (isset($_REQUEST["pogoj"])){
-	  $pogoj = new Test_input($_REQUEST['pogoj']); 
-      $pogoj = $pogoj->get_test();
+	  //$pogoj = new Test_input($_REQUEST['pogoj']); 
+     // $pogoj = $pogoj->get_test();
 	$pogoj = $_REQUEST['pogoj']; 
   }else {
 	 $pogoj = NULL;   
   } 
-*/
 
-//$podminka = array("status"=>$pogoj);
+
+$podminka = array("status"=>$pogoj);
 //$podminka = $pogoj;
-$podminka = array("status"=>2);
+//$podminka = array("status"=>2);
 //$podminka = NULL;
 vyberFunction($podminka);
 function vyberFunction($podminka){

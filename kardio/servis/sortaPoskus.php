@@ -26,8 +26,8 @@ require_once('../frontend/sabloni/zahlavi.php');
 <?php
 
 echo'
-<p><a class="zdrav" href="javascript: showZDR(\"servis/poskusArrayZdravniki.php?pogoj=1\")">ČLANI</a></p>
-<p><a class="zdrav" href="javascript: showZDR(\"servis/poskusArrayZdravniki.php?pogoj=2\")">Pridruženi</a></p>
+<p><a class="zdrav" href="poskusArrayZdravniki.php?pogoj=1">ČLANI</a></p>
+<p><a class="zdrav" href="poskusArrayZdravniki.php?pogoj=2">PRIDRUŽENI</a></p>
 <b id= "okr"> to je mail </b>
 ';
 ?>
