@@ -22,5 +22,5 @@ p.obarvaj:hover {font-size: 120%;background-color:white}
 
 </head>
 <body>
-<span id="levo" style="position:absolute; top:0; left:10px;width:200px"></span>
+
 <span id="desno" style="position:absolute; top:0; left:225px;"></span>
