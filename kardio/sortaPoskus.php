@@ -20,35 +20,35 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 </style>-->
 <?php
-require_once('../frontend/sabloni/zahlavi.php');
+require_once('frontend/sabloni/zahlavi.php');
 //require_once('poskusArrayZdravniki.php');
 ?>
 <?php
 
 echo'
-<p><a class="zdrav" href="poskusArrayZdravniki.php?pogoj=1">ČLANI</a></p>
-<p><a class="zdrav" href="poskusArrayZdravniki.php?pogoj=2">PRIDRUŽENI</a></p>
+<p><a class="zdrav" href="servis/poskusArrayZdravniki.php?pogoj=1">ČLANI</a></p>
+<p><a class="zdrav" href="servis/poskusArrayZdravniki.php?pogoj=2">PRIDRUŽENI</a></p>
 <b id= "okr"> to je mail </b>
 ';
 ?>
 
 </head>
 <body id="sorta">
-script>
+
 
 
 
 <SCRIPT>
 var c = "";
-var p = ""
+var emajl = ""
 var r = ""
 for (i=0;i<zdrClan.length;i++)
 {
 if (zdrClan[i].rang==1 || zdrClan[i].rang==2) 
 {
-p += zdrClan[i].email + ","
+emajl += zdrClan[i].email + ","
 }
-r = "<a  class='okro' href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" 
+r = "<a  class='okro' href='mailto:" + emajl + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" 
 }
 
 document.getElementById('okr').innerHTML = "<br>" + r;
