@@ -23,8 +23,7 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 require_once('frontend/sabloni/zahlavi.php');
 ?>
 
-<script src="js/clani.js?<?php echo time(); ?>" type="text/javascript">
-  </script>
+
 </head>
 <body id="sorta">
 
