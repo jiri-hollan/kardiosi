@@ -1,7 +1,6 @@
  <?php 
  /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('../admin/sabloni/vkladane/zahlavi.php');
- //require_once '../skupne/sabloni/zahlavi.php';
  require_once('../admin/sabloni/formBaze.php');
  require_once '../skupne/database.php';
 
@@ -112,7 +111,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 //_____________________________________________________________________________________
 
 	class Vyber extends DostopPost{ 
-//najde vse zapise v tabulki za določeno bolnišnico. Če ni določena, najde vse
+//najde vse zapise v tabulki za pogoj. Če ni določen, najde vse
   public $stolpci;
   public $pogoj; 
   public $tabulka;
