@@ -13,7 +13,7 @@ else
 
 
 {
-window.location="index.php";
+window.location="menuMain.php";
 }
 }
 

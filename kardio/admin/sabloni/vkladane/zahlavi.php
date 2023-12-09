@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="topnav">
-  <a class="active" href="../index.php" target="_top">Domov</a>
+  <a class="active" href="../menuMain.php" target="_top">Domov</a>
   <!--<a href="../frontend/prihlaseni.php?r=logout&stav=odhlasit">Odjava in prijava</a>-->
 </div>
  <?php 

@@ -8,7 +8,7 @@
 <title>na zacetek</title>
 </head>
 <body id="glava1" lang="sl-SI" dir="ltr">
-       <a class="obarvaj" href="index.php" target="_top">
+       <a class="obarvaj" href="menuMain.php" target="_top">
 	   domov
 	   </a>
 </body>
