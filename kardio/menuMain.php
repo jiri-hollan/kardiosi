@@ -1,6 +1,10 @@
 <?php
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+//echo 'Menu Main';
+//require_once('sabloni/vkladane/zahlavi.php');
+require_once('skupne/administrace.php');
+
 ?>
 <!DOCTYPE HTML>
 <html  lang="sl-SI"> 
