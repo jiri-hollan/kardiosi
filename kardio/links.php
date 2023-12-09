@@ -4,4 +4,14 @@
 <li><a href="mailto:kardio.an@gmail.com" >razpisovalec</a></li>
 <li><a href="menuMain.php?p=kuharica">KUHARICA</a></li>
 <li><a href="menuMain.php?p=povezave">POVEZAVE</a></li>
-<li><a href="menuMain.php?p=biznis">BIZNIS</a></li>
+<?php
+  if (isset($_SESSION["pristop"]))  {
+	  	   switch ($_SESSION["pristop"]) {		   
+	case 1:
+	echo'	
+	<li><a href="menuMain.php?p=biznis">BIZNIS</a></li>
+	';
+    break;    
+	  }
+  }
+?>
