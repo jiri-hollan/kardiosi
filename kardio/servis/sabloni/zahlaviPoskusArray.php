@@ -6,7 +6,7 @@
 <style type="text/css">
 body {
 background-color: wheat;
-background-image: url('../ozadja/ZadnjaVecera.jpg');
+background-image: url('../frontend/ozadja/ZadnjaVecera.jpg');
 background-size:60%;
 background-repeat:no-repeat;
 background-position:500px 30px;
