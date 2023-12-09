@@ -15,7 +15,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8_general_ci" />
 
   <meta name="keywords" content="kardio,hollan" />
-  <meta http-equiv="refresh" content="0;url=kardio/menuMain.php" />
+  <meta http-equiv="refresh" content="0;url=kardio/frontend/menuMain.php" />
 
   <title>Anestezija za operacije srca</title>
 </head>

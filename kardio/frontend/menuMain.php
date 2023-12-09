@@ -3,7 +3,7 @@ header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 //echo 'Menu Main';
 //require_once('sabloni/vkladane/zahlavi.php');
-require_once('skupne/administrace.php');
+require_once('../skupne/administrace.php');
 
 ?>
 <!DOCTYPE HTML>
@@ -15,7 +15,7 @@ require_once('skupne/administrace.php');
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
  <link rel="stylesheet"href="css/style.css?<?php echo time(); ?>" >
- <link rel="shortcut icon" href="favicon.ico?<?php echo time(); ?>">
+ <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <title>Anestezija za operacije srca</title>
 <?php
 $direktorij = "";
