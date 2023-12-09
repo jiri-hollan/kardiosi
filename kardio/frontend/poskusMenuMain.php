@@ -1,7 +1,7 @@
 <?php
 //echo 'Menu anestiz';
 require_once('sabloni/vkladane/zahlavi.php');
-require_once('administrace.php');
+require_once('../skupne/administrace.php');
 
 class MenuKardiosi  {
    public function __construct() {
