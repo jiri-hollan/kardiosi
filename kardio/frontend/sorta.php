@@ -20,7 +20,7 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 </style>-->
 <?php
-require_once('frontend/sabloni/zahlavi.php');
+require_once('sabloni/zahlavi.php');
 ?>
 
 
