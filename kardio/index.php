@@ -12,6 +12,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </meta> 
+  <link rel="shortcut icon" href="favicon.ico?<?php echo time(); ?>"> 
 <title>prikaz mese&#269nega razporeda v obliki PDF</title>
 <?php
 
