@@ -1,3 +1,4 @@
 Ta varianta je nadgradnja stare, s tem da uporablja databazo namesto js araay za seznam zdravnikov.
 
 Seznam je v tabeli uporabnikiTbl. 
+iz urejanja kompetenc odstranjeno uname in geslo.
