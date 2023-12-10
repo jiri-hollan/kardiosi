@@ -1,5 +1,5 @@
 <h2>kompetence uporabnikov</h2>
-<button onclick="izborFunction('vyber')">izberi</button>
+<button onclick="izborFunction('vyber')">izberi po priimku</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
  <input type="hidden" id="akceId" name="akce" value="">
  <input type="hidden" id="nazaj" name="nazaj" value="<?php echo $nazaj;?>">
