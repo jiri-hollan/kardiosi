@@ -19,4 +19,8 @@
   <a href="../frontend/prihlaseni.php?r=profil">Moj profil</a>
   <span id="uname">odjavljen</span>
 </div>
+<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
+	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
+	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
+	<div id="tojePdf"></div>
  <?php require_once('sabloni/oznamovaci-oblast.php');  ?> 
