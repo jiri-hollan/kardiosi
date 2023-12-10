@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="sabloni/css/zahlavi.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="../css/menuFile.css?<?php echo time(); ?>">
 <script src="../frontend/js/uporabnikiVse.js?<?php echo time(); ?>"></script> 
-<!--<script src="../pregled/js/?<?php echo time(); ?>"></script>-->
 <script src="js/show.js?<?php echo time(); ?>"></script>
 <link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?<?php echo time(); ?>">
 </head>
@@ -17,7 +16,7 @@
 <div class="topnav">
   <a id="dom" class="active" href="../frontend/poskusMenuMain.php">Domov</a>
   <a id="prij" href="../frontend/prihlaseni.php?r=logout&stav=odhlasit">Prijava</a>
-  <a href="../frontend/prihlaseni.php?r=profil">Moj profiprijava.jsl</a>
+  <a href="../frontend/prihlaseni.php?r=profil">Moj profil</a>
   <span id="uname">odjavljen</span>
 </div>
  <?php require_once('sabloni/oznamovaci-oblast.php');  ?> 
