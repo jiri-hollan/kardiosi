@@ -1,0 +1,5 @@
+Ta varianta je v razvoju s ciljem omogočiti dostop prijavljeni uporabnikom. Razvijana varianta se zažene preko kardiosi/kardio/frontend/poskusMainMenu.php. Še približno delujoča preko
+kardiosi/kardio/frontend/mainMenu.php
+username: lanhol2 geslo tosemjaz2.
+Seznam je v tabeli uporabnikiTbl. 
+dostop do manipulace z bazo preko gesla v folderju biznis.
