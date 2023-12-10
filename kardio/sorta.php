@@ -56,7 +56,7 @@ document.write(b);
 
 </script>
 
-<b id= "okr"> to je mail </b>
+<!--<b id= "okr"> to je mail </b>-->
 
 <SCRIPT>
 var c = "";
