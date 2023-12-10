@@ -36,7 +36,6 @@ echo'
 <h1>Menu servis</h1>
 <ul id="linky1">
 
-<li><a href="manipulaceObjektUniverzal.php?tabulka=pregledovalciTbl">upravljanje z pregledovalci</a></li>
 <li><a href="manipulaceObjektUniverzal.php?tabulka=uporabnikiTbl">upravljanje z uporabniki</a></li>
 <li><a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">Vertikal Menu</a></li>
 <li><a href="../servis/manipulacePogojUniverzal.php?tabulka=uporabnikiTbl">Poskus pogoj</a></li>
