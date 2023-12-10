@@ -8,7 +8,7 @@ echo'
           <!-- Right Nav Section -->
           <ul class="right">
               <li class=""><a href="upload/formUpload.html"><h1>naloži mesečni razpis PDF</h1></a></li>
-              <li class=""><a href="../admin1/manipulaceUporabniki.php?nazaj='.$nazaj.'">kompetence</a></li> 
+              <li class=""><a href="manipulaceUporabniki.php?nazaj='.$nazaj.'">kompetence</a></li> 
           </ul>
         </section>
 ';
