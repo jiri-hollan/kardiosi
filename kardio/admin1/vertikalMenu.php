@@ -20,13 +20,9 @@ echo '
 <li><a href="pokaziTable.php?nazaj='.$nazaj.'">pokaži Table</a></li>
 <li><a href="pokaziStolpce.php?nazaj='.$nazaj.'">pokaži Stolpce</a></li>
 <li><a href="serverInformace.php?nazaj='.$nazaj.'">Informace o serveru</a></li>
-</ul>
-<h1>Menu navodila</h1>
-<ul id="linky1">
-
-<li><a href="../admin1/manipulaceUporabniki.php?nazaj='.$nazaj.'">uporabniki</a></li>
 <li><a href="../admin1/kreateTableVse.php?nazaj='.$nazaj.'">naredi tabele</a></li>
 </ul>
+
 ';
   /*   } else {
 	echo	' <h2>za ta del niste pooblaščeni</h2>';
