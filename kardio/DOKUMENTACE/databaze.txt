@@ -1,0 +1,3 @@
+user: kardiosi_kardiosi
+baze: kardiosi_biznis
+geslo: 300kosmatih!
