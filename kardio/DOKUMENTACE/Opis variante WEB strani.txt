@@ -3,3 +3,4 @@ kardiosi/kardio/frontend/mainMenu.php
 username: lanhol2 geslo tosemjaz2.
 Seznam je v tabeli uporabnikiTbl. 
 dostop do manipulace z bazo preko gesla v folderju biznis.
+Opis variante premeščen v nov folder DOKUMENTACE
