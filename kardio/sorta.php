@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,36 +18,38 @@ a.zdrav:hover {font-size: 130%;background-color:maroon; color:white}
 a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 
-</style>-->
-<?php
-require_once('frontend/sabloni/zahlavi.php');
-?>
+</style>
 
 
+<script src="js/clani.js?<?php echo time(); ?>" type="text/javascript">
+  </script>
 </head>
-<body id="sorta">
-
+<body>
 <script>
-var skupina = "ČLANI";
+
+
+var a = "&#268;LANI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"servis/poskusArrayZdravniki.php?pogoj=1")';
+b += '"clani.php?<?php echo time(); ?>")';
 b += "' > ";
-b += skupina;
+
+b += a;
 b += "</a>";
 b +=  "</p>";
 document.write(b);
 
-var skupina = "PRIDRUŽENI";
+var a = "PRIDRU&#381;ENI";
 var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"servis/poskusArrayZdravniki.php?pogoj=2")';
+
+b += '"clani1.php?<?php echo time(); ?>")';
 b += "' > ";
-b += skupina;
+b += a;
 b += "</a>";
 b +=  "</p>";
 document.write(b);
@@ -55,11 +57,10 @@ document.write(b);
 
 
 </script>
-
-<!--<b id= "okr"> to je mail </b>-->
-
+<b id= "okr"> to je mail </b>
 <SCRIPT>
 var c = "";
+for (i=0;i<zdrClan.length;i++)
 var p = ""
 var r = ""
 for (i=0;i<zdrClan.length;i++)

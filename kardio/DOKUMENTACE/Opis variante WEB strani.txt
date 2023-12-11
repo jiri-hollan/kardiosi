@@ -1,6 +1,0 @@
-Delujoča varianta za web
-Ta varianta je nadgradnja stare, s tem da uporablja databazo namesto js araay za seznam zdravnikov.
-Neuporablja še registracije in prijave
-Seznam je v tabeli uporabnikiTbl. 
-iz urejanja kompetenc odstranjeno uname in geslo.
-ta fajl premeščen v nov folder DOKUMENTACE

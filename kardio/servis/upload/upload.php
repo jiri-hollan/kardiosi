@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="sl-SI">
+<body>
 
 <?php
 
@@ -52,3 +55,7 @@ if ($uploadOk == 0) {
   }
 }
 ?>
+
+
+</body>
+</html>
