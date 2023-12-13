@@ -4,3 +4,5 @@ Neuporablja še registracije in prijave
 Seznam je v tabeli uporabnikiTbl. 
 iz urejanja kompetenc odstranjeno uname in geslo.
 ta fajl premeščen v nov folder DOKUMENTACE
+
+ko so bili zakomentirani in zaixani vsi pregledovalci, so izginili styli za uporabnike.
