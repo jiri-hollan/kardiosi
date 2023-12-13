@@ -12,9 +12,8 @@ echo '
   <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
   <input type="radio" id="uporabniki" name="name" value="uporabniki">
 
-
-   <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
-   <input type="radio" id="pregledovalci" name="name" value="pregledovalci">
+<!-- <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
+   <input type="radio" id="pregledovalci" name="name" value="pregledovalci">-->
 
 
    <input type="hidden" name="nazaj" value='. $nazaj.'>
@@ -62,7 +61,7 @@ break;
 
 
 /*...............................................................*/
-case "pregledovalci":
+/*case "pregledovalci":
 echo"kreateTableVse v ADMIN 1";
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `status` int(3) NOT NULL,
@@ -73,7 +72,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci ,	
 	UNIQUE (email, uname)";
 $databaseGloboka->naredi('pregledovalciTbl', $definice);
-break;
+break;*/
 
 
 /*
