@@ -5,20 +5,18 @@ function izborFunction(akce, tabulka) {
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
-
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
 
     case "vloz":
-
     email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
     uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
     geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
-ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
-priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
-pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
+    ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
+    priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
+    status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
+    pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
 
 	
     document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + status + pristop;
