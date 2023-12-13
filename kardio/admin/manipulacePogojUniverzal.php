@@ -59,10 +59,10 @@ if (isset($_REQUEST["pogoj"])){
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
-	  case "pregledovalciTbl":
+	 /* case "pregledovalciTbl":
 	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
 	  //var_dump($this->dataPreg);
-	  break;
+	  break;*/
 	  case "uporabnikiTbl":
 	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
@@ -182,9 +182,9 @@ foreach (json_decode($this->dataPreg) as $key) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
-		  case "pregledovalciTbl":
+	/*	  case "pregledovalciTbl":
     echo "<tr><th>Id</th><th>status</><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr>";
-    break;
+    break;*/
 	
 	case "uporabnikiTbl":
     echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
@@ -266,9 +266,9 @@ if (isset($_REQUEST["tabulka"])){
 
 switch($_REQUEST["tabulka"]){
 
-case "pregledovalciTbl":
+/*case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
-break;
+break;*/
 case "uporabnikiTbl":
 echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
 break;
