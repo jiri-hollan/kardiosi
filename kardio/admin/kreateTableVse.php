@@ -5,14 +5,10 @@ require_once '../skupne/sabloni/zahlavi.php';
 echo '
 <h2>Naredi tabelo</h2>
 <form method="post" action="'. htmlspecialchars($_SERVER["PHP_SELF"]).'">  
-
-
-
-  <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
-  <input type="radio" id="pregledovalci" name="name" value="pregledovalci">
+<!-- <label for="pregledovalci"><span class="imenaFilov">pregledovalci</span></label>
+  <input type="radio" id="pregledovalci" name="name" value="pregledovalci">-->
   
- 
-     <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
+  <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
   <input type="radio" id="uporabniki" name="name" value="uporabniki">
   
    <input type="hidden" name="nazaj" value='. $nazaj.'>
@@ -35,9 +31,7 @@ function naredi($ime) {
 require_once '../skupne/narediTablo.php';	
 $databaseGloboka=new DatabaseGloboka;	
 switch ($ime) {	
-
-
-case "pregledovalci":
+/*case "pregledovalci":
 echo"kreateTableVse v ADMIN";
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `status` int(3) NOT NULL,
@@ -48,7 +42,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci ,	
 	UNIQUE (email, uname)";
 $databaseGloboka->naredi('pregledovalciTbl', $definice);
-break;
+break;*/
 case "uporabniki":
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`email` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
