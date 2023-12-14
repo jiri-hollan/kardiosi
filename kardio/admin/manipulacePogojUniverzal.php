@@ -58,15 +58,10 @@ if (isset($_REQUEST["pogoj"])){
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
-		 switch($this->tabulka){
-	 /* case "pregledovalciTbl":
-	  $this->dataPreg= '["status", "ime", "priimek", "email", "uname", "geslo"]';
-	  //var_dump($this->dataPreg);
-	  break;*/
+	switch($this->tabulka){
 	  case "uporabnikiTbl":
 	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
-;
 	  default:
 	  echo "tabulka ni določena";
   }
