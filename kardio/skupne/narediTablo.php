@@ -121,13 +121,13 @@ try {
 //Execute the statement.
    $statement->execute(); 
 //Fetch the rows from our statement.
-  $tables = $statement->fetchAll(PDO::FETCH_NUM);
+  $stolpci = $statement->fetchAll(PDO::FETCH_NUM);
 //Loop through our table names.
-   foreach($tables as $table){
+   foreach($stolpci as $stolpci){
 //Print the table name out onto the page.
 //echo "stolpci:";
-//echo $table[0], '<br>';
-   print_r($table);
+//echo $stolpci[0], '<br>';
+   print_r($stolpci);
    echo '<br>';	
 }
 }catch(PDOException $e) {
