@@ -6,7 +6,6 @@ class Database {
 	public $password = '';
 	public $dbname = '';
 	public $connn = '';
-	public $bolnikObstaja= '';
 	public Function __construct(){
 	require 'streznik.php';
       //$this->servername = "sh17.neoserv.si";
@@ -241,27 +240,5 @@ if (is_array($podminka)){
 	
 	return $pocetOdstranenych;
 	}// od function odstrani		
-//......konec odstrani......................
-
-public function testirajBolnik() {
-try {
-  $kje='Tables_in_'.$this->dbname;
-  $sql = "SHOW TABLES FROM $this->dbname  WHERE $kje LIKE 'bolnikTbl' OR $kje LIKE 'bolnikOmejitve'";
-  $statement = $this->conn->prepare($sql);   
-  $statement->execute();
-  $tables = $statement->fetchAll(PDO::FETCH_BOTH);
-// var_dump($tables);
-  $bolnikObstaja=count($tables);
-  $this->bolnikObstaja = $bolnikObstaja;
-   return $this;
-}
-
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    }
-$conn = null;
-}//uzavírací zavorky function testrajBolnik
-//-------------------konec function testraj
-
-	
+//......konec odstrani......................	
 }//uzavírací zavorky class Database
