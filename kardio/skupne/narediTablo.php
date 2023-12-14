@@ -61,13 +61,13 @@ $sql = "select column_name from information_schema.columns where table_name =  '
 //Execute the statement.
    $stmtl->execute();
 //Fetch the rows from our statement.
-  $tables = $stmtl->fetchAll(PDO::FETCH_NUM); 
+  $stolpci = $stmtl->fetchAll(PDO::FETCH_NUM); 
 //Loop through our table names.
-   foreach($tables as $table){
+   foreach($stolpci as $stolpec){
 //Print the table name out onto the page.
 //echo "stolpci:";
-//echo $table[0], '<br>';   
-  echo '<th>'.$table[0].'</th>';
+//echo $stolpec[0], '<br>';   
+  echo '<th>'.$stolpec[0].'</th>';
 	} //od foreach-
     $stmt = $this->conn->prepare("SELECT * FROM " . $imeTable );
     $stmt->execute();
