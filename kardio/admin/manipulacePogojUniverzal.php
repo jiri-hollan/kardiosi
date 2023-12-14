@@ -177,11 +177,8 @@ foreach (json_decode($this->dataPreg) as $key) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
 	switch ($_REQUEST["tabulka"]){
-	/*	  case "pregledovalciTbl":
-    echo "<tr><th>Id</th><th>status</><th>ime</th><th>priimek</th><th>email</th><th>uname</th><th>geslo</th></tr>";
-    break;*/
-	
 	case "uporabnikiTbl":
+	
     echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
     break;
 	default:
