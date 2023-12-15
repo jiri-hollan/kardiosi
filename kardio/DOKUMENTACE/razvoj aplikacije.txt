@@ -1,0 +1,1 @@
+K osnovni verziji, ki je na netu že več let postopoma dodajam fajle za komunikacijo z bazo.
