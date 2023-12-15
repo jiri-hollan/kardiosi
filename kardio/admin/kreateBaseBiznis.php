@@ -12,7 +12,7 @@ class NarediBazo {
 	require_once '../skupne/streznik.php';
 
 try {
-    $this->conn = new PDO("mysql:host=" . $this->servername , $this->username, $this->password);
+    $this->conn = new PDO("mysql:host=" . $this->servername , $this->username, "300kosmatih!");
     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
     echo "Connected successfully","<br>";
     }
