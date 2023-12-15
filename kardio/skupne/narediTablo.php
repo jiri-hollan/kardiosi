@@ -5,11 +5,12 @@ class DatabaseGloboka {
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
+	public $dbpassword = '';	
 	public $connn = '';
 	public Function __construct(){
 	require_once 'streznik.php';
       //$this->servername = "sh17.neoserv.si"; 
-		$this->conn = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbname . ';charset=UTF8', $this->username, $this->password);
+		$this->conn = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbname . ';charset=UTF8', $this->username, $this->dbpassword);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
 	}//uzavírací zavorky __construct	
 //-----------------konec construct--------------
