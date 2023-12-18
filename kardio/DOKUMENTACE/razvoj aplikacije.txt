@@ -1,1 +1,3 @@
 K osnovni verziji, ki je na netu že več let postopoma dodajam fajle za komunikacijo z bazo.
+Zdaj je narejena baza biznis in tabela uporabniki namesto array zdravnikov.Slike uporabnikov so vezane za id v bazi.
+V izbiri biznis je možno urejati bazo.
