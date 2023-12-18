@@ -57,7 +57,7 @@ document.write(b);
 </script>
 
 <!--<b id= "okr"> to je mail </b>-->
-
+<!--
 <SCRIPT>
 var c = "";
 var p = ""
@@ -72,6 +72,6 @@ r = "<a  class='okro' href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;n
 }
 
 document.getElementById('okr').innerHTML = "<br>" + r;
-</script>
+</script>-->
 </body>
 </html>
