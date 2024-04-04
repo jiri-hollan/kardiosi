@@ -23,7 +23,7 @@ $p = $_GET['p'];
 	}
 	switch($p){
 		case "mespdf":
-		$n = "mespdf.php";
+		$n = "../organizace/mespdf.php";
 		$direktorij = "razpis/mespdf/";
 		$l= "";	
 		break;
