@@ -18,10 +18,5 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
   <meta http-equiv="refresh" content="0;url=kardio/index.php" />
 
   <title>Anestezija za operacije srca</title>
-</head>
-
-
-    <body>
-    </body>
-  
+</head>  
 </html>
