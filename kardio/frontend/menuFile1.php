@@ -42,7 +42,7 @@ $p = $_GET['p'];
 		
 		case "kuharica":
 		$s = "zahod.php";
-		$direktorij = "besedila/";
+		$direktorij = "../besedila/";
 		$l= 'navodila.php';
 		$n = "domov.php";
 		break;

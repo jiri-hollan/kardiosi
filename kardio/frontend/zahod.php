@@ -1,3 +1,3 @@
 <div id="tojePdf">
-<img src="../kardio/ozadja/Zahod.jpg" >
+<img src="../ozadja/Zahod.jpg" >
 </div>
