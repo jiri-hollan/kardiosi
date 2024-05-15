@@ -1,1 +1,1 @@
-<div id="naslovnica"><img src="../kardio/ozadja/eso.gif" ></div>
+<div id="naslovnica"><img src="../ozadja/eso.gif" ></div>
