@@ -9,7 +9,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
  <meta http-equiv="Pragma" content="no-cache">
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </meta> 
+ </meta> 
  <link rel="stylesheet"href="../css/style.css?<?php echo time(); ?>" >
  <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <title>Anestezija za operacije srca</title>
@@ -23,7 +23,7 @@ $p = $_GET['p'];
 	}
 	switch($p){
 		case "mespdf":
-		$n = "../organizace/mespdf.php";
+		$n = "mespdf.php";
 		$direktorij = "../razpis/mespdf/";
 		$l= "";	
 		break;
