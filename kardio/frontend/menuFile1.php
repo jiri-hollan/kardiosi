@@ -49,13 +49,13 @@ $p = $_GET['p'];
 		
 		case "povezave":
 		$s = "";
-		$l= "linki.php";
+		$l= "../linki.php";
 		$n = "domov.php";
 		break;		
 	
 	    case "biznis":
 		$s = "";
-		$l= "biznis.php";
+		$l= "../biznis.php";
 		$n = "domov.php";
 		break;	
 			
