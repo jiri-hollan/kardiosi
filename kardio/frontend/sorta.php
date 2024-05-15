@@ -20,7 +20,7 @@ a.okro:hover {font-size: 130%;background-color:blue; color:yellow}
 
 </style>-->
 <?php
-require_once('frontend/sabloni/zahlavi.php');
+require_once('sabloni/zahlavi.php');
 ?>
 
 
@@ -33,7 +33,7 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"servis/poskusArrayZdravniki.php?pogoj=1")';
+b += '"../servis/poskusArrayZdravniki.php?pogoj=1")';
 b += "' > ";
 b += skupina;
 b += "</a>";
@@ -45,7 +45,7 @@ var b ="";
 b += "<p>";
 b += "<a class='zdrav' ";
 b += "href='javascript: showZDR(";
-b += '"servis/poskusArrayZdravniki.php?pogoj=2")';
+b += '"../servis/poskusArrayZdravniki.php?pogoj=2")';
 b += "' > ";
 b += skupina;
 b += "</a>";

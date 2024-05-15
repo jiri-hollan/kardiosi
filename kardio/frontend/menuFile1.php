@@ -30,7 +30,7 @@ $p = $_GET['p'];
 		
 		case "zdravniki":
 		$s = "";
-		$l= "../sorta.php";
+		$l= "sorta.php";
 		$n = "domov.php";
 		break;
 		
