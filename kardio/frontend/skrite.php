@@ -19,7 +19,7 @@ body {background-color: GoldenRod }
 <?php
 
 
-$nazaj="../genom.php";
+$nazaj="genom.php";
 echo'
 <table >
 <tr><td> <h2>RAZPIS:</h2> </td></tr>
