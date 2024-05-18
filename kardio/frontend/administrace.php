@@ -12,7 +12,7 @@ class Administrace {
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardio/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/frontend/';  
 	  }
 		  
       //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
