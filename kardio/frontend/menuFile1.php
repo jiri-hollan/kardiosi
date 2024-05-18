@@ -1,19 +1,10 @@
 <?php
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-?>
-<!DOCTYPE HTML>
-<html  lang="sl-SI"> 
-<head>
- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
- <meta http-equiv="Pragma" content="no-cache">
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- </meta> 
- <link rel="stylesheet"href="../css/style.css?<?php echo time(); ?>" >
- <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
-<title>Anestezija za operacije srca</title>
-<?php
+
+require_once('sabloni/vkladane/zahlavi.php');
+require_once('administrace.php');
+
 $direktorij = "";
 $l="links.php";
 $p="";    
