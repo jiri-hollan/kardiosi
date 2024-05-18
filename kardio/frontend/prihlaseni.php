@@ -13,9 +13,9 @@ Class Prihlaseni {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/ksrdiosi/kardio/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/frontend/';  
 	  }
 	  
 
