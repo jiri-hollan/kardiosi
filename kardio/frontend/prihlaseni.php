@@ -1,6 +1,7 @@
  <?php
 session_start();
 require_once('../skupne/database.php');
+require_once('sabloni/vkladane/prihlas.php');
 global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
 Class Prihlaseni {
