@@ -26,7 +26,7 @@ input.imePriimek {
 
 
 /* Set a style for all buttons */
-prihlasovaci-formular.button {
+button.prihlasovaci-formular {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -37,7 +37,7 @@ prihlasovaci-formular.button {
   opacity: 0.9;
 }
 
-prihlasovaci-formular.button:hover {
+button.prihlasovaci-formular:hover {
   opacity:1;
 }
 
