@@ -9,6 +9,7 @@ $direktorij = "";
 $l="links.php";
 $p="";    
 $n="";
+$prijava="sabloni/vkladane/prihlas.php";
 if(isset($_GET['p'])){
 $p = $_GET['p'];
 	}
@@ -17,18 +18,21 @@ $p = $_GET['p'];
 		$n = "mespdf.php";
 		$direktorij = "../razpis/mespdf/";
 		$l= "";	
+		$prijava="";
 		break;
 		
 		case "zdravniki":
 		$s = "";
 		$l= "sorta.php";
 		$n = "domov.php";
+		$prijava="";
 		break;
 		
 		case "razpisovalec":
 		$s = "posta.php";
 		$l= '';		
 		$n = "domov.php";
+		$prijava="";
 		break;
 		
 		case "kuharica":
@@ -36,18 +40,20 @@ $p = $_GET['p'];
 		$direktorij = "../besedila/";
 		$l= 'navodila.php';
 		$n = "domov.php";
+		$prijava="";
 		break;
 		
 		case "povezave":
 		$s = "";
 		$l= "../linki.php";
 		$n = "domov.php";
+		$prijava="";
 		break;		
 	
 	    case "biznis":
 		$s = "";
 		$l= "../biznis.php";
-		$n = "domov.php";
+		$n = "";
 		break;	
 			
 		default:
@@ -78,6 +84,7 @@ $p = $_GET['p'];
 	</script>
 </head>
 <body>
+    <div id="topnav"> <?php if (isset($prijava) and $prijava != "") {include($prijava); }?></div> 
 	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
