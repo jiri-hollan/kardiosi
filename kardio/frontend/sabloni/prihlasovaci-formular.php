@@ -27,11 +27,11 @@
       <label for="psw-repeat"><b>Ponovi geslo</b></label>
       <input type="password" placeholder="Ponovi geslo" name="psw-repeat" autocomplete="off" required>
       <button class="prihlasovaci-formular" type="submit" class="signupbtn">Sign Up</button>    
- 
-    </div>
-      <div class="clearfix">
-        <button class="prihlasovaci-formular" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+ <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
+    </div>
+      
 
   </form>
 </div>
@@ -55,12 +55,13 @@
  <!--     <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>-->
-    </div>
-
-      <div class="clearfix">
-      <button class="prihlasovaci-formular" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+	   <div class="clearfix">
+      <button  type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
    <!--   <span class="psw">Forgot <a href="#">password?</a></span>-->
     </div>   
+    </div>
+
+     
 
   </form>
 </div>
