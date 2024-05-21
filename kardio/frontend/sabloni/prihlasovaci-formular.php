@@ -1,9 +1,8 @@
 <?php require_once('vkladane/zahlavi.php');?>
 
 
-<button class="prihlasovaci-formular" onclick="schovej('id01')"style="width:auto;">Registracija</button>
-
-<button class="prihlasovaci-formular" onclick="schovej('id02')" style="width:auto;">Prijava</button>
+<button class="knof" onclick="schovej('id01')"style="width:auto;">Registracija</button>
+<button class="knof" onclick="schovej('id02')" style="width:auto;">Prijava</button>
 
 <!-- ---------------------------------Registracija------------------------------------------------------- --> 
 <div id="id01" class="modal">
@@ -26,7 +25,7 @@
 
       <label for="psw-repeat"><b>Ponovi geslo</b></label>
       <input type="password" placeholder="Ponovi geslo" name="psw-repeat" autocomplete="off" required>
-      <button class="prihlasovaci-formular" type="submit" class="signupbtn">Sign Up</button>    
+      <button  type="submit" class="signupbtn">Sign Up</button>    
  <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
@@ -51,7 +50,7 @@
       <label for="geslo"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="geslo" autocomplete="off" required>
         
-      <button class="prihlasovaci-formular" type="submit" class="signupbtn" >Login</button>
+      <button  type="submit" class="signupbtn" >Login</button>
  <!--     <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>-->
@@ -60,9 +59,6 @@
    <!--   <span class="psw">Forgot <a href="#">password?</a></span>-->
     </div>   
     </div>
-
-     
-
   </form>
 </div>
 
