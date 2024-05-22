@@ -5,3 +5,39 @@
 <li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
 <li><a href="menuFile1.php?p=povezave">POVEZAVE</a></li>
 <li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
+
+<?php
+class MenuAnestiz  {
+   public function __construct() {         
+echo '
+<nav id= "glavnaNav">
+<ul>';
+  if (isset($_SESSION["status"]))  {
+	  //require_once('../skupne/menu-items.php'); 
+	   switch ($_SESSION["status"]) {		   
+	case 1:
+	  echo $a0.$a1;
+    break;   
+     case 2:
+	   echo $a0.$a1.$a2;
+	 break;	 
+	 case 3:
+	   echo $a0.$a1.$a2.$a3;
+    break;   
+    default:
+	   } //od switch
+	 echo
+	'<script>
+    document.getElementById("prij").innerHTML = "Odjava";
+	document.getElementById("uname").innerHTML = "prijavljen";	
+     </script>';
+   }//od if 
+   else{
+	 	  echo $a0; 
+   }
+      echo '</ul></nav>';
+   }//od construct
+}//od class MenuAnestiz  
+$adminAnestiz = new MenuAnestiz(); 
+$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
+?>
