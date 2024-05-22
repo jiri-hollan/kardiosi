@@ -46,13 +46,13 @@ echo '
 	  //require_once('../skupne/menu-items.php'); 
 	   switch ($_SESSION["status"]) {		   
 	case 1:
-	  echo $a0.$a1;
+	  echo $a1.$a0;
     break;   
      case 2:
-	   echo $a0.$a1.$a2;
+	   echo $a1.$a0.$a2;
 	 break;	 
 	 case 3:
-	   echo $a0.$a1.$a2.$a3;
+	   echo $a1.$a0.$a2.$a3;
     break;   
     default:
 	   } //od switch
