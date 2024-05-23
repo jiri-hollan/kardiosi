@@ -41,7 +41,7 @@ $a2= '
 <li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
 '; 
 $a3= '
-<li><a href="menuFile1.php?p=biznis">ADMIN</a></li>
+<li><a href="menuFile1.php?p=admin">ADMIN</a></li>
 ';  
 echo '
 <nav id= "glavnaNav">

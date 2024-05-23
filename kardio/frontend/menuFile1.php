@@ -56,9 +56,9 @@ $p = $_GET['p'];
 		$n = "";
 		break;
 		
-        case "biznis":
+        case "admin":
 		$s = "";
-		$l= "../biznis/biznis.php";
+		$l= "../admin/admin.php";
 		$n = "";
 		break;			
 					
