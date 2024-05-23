@@ -21,9 +21,9 @@ if (isset($_GET['nazaj'])){
 }else {
      $nazaj = "../index.php";
 }
-echo '
+/*echo '
  <a class="active" href=' .$nazaj.'>Nazaj</a>
- ';
+ ';*/
 function test_input($test) {
   $test = trim($test);
   $test = stripslashes($test);
