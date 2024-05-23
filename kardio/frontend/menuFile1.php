@@ -57,9 +57,7 @@ $p = $_GET['p'];
 		break;
 		
         case "admin":
-		$s = "";
-		$l= "../admin/admin.php";
-		$n = "";
+
 		  header("Location: ../admin/admin.php");
 		break;			
 					
