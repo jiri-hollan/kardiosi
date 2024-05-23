@@ -60,6 +60,7 @@ $p = $_GET['p'];
 		$s = "";
 		$l= "../admin/admin.php";
 		$n = "";
+		  header("Location: ../admin/admin.php");
 		break;			
 					
 		default:
