@@ -11,6 +11,7 @@
 
 
 <?php
+/*
 $a0= '
 <li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
 <li><a href="menuFile1.php?p=povezave">POVEZAVE</a></li>
@@ -24,7 +25,7 @@ $a2= '
 <li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
 ';
 
-
+*/
 class MenuAnestiz  {
    public function __construct() { 
  $a0= '
@@ -38,7 +39,8 @@ $a1= '
 ';
 $a2= '
 <li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
-';  
+'; 
+ 
 echo '
 <nav id= "glavnaNav">
 <ul id="links">';
@@ -52,7 +54,7 @@ echo '
 	   echo $a1.$a0.$a2;
 	 break;	 
 	 case 3:
-	   echo $a1.$a0.$a2.$a3;
+	   echo $a1.$a0.$a2;
     break;   
     default:
 	   } //od switch
