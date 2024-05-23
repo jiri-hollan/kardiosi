@@ -54,8 +54,14 @@ $p = $_GET['p'];
 		$s = "";
 		$l= "../biznis/biznis.php";
 		$n = "";
-		break;	
-			
+		break;
+		
+        case "biznis":
+		$s = "";
+		$l= "../biznis/biznis.php";
+		$n = "";
+		break;			
+					
 		default:
 		$s = "main.php";
 	}
