@@ -52,7 +52,7 @@ $p = $_GET['p'];
 	
 	    case "biznis":
 		$s = "";
-		$l= "../biznis.php";
+		$l= "../biznis/biznis.php";
 		$n = "";
 		break;	
 			
