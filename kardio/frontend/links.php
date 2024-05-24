@@ -1,32 +1,7 @@
-<!--<ul id="links">
-<li><a href="menuFile1.php?p=mespdf">RAZPIS</a></li>
-<li><a href="menuFile1.php?p=zdravniki">ZDRAVNIKI</a></li>
-<li><a href="mailto:kardio.an@gmail.com" >razpisovalec</a></li>
-<li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
-<li><a href="menuFile1.php?p=povezave">POVEZAVE</a></li>
-<li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
--->
-
-
-
 
 <?php
-/*
-$a0= '
-<li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
-<li><a href="menuFile1.php?p=povezave">POVEZAVE</a></li>
-<li><a href="mailto:kardio.an@gmail.com" >razpisovalec</a></li>
-';
-$a1= '
-<li><a href="menuFile1.php?p=mespdf">RAZPIS</a></li>
-<li><a href="menuFile1.php?p=zdravniki">ZDRAVNIKI</a></li>
-';
-$a2= '
-<li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
-';
 
-*/
-class MenuAnestiz  {
+class MenuBiznis  {
    public function __construct() { 
  $a0= '
 <li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
@@ -71,7 +46,7 @@ echo '
    }
       echo '</ul></nav>';
    }//od construct
-}//od class MenuAnestiz  
-$adminAnestiz = new MenuAnestiz(); 
+}//od class MenuBiznis  
+$adminAnestiz = new MenuBiznis(); 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 ?>
