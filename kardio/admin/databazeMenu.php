@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION["status"])&&$_SESSION["status"]=4)  {
+if (isset($_SESSION["status"])&&$_SESSION["status"]==4)  {
 require_once('sabloni/vkladane/zahlavi.php');
 echo 'napredna manipulacija z bazo';
 

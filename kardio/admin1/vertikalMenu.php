@@ -6,8 +6,8 @@ require_once('../admin/administrace.php');
 class Vertikal extends Administrace {
    public function __construct() {
 	       parent::__construct();
- /*		   
- if (isset($_SESSION["status"]) && $_SESSION["status"] == 4)  {*/
+	   
+ if (isset($_SESSION["status"]) && $_SESSION["status"] == 4)  {
 $nazaj="../admin1/vertikalMenu.php";	  
 echo '
 
@@ -24,9 +24,9 @@ echo '
 </ul>
 
 ';
-  /*   } else {
+     } else {
 	echo	' <h2>za ta del niste pooblaščeni</h2>';
-	}*/
+	}
    }//od construct 
 }//od class vertikal  
  $adminVnertikal = new Vertikal(); 
