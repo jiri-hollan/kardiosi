@@ -1,4 +1,5 @@
 <?php
+if (isset($_SESSION["status"])&&$_SESSION["status"]=3)  {
 require_once('sabloni/vkladane/zahlavi.php');
 echo 'napredna manipulacija z bazo';
 
@@ -22,4 +23,5 @@ echo'
 ';
 
 require_once('sabloni/zapati.php'); 
+   }//od if 
 ?>
