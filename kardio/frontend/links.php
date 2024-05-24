@@ -28,11 +28,14 @@ echo '
 	  echo $a1.$a0;
     break;   
      case 2:
-	   echo $a1.$a0.$a2;
+	   echo $a1.$a0;
 	 break;	 
 	 case 3:
+	   echo $a1.$a0.$a2;
+    break;
+	 case 4:
 	   echo $a1.$a0.$a2.$a3;
-    break;   
+    break;   	
     default:
 	   } //od switch
 	 echo
