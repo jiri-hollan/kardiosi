@@ -21,7 +21,7 @@ $a2= '
 
 '; 
 $a3= '
-../admin/databazeMenu.php
+
 ';  
 echo '
 <nav id= "glavnaNav">
