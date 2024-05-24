@@ -1,7 +1,7 @@
 <?php
-/*
+
 session_start();
-*/
+
 require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
@@ -14,7 +14,7 @@ class Administrace {
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/admin/';  
 	  }
-	/*  $casoviLimit = 600;
+	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
 		  if ($uplinuliCas > $casoviLimit) {
@@ -34,6 +34,6 @@ class Administrace {
 	  } else {
 		  $this->conn = new Database();
 	  }	  
-*/	  
+	  
 }//od construct	
 }//0d class administrace
