@@ -32,8 +32,6 @@ arhiv</a></b></td></tr>
 <tr><td><b><a class="obarvaj" href="../servis/servis.php?nazaj='.$nazaj.'" target="vsebina"> 
 Servis</a></b></td></tr>
 
-<tr><td><b><a class="obarvaj" href="../admin/databazeMenu.php?nazaj='.$nazaj.'" target="vsebina"> 
-databaze</a></b></td></tr>
 </table>
 ';
 ?>

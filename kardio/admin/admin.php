@@ -36,7 +36,8 @@ echo '
 	  
 	 break;	 
 	 case 3:
-	  header("Location: ../admin/databazeMenu.php");
+	 require_once('../admin/databazeMenu.php');
+	 // header("Location: ../admin/databazeMenu.php");
 	   echo $a3;
     break;   
     default:
