@@ -23,7 +23,11 @@ echo '
 <ul id="links">';
   if (isset($_SESSION["status"]))  {
 	  //require_once('../skupne/menu-items.php'); 
-	   switch ($_SESSION["status"]) {		   
+	   switch ($_SESSION["status"]) {
+	case 0; 
+	  echo $a0;
+	  echo "<p style='color: black;'>vaša registracija še ni overjena</>";
+	break;  
 	case 1:
 	  echo $a1.$a0;
     break;   

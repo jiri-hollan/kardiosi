@@ -27,9 +27,7 @@ if (isset($_REQUEST["pogoj"])){
 
 
 $podminka = array("status"=>$pogoj);
-//$podminka = $pogoj;
-//$podminka = array("status"=>2);
-//$podminka = NULL;
+
 vyberFunction($podminka);
 function vyberFunction($podminka){
 $tabulka="uporabnikiTbl";

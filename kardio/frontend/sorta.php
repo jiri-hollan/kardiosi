@@ -51,27 +51,7 @@ b += skupina;
 b += "</a>";
 b +=  "</p>";
 document.write(b);
-
-
-
 </script>
 
-<!--<b id= "okr"> to je mail </b>-->
-<!--
-<SCRIPT>
-var c = "";
-var p = ""
-var r = ""
-for (i=0;i<zdrClan.length;i++)
-{
-if (zdrClan[i].rang==1 || zdrClan[i].rang==2) 
-{
-p += zdrClan[i].email + ","
-}
-r = "<a  class='okro' href='mailto:" + p + "'" + "target='_top'>" + "okro&#382;nica" + "</a>" 
-}
-
-document.getElementById('okr').innerHTML = "<br>" + r;
-</script>-->
 </body>
 </html>
