@@ -16,11 +16,12 @@ switch ($akce) {
  case "vyber":
    // echo "to je vyber.<br>";
    if ($priimek == "") {
-	$podminka = NULL;
+	$podminka = "status";
+	$vrednosti = array("0","1","2");
 } else {
     $podminka = array("priimek"=>$priimek);
 }
-    vyberFunction($podminka);
+    vyberFunction($podminka, $vrednosti);
   break; 	 
 case "vloz":
      echo "ni dovoljeno";
@@ -69,11 +70,11 @@ case "odstrani":
   }//od switch	  
 }//od if
 
-function vyberFunction($podminka){
+function vyberFunction($podminka,$vrednosti){
    $tabulka="uporabnikiTbl";
    $stolpci=["id,email,ime,priimek, status,pristop"];
    $vyber = new database();
-   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
+   $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    echo "<br>";
