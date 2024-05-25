@@ -1,5 +1,5 @@
 <?php
-$to = "<jiri.hollan@gmail.com>";
+$to = "<dr.maja.sostaric@gmail.com>";
 //$to .= ", <hocimin68@gmail.com>";
 $subject = "obvestilo anestiz";
 $from = '<noreply@sender.com>';
