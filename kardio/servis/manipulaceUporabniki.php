@@ -19,7 +19,8 @@ switch ($akce) {
 	$podminka = "status";
 	$vrednosti = array("0","1","2");
 } else {
-    $podminka = array("priimek"=>$priimek);
+    $podminka = "priimek";
+		$vrednosti = array("$priimek");
 }
     vyberFunction($podminka, $vrednosti);
   break; 	 
