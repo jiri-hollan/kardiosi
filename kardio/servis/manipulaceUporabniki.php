@@ -16,11 +16,13 @@ switch ($akce) {
  case "vyber":
    // echo "to je vyber.<br>";
    if ($priimek == "") {
-	$podminka = NULL;
+	$podminka = "status";
+	$vrednosti = array("0","1","2");
 } else {
-    $podminka = array("priimek"=>$priimek);
+    $podminka = "priimek";
+		$vrednosti = array("$priimek");
 }
-    vyberFunction($podminka);
+    vyberFunction($podminka, $vrednosti);
   break; 	 
 case "vloz":
      echo "ni dovoljeno";
@@ -69,11 +71,12 @@ case "odstrani":
   }//od switch	  
 }//od if
 
-function vyberFunction($podminka){
+function vyberFunction($podminka,$vrednosti){
    $tabulka="uporabnikiTbl";
    $stolpci=["id,email,ime,priimek, status,pristop"];
+   //var_dump($vrednosti);
    $vyber = new database();
-   $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
+   $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    echo "<br>";
@@ -144,10 +147,10 @@ function editFunction($podminka){
    for ($i = 0; $i < $dolzina; $i++) {
      foreach ($vybrano[$i] as $key => $value) {
       if($key=="id"||$key=="ime"||$key=="priimek"){
-	   echo " $key: <input name=$key value=$value readonly\n></input>";	
+	   echo " $key: <input name=$key value=$value readonly style='background-color:ivory;'\n></input>";	
 }	 
      if($key=="status"||$key=="pristop"){	
-	  echo " $key: <input name=$key value=$value \n></input>";
+	  echo " $key: <input name=$key value=$value   pattern='[0,1,2]{1}' \n></input>";
 }	
 }//od foreach
    echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
