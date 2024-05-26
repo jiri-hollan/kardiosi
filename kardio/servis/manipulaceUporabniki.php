@@ -150,7 +150,7 @@ function editFunction($podminka){
 	   echo " $key: <input name=$key value=$value readonly style='background-color:ivory;'\n></input>";	
 }	 
      if($key=="status"||$key=="pristop"){	
-	  echo " $key: <input name=$key value=$value  max='2' \n></input>";
+	  echo " $key: <input name=$key value=$value   pattern='[0,1,2]{1}' \n></input>";
 }	
 }//od foreach
    echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
