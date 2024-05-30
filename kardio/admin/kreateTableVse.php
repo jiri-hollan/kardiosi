@@ -10,6 +10,8 @@ echo '
   
   <label for="uporabniki"><span class="imenaFilov">uporabniki</span></label>
   <input type="radio" id="uporabniki" name="name" value="uporabniki">
+  <label for="statusi"><span class="imenaFilov">statusi</span></label>
+  <input type="radio" id="statusi" name="name" value="statusi">  
   
    <input type="hidden" name="nazaj" value='. $nazaj.'>
   <br><br>
@@ -55,6 +57,14 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	UNIQUE (email, uname)";
 $databaseGloboka->naredi('uporabnikiTbl', $definice);
 break;
+
+case "statusi":
+$definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `status` int(3) NOT NULL,
+	`pomen` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL";
+$databaseGloboka->naredi('statusiTbl', $definice);
+break;
+
 /*
 case "":
 $definice= "";
