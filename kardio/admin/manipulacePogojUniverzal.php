@@ -179,14 +179,16 @@ foreach (json_decode($this->dataPreg) as $key) {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
-	echo 'Tabulka'.$_REQUEST["tabulka"];
-	switch ($_REQUEST["tabulka"]){
+	//echo 'Tabulka'.$_REQUEST["tabulka"];
+	$tabulka=$_REQUEST["tabulka"];
+	//echo $tabulka;
+	switch ($tabulka){
 	case "statusiTbl":
-		echo "<br>".'Tabulka'.$_REQUEST["tabulka"];
+	echo "<br>".'Tabulka: '.$tabulka;
     echo "<tr><th>Id</th><th>status</><th>pomen</th></tr>";
     break;
 	case "uporabnikiTbl":
-		echo "<br>".'Tabulka'.$_REQUEST["tabulka"];
+		echo "<br>".'Tabulka uporabniki'.$_REQUEST["tabulka"];
     echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
 	break;
 	default:
