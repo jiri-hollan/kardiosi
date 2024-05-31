@@ -1,5 +1,5 @@
 //var tabulka="uporabnikiTbl";
-var tabulka;
+//var tabulka;
 function izborFunction(akce, tabulka) {
  tabulka=tabulka;
 	//alert(tabulka);
@@ -42,7 +42,7 @@ switch(akce) {
   case "edit":
 //alert("v JS case edit");
    if(document.getElementById("osebe")!=null){
-     document.getElementById("osebe").addEventListener("click", functionOver);
+     document.getElementById("osebe").addEventListener("click", functionOver('', tabulka));
 }
     break;
 
@@ -59,7 +59,7 @@ switch(akce) {
  }//od switch
 } // od izborFunction
 //----------------------------------------------------------------------------------------
-function functionOver (e) {
+function functionOver (e, tabulka) {
 var x = e.target;
 alert(tabulka);
 	//alert("functionOver");
