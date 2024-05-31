@@ -62,6 +62,9 @@ if (isset($_REQUEST["pogoj"])){
 	  case "uporabnikiTbl":
 	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
+	  case "statusiTbl":
+	  $this->dataPreg= '["status", "pomen"]';
+	  break;	  
 	  default:
 	  echo "tabulka ni določena";
   }
@@ -125,7 +128,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 $vyber = new database();
 $vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 echo "<br>";
-if(count($vybrano)>0){	
+if(count($vybrano)>=0){	
 	//var_dump($vybrano);
 	
 	
@@ -261,6 +264,9 @@ switch($_REQUEST["tabulka"]){
 /*case "pregledovalciTbl":
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;*/
+case "statusiTbl":
+echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
+break;
 case "uporabnikiTbl":
 echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
 break;
