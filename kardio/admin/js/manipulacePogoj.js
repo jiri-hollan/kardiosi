@@ -1,7 +1,8 @@
 //var tabulka="uporabnikiTbl";
-//var tabulka;
+var tabulka;
+alert('definicija tabulke:  '+tabulka);
 function izborFunction(akce, tabulka) {
- tabulka=tabulka;
+ tabulka=tabulka; 
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {

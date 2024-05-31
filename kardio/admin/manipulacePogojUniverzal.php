@@ -265,10 +265,10 @@ switch($_REQUEST["tabulka"]){
 echo '<script src="js/manipulacePregledovalci.js?<?php echo time(); ?>"></script>'; 
 break;*/
 case "statusiTbl":
-echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
+/*echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; */
 break;
 case "uporabnikiTbl":
-echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; 
+/*echo '<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script>'; */
 break;
 
 
