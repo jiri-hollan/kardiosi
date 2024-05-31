@@ -1,17 +1,20 @@
-var tabulka="uporabnikiTbl";
+//var tabulka="uporabnikiTbl";
+var tabulka;
 function izborFunction(akce, tabulka) {
-	var tabulka=tabulka;
+ tabulka=tabulka;
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
   case "vyber":
-
+	//alert(tabulka);
   document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
   document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
 
     case "vloz":
-
+	switch(tabulka) {
+		case "uporabnikiTbl":
+	//alert(tabulka);
     email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
     uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
     geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
@@ -24,6 +27,16 @@ switch(akce) {
     document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + status + pristop;
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
+	        break;
+			case "statusiTbl":
+			//alert(tabulka);	
+	 status= '<input type="text" id="emailId" name="status" value="" placeholder="status" required>';
+     pomen= '<input type="text" id="unameId" name="pomen" value="" placeholder="pomen" >';    document.getElementById("demo").innerHTML =  status + pomen;		
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
+			
+			break;
+	}
     break;
 
   case "edit":
@@ -48,6 +61,8 @@ switch(akce) {
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 var x = e.target;
+alert(tabulka);
+	//alert("functionOver");
 if (x.nodeName == "TD") {
 var y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
