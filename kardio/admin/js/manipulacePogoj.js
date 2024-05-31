@@ -27,16 +27,27 @@ switch(akce) {
     break;
 
   case "edit":
+       switch(tabulka) {
+		  case "statusiTbl":   
 //alert("v JS case edit");
-   if(document.getElementById("osebe")!=null){
-     document.getElementById("osebe").addEventListener("click", functionOver);
+     if(document.getElementById("osebe")!=null){
+       document.getElementById("osebe").addEventListener("click", functionOverStatusi);
 }
+        break;
+	/*	  case "uporabnikiTbl": 
+		if(document.getElementById("osebe")!=null){
+     document.getElementById("osebe").addEventListener("click", functionOverUporabniki);
+}  
+       break;
+	   default:
+	   alert(nekaj je narobe);*/
+	   }
     break;
 
   case "odstrani": 
    if ( confirm("Odstranim en zapis?") == true) {
     if(document.getElementById("osebe")!=null){
-    document.getElementById("osebe").addEventListener("click", functionOver);
+    document.getElementById("osebe").addEventListener("click", functionOverStatusi);
       }
 } else {
   text = "You canceled!";
@@ -46,7 +57,19 @@ switch(akce) {
  }//od switch
 } // od izborFunction
 //----------------------------------------------------------------------------------------
-function functionOver (e) {
+function functionOverStatusi (e) {
+let tabulka="statusiTbl";	
+var x = e.target;
+if (x.nodeName == "TD") {
+var y = event.composedPath()[1];
+row_value = y.cells[0].innerHTML;
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+ }//od if 
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
+}//od function(e)
+
+function functionOverUporabniki (e) {
+let tabulka="uporabnikiTbl";		
 var x = e.target;
 if (x.nodeName == "TD") {
 var y = event.composedPath()[1];
