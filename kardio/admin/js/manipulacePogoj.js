@@ -63,7 +63,7 @@ switch(akce) {
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 var x = e.target;
-alert(tabulka_global);
+//alert(tabulka_global);
 	//alert("functionOver");
 if (x.nodeName == "TD") {
 var y = event.composedPath()[1];
