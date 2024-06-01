@@ -43,7 +43,7 @@ switch(akce) {
   case "edit":
 //alert("v JS case edit");
    if(document.getElementById("osebe")!=null){
-     document.getElementById("osebe").addEventListener("click", functionOver('', tabulka));
+     document.getElementById("osebe").addEventListener("click", functionOver);
 }
     break;
 
@@ -60,7 +60,7 @@ switch(akce) {
  }//od switch
 } // od izborFunction
 //----------------------------------------------------------------------------------------
-function functionOver (e, tabulka) {
+function functionOver (e) {
 var x = e.target;
 alert(tabulka);
 	//alert("functionOver");

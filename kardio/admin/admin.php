@@ -38,11 +38,11 @@ echo '
   	
     default:
 	   } //od switch
-	 echo
+	/* echo
 	'<script>
     document.getElementById("prij").innerHTML = "Odjava";
 	document.getElementById("uname").innerHTML = "prijavljen";	
-     </script>';
+     </script>';*/
    }//od if 
    else{
 	 	  echo $a0; 
