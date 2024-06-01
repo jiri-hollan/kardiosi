@@ -37,11 +37,11 @@ switch(akce) {
 		  if(document.getElementById("osebe")!=null){
              document.getElementById("osebe").addEventListener("click", functionOverUporabniki);
           } else{
-			  	   alert(nekaj je narobe);
+			  	   alert("nekaj je narobe");
 		  } 
        break;
 	   default:
-	   alert(nekaj je narobe);
+	   alert("nekaj je narobe");
 	   }
     break;
 
