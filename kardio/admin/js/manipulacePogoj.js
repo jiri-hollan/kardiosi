@@ -29,18 +29,19 @@ switch(akce) {
   case "edit":
        switch(tabulka) {
 		  case "statusiTbl":   
-//alert("v JS case edit");
-     if(document.getElementById("osebe")!=null){
-       document.getElementById("osebe").addEventListener("click", functionOverStatusi);
-}
-        break;
-	/*	  case "uporabnikiTbl": 
-		if(document.getElementById("osebe")!=null){
-     document.getElementById("osebe").addEventListener("click", functionOverUporabniki);
-}  
-       break;
-	   default:
-	   alert(nekaj je narobe);*/
+		   //alert("v JS case edit");
+			 if(document.getElementById("osebe")!=null){
+				document.getElementById("osebe").addEventListener("click", functionOverStatusi);
+			   }
+		  break;
+		/*case "uporabnikiTbl": 
+		   //alert("v JS case edit");		
+			if(document.getElementById("osebe")!=null){
+				document.getElementById("osebe").addEventListener("click", functionOverUporabniki);
+			   }  
+		   break;
+		   default:
+		   alert(nekaj je narobe);*/
 	   }
     break;
 
