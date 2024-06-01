@@ -1,8 +1,9 @@
-let tabulka="uporabnikiTbl";
-//let tabulka;
-alert('definicija tabulke:  '+tabulka);
+//let tabulka="uporabnikiTbl";
+let tabulka_global;
+//alert('definicija tabulke:  '+tabulka_global);
 function izborFunction(akce, tabulka) {
- tabulka=tabulka; 
+	console.log(tabulka);
+ tabulka_global=tabulka; 
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
 switch(akce) {
@@ -62,12 +63,12 @@ switch(akce) {
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
 var x = e.target;
-alert(tabulka);
+alert(tabulka_global);
 	//alert("functionOver");
 if (x.nodeName == "TD") {
 var y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
-  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka; 
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
 }//od function(e)

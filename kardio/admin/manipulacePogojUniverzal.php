@@ -196,8 +196,9 @@ foreach (json_decode($this->dataPreg) as $key) {
         echo "<tr>";
     }
     function endChildren() {
-        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit'".')"'.'"' . ">edit</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>
+		$tabulka = $_REQUEST["tabulka"];
+        echo "<td class='urediCls' onclick=\"izborFunction('edit', '$tabulka')\">edit</td>
+		<td class='odstraniCls' onclick=\"izborFunction('odstrani', '$tabulka')\">odstrani</td>
 		
 		</tr>" . "\n";
     }
