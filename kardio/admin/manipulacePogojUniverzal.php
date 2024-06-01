@@ -175,39 +175,40 @@ foreach (json_decode($this->dataPreg) as $key) {
 }// od class Vloz
 
 //-------------------------iterator-----------------------------------------------------
-	class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
+class TableRows extends RecursiveIteratorIterator {
+	function __construct($it) {
 		//echo $_REQUEST["tabulka"];
-	echo "<table id='osebe' style='border: solid 1px black;'>";
-	//echo 'Tabulka'.$_REQUEST["tabulka"];
-	$tabulka=$_REQUEST["tabulka"];
-	//echo $tabulka;
-	switch ($tabulka){
-	case "statusiTbl":
-	echo "<br>".'Tabulka: '.$tabulka;
-    echo "<tr><th>Id</th><th>status</><th>pomen</th></tr>";
-    break;
-	case "uporabnikiTbl":
-		echo "<br>".'Tabulka uporabniki'.$_REQUEST["tabulka"];
-    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
-	break;
-	default:
-	echo "";
+		echo "<table id='osebe' style='border: solid 1px black;'>";
+		//echo 'Tabulka'.$_REQUEST["tabulka"];
+		$tabulka=$_REQUEST["tabulka"];
+		//echo $tabulka;
+		switch ($tabulka){
+			case "statusiTbl":
+				echo "<br>".'Tabulka: '.$tabulka;
+				echo "<tr><th>Id</th><th>status</><th>pomen</th></tr>";
+				break;
+			case "uporabnikiTbl":
+				echo "<br>".'Tabulka uporabniki'.$_REQUEST["tabulka"];
+				echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+				break;
+			default:
+				echo "";
+		}
+		parent::__construct($it, self::LEAVES_ONLY);
 	}
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-    function current() { 
+	function current() { 
 		 return "<td  >"  . parent::current() . "</td>";
-    }
-    function beginChildren() {
-        echo "<tr>";
-    }
-    function endChildren() {
-        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'edit',"."'statusiTbl'".')"'.'"' . ">edit</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani',"."'statusiTbl'".')"'.'"' . ">odstrani</td>
+	}
+	function beginChildren() {
+		echo "<tr>";
+	}
+	function endChildren() {
+		$tabulka=$_REQUEST["tabulka"];
+		echo "<td class='urediCls' onclick=\"izborFunction('edit', '" . $tabulka . "')\">edit</td>
+			<td class='odstraniCls' onclick=\"izborFunction('odstrani', '" . $tabulka . "')\">odstrani</td>
 		
-		</tr>" . "\n";
-    }
+		</tr>\n";
+	}
 	
 } // od class TableRows
 
