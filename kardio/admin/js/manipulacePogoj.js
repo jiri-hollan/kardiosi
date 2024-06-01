@@ -1,5 +1,5 @@
-//var tabulka="uporabnikiTbl";
-var tabulka;
+let tabulka="uporabnikiTbl";
+//let tabulka;
 alert('definicija tabulke:  '+tabulka);
 function izborFunction(akce, tabulka) {
  tabulka=tabulka; 
