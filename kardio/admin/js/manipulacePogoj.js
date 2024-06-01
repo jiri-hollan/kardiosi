@@ -33,15 +33,15 @@ switch(akce) {
 			 if(document.getElementById("osebe")!=null){
 				document.getElementById("osebe").addEventListener("click", functionOverStatusi);
 			   }
-		  break;
-		/*case "uporabnikiTbl": 
+		   break;
+	   	 case "uporabnikiTbl": 
 		   //alert("v JS case edit");		
 			if(document.getElementById("osebe")!=null){
 				document.getElementById("osebe").addEventListener("click", functionOverUporabniki);
 			   }  
 		   break;
 		   default:
-		   alert(nekaj je narobe);*/
+		   alert("nekaj je narobe");
 	   }
     break;
 
