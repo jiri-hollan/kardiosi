@@ -23,6 +23,7 @@ echo '
 <ul id="links">';
   if (isset($_SESSION["status"]))  {
 	  //require_once('../skupne/menu-items.php'); 
+	  echo '<script>alert("status="+'.$_SESSION["status"].');</script>';
 	   switch ($_SESSION["status"]) {
 	case 0;
 		  echo $a1.$a0;
