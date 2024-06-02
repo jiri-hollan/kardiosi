@@ -77,7 +77,7 @@ Class Prijava extends Prihlaseni {
 	   $_SESSION["status"] = $status;
 	   $_SESSION["pristop"] = $pristop;
 	   $_SESSION["uname"] = $uname;
-	  //echo $status;
+	  echo '<script>alert("status prihlaseniphp="+'.$_SESSION["status"].');</script>';
 	echo '<script type="text/JavaScript"> 
      location.replace("menuFile1.php"); 
      </script>';
