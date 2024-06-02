@@ -1,6 +1,6 @@
 
 <?php
-
+	  echo '<script>alert("status linksphp="+'.$_SESSION["status"].');</script>';
 class MenuBiznis  {
    public function __construct() { 
  $a0= '
@@ -23,7 +23,7 @@ echo '
 <ul id="links">';
   if (isset($_SESSION["status"]))  {
 	  //require_once('../skupne/menu-items.php'); 
-	  echo '<script>alert("status linksphp="+'.$_SESSION["status"].');</script>';
+
 	   switch ($_SESSION["status"]) {
 	case 0;
 		  echo $a1.$a0;
