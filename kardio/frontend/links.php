@@ -1,7 +1,7 @@
 
 <?php
 
-echo "v frontend/links<br>";
+echo "<br><br><br>v frontend/links<br>";
       var_dump($_SESSION);	  
 class MenuBiznis  {
    public function __construct() { 
