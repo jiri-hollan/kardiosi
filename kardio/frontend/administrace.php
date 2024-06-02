@@ -2,7 +2,7 @@
 session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/zahlavi.php');
-	  echo '<script>alert("status administraceFrontendphp="+'.$_SESSION["status"].');</script>';
+	  //echo '<script>alert("status administraceFrontendphp="+'.var_dump ($_SESSION).');</script>';
 class Administrace {
 	public $conn;
 	public $zaklad;

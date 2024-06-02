@@ -1,5 +1,7 @@
  <?php
 session_start();
+      echo "V frontend/prihlaseni";
+	 var_dump($_SESSION);
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/prihlas.php');
 global $r;

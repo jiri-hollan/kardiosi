@@ -1,6 +1,8 @@
 
 <?php
-	  echo '<script>alert("status linksphp="+'.$_SESSION["status"].');</script>';
+
+echo "v frontend/links<br>";
+      var_dump($_SESSION);	  
 class MenuBiznis  {
    public function __construct() { 
  $a0= '
