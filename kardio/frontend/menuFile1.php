@@ -1,9 +1,10 @@
 <?php
+require_once('administrace.php');
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 
 require_once('sabloni/vkladane/zahlavi.php');
-require_once('administrace.php');
+
 echo "v frontend/menufile1<br>";
       var_dump($_SESSION);	  
 $direktorij = "";

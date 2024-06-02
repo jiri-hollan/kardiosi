@@ -7,12 +7,12 @@
 <title>Anestezija za operacije srca</title>
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <link rel="stylesheet" href="sabloni/css/zahlavi.css?<?php echo time(); ?>">
-<!--<link rel="stylesheet" href="../css/menuFile.css?<?php echo time(); ?>">-->
+
 <script src="../frontend/js/uporabnikiVse.js?<?php echo time(); ?>"></script> 
-<!--<script src="../pregled/js/prijava.js?<?php// echo time(); ?>"></script>-->
+
 <link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?<?php echo time(); ?>">
 <link rel="stylesheet"href="css/style.css?<?php echo time(); ?>" >
 </head>
 <body>
 
- <?php// require_once('sabloni/oznamovaci-oblast.php');  ?> 
+
