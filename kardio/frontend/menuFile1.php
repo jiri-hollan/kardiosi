@@ -1,7 +1,7 @@
 <?php
 require_once('administrace.php');
-header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+//header("Cache-Control: no-cache, must-revalidate");
+//header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 
 require_once('sabloni/vkladane/zahlavi.php');
 
@@ -92,9 +92,9 @@ $p = $_GET['p'];
 </head>
 <body>
     <div id="topnav"> <?php if (isset($prijava) and $prijava != "") {include($prijava); }?></div> 
-	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
-	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
-	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
+	<div id="nav">    <?php if (isset($l) and $l != "") {include_once($l); }?></div>     
+	<div id="vsebina"><?php if (isset($s) and $s != "") {include_once($s); }?></div>
+	<div id="sos">    <?php if (isset($n) and $n != "") {include_once($n); }?></div>
 	<div id="tojePdf"></div>
 
 </body>
