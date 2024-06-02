@@ -50,8 +50,8 @@ echo '
      </script>';
    }//od if 
    else{
-			  echo $a1.$a0;   
-	 	 // echo $a0; 
+			  //echo $a1.$a0;   
+	 	  echo $a0; 
    }
       echo '</ul></nav>';
    }//od construct
