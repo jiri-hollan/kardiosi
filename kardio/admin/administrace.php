@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 	  echo '<script>alert("status administraceAdminphp="+'.$_SESSION["status"].');</script>';
 
