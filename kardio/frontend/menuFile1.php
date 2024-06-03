@@ -6,7 +6,9 @@ require_once('administrace.php');
 require_once('sabloni/vkladane/zahlavi.php');
 
 echo "v frontend/menufile1<br>";
-      var_dump($_SESSION);	  
+      var_dump($_SESSION);	
+echo "<br>hedry:<br>";	  
+      var_dump(headers_list());	  
 $direktorij = "";
 $l="links.php";
 $p="";    
