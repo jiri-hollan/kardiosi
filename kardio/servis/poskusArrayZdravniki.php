@@ -8,7 +8,6 @@ var mail = "";
 slika += "<img src='../podobe/personId" + id + ".jpg' alt='---- ' width='200'/>"
 celoIme += "<h2>" + ime + " " + priimek  + "</h2>"
 mail += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
-
 document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" + mail
 }
 </script>
@@ -24,7 +23,6 @@ if (isset($_REQUEST["pogoj"])){
   }else {
 	 $pogoj = NULL;   
   } 
-
 
 $podminka = array("status"=>$pogoj);
 
