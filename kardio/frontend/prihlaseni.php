@@ -1,5 +1,4 @@
- <?php
- header_remove();
+<?php
 session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/prihlas.php');
@@ -7,8 +6,6 @@ global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
 	      echo "V frontend/prihlaseni";
 	 var_dump($_SESSION);
-	echo "<br>hedry:<br>";	  
-      var_dump(headers_list()); 
 Class Prihlaseni {
 	public $conn;
 	public $zaklad;
