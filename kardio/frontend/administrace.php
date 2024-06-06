@@ -1,8 +1,7 @@
 <?php
-session_start();
+//session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/zahlavi.php');
-	  //echo '<script>alert("status administraceFrontendphp="+'.var_dump ($_SESSION).');</script>';
 class Administrace {
 	public $conn;
 	public $zaklad;
@@ -11,9 +10,9 @@ class Administrace {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardiox2/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardio/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiox2/frontend/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/frontend/';  
 	  }
 		  
       //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
