@@ -10,7 +10,8 @@
 <script src="../frontend/js/uporabnikiVse.js?<?php echo time(); ?>"></script> 
 <link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?<?php echo time(); ?>">
 <link rel="stylesheet"href="css/style.css?<?php echo time(); ?>" >
+<link rel="stylesheet" href="css/sorta.css?<?php echo time(); ?>">
 </head>
-<body>
+<!--<body> konec zahlaviSkupne.php-->
 
 <?php //require_once('sabloni/oznamovaci-oblast.php');  ?>

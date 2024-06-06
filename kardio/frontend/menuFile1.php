@@ -2,7 +2,8 @@
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 
-require_once('sabloni/vkladane/zahlavi.php');
+//require_once('sabloni/vkladane/zahlavi.php');
+require_once('sabloni/zahlaviSkupne.php');
 require_once('administrace.php');
 
 $direktorij = "";
@@ -87,7 +88,7 @@ $p = $_GET['p'];
 			document.getElementById('vsebina').innerHTML= b;  			
 		}		
 	</script>
-</head>
+<!--</head>-->
 <body>
     <div id="topnav"> <?php if (isset($prijava) and $prijava != "") {include($prijava); }?></div> 
 	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     

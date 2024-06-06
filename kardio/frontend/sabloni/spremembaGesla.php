@@ -1,4 +1,4 @@
-<?php require_once('vkladane/zahlavi.php');?>
+<?php require_once('zahlaviSkupne.php');?>
 
  <form autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'] . '?r=spremembaG'?>"  method="post">
    <div class="containerGeslo">

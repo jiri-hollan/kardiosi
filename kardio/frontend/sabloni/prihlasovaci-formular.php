@@ -1,4 +1,4 @@
-<?php require_once('vkladane/zahlavi.php');?>
+<?php require_once('zahlaviSkupne.php');?>
 
 
 <button class="knof" onclick="schovej('id01')"style="width:auto;">Registracija</button>

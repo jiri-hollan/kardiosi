@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../skupne/database.php');
-require_once('sabloni/vkladane/zahlavi.php');
+require_once('sabloni/zahlaviSkupne.php');
 class Administrace {
 	public $conn;
 	public $zaklad;
