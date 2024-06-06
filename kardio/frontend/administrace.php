@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/zahlaviSkupne.php');
 class Administrace {
