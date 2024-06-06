@@ -4,8 +4,6 @@ require_once('../skupne/database.php');
 require_once('sabloni/vkladane/prihlas.php');
 global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
-	      echo "V frontend/prihlaseni";
-	 var_dump($_SESSION);
 Class Prihlaseni {
 	public $conn;
 	public $zaklad;
@@ -79,7 +77,7 @@ Class Prijava extends Prihlaseni {
 	   $_SESSION["status"] = $status;
 	   $_SESSION["pristop"] = $pristop;
 	   $_SESSION["uname"] = $uname;
-	  echo '<script>alert("status frontend/prihlaseniphp="+'.$_SESSION["status"].');</script>';
+	  //echo '<script>alert("status frontend/prihlaseniphp="+'.$_SESSION["status"].');</script>';
 	echo '<script type="text/JavaScript"> 
      location.replace("menuFile1.php"); 
      </script>';

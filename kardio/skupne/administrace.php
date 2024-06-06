@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../skupne/database.php');
-	  echo '<script>alert("status administraceSkupnephp="+'.$_SESSION["status"].');</script>';
+	  //echo '<script>alert("status administraceSkupnephp="+'.$_SESSION["status"].');</script>';
 class Administrace {
 	public $conn;
 	public $zaklad;
