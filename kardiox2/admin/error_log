@@ -1,0 +1,10 @@
+[15-Dec-2023 09:11:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function exec() on null in /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php:27
+Stack trace:
+#0 /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php(39): NarediBazo->__construct()
+#1 {main}
+  thrown in /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php on line 27
+[15-Dec-2023 09:15:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function exec() on null in /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php:27
+Stack trace:
+#0 /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php(39): NarediBazo->__construct()
+#1 {main}
+  thrown in /home/kardiosi/public_html/kardio/admin/kreateBaseBiznis.php on line 27
