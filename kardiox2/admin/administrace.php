@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
@@ -37,3 +35,4 @@ class Administrace {
 	  
 }//od construct	
 }//0d class administrace
+?>

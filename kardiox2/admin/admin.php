@@ -52,7 +52,4 @@ echo '
 }//od class MenuBiznis  
 $adminAnestiz = new MenuBiznis(); 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
-
-
-
 ?>

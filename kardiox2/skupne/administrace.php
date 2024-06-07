@@ -36,3 +36,4 @@ class Administrace {
 	  }//od construct	  
 	}//0d class administrace	
 }
+?>

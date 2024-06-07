@@ -49,3 +49,4 @@ class Administrace {
 	}
 //0d class administrace	
 }
+?>
