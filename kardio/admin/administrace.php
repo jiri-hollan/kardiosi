@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require_once('../skupne/database.php');
 class Administrace {
 	public $conn;
@@ -10,9 +8,9 @@ class Administrace {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardio/admin/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardiox2/admin/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/admin/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiox2/admin/';  
 	  }
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {

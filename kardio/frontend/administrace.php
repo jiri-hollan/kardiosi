@@ -1,5 +1,4 @@
 <?php
-//session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/zahlaviSkupne.php');
 class Administrace {
@@ -10,9 +9,9 @@ class Administrace {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardio/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardiox2/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardio/frontend/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiox2/frontend/';  
 	  }
 		  
       //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
