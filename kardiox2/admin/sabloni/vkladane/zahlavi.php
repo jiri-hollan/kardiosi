@@ -24,6 +24,6 @@
   $test = htmlspecialchars($test);
   return $test;
 } 
-?> 
+?>
 
 

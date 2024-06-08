@@ -26,7 +26,7 @@ echo "<br>izgleda, da je poslano";
 echo "<br>pošiljanje ni uspelo"; 
 }
 
-?> 
+?>
  
 </body> 
 </html>
