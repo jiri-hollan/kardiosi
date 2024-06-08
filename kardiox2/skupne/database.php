@@ -1,4 +1,4 @@
- <?php
+<?php
  //echo "<script>alert('databaze PHP');</script>";
 class Database {
 	public $servername = '';
@@ -245,3 +245,4 @@ if (is_array($podminka)){
 	}// od function odstrani		
 //......konec odstrani......................	
 }//uzavírací zavorky class Database
+?>
