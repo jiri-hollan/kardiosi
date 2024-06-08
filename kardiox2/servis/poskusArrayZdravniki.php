@@ -14,13 +14,12 @@ document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" +
 <?php
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/database.php';
-require_once 'sabloni/zahlaviPoskusArray.php';
-
 if (isset($_REQUEST["pogoj"])){
 	  //$pogoj = new Test_input($_REQUEST['pogoj']); 
      // $pogoj = $pogoj->get_test();
-	$pogoj = $_REQUEST['pogoj']; 
-  }else {
+	 $pogoj = $_REQUEST['pogoj'];	 
+	 require_once 'sabloni/zahlaviPoskusArray'.$pogoj.'.php';
+   }else {
 	 $pogoj = NULL;   
   } 
 
