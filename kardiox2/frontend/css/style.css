@@ -109,11 +109,11 @@ left:+10px;
 	}
 
 .izbira{
-	color: #FFFF80;
+   color: white;
    background: #4444FF;
    display:block;
-  padding: 0.2cm;
-  font-size:80%;
+   padding: 0.2cm;
+   font-size:80%;
 }
 .izbira:visited {
 	color: #ffffff

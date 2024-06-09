@@ -13,12 +13,20 @@ echo "<br>";
 try {
 //---------------------prikaže izbiro vnešenega besedila iz podatkov v bazi "navodila" tabela "besedilaTbl"------------------	
 
-echo '<ul id= "navodilaId">';
+/*echo '<ul id= "navodilaId">';
  foreach ($vybrano as $value) {
   //var_dump($value);
   echo '<li class="izbira"><a href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></li>';
 }
-echo '</ul>';
+echo '</ul>';*/
+foreach ($vybrano as $value) {
+  //var_dump($value);
+  echo '<span class="izbira"><a href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></span>';
+}
+
+
+
+
     }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
