@@ -21,7 +21,7 @@ try {
 echo '</ul>';*/
 foreach ($vybrano as $value) {
   //var_dump($value);
-  echo '<span class="izbira"><a href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></span>';
+  echo '<span class="izbira"><a CLASS="izbira" href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></span>';
 }
 
 
