@@ -4,7 +4,7 @@ function aktualRazpis(){
   var x=""
   x=(document.getElementById("letnikx").value);
 if (x!=""){
- window.location="../razpis/msofice/" + x +".xlsx";//zdaj je window.location="skrita1.php"
+ window.location="../razpis/msofice/" + x +".xlsx";//zdaj je window.location="biznis.php"
   } else {
  alert("Vpisi iskano letnico ");
   }
@@ -24,7 +24,7 @@ if (x=="") {
 	  window.location=ms;
   
 	  
-	  //zdaj je window.location="skrita1.php"
+	  //zdaj je window.location="biznis.php"
 
 }
 } //od function arhivRazpis
