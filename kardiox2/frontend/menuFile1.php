@@ -52,9 +52,7 @@ $p = $_GET['p'];
 		break;		
 	
 	    case "biznis":
-		$s = "";
-		$l= "../biznis/biznis.php";
-		$n = "";
+		echo '<script>window.location="../biznis/skrita1.php";</script>';
 		break;
 		
         case "admin":
