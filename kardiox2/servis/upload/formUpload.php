@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="sl-SI">
-<head>
-    <meta charset="utf-8">
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
 <body>
-
-
-
 <h1><form action="upload.php" method="post" enctype="multipart/form-data">
 <label for="meseci">Izberi mesec:</label>
   <select id="meseci" name="meseci" required>
@@ -35,6 +24,4 @@
   <label for="pusti">Pusti obstoječo</label><br>
   <input type="submit" value="Naloži mesečni razpis" name="submit">
 </form></h1>
-
 </body>
-</html>
