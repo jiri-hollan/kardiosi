@@ -16,7 +16,7 @@ try {
 echo '<ul id= "navodilaId">';
  foreach ($vybrano as $value) {
   //var_dump($value);
-  echo '<li><a href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></li>';
+  echo '<li class="izbira"><a href= "' . $value["direktorij"] . $value["fajl"] . '" >' . $value["naslov"] . '</a></li>';
 }
 echo '</ul>';
     }
