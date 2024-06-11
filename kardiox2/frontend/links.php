@@ -4,6 +4,7 @@ class MenuBiznis  {
  $a0= '
 <li><a href="menuFile1.php?p=kuharica">KUHARICA</a></li>
 <li><a href="menuFile1.php?p=povezave">POVEZAVE</a></li>
+<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
 <li><a href="mailto:kardio.an@gmail.com" >razpisovalec</a></li>
 ';
 $a1= '
