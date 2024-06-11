@@ -50,7 +50,14 @@ $p = $_GET['p'];
 		$n = "domov.php";
 		$prijava="";
 		break;		
-	
+		
+		case "pregled":
+		$s = "";
+echo '<script>sbFunction("spomin");</script>';
+		$n = "domov.php";
+		$prijava="";
+		break;	
+		
 	    case "biznis":
 		echo '<script>window.location="../biznis/biznis.php";</script>';
 		break;
