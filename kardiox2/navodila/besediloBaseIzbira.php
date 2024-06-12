@@ -11,7 +11,7 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo var_dump($vybrano);
 echo "<br>";
 try {
-//---------------------prikaže izbiro vnešenega besedila iz podatkov v bazi "navodila" tabela "besedilaTbl"------------------	
+//---------------------prikaže izbiro vnešenega besedila iz podatkov v bazi "biznis" tabela "besedilaTbl"------------------	
 
 /*echo '<ul id= "navodilaId">';
  foreach ($vybrano as $value) {

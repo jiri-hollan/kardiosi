@@ -16,7 +16,7 @@ class DatabaseGloboka {
 
 public function naredi($tabulka, $definice) {
 $tabulka ;
-//$dbname="navodila";
+//$dbname="biznis";
 try {
     // sql to create table
     $sql = "CREATE TABLE". " " . $tabulka . " " . " ($definice)";
