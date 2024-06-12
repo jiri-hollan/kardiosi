@@ -100,6 +100,9 @@ echo '<script>sbFunction("spomin");</script>';
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
 	<div id="tojePdf"></div>
-
+<script>	
+	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
+	document.getElementById("dom").innerHTML = "doma";		
+</script>
 </body>
 </html>
