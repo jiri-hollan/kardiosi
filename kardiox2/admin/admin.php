@@ -33,7 +33,7 @@ echo '
     break;
 	
 	 case 4:
-	 require_once('../admin/databazeMenu.php');
+	 require_once('../admin/databaseMenu.php');
     break; 
   	
     default:
