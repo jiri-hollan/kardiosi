@@ -26,20 +26,20 @@ echo '
 	  //require_once('../skupne/menu-items.php'); 
 	   switch ($_SESSION["status"]) {
 	case 0; 
-	  echo $a1.$a0.$a4;
+	  echo $a1.$a4.$a0;
 	  echo "<p style='color: black;'>vaša registracija še ni overjena</>";
 	break;  
 	case 1:
-	  echo $a1.$a0.$a4;
+	  echo $a1.$a4.$a0;
     break;   
      case 2:
-	   echo $a1.$a0.$a4;
+	   echo $a1.$a4.$a0;
 	 break;	 
 	 case 3:
-	   echo $a1.$a0.$a2.$a4;
+	   echo $a1.$a4.$a0.$a2;
     break;
 	 case 4:
-	   echo $a1.$a0.$a2.$a3.$a4;
+	   echo $a1.$a4.$a0.$a2.$a3;
     break;   	
     default:
 	   } //od switch
