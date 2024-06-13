@@ -14,7 +14,7 @@ echo '
 <form method="post" action="../skupne/ogledTabele.php">
 <input type="hidden"  name="nazaj" value="'.$nazaj.'">
 <input type="submit"  name="imeTable" value="besedilaTbl">
-<input type="submit"  name="imeTable" value="uporabnikiTbl2">
+<input type="submit"  name="imeTable" value="uporabnikiTbl">
 <input type="submit"  name="imeTable" value="pregledovalciTbl">
 <input type="submit"  name="imeTable" value="limitiTbl">
 <!--<input type="submit"  name="imeTable" value="ocenaTbl">-->
@@ -25,11 +25,11 @@ echo '
 echo '
 <h1>manipulace</h1>
 <ul id="linky">
-<li><a href="../admin/manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
-<li><a href="../admin/manipulaceLimiti.php?nazaj='.$nazaj.'">limiti</a></li>
-<!--<li><a href="../admin/manipulaceOcena.php?nazaj='.$nazaj.'">ocena</a></li>-->
-<li><a href="../admin/manipulaceSklepi.php?nazaj='.$nazaj.'">sklepi</a></li>
-<li><a href="../admin/manipulaceBolnisnice.php?nazaj='.$nazaj.'">bolnišnice</a></li><br>
+<li><a href="../servis/manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
+<li><a href="../servis/manipulaceLimiti.php?nazaj='.$nazaj.'">limiti</a></li>
+<!--<li><a href="../servis/manipulaceOcena.php?nazaj='.$nazaj.'">ocena</a></li>-->
+<li><a href="../servis/manipulaceSklepi.php?nazaj='.$nazaj.'">sklepi</a></li>
+<li><a href="../servis/manipulaceBolnisnice.php?nazaj='.$nazaj.'">bolnišnice</a></li><br>
 </ul>
 <a href="../admin1/vertikalMenu.php?nazaj='.$nazaj.'">.</a>
 </div>
