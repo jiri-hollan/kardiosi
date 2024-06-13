@@ -60,11 +60,20 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
-	  $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
 	  break;
 	  case "statusiTbl":
-	  $this->dataPreg= '["status", "pomen"]';
-	  break;	  
+	     $this->dataPreg= '["status", "pomen"]';
+	  break;
+  case "bolnisniceTbl":
+	     $this->dataPreg= '["mesto", "nazivB", "status", "reg_date"]';
+	  break;
+	/*	  case "uporabnikiTbl":
+	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	  break;
+	  case "uporabnikiTbl":
+	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	  break;*/
 	  default:
 	  echo "tabulka ni določena";
   }

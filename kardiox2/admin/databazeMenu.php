@@ -19,6 +19,7 @@ echo'
 <li><a href="../admin1/vertikalMenu.php ">Vertikal Menu</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=uporabnikiTbl">upravljanje z uporabniki</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=statusiTbl">upravljanje statusi</a></li>
+<li><a href="manipulacePogojUniverzal.php?tabulka=bolnisniceTbl">upravljanje bolnišnice</a></li>
 </ul>
 
 ';
