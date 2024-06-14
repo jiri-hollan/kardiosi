@@ -20,7 +20,7 @@ $databaseGloboka->	pokaziStolpce($tabulka);
 <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: 
   <input type="text" name="imeTable">
-  <input type="hidden" name="nazaj" value= <?php echo $nazaj;?>> 
+  <input type="hidden" name="nazaj" value=<?php echo $nazaj;?>> 
   <br><br>
   <br><br>
   <input type="submit" name="submit" value="Submit">  

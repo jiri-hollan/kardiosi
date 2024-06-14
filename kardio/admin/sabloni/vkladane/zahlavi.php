@@ -16,7 +16,7 @@
   <a class="active" href="../index.php" target="_top">Domov</a>
   <!--<a href="../frontend/prihlaseni.php?r=logout&stav=odhlasit">Odjava in prijava</a>-->
 </div>
- <?php 
+<?php 
  //require_once('../admin/sabloni/oznamovaci-oblast.php');  
  function test_input($test) {
   $test = trim($test);

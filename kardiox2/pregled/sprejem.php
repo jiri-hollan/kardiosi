@@ -24,6 +24,6 @@ $GLOBALS['testJSON'] = $iskaniPregled;
 //alert(sessionStorage.getItem("testJSON"));  
   window.location.href = "bolnik.php";   
   </script>
- <?php 
+<?php 
  require_once 'sabloni/zapati.php';
  ?>
