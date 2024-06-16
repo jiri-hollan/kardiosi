@@ -1,6 +1,6 @@
 <?php
 //------seznam bolnišnic
-require_once '../skupne/database.php';
+require_once '../../kardiox2/skupne/database.php';
 Class spisekBolnisnic{
 	public $conn;
 	public $zaklad;
