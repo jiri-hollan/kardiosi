@@ -1,6 +1,6 @@
 
 <?php
-require_once '../skupne/database.php';
+require_once '../../kardiox2/skupne/database.php';
 require_once('../skupne/aktivace.php');
 if($gdpr==1){
 if ($_SERVER['REQUEST_METHOD']== 'POST') {

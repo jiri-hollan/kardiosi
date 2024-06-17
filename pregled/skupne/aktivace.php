@@ -1,6 +1,6 @@
 
 <?php
-require_once'database.php';
+require_once'../../kardiox2/skupne/database.php';
 // aktivace
 $database=new Database;
 $database->testirajBolnik();
