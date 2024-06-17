@@ -54,6 +54,7 @@ $p = $_GET['p'];
 		case "pregled":
 		$s = "";
 echo '<script>sbFunction("spomin");</script>';
+		echo '<script>window.location="../../pregled";</script>';
 		$n = "domov.php";
 		$prijava="";
 		break;	
