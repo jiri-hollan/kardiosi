@@ -1,5 +1,5 @@
 <?php
-require_once '../skupne/database.php'; 
+require_once '../../kardiox2/skupne/database.php'; 
 //var_dump ($data);
 //require_once 'testVariable.php';
 
@@ -43,7 +43,7 @@ try {
 	//var_dump ($this->data);
     //var_dump ($data);
 	
-	$uporabnikiIzbrani = $this->conn->vyber('uporabnikiTbl2', array('id', 'email', 'uname', 'ime', 'priimek', 'status', 'pristop'), $this->data);
+	$uporabnikiIzbrani = $this->conn->vyber('uporabnikiTbl', array('id', 'email', 'uname', 'ime', 'priimek', 'status', 'pristop'), $this->data);
 	//var_dump($uporabnikiIzbrani);
 	//--------------------------------------------------------
    

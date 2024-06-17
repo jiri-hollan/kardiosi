@@ -13,7 +13,7 @@ Class Prihlaseni {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/kardiox2/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
@@ -89,14 +89,14 @@ Class Prijava extends Prihlaseni {
 	public function overUdaje() {
 		if (!empty($_POST['uname']) && !empty($_POST['geslo'])){
 			$geslo = md5($_POST['geslo']);
-			$uporabnikiTbl2 = $this->conn->vyber('uporabnikiTbl2', array('status', 'pristop', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
+			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('status', 'pristop', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
 
-		if (count($uporabnikiTbl2) == 1)	{
-			$status=$uporabnikiTbl2[0]['status'];			
+		if (count($uporabnikiTbl) == 1)	{
+			$status=$uporabnikiTbl[0]['status'];			
 			//echo $status;
-			$pristop=$uporabnikiTbl2[0]['pristop'];			
+			$pristop=$uporabnikiTbl[0]['pristop'];			
 			//echo $pristop;			
-			$uname=$uporabnikiTbl2[0]['uname'];
+			$uname=$uporabnikiTbl[0]['uname'];
 			echo $uname;
 		// echo $status;
 			$this->prihlaseniUspesne($status, $pristop,  $uname);
@@ -124,7 +124,7 @@ $registracija=true;
 $email=$geslo=$ime=$priimek=$uname=0;
 $status = 0;
 $pristop = 0;
-$nameTable = "uporabnikiTbl2";
+$nameTable = "uporabnikiTbl";
 
 	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -192,9 +192,9 @@ public function overUdaje($nameTable, $data) {
 	if (!empty($data['uname'])){
 		echo $data['ime'] .' '. $data['priimek'].', ';
 
-			$uporabnikiTbl2 = $this->conn->vyberOr($nameTable, array('id'), array('uname'=>$data['uname'], 'email'=>$data['email'] ));
+			$uporabnikiTbl = $this->conn->vyberOr($nameTable, array('id'), array('uname'=>$data['uname'], 'email'=>$data['email'] ));
 
-		if (count($uporabnikiTbl2) > 0)	{
+		if (count($uporabnikiTbl) > 0)	{
 			//$this->prihlaseniUspesne();
 			echo 'To uporabniško ime ali email je že v upoabi.';
 			
@@ -224,7 +224,7 @@ Class Profil extends Prihlaseni {
 //$registracija=true;
 //$email=$geslo=$ime=$priimek=$uname=0;
 //$status = 0;
-//$nameTable = "uporabnikiTbl2";
+//$nameTable = "uporabnikiTbl";
 //echo 'Uname: '. $_SESSION["uname"];
 
 if (isset($_SESSION["uname"])) {
@@ -258,7 +258,7 @@ class SpremembaG extends Prihlaseni  {
  public function __construct() {
 		    parent::__construct();
 			
-    $tabulka = 'uporabnikiTbl2';
+    $tabulka = 'uporabnikiTbl';
 	$geslo=0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//echo 'v server rekvest';
@@ -278,10 +278,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$data['geslo'] = md5($geslo);
 	//var_dump($data);
 	new Database;
-$uporabnikiTbl2 = $this->conn->aktualizuj($tabulka,$data,$podminka);
+$uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //aktualizuj($tabulka,$data,$podminka);
-//echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl2
-     if ($uporabnikiTbl2 == 1) {
+//echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
+     if ($uporabnikiTbl == 1) {
 		echo 'Vaše geslo je bilo spremenjeno'; 
 	 }
   }
