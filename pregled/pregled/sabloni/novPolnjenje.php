@@ -172,7 +172,7 @@
 	<label for="premedVecer">Zvečer:..<input id="premedVecer" type="textarea" name="premedVecer" ></label>  
     <br>
 	<label for="premedPredOp">Pred op.:<input id="premedPredOp" type="textarea" name="premedPredOp" ></label> <br> 
-    <textarea id="premedikacija" class="mikro"  name="premedikacija" placeholder="premedikacija" rows="3" ></textarea>
+    <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3" ></textarea>
    </div>
   </fieldset> 	
  </fieldset>	
@@ -230,7 +230,7 @@
 </div> 
    <div id="premedikacijaR"><i>premedikacija</i></div>
    <div id="zdravnikR">zdravnik</div>
-   <div id="premedikacijaR">premedikacija</div>
+   <div id="navodilaR">navodila</div>
 </div>
 
 <!-- ______________________________________________________________________________________
@@ -260,7 +260,7 @@
   <p class="levo" class="velka" id="izvidiPr">Izvidi in opombe</p>
 </p> 
    <p class="levo" ><span class="nadpis">Premedikacija: </span><span id="premedikacijaPr"></span></p>  
-   <p class="levo" id="premedikacijaPr">premedikacija</p>
+   <p class="levo" id="navodilaPr">navodila</p>
    <p class="levo" id="zdravnikPr">zdravnik</p>
 
 </div>
