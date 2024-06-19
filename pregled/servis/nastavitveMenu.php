@@ -1,6 +1,6 @@
 <?php
 require_once('sabloni/vkladane/zahlavi.php');
-require_once('sessionKontrola.php');
+require_once('../admin/administrace.php');
 echo 'Menipulacija z bazo';
 class Manipulace extends Administrace {
    public function __construct() {
