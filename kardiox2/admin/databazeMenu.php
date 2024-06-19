@@ -20,6 +20,9 @@ echo'
 <li><a href="manipulacePogojUniverzal.php?tabulka=uporabnikiTbl">upravljanje z uporabniki</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=statusiTbl">upravljanje statusi</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=bolnisniceTbl">upravljanje bolnišnice</a></li>
+<li><a href="manipulacePogojUniverzal.php?tabulka=pregledovalciTbl">upravljanje pregledovalci</a></li>
+<li><a href="manipulacePogojUniverzal.php?tabulka=limitiTbl">upravljanje limiti</a></li>
+<li><a href="manipulacePogojUniverzal.php?tabulka=omejitvaTbl">upravljanje omejitve</a></li>
 </ul>
 
 ';
