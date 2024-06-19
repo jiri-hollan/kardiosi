@@ -22,7 +22,7 @@ echo'
 <li><a href="manipulacePogojUniverzal.php?tabulka=bolnisniceTbl">upravljanje bolnišnice</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=pregledovalciTbl">upravljanje pregledovalci</a></li>
 <li><a href="manipulacePogojUniverzal.php?tabulka=limitiTbl">upravljanje limiti</a></li>
-<li><a href="manipulacePogojUniverzal.php?tabulka=omejitvaTbl">upravljanje omejitve</a></li>
+<li><a href="manipulacePogojUniverzal.php?tabulka=omejitveTbl">upravljanje omejitve</a></li>
 </ul>
 
 ';
