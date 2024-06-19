@@ -4,7 +4,7 @@ session_start();
 /*header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
 require_once('sabloni/zahlaviSkupne.php');
-require_once('administrace.php');
+require_once('../admin/administrace.php');
 
 $direktorij = "";
 $l="links.php";

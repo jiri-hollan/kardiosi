@@ -1,5 +1,5 @@
 <?php
 session_start();
-require_once('administrace.php');
+require_once('../admin/administrace.php');
 $admin = new Administrace();
 ?>
