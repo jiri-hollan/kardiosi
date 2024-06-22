@@ -103,8 +103,8 @@ function vyberFunction($podminka){
     function endChildren() {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
-        echo "<td onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<td onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
+        echo "<td class='urediCls' onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
+		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
 		</tr>" . "\n";
 }// od function endChildren
 }// od class TableRows
