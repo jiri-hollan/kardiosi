@@ -5,7 +5,7 @@ echo'
  <section class="top-bar-section">
           <!-- Right Nav Section -->
     <ul class="right">
-	  <li class=""><a href="../navodila/formUploadBesedilo.php?direktorij=../besedila/"><h1>naloži besedilo</h1></a></li> 
+	  <li class=""><a href="../navodila/formUploadBesedilo.php?direktorij=../../kardio/besedila/"><h1>naloži besedilo</h1></a></li> 
 	  <li class=""><a href="upload/formUpload.php"><h1>naloži mesečni razpis PDF</h1></a></li>
 	  <li class=""><a href="manipulaceUporabniki.php?nazaj='.$nazaj.'">kompetence</a></li>
 	  <li class=""><a href="manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
