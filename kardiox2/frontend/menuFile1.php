@@ -102,7 +102,7 @@ $p = $_GET['p'];
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
 	<div id="tojePdf"></div>
 <script>	
-	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
+	document.getElementById("uname").innerHTML = "prijavljenyyy je: " + " " + "<?= $uname ?>";
 	document.getElementById("dom").innerHTML = "doma";		
 </script>
 </body>
