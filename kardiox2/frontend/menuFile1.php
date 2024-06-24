@@ -101,8 +101,13 @@ $p = $_GET['p'];
 	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
 	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
 	<div id="tojePdf"></div>
-<script>	
-	document.getElementById("uname").innerHTML = "prijavljenyyy je: " + " " + "<?= $uname ?>";
+<script>
+if("<?= $uname ?>"==""){
+	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
+}else{
+
+	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
+	}
 	document.getElementById("dom").innerHTML = "doma";		
 </script>
 </body>
