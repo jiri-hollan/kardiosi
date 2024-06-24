@@ -6,7 +6,7 @@ if (typeof(Storage) !== "undefined") {
    imeZdravnika = document.getElementById("zdravnik").value || "" ;
    localStorage.setItem("imeZdravnika", imeZdravnika);
 // Retrieve
-   document.getElementById("pregledovalec").innerHTML = "prijavljen je:  " + localStorage.getItem("imeZdravnika");
+   document.getElementById("pregledovalec").innerHTML = "izvajalec:  "+"<b>" + localStorage.getItem("imeZdravnika")+"</b>";
      } else {
      document.getElementById("pregledovalec").innerHTML = "oprostite, vaš brskalnik ne podpira Web Storage" + "<br>" + "uporabite Google Chrom";
     }
@@ -42,7 +42,7 @@ function naprejFunction() {
 //______________________________________________________
 function listaZdravnikovFunction(zdravListX) {
 //alert ("lista zdravnikov function");
-document.getElementById("pregledovalec").innerHTML = "prijavljen je:  " + localStorage.getItem("imeZdravnika");
+document.getElementById("pregledovalec").innerHTML = "izvajalec:  " +"<b>"+ localStorage.getItem("imeZdravnika")+"</b>";
 //alert(localStorage.getItem("imeZdravnika"));
 //  koda, ki naredi array zdravList iz tabele pregledovalci	
 //alert(zdravListX);
@@ -65,7 +65,7 @@ document.getElementById("zdravniki").innerHTML = text;
 //__________________________________________________________________________________________
 function listaBolnisnicFunction(bolListX) {
 	//alert ("lista bolnisnic function");
-document.getElementById("pregledovalec").innerHTML = "prijavljen je:  " + localStorage.getItem("imeZdravnika");
+document.getElementById("pregledovalec").innerHTML = "izvajalec:  " + localStorage.getItem("imeZdravnika");
 
 // koda, ki naredi array bolList iz tabele bolnisniceTab	
 
