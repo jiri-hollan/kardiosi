@@ -1,1 +1,4 @@
 
+[22-Jun-2024 20:51:37 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/kardiosi/public_html/pregled/frontend/administrace.php on line 2
+[22-Jun-2024 20:53:35 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/kardiosi/public_html/pregled/frontend/administrace.php on line 2
+[22-Jun-2024 21:02:07 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/kardiosi/public_html/pregled/frontend/administrace.php on line 2
