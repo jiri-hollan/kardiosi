@@ -26,8 +26,8 @@ for (i = 0; i < bolList.length; i++) {
     bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="Bolnišnica" required>';
     ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
     priimek= '<input type="text" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-    status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
-    document.getElementById("demo").innerHTML = bolnisnica + ime + priimek + status;
+    pregledovalciStatus= '<input type="int" id="pregledovalciStatusId" name="pregledovalciStatus" value="" placeholder="pregledovalciStatus" required>';
+    document.getElementById("demo").innerHTML = bolnisnica + ime + priimek + pregledovalciStatus;
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
     break;
