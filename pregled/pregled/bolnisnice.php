@@ -4,14 +4,14 @@ require_once '../../kardiox2/skupne/database.php';
 Class spisekBolnisnic{
 	public $conn;
 	public $zaklad;
-	public $status; //vključena+baza=2, vljučena=1, nevključena=0
+	public $bolnisnicaStatus; //vključena+baza=2, vljučena=1, nevključena=0
 	public function __construct() {
-  $this->status = '1';
+  $this->bolnisnicaStatus = '1';
   $this->conn = new Database();	
   $this->nameTable = 'bolnisniceTbl'; 
   $stolpci = array('mesto','nazivB');
   $poradi = "mesto";
-  $podminka = "status";
+  $podminka = "bolnisnicaStatus";
   $vrednosti = array(1,2);
   $prebrano = $this->conn->vyberIn($this->nameTable, $stolpci, $podminka, $vrednosti, $poradi);
 //var_dump ($prebrano);

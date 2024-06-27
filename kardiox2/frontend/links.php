@@ -22,9 +22,9 @@ $a4= '
 echo '
 <nav id= "glavnaNav">
 <ul id="links">';
-  if (isset($_SESSION["status"]))  {
+  if (isset($_SESSION["upstatus"]))  {
 	  //require_once('../skupne/menu-items.php'); 
-	   switch ($_SESSION["status"]) {
+	   switch ($_SESSION["upstatus"]) {
 	case 0; 
 	  echo $a1.$a4.$a0;
 	  echo "<p style='color: black;'>vaša registracija še ni overjena</>";

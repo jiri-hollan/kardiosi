@@ -29,7 +29,7 @@ class UporabnikiWhere {
 	  function __construct($data) {
 
 echo "<table style='border: solid 1px black;'>";
- echo "<tr><th>Id</th><th>email</th><th>username</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+ echo "<tr><th>Id</th><th>email</th><th>username</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
 
 try {
 	
@@ -43,7 +43,7 @@ try {
 	//var_dump ($this->data);
     //var_dump ($data);
 	
-	$uporabnikiIzbrani = $this->conn->vyber('uporabnikiTbl', array('id', 'email', 'uname', 'ime', 'priimek', 'status', 'pristop'), $this->data);
+	$uporabnikiIzbrani = $this->conn->vyber('uporabnikiTbl', array('id', 'email', 'uname', 'ime', 'priimek', 'upstatus', 'pristop'), $this->data);
 	//var_dump($uporabnikiIzbrani);
 	//--------------------------------------------------------
    

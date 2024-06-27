@@ -23,7 +23,7 @@ if (isset($_REQUEST["pogoj"])){
 	 $pogoj = NULL;   
   } 
 
-$podminka = array("status"=>$pogoj);
+$podminka = array("upstatus"=>$pogoj);
 
 vyberFunction($podminka);
 function vyberFunction($podminka){

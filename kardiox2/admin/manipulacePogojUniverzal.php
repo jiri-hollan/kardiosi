@@ -60,19 +60,19 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "upstatus", "pristop"]';
 	  break;
 	  case "statusiTbl":
 	     $this->dataPreg= '["status", "pomen"]';
 	  break;
   case "bolnisniceTbl":
-	     $this->dataPreg= '["mesto", "nazivB", "status", "reg_date"]';
+	     $this->dataPreg= '["mesto", "nazivB", "bolnisnicaStatus", "reg_date"]';
 	  break;
-	/*	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	/*	  case "":
+	     ....
 	  break;
-	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "status", "pristop"]';
+	  case "":
+	     ....
 	  break;*/
 	  default:
 	  echo "tabulka ni določena";
@@ -85,7 +85,7 @@ if (isset($_REQUEST["pogoj"])){
   public $id;
   public $ime;
   public $priimek;
-  public $status; 
+  //public $status; 
   public function __construct($pogoj, $tabulka) {
 	parent::__construct($pogoj, $tabulka);	
 	echo "case uredi <br>";
@@ -191,7 +191,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	switch ($_REQUEST["tabulka"]){
 	case "uporabnikiTbl":
 	
-    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";

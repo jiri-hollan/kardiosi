@@ -8,7 +8,7 @@ class Vertikal extends Administrace {
    public function __construct() {
 	       parent::__construct();
 	   
- if (isset($_SESSION["status"]) && $_SESSION["status"] == 4)  {
+ if (isset($_SESSION["upstatus"]) && $_SESSION["upstatus"] == 4)  {
 $nazaj="../admin1/vertikalMenu.php";	  
 echo '
 

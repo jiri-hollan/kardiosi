@@ -36,7 +36,7 @@ switch ($ime) {
 /*case "pregledovalci":
 echo"kreateTableVse v ADMIN";
 $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    `status` int(3) NOT NULL,
+    `pregledovalciStatus` int(3) NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`email` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
@@ -52,7 +52,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
-    `status` int(3) NOT NULL,
+    `upstatus` int(3) NOT NULL,
     `pristop` int(3) NOT NULL,	
 	UNIQUE (email, uname)";
 $databaseGloboka->naredi('uporabnikiTbl', $definice);

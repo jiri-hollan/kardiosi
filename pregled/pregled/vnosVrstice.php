@@ -50,7 +50,7 @@ else{
 Class Apregled {
 	public $conn;
 	public $zaklad;
-	public $status;
+	public $upstatus;
 	public $pristop;
 	
 	public function __construct() {

@@ -21,8 +21,8 @@ $a3= '
 echo '
 <nav id= "glavnaNav">
 <ul id="links">';
-  if (isset($_SESSION["status"]))  {
-	   switch ($_SESSION["status"]) {		   
+  if (isset($_SESSION["upstatus"]))  {
+	   switch ($_SESSION["upstatus"]) {		   
 	case 1:
 	  
     break;   

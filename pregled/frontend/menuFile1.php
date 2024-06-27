@@ -9,9 +9,9 @@ class MenuAnestiz  {
 echo '
 <nav id= "glavnaNav">
 <ul>';
-  if (isset($_SESSION["status"]))  {
+  if (isset($_SESSION["upstatus"]))  {
 	  //require_once('../skupne/menu-items.php'); 
-	   switch ($_SESSION["status"]) {		   
+	   switch ($_SESSION["upstatus"]) {		   
 	case 1:
 	  echo $a0.$a1;
     break;   

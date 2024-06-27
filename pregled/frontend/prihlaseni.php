@@ -6,7 +6,7 @@ global $r;
 Class Prihlaseni {
 	public $conn;
 	public $zaklad;
-	public $status;
+	public $upstatus;
 	public $pristop;
 	
 	public function __construct() {
@@ -70,13 +70,13 @@ Class Prijava extends Prihlaseni {
 	//od function inicializuj		
 	}
 	
-	public function prihlaseniUspesne($status, $pristop, $uname){
+	public function prihlaseniUspesne($upstatus, $pristop, $uname){
 	   $_SESSION['uporabnikPrihlasen'] = true;
 	   $_SESSION["casova_znamka"] = time();
-	   $_SESSION["status"] = $status;
+	   $_SESSION["upstatus"] = $upstatus;
 	   $_SESSION["pristop"] = $pristop;
 	   $_SESSION["uname"] = $uname;
-	  //echo $status;
+	  //echo $upstatus;
 	echo '<script type="text/JavaScript"> 
      location.replace("menuFile1.php"); 
      </script>';
@@ -89,17 +89,17 @@ Class Prijava extends Prihlaseni {
 	public function overUdaje() {
 		if (!empty($_POST['uname']) && !empty($_POST['geslo'])){
 			$geslo = md5($_POST['geslo']);
-			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('status', 'pristop', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
+			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('upstatus', 'pristop', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
 
 		if (count($uporabnikiTbl) == 1)	{
-			$status=$uporabnikiTbl[0]['status'];			
-			//echo $status;
+			$upstatus=$uporabnikiTbl[0]['upstatus'];			
+			//echo $upstatus;
 			$pristop=$uporabnikiTbl[0]['pristop'];			
 			//echo $pristop;			
 			$uname=$uporabnikiTbl[0]['uname'];
 			echo $uname;
-		// echo $status;
-			$this->prihlaseniUspesne($status, $pristop,  $uname);
+		// echo $upstatus;
+			$this->prihlaseniUspesne($upstatus, $pristop,  $uname);
 		} else {
 			//echo 'iz funkcije overUdaje';
 			return $this->prihlaseniSelhalo();
@@ -122,7 +122,7 @@ Class Registrace extends Prihlaseni {
 			
 $registracija=true;
 $email=$geslo=$ime=$priimek=$uname=0;
-$status = 0;
+$upstatus = 0;
 $pristop = 0;
 $nameTable = "uporabnikiTbl";
 
@@ -165,10 +165,10 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     $geslo = $this->test_input($_POST["geslo"]);
 	$data['geslo'] = md5($geslo);
   }
-    $data['status'] = $status;
+    $data['upstatus'] = $upstatus;
 	$data['pristop'] = $pristop;
-  //echo '<br>status: ' .$status;
-  //echo'<br>data: '. $data["status"].'<br>';
+  //echo '<br>upstatus: ' .$upstatus;
+  //echo'<br>data: '. $data["upstatus"].'<br>';
 }
 
 
@@ -223,7 +223,7 @@ Class Profil extends Prihlaseni {
 			
 //$registracija=true;
 //$email=$geslo=$ime=$priimek=$uname=0;
-//$status = 0;
+//$upstatus = 0;
 //$nameTable = "uporabnikiTbl";
 //echo 'Uname: '. $_SESSION["uname"];
 

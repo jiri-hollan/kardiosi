@@ -22,11 +22,11 @@ switch(akce) {
     geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
     ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
     priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
-    status= '<input type="int" id="statusId" name="status" value="" placeholder="status" required>';
+    upstatus= '<input type="int" id="statusId" name="upstatus" value="" placeholder="upstatus" required>';
     pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
 
 	
-    document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + status + pristop;
+    document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + upstatus + pristop;
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
 	        break;
@@ -42,8 +42,8 @@ switch(akce) {
 			//alert(tabulka);	
 	 mesto= '<input type="text" id="mestoId" name="mesto" value="" placeholder="mesto" required>';
      nazivB= '<input type="text" id="nazivBId" name="nazivB" value="" placeholder="nazivB" >';    
-     status= '<input type="text" id="statusBId" name="status" value="" placeholder="status" >'; 	 
-	 document.getElementById("demo").innerHTML = mesto+nazivB+status;		
+     bolnisnicaStatus= '<input type="text" id="statusBId" name="bolnisnicaStatus" value="" placeholder="bolnisnicaStatus" >'; 	 
+	 document.getElementById("demo").innerHTML = mesto+nazivB+bolnisnicaStatus;		
 			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
 			

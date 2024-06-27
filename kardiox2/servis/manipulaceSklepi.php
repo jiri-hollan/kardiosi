@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $bolnisnica = test_input($_POST["bolnisnica"]);
   echo strtoupper($akce) .': ';
   echo strtoupper($bolnisnica) .'<br>';
-//echo var_dump($status) .'<br>';
+//echo var_dump($sklepiStatus) .'<br>';
 //$akce = naredi($akce);
 switch ($akce) {
   case "vyber":
@@ -32,8 +32,8 @@ switch ($akce) {
     break;
 case "vloz":
     $sklep = test_input($_POST["sklep"]);
-    $status = test_input($_POST["status"]);  
-    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "status"=>$status);
+    $sklepiStatus = test_input($_POST["sklepiStatus"]);  
+    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "sklepiStatus"=>$sklepiStatus);
     vlozFunction($data);
     break;
 case "uredi":
@@ -41,9 +41,9 @@ case "uredi":
     $id=test_input($_POST["id"]);
     $bolnisnica=test_input($_POST["bolnisnica"]);
     $sklep = test_input($_POST["sklep"]);
-	$status = test_input($_POST["status"]); 
+	$sklepiStatus = test_input($_POST["sklepiStatus"]); 
 	$podminka = array("id"=>$id);
-    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "status"=>$status);
+    $data= array("bolnisnica"=>$bolnisnica, "sklep"=>$sklep, "sklepiStatus"=>$sklepiStatus);
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
     break;
@@ -87,7 +87,7 @@ function vyberFunction($podminka){
 //echo $vybrano[1];
 if(count($vybrano)>0){
  echo "<table id='osebe' style='border: solid 1px black;'>";
- echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>status</th></tr>";
+ echo "<tr><th>Id</th><th>bolnišnica</><th>sklep</th><th>sklepiStatus</th></tr>";
 
  class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
