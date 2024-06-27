@@ -51,7 +51,7 @@ echo '<button id="buttonDomov" onclick="window.location.href=' . "'" . $home . "
   listaZdravnikovFunction(zdravListX);
 //alert(localStorage.getItem("bazeBolnisnice"));
   </script>
-     <span class="" id="odjava" onclick="odjavaFunction()">reset</span>
+     <span class="" id="odjava" onclick="odjavaFunction()">RESET</span>
  </div>	 
 </body>
 </html>
