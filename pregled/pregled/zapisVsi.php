@@ -4,17 +4,17 @@ require_once '../../kardiox2/skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $zaklad;
-	public $bolnisnicaStatus;
+	public $pregledovalciStatus;
 	public $pristop;
 	public function __construct($bolnisnica) {
  $this->bolnisnica = $bolnisnica;
- $this->bolnisnicaStatus = '1';
+ $this->pregledovalciStatus = '1';
  $this->conn = new Database();	
  $this->nameTable = 'pregledovalciTbl';
  $stolpci = array('ime','priimek');
  $poradi = "priimek";
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciTbl
- $podminka = array("bolnisnica"=>$this->bolnisnica,"bolnisnicaStatus"=>$this->bolnisnicaStatus);  
+ $podminka = array("bolnisnica"=>$this->bolnisnica,"pregledovalciStatus"=>$this->pregledovalciStatus);  
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $celoIme=array();
 for ($i = 0; $i < count($prebrano); $i++) {
