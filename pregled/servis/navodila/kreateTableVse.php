@@ -60,7 +60,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `upstatus` int(3) NOT NULL,
     `pristop` int(3) NOT NULL,	
 	UNIQUE (email, uname)";
-$databaseGloboka->naredi('uporabnikiTbl2', $definice);
+$databaseGloboka->naredi('uporabnikiTbl', $definice);
 break;
 
 case "omejitve":
