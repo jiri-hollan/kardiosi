@@ -1,5 +1,3 @@
 <?php
-session_start();
-require_once('../admin/administrace.php');
-$admin = new Administrace();
+header('Location: menuFile1.php');
 ?>
