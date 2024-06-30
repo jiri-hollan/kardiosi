@@ -79,12 +79,13 @@ function vyberFunction($podminka,$vrednosti){
    $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
 //echo $vybrano[1];
 //echo var_dump($vybrano);
-   echo "<br>";
+   //echo "<br>";
    echo count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
+  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
 
