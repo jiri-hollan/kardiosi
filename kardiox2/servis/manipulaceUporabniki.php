@@ -102,7 +102,7 @@ class TableRows extends RecursiveIteratorIterator {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td class='urediCls'  onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
+		<!--<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">ODSTRANI</td>-->		
 		</tr>" . "\n";
 }//od endChildren
 }// od class TableRows
