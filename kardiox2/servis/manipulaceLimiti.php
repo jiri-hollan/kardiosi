@@ -18,7 +18,7 @@ require_once '../skupne/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $bolnisnica = test_input($_POST["bolnisnica"]);
-  echo strtoupper($akce) .': ';
+ //echo strtoupper($akce) .': ';
 switch ($akce) {
   case "vyber":
 	$podminka = NULL;
@@ -82,8 +82,8 @@ $vyber = new database();
 $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
-echo "<br>";
-echo count($vybrano);
+//echo "<br>";
+echo 'Število zapisov: '.count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
