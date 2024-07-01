@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $priimek = test_input($_POST["priimek"]);
 
-  echo strtoupper($akce) .': ';
-  echo strtoupper($priimek) .'<br>';
+ // echo strtoupper($akce) .': ';
+ // echo strtoupper($priimek) .'<br>';
   
 switch ($akce) {
  case "vyber":
@@ -80,12 +80,13 @@ function vyberFunction($podminka,$vrednosti){
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    //echo "<br>";
-   echo count($vybrano);
+   echo 'Število zapisov: '.count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
   echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
+  echo'<P><b>pristop:</b> 3=dostop do baze</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
 
