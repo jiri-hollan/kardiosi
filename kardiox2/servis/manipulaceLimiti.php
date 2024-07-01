@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $bolnisnica = test_input($_POST["bolnisnica"]);
  //echo strtoupper($akce) .': ';
+   echo strtoupper($bolnisnica) .'<br>';
 switch ($akce) {
   case "vyber":
 	$podminka = NULL;
