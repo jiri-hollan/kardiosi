@@ -229,7 +229,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 $stolpci=["*"];
 	 $vyber = new database();
 	 $vybrano=$vyber->vyber($this->tabulka, $stolpci, $podminka );
-//echo "število vybranych zapisov= " . count($vybrano);
+//echo "število izbranih zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
      echo "<form  method='post'>";
      for ($i = 0; $i < $dolzina; $i++) {

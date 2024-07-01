@@ -139,7 +139,7 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo $vybrano[1];
 //echo var_dump($vybrano);
 echo "<br>";
-echo "število vybranych zapisov= " . count($vybrano);
+echo "število izbranih zapisov= " . count($vybrano);
 $dolzina=count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
