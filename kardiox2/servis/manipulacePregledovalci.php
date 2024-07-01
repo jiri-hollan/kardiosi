@@ -17,8 +17,7 @@ require_once '../skupne/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $bolnisnica = test_input($_POST["bolnisnica"]);
-  echo strtoupper($akce) .': ';
-  echo strtoupper($bolnisnica) .'<br>';
+  //echo strtoupper($akce) .': ';
 //echo var_dump($pregledovalciStatus) .'<br>';
 switch ($akce) {
   case "vyber":
@@ -83,7 +82,7 @@ function vyberFunction($podminka){
 //echo $vybrano[1];
 //echo var_dump($vybrano);
   echo "<br>";
-  echo count($vybrano);
+  echo 'Število zapisov: '.count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
   echo "<br>";

@@ -24,8 +24,8 @@ if (isset($_REQUEST["pogoj"])){
 	  echo "ni tabulke v post";
   }
   //var_dump($akce);
-    echo strtoupper($akce) .': ';
-  echo strtoupper($pogoj) .'<br>';
+ //echo strtoupper($akce) .': ';
+ // echo strtoupper($pogoj) .'<br>';
  
   new $akce($pogoj, $tabulka);
 
