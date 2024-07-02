@@ -8,9 +8,9 @@ class Administrace {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/admin/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/pregled/admin/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/admin/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/pregled/admin/';  
 	  }
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {

@@ -6,7 +6,7 @@
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <link rel="stylesheet" href="../frontend/sabloni/css/zahlavi.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="css/pregledovalci.css?<?php echo time(); ?>">
-<title>Anestiz</title>
+<title>Pregled</title>
 </head>
 <body>
  

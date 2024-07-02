@@ -4,7 +4,7 @@
 <meta http-equiv="cache-control" content="No-Cache">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anestiz-set</title> 
+<title>Pregled</title> 
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <script src="js/prijava.js?<?php echo time(); ?>"></script> 
 <script src="js/odjava.js?<?php echo time(); ?>"></script>

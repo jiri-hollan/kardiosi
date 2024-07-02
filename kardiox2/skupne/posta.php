@@ -1,7 +1,7 @@
 <?php
 $to = "<dr.maja.sostaric@gmail.com>";
 //$to .= ", <hocimin68@gmail.com>";
-$subject = "obvestilo anestiz";
+$subject = "obvestilo kardiosi";
 $from = '<noreply@sender.com>';
 $message = "Nov uporabnik";
 $headers[] = "From: " .($from);

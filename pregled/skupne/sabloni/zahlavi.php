@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../skupne/css/zahlavi.css?<?php echo time(); ?>">
-<title>Anestiz</title>
+<title>Pregled</title>
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 </head>
 <body>

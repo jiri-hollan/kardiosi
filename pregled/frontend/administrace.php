@@ -10,9 +10,9 @@ class Administrace {
 	  $this->conn = new Database();
       $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/pregled/frontend/'; 
 	  }else {
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/pregled/frontend/';  
 	  }
 		  
       //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
@@ -39,7 +39,7 @@ class Administrace {
 		  
 		  header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit');
 		   
-	// header('Location: localhost/anestiz/frontend/prihlaseni.php?stav=odhlasit');
+	// header('Location: localhost/kardiosi/pregled/frontend/prihlaseni.php?stav=odhlasit');
 		   
 		   exit();
 	  } else {
