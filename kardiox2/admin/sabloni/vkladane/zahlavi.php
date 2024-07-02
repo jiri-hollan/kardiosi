@@ -18,12 +18,12 @@
 </div>
 <?php 
  //require_once('../admin/sabloni/oznamovaci-oblast.php');  
- function test_input($test) {
+/*function test_input($test) {
   $test = trim($test);
   $test = stripslashes($test);
   $test = htmlspecialchars($test);
   return $test;
-} 
+} */
 ?>
 
 
