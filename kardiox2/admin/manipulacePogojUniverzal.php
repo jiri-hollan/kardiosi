@@ -60,7 +60,7 @@ if (isset($_REQUEST["pogoj"])){
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
-		//switch prikaže glavo tabele
+		//switch prikaže glavo tabele amšak ne vam kdaj
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
 	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "upstatus", "pristop"]';
@@ -191,11 +191,16 @@ foreach (json_decode($this->dataPreg) as $key) {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
 	echo "<table id='osebe' style='border: solid 1px black;'>";
+	// case uporabnikiTbl prikaže kompletno tabulko z glavo
 	switch ($_REQUEST["tabulka"]){
-	case "uporabnikiTbl":
-	
+		
+	case "uporabnikiTbl":	
     echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
     break;
+	
+	case "pregledovalciTbl":
+	echo"<tr><th>Id</th><th>bolnišnica</><th>ime</th><th>priimek</th><th>pregledovalciStatus</th></tr>";
+	break;
 	default:
 	echo "";
 	}
