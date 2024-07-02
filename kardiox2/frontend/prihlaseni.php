@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (!isset($_SESSION)) session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/prihlas.php');
 global $r;

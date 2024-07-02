@@ -1,5 +1,5 @@
  <?php
-session_start();
+if (!isset($_SESSION)) session_start();
 require_once('../../kardiox2/skupne/database.php');
 global $r;
 	  require_once('sabloni/prihlasovaci-formular.php');
