@@ -1,7 +1,6 @@
 <?php
-//echo 'Menu anestiz';
-require_once('sabloni/vkladane/zahlavi.php');
 require_once('administrace.php');
+require_once('sabloni/vkladane/zahlavi.php');
 
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 require_once('sabloni/vkladane/zapati.php'); 
