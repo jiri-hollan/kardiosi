@@ -86,11 +86,7 @@ function vyberFunction($podminka,$vrednosti){
 echo "<br>";
 if(count($vybrano)>0){
   echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
-<<<<<<< Updated upstream
   echo'<P><b>pristop:</b> 3=dostop do baze</P>';
-=======
-  echo'<p><b>pristop:</b> 3=dostop do baze</p>';
->>>>>>> Stashed changes
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
 
