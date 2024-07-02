@@ -16,10 +16,12 @@ if (isset($_REQUEST["pogoj"])){
 	 $pogoj = "";   
   } 
  if (isset($tabulka)){
-	  $tabulka= $tabulka; 
+	  $tabulka= $tabulka;
+	 echo'tabulka 20= '.$tabulka; 
   }else if (isset($_REQUEST["tabulka"])){
 	  $tabulka= new Test_input($_REQUEST["tabulka"]);
 	  $tabulka = $tabulka->get_test();
+		 echo'tabulka 24= '.$tabulka;   
   }else {
 	  echo "ni tabulke v post";
   }
@@ -58,6 +60,7 @@ if (isset($_REQUEST["pogoj"])){
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
+		//switch prikaže glavo tabele
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
 	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "upstatus", "pristop"]';
@@ -68,10 +71,10 @@ if (isset($_REQUEST["pogoj"])){
   case "bolnisniceTbl":
 	     $this->dataPreg= '["mesto", "nazivB", "bolnisnicaStatus", "reg_date"]';
 	  break;
-	/*	  case "":
-	     ....
+	  case "pregledovalciTbl":
+	     $this->dataPreg= '["bolnica", "ime", "priimek", "status"]';
 	  break;
-	  case "":
+	 /*	 case "":
 	     ....
 	  break;*/
 	  default:
