@@ -1,5 +1,3 @@
 <?php
-
-require_once('administrace.php');
-
-$admin = new Administrace();
+header('Location: menuFile1.php');
+?>
