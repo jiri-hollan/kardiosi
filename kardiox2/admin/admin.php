@@ -1,9 +1,10 @@
 <?php
 if (!isset($_SESSION)) session_start();
+require_once('administrace.php');
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 require_once('sabloni/vkladane/zahlavi.php');
-require_once('administrace.php');
+
 
 class MenuBiznis  {
    public function __construct() { 
