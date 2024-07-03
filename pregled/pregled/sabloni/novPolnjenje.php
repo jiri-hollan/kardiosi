@@ -128,6 +128,13 @@
      <datalist id="mally">
      <option value='st mall'>
      </datalist>
+	  
+	 <label class="zacetekAsa">euroscore:
+	 <input id="euroscore" class="ocena" type="text"   list="eusc"  name="euroscore" size="1" maxlength="1"  onfocus="stevilkaFunction(5, 'euroscore', 'eusc')"  onkeypress=" return isNumber(event, euroscoreVar)" onfocusout=  "laborFunction(name,value)" />
+	 </label> 
+     <datalist id="eusc">
+     <option value='st eusco'>
+     </datalist>
 	 
 	 <!-- odvisnosti-->
 	 <!-- opiati-->
@@ -215,7 +222,9 @@
     <span id="asaR" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallR" class="kvadrat" >.</span> 
-	
+    <span style="padding-left:10px;">Euroscore:</span> 
+    <span id="euscR" class="kvadrat" >.</span> 
+		
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaR" class="kvadrat" >.</span>
 	
@@ -250,6 +259,9 @@
     <span id="asaPr" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallPr" class="kvadrat" >.</span> 
+    <span style="padding-left:10px;">Euroscore:</span> 
+    <span id="euscPr" class="kvadrat" >.</span> 
+		
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaPr" class="kvadrat" >.</span>
 	<span id="dovisnostiLabelPr"style="padding-left:10px;">Druge odvisnosti:</span>
