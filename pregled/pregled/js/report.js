@@ -155,6 +155,20 @@ var mall = document.getElementById("mallampati");
 document.getElementById("mallR").innerHTML= mall.value;
 document.getElementById("mallR").style="font-weight:"+mall.style.fontWeight;
 
+var eusc = document.getElementById("euroscore");
+//alert(eusc);
+document.getElementById("euscR").innerHTML= eusc.value;
+//document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;
+if (eusc.value!==NULL){	
+document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;	
+document.getElementById("euscLabelR").style.visibility = "visible";
+}
+else{	
+document.getElementById("euscR").style.visibility = "hidden";
+document.getElementById("euscLabelR").style.visibility = "hidden";
+       }//od else
+
+
 var opia = document.getElementById("opiati");
 //alert(opi);
 //console.log("opia: "+opia.value);
@@ -167,7 +181,6 @@ var dovis = document.getElementById("dovisnosti");
 //alert(dovis);
 //console.log("dovis: "+dovis.value);
 dovis.value=dovis.value.toUpperCase();
-
 document.getElementById("dovisnostiR").innerHTML= dovis.value;
 if (dovis.value=="DA"|| dovis.value=="NE"){	
 document.getElementById("dovisnostiR").style="font-weight:"+dovis.style.fontWeight;	
