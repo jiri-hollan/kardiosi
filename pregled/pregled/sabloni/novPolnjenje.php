@@ -128,14 +128,14 @@
      <datalist id="mally">
      <option value='st mall'>
      </datalist>
-	  
+	 <!--euroscore--> 
 	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore" class="ocena" type="text"   list="eusc"  name="euroscore" size="1" maxlength="1"  onfocus="stevilkaFunction(5, 'euroscore', 'eusc')"  onkeypress=" return isNumber(event, euroscoreVar)" onfocusout=  "laborFunction(name,value)" />
+	 <input id="euroscore" class="ocena" type="text"   list="eusc"  name="euroscore" size="2" maxlength="2"  onfocus="stevilkaFunction(5, 'euroscore', 'eusc')"  onkeypress=" return isNumber(event, euroscoreVar)" onfocusout=  "laborFunction(name,value)" />
 	 </label> 
      <datalist id="eusc">
      <option value='st eusco'>
      </datalist>
-	 
+	 <!--konec euroscore-->
 	 <!-- odvisnosti-->
 	 <!-- opiati-->
 	 <label class="zacetekAsa" >Opiati:

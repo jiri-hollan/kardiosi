@@ -156,15 +156,15 @@ document.getElementById("mallPr").style="font-weight:"+mall.style.fontWeight;
 
 var eusc = document.getElementById("euroscore");
 //alert(eusc);
-document.getElementById("euscR").innerHTML= eusc.value;
-//document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;
+document.getElementById("euscPr").innerHTML= eusc.value;
+//document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;
 if (!isNaN(eusc.value) ){	
-document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;	
-document.getElementById("euscLabelR").style.visibility = "visible";
+document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;	
+document.getElementById("euscLabelPr").style.visibility = "visible";
 }
 else{	
-document.getElementById("euscR").style.visibility = "hidden";
-document.getElementById("euscLabelR").style.visibility = "hidden";
+document.getElementById("euscPr").style.visibility = "hidden";
+document.getElementById("euscLabelPr").style.visibility = "hidden";
        }//od else
 
 var opia = document.getElementById("opiati");
