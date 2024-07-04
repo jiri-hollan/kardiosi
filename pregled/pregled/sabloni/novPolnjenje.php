@@ -123,14 +123,14 @@
      </datalist>
 	 
 	 <label class="zacetekAsa">Mallampati:
-	 <input id="mallampati" class="ocena" type="text"   list="mally"  name="mallampati" size="1" maxlength="1"  onfocus="stevilkaFunction(5, 'mallampati', 'mally')"  onkeypress=" return isNumber(event, allNumb)" onfocusout=  "laborFunction(name,value)" />
+	 <input id="mallampati" class="ocena" type="text"   list="mally"  name="mallampati" size="1" maxlength="1"  onfocus="stevilkaFunction(5, 'mallampati', 'mally')"  onkeypress=" return isNumber(event, mallampatiVar)" onfocusout=  "laborFunction(name,value)" />
 	 </label> 
      <datalist id="mally">
      <option value='st mall'>
      </datalist>
 	 <!--euroscore--> 
 	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore" class="ocena" type="text"  name="euroscore" size="1" maxlength="5"  onfocus=""laborFunction(name, value)"  />
+	 <input id="euroscore" class="ocena" type="text"  name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
 	 </label> 
 	 
 
