@@ -260,7 +260,7 @@
     <span id="asaPr" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallPr" class="kvadrat" >.</span> 
-    <span style="padding-left:10px;">Euroscore:</span> 
+    <span id="euscLabelPr"style="padding-left:10px;">Euroscore:</span> 
     <span id="euscPr" class="kvadrat" >.</span> 
 		
     <span style="padding-left:10px;">Opiati:</span> 
