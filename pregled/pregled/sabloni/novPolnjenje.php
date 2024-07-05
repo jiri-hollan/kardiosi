@@ -46,7 +46,6 @@
     <option value="ORL">
     <option value="RTG">
 	<option value="interna">
-	<option value="KVK">
   </datalist>
     <label for="imeZdravnika">Zdravnik: <input id="imeZdravnika" type="text" name="imeZdravnika" readonly tabindex="-1"></label>
     <br> 
@@ -65,7 +64,7 @@
     <label for = "teza">Teža:<input id = "teza" type = "text" name = "teza" onkeyup="bmiFunction()" required>kg</label>
     <label for = "visina">Višina:<input id = "visina" type = "text" name = "visina" size="1" onkeyup="bmiFunction()" required>m</label> 
     <label for = "bmi">BMI: <input id = "bmi" type = "text" name = "bmi" id = "bmi" onclick = "bmiFunction()" readonly tabindex="-1"></label>  
-    <label for = "krTlak">Krvni Tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
+    <label for = "krvniTlak">Krvni Tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
     <label for = "pulz">Pulz:<input id = "pulz" type="text" name="pulz" size="1" ></label> 
 	<label for = "spo2">SPO2:<input class="lab osnovne" id = "spo2" type="text" name="spo2" pattern="[0-9]{3}" maxlength="3" size="1"onkeypress=" return isNumber(event, allNumb)"  onfocusout=  "laborFunction(name,value)">%</label>
     <br> 
@@ -129,13 +128,7 @@
      <datalist id="mally">
      <option value='st mall'>
      </datalist>
-	 <!--euroscore--> 
-	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore" class="ocena" type="text"  name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
-	 </label> 
 	 
-
-	 <!--konec euroscore-->
 	 <!-- odvisnosti-->
 	 <!-- opiati-->
 	 <label class="zacetekAsa" >Opiati:
@@ -220,18 +213,14 @@
   <div class="asmalR">
     <span style="padding-left:1px;">ASA: </span>
     <span id="asaR" class="kvadrat" >.</span>
-	
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallR" class="kvadrat" >.</span> 
 	
-    <span id="euscLabelR"style="padding-left:10px;">Euroscore:</span> 
-    <span id="euscR" class="kvadrat" >.</span> 
-		
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaR" class="kvadrat" >.</span>
 	
-	<span id="dovisnostiLabelR"style="padding-left:10px;">Druge odvisnosti:</span>
-	<span id="dovisnostiR" class="kvadrat" >.</span>
+	    <span id="dovisnostiLabelR"style="padding-left:10px;">Druge odvisnosti:</span>
+	    <span id="dovisnostiR" class="kvadrat" >.</span>
 	
 
   </div>
@@ -261,9 +250,6 @@
     <span id="asaPr" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallPr" class="kvadrat" >.</span> 
-    <span id="euscLabelPr"style="padding-left:10px;">Euroscore:</span> 
-    <span id="euscPr" class="kvadrat" >.</span> 
-		
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaPr" class="kvadrat" >.</span>
 	<span id="dovisnostiLabelPr"style="padding-left:10px;">Druge odvisnosti:</span>
