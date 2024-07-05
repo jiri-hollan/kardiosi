@@ -158,7 +158,8 @@ var eusc = document.getElementById("euroscore");
 //alert(eusc);
 document.getElementById("euscPr").innerHTML= eusc.value;
 //document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;
-if (!isNaN(eusc.value) ){	
+alert(eusc.value);
+if (eusc.value.length > 0  ){	
 document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;	
 document.getElementById("euscLabelPr").style.visibility = "visible";
 }
