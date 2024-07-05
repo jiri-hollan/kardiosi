@@ -46,6 +46,7 @@
     <option value="ORL">
     <option value="RTG">
 	<option value="interna">
+	<option value="KVK">
   </datalist>
     <label for="imeZdravnika">Zdravnik: <input id="imeZdravnika" type="text" name="imeZdravnika" readonly tabindex="-1"></label>
     <br> 
