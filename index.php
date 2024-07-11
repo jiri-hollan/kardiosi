@@ -18,5 +18,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
   <meta http-equiv="refresh" content="0;url=kardiox2" />
 
   <title>Anestezija za operacije srca</title>
-</head>  
+</head>
+ <body>
+ <?PHP
+ include_once "kardiox2/skupne/pregledovalciKomb.php";
+ ?>
+ </body>
 </html>
