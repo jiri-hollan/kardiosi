@@ -20,8 +20,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
   <title>Anestezija za operacije srca</title>
 </head>
  <body>
- <?PHP
- include_once "kardiox2/skupne/pregledovalciKomb.php";
- ?>
+
  </body>
 </html>

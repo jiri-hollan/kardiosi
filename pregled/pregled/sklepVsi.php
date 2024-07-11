@@ -1,6 +1,6 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa z bolnišnice
-require_once '../../kardiox2/skupne/database.php';
+require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $zaklad;
@@ -12,7 +12,7 @@ Class PoberZapis{
  $this->nameTable = 'sklepiTbl';
  $stolpci = array('*');
  $poradi = "";
-//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciTbl
+//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $sklep=array();
