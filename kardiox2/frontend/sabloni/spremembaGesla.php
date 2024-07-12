@@ -15,3 +15,18 @@
 	  <button type="submit" class="signupbtn" >Spremeni</button> 
    </div>
 </form>
+<form autocomplete="off" action="<?php echo $_SERVER['PHP_SELF'] . '?r=spremembaU'?>"  method="post">
+   <div class="containerGeslo">
+   <h2>Sprememba uporabniškega imena</h2>
+      <!--<label for="sGeslo"><b>Staro geslo</b></label>-->
+      <input type="text" placeholder="Staro uname" name="sUname" autocomplete="off" required>
+	  <br> 
+	  <!--<label for="geslo"><b>Novo geslo</b></label>-->
+      <input type="text" placeholder="Novo uname" name="uname" autocomplete="off"  required>
+      <br> 
+      <!--<label for="unm-repeat"><b>Ponovi geslo</b></label>-->
+      <input type="text" placeholder="Ponovi uname" name="unm-repeat" autocomplete="off" required>
+	  <br>
+	  <button type="submit" class="signupbtn" >Spremeni</button> 
+   </div>
+</form>
