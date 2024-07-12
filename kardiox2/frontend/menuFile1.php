@@ -3,7 +3,6 @@ ob_start();
 if (!isset($_SESSION)) session_start();
 /*header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
-include_once "../skupne/pregledovalciKomb.php";
 require_once('sabloni/zahlaviSkupne.php');
 require_once('../admin/administrace.php');
 

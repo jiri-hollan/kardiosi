@@ -18,7 +18,7 @@
     <option value='mesec leta'>
     </datalist>
     <input id="leto"type="text" name="leto" size="2" maxlength="4" required onkeyup="starostFunction()" ><br>
-    <input id="ustanova"  type = "hidden" name="ustanova"     <input id="datRojstva" type = "hidden" name = "datRojstva" readonly >   
+<input id="ustanova"  type = "hidden" name="ustanova"     <input id="datRojstva" type = "hidden" name = "datRojstva" readonly >   
     <label for="stevMaticna">Matična številka:</label>
     <input id="stevMaticna"type="text" name="stevMaticna" pattern="[0-9]{1,}" required onkeypress=" return isNumber(event, allNumb)"/><br>
     <input id="EMSO"  type = "hidden" name="EMSO"pattern="[0-9]{1,}" placeholder="pusti prazno" onkeypress=" return isNumber(event, allNumb)"/ >  
@@ -64,7 +64,7 @@
     <label for = "teza">Teža:<input id = "teza" type = "text" name = "teza" onkeyup="bmiFunction()" required>kg</label>
     <label for = "visina">Višina:<input id = "visina" type = "text" name = "visina" size="1" onkeyup="bmiFunction()" required>m</label> 
     <label for = "bmi">BMI: <input id = "bmi" type = "text" name = "bmi" id = "bmi" onclick = "bmiFunction()" readonly tabindex="-1"></label>  
-    <label for = "krTlak">Krvni Tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
+    <label for = "krvniTlak">Krvni Tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
     <label for = "pulz">Pulz:<input id = "pulz" type="text" name="pulz" size="1" ></label> 
 	<label for = "spo2">SPO2:<input class="lab osnovne" id = "spo2" type="text" name="spo2" pattern="[0-9]{3}" maxlength="3" size="1"onkeypress=" return isNumber(event, allNumb)"  onfocusout=  "laborFunction(name,value)">%</label>
     <br> 

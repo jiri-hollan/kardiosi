@@ -27,7 +27,7 @@ ________________________________________________________________________________
   </datalist>
 	 <!-- Izbira zdravnika -->
 <br><br><label for="zdravnik" > Zdravnik:</label> 
-<input id="zdravnik"  list="zdravniki" name="zdravnik"  onkeyup="zdravnikFunction()" autocomplete="off" required> 
+<input id="zdravnik"  list="zdravniki" name="zdravnik"  onkeyup="zdravnikFunction()" required> 
   <datalist id="zdravniki">  
     <option value='ime zdravnika'>    
   </datalist>

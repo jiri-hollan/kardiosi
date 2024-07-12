@@ -129,14 +129,7 @@ $nameTable = "uporabnikiTbl";
 
 	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		//echo $_POST["bolnisnica"];	
-if (empty($_POST["bolnisnica"])) {
-    echo"bolnisnica is required";
-	$registracija=false;	
-  } else {
-	$data['bolnisnica'] = $this->test_input($_POST["bolnisnica"]);
-   // $bolnisnica = $this->test_input($_POST["bolnisnica"]);
-  }		
+	
 
 	//echo $_POST["ime"];	
 if (empty($_POST["ime"])) {
@@ -309,66 +302,6 @@ else {
 //new SpremembaG;
 
 //_____________________konec clas spremembaG___________________________
-
-//cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-
-
-class SpremembaU extends Prihlaseni  {
-	public $tabulka;
-    public $data;
-    public $podminka;
-
- public function __construct() {
-		    parent::__construct();
-			
-    $tabulka = 'uporabnikiTbl';
-	$uname=0;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	//echo 'v server rekvest';
-	//var_dump($_POST["sUname"]);
-	//var_dump($_POST["id"]);
-	if (isset($_SESSION["uname"]) && !empty($_POST["sUname"])) {
-	$podminka['uname'] = $_SESSION["uname"];
-	$sUname = $_POST["sUname"];
-	$podminka['uname'] = $sUname;
-	
-	
-	if ($_POST["uname"]!=$_POST["unm-repeat"]) {
-    echo "napačen vnos uname";
-	//$registracija=false;	
-  } else {
-    $uname = $_POST["uname"];
-	$data['uname'] = $uname;
-	//var_dump($data);
-	new Database;
-$uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
-//aktualizuj($tabulka,$data,$podminka);
-//echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
-     if ($uporabnikiTbl == 1) {
-		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>';
-; 
-	 }
-  }
-	
-	}//od if isset session
-	else {
-	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
-	}
-
-	
-}//od if $ server
-else {
-	echo "nekaj je narobe";
-}	
- }//od construct
-}//od class SpremembaU
-//new SpremembaU;
-
-//_____________________konec clas SpremembaU___________________________
-
-
-
-//ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 //$prihlaseni = new Prihlaseni;
 if (isset($_GET['r'])) {
 	 // echo 'poskus GET' . $_GET['r'];
@@ -399,12 +332,7 @@ case "spremembaG":
   $prihlaseni = new SpremembaG;
     //echo "V profilu"; 
    break;  
-       
- case "spremembaU":
-  $prihlaseni = new SpremembaU;
-    //echo "V profilu"; 
-   break;    
-      
+   
   default:
     //echo "Your favorite color is neither red, blue, nor green!";
 }

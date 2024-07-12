@@ -12,7 +12,7 @@ Class PoberZapis{
  $this->nameTable = 'sklepiTbl';
  $stolpci = array('*');
  $poradi = "";
-//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
+//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciTbl
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $sklep=array();

@@ -25,7 +25,7 @@ echo '
 <label for "ustanova">bolnišnica:</label>
 <input id="ustanova" type="text" name="ustanova" value="" required ></input>
 <label for "stevMaticna">matična številka</label>
-<input  id="stevMaticna"  type="number" name="stevMaticna" required ></input>
+<input   type="number" name="stevMaticna" required ></input>
 <input   type="hidden" name="doBaze" value="vyber" readonly ></input>
 <input   type="submit" ></input>
 </form>

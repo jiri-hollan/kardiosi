@@ -24,8 +24,8 @@ if (isset($_REQUEST["pogoj"])){
 	  echo "ni tabulke v post";
   }
   //var_dump($akce);
- //echo strtoupper($akce) .': ';
- // echo strtoupper($pogoj) .'<br>';
+    echo strtoupper($akce) .': ';
+  echo strtoupper($pogoj) .'<br>';
  
   new $akce($pogoj, $tabulka);
 
@@ -60,7 +60,7 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop"]';
+	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek", "upstatus", "pristop"]';
 	  break;
 	  case "statusiTbl":
 	     $this->dataPreg= '["status", "pomen"]';
@@ -191,7 +191,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	switch ($_REQUEST["tabulka"]){
 	case "uporabnikiTbl":
 	
-    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
+    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
     break;
 	default:
 	echo "";
@@ -229,7 +229,7 @@ foreach (json_decode($this->dataPreg) as $key) {
 	 $stolpci=["*"];
 	 $vyber = new database();
 	 $vybrano=$vyber->vyber($this->tabulka, $stolpci, $podminka );
-//echo "število izbranih zapisov= " . count($vybrano);
+//echo "število vybranych zapisov= " . count($vybrano);
      $dolzina=count($vybrano);
      echo "<form  method='post'>";
      for ($i = 0; $i < $dolzina; $i++) {
