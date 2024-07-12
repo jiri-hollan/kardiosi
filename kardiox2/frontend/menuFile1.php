@@ -5,7 +5,7 @@ if (!isset($_SESSION)) session_start();
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
 require_once('sabloni/zahlaviSkupne.php');
 require_once('../admin/administrace.php');
-
+include_once "../skupne/pregledovalciKomb.php";
 $direktorij = "";
 $l="links.php";
 $p="";    
