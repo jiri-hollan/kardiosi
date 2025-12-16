@@ -5,7 +5,7 @@ class DatabaseGloboka {
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
-	public $connn = '';
+	public $conn = '';
 	public Function __construct(){
 	require_once 'streznik.php';
       //$this->servername = "sh17.neoserv.si"; 
