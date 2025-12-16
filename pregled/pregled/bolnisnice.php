@@ -5,6 +5,7 @@ Class spisekBolnisnic{
 	public $conn;
 	public $zaklad;
 	public $bolnisnicaStatus; //vključena+baza=2, vljučena=1, nevključena=0
+	public $nameTable;
 	public function __construct() {
   $this->bolnisnicaStatus = '1';
   $this->conn = new Database();	
