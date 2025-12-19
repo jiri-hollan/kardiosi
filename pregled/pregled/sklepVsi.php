@@ -6,6 +6,7 @@ Class PoberZapis{
 	public $zaklad;
 	public $sklepiStatus;
 	public $pristop;
+	public $nameTable;	
 	public function __construct($bolnisnica) {
  $this->sklepiStatus = '1';
  $this->conn = new Database();	

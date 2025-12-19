@@ -6,6 +6,7 @@ class Database {
 	public $password = '';
 	public $dbname = '';
 	public $conn = '';
+	public $bolnikObstaja ;	
 	public Function __construct(){
 	require 'streznik.php';
       //$this->servername = "sh17.neoserv.si";

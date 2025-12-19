@@ -52,7 +52,8 @@ Class Apregled {
 	public $zaklad;
 	public $upstatus;
 	public $pristop;
-	
+	public $nameTable;
+	public $stolpci;	
 	public function __construct() {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
@@ -172,7 +173,7 @@ $ulozeno = $this->conn->aktualizuj($this->nameTable, $data, $podminka );
 //-------------------------------------------konec SpremeniVpis---------------------------	
 
 Class PreberiVpis extends Apregled {
-
+	public $podminka;
 	public function __construct() {
 		    parent::__construct();
 			//echo 'v preberi vpis';
