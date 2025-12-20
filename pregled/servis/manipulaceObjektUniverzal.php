@@ -201,13 +201,13 @@ foreach (json_decode($this->dataPreg) as $key) {
 	}
         parent::__construct($it, self::LEAVES_ONLY);
     }
-    function current() { 
+    function current() :mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
     }
-    function beginChildren() {
+    function beginChildren() :void {
         echo "<tr>";
     }
-    function endChildren() {
+    function endChildren() :void {
  	$tabulka = $_REQUEST["tabulka"];
         echo "<td class='urediCls' onclick=\"izborFunction('edit', '$tabulka')\">edit</td>
 		<td class='odstraniCls' onclick=\"izborFunction('odstrani', '$tabulka')\">odstrani</td>
