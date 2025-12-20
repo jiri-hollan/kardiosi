@@ -43,7 +43,7 @@ try {
     }
 catch(PDOException $e)
     { 
-	echo "napaka";
+	echo "<br>napaka!!!!!!!!!!!!!!!!!!!<br><br>";
     echo $sql . "<br>" . $e->getMessage();
     }
 $conn = null;
@@ -52,7 +52,8 @@ $conn = null;
 public function ogled($imeTable) { 
 if ($imeTable!=""){
 try {
-$sql = "select column_name from information_schema.columns where table_name =  '$imeTable'";
+    $dbname = $this->conn->query('select database()')->fetchColumn();
+    $sql = "select column_name from information_schema.columns where `TABLE_SCHEMA`='$dbname' and table_name =  '$imeTable'";
 //Prepare our SQL statement,
    $stmtl = $this->conn->prepare($sql);
 // echo "To so stolpci tabele: " . "$imeTable", "<br>";
@@ -61,13 +62,13 @@ $sql = "select column_name from information_schema.columns where table_name =  '
 //Execute the statement.
    $stmtl->execute();
 //Fetch the rows from our statement.
-  $stolpci = $stmtl->fetchAll(PDO::FETCH_NUM); 
+  $tables = $stmtl->fetchAll(PDO::FETCH_NUM); 
 //Loop through our table names.
-   foreach($stolpci as $stolpec){
+   foreach($tables as $table){
 //Print the table name out onto the page.
 //echo "stolpci:";
-//echo $stolpec[0], '<br>';   
-  echo '<th>'.$stolpec[0].'</th>';
+//echo $table[0], '<br>';   
+  echo '<th>'.$table[0].'</th>';
 	} //od foreach-
     $stmt = $this->conn->prepare("SELECT * FROM " . $imeTable );
     $stmt->execute();
@@ -121,13 +122,13 @@ try {
 //Execute the statement.
    $statement->execute(); 
 //Fetch the rows from our statement.
-  $stolpci = $statement->fetchAll(PDO::FETCH_NUM);
+  $tables = $statement->fetchAll(PDO::FETCH_NUM);
 //Loop through our table names.
-   foreach($stolpci as $stolpci){
+   foreach($tables as $table){
 //Print the table name out onto the page.
 //echo "stolpci:";
-//echo $stolpci[0], '<br>';
-   print_r($stolpci);
+//echo $table[0], '<br>';
+   print_r($table);
    echo '<br>';	
 }
 }catch(PDOException $e) {
