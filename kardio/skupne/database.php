@@ -1,11 +1,11 @@
  <?php
- //echo "<script>alert('databaze PHP');</script>";
 class Database {
 	public $servername = '';
 	public $username = '';
 	public $password = '';
 	public $dbname = '';
 	public $conn = '';
+	public $bolnikObstaja= '';
 	public Function __construct(){
 	require 'streznik.php';
       //$this->servername = "sh17.neoserv.si";
@@ -240,5 +240,182 @@ if (is_array($podminka)){
 	
 	return $pocetOdstranenych;
 	}// od function odstrani		
-//......konec odstrani......................	
+//......konec odstrani......................
+
+public function testirajBolnik() {
+try {
+  $kje='Tables_in_'.$this->dbname;
+  $sql = "SHOW TABLES FROM $this->dbname  WHERE $kje LIKE 'bolnikTbl' OR $kje LIKE 'omejitveTbl'";
+  $statement = $this->conn->prepare($sql);   
+  $statement->execute();
+  $tables = $statement->fetchAll(PDO::FETCH_BOTH);
+// var_dump($tables);
+  $bolnikObstaja=count($tables);
+  $this->bolnikObstaja = $bolnikObstaja;
+   return $this;
+}
+
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    }
+$conn = null;
+}//uzavírací zavorky function testrajBolnik
+//-------------------konec function testraj
+
+
+/**************************vyberPogoj*****************************************************/
+
+	public function vyberPogoj($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
+	$sloupceSQL = implode(', ', $sloupce);
+	//echo '<br>'.$sloupceSQL;
+	$podminkaSQL = '';
+	$parametry = array();
+	$poradiSQL = '';
+	if (is_array($podminka)){
+		$i = 0;
+		foreach ($podminka as $sloupec=>$hodnota){
+			if ($i == 0){
+				$podminkaSQL .=" WHERE $sloupec ?";				
+			}else {
+				$podminkaSQL .=" AND $sloupec  ?";
+			}
+			$parametry[$i] = $hodnota;
+			$i++;
+		}
+	}
+	if ($poradi!=NULL){
+	   $poradiSQL = " ORDER BY " . $poradi;	
+	}
+
+	//echo $poradiSQL;
+	// echo '<br>';
+	// echo var_dump($parametry) . "<br>";
+	 // echo var_dump($podminka) . "<br>";
+	 // echo var_dump($podminkaSQL );
+	$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka". $podminkaSQL. $poradiSQL);
+	//var_dump($dotaz);
+	try {
+		$dotaz->execute($parametry);		
+		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+		//echo '<br>v try vyber';
+	  }catch (PDException $e) {
+		  echo $e->getMessage();
+		  $zaznamy = false;
+	  }
+	  
+	  $dotaz->closeCursor();
+	  return $zaznamy;
+	}
+/**********************konec vyberPogoj******************************************************************************/
+//....................funkcija suma v razvoju.........................................
+public function suma($tabulka, $sloupce, $podminka = NULL){
+	$sloupceSQL = implode(', ', $sloupce);
+	//echo '<br>$sloupceSQL= ';
+	//var_dump($sloupceSQL);
+	$podminkaSQL = '';
+	$parametry = array();
+
+	if (is_array($podminka)){
+		$i = 0;
+		foreach ($podminka as $sloupec=>$hodnota){
+			if ($i == 0){
+				$podminkaSQL .=" WHERE $sloupec = ?";				
+			}else {
+				$podminkaSQL .=" AND $sloupec = ?";
+			}
+			$parametry[$i] = $hodnota;
+			$i++;
+		}
+	}
+
+	/*echo '<br>parametry= ';
+	var_dump($parametry);
+	 echo "<br>podminka= ";
+	 var_dump($podminka);
+	echo "<br>podminka SQL: ";
+	var_dump($podminkaSQL );*/
+	$dotaz = $this->conn->prepare("SELECT SUM($sloupceSQL)FROM $tabulka". $podminkaSQL);
+	//var_dump($dotaz);
+	try {
+		$dotaz->execute($parametry);		
+		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+		//echo '<br>v try vyber';
+	  }catch (PDException $e) {
+		  echo $e->getMessage();
+		  $zaznamy = false;
+	  }
+	  
+	  $dotaz->closeCursor();
+	  return $zaznamy;
+	}
+//............konec sum............................................................	
+
+
+//..........začetek ciscenje.................
+public function ciscenje($tabulka='bolnikTbl', $sloupce='imeZdravnika'){
+$dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupce = REPLACE($sloupce, ' ', UNHEX('C2A0'))  ");
+var_dump($dotaz);
+//SQL:UPDATE table_name SET column1 = value1, column2 = value2, ...WHERE condition; 
+try {
+    $dotaz->execute();		
+    $zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+//echo '<br>v try vyber';
+    }catch (PDException $e) {
+    echo $e->getMessage();
+    $zaznamy = false;
+    }
+$dotaz->closeCursor();
+return $zaznamy;	
+}//konec function ciscenje
+//........konec ciscenje.....................
+
+//.........začetek otroska...................
+public function otroska($tabulka, $sloupce, $podminka, $poradi){
+	$sloupceSQL = implode(', ', $sloupce);
+	//echo '<br>'.$sloupceSQL;
+	$podminkaSQL = '';
+	$parametry = array();
+	$poradiSQL = '';
+       if (is_array($podminka)){
+		$i = 0;
+		foreach ($podminka as $sloupec=>$hodnota){
+			if ($i == 0){
+				$podminkaSQL .=" WHERE $sloupec ?";				
+			}else {
+				$podminkaSQL .=" AND $sloupec  ?";
+			}
+			$parametry[$i] = $hodnota;
+			$i++;
+		}
+	}
+	if ($poradi!=NULL){
+	   $poradiSQL = " ORDER BY " . $poradi;	
+	}
+
+	/* echo "Poradi: ".$poradiSQL;
+	 echo '<br>';
+	 echo" parametry: ". var_dump($parametry) . "<br>";
+	 echo " Podminka: ".var_dump($podminka) . "<br>";
+	 echo " podminkaSQL: ".var_dump($podminkaSQL );*/
+	$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka $podminkaSQL $poradiSQL DESC LIMIT 1");
+	//var_dump($dotaz);
+	try {
+		$dotaz->execute($parametry);		
+		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
+		//echo '<br>v try vyber';
+	  }catch (PDException $e) {
+		  echo $e->getMessage();
+		  $zaznamy = false;
+	  }
+	  
+	  $dotaz->closeCursor();
+	  //var_dump($zaznamy);
+	  return $zaznamy;	
+	
+}//konec function otroska
+//.........konec otroska.....................
+
+
+
 }//uzavírací zavorky class Database
+
