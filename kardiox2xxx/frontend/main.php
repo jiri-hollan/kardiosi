@@ -1,1 +1,0 @@
-<div id="naslovnica"><img src="../ozadja/eso.gif" ></div>
