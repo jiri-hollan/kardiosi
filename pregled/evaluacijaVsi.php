@@ -1,6 +1,6 @@
 <?php
 //------upam da naredi primeren jason iz limitiTbl
-require_once '../../kardiox2/skupne/database.php';
+require_once '../skupne/database.php';
 Class PoberZapise{
 	public $conn;
 	public $zaklad;

@@ -1,6 +1,6 @@
 <?php
 require_once 'sabloni/zahlavi.php';
-require_once '../../kardiox2/skupne/database.php';
+require_once '../skupne/database.php';
 $conn = new Database();
 //var_dump($_GET);
 $id = $_GET["id"];

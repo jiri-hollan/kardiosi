@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION)) session_start();
-require_once('../../kardiox2/skupne/database.php');
+require_once('../skupne/database.php');
 require_once('sabloni/vkladane/zahlavi.php');
 class Administrace {
 	public $conn;

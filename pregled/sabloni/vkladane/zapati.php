@@ -2,7 +2,7 @@
 <!--.................................................Navigacija.........................-->	
  <div class="navbar" id="navbar" >
 <?php
-require_once('../../kardiox2/skupne/home.php');
+require_once('../skupne/home.php');
 echo '<button class=""id="buttonDomov" onclick="window.location.href=' . "'" . $home . "'" . ';"> Domov </button>';
 ?>
      <span class="" id="odjava" onclick="odjavaFunction()">RESET</span>

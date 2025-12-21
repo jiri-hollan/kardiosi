@@ -1,6 +1,6 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa z bolnišnice
-require_once '../../kardiox2/skupne/database.php';
+require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
 	public $zaklad;

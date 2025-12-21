@@ -35,7 +35,7 @@ ________________________________________________________________________________
 </div>
 <div class="navbar" id="navBolnisnice" style='display:z-index:1;'>
 <?php
-require_once('../../kardiox2/skupne/home.php');
+require_once('../skupne/home.php');
 require_once('zapisVsi.php');
 require_once('bolnisnice.php');
 echo '<button id="buttonDomov" onclick="window.location.href=' . "'" . $home . "'" . ';"> Domov </button>';
