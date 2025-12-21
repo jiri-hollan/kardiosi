@@ -1,5 +1,5 @@
 <?php
-require_once '../../kardiox2/skupne/database.php'; 
+require_once '../skupne/database.php'; 
 //var_dump ($data);
 //require_once 'testVariable.php';
 

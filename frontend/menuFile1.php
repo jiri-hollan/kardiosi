@@ -1,13 +1,114 @@
 <?php
-require_once('administrace.php');
-require_once('sabloni/vkladane/zahlavi.php');
+ob_start();
+if (!isset($_SESSION)) session_start();
+/*header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
+require_once('sabloni/zahlaviSkupne.php');
+require_once('../admin/administrace.php');
+include_once "../skupne/pregledovalciKomb.php";
+$direktorij = "";
+$l="links.php";
+$p="";    
+$n="";
+$prijava="sabloni/vkladane/prihlas.php";
+if(isset($_GET['p'])){
+$p = $_GET['p'];
+	}
+	switch($p){
+		case "mespdf":
+		$n = "mespdf.php";
+		$direktorij = "../../kardio/razpis/mespdf/";
+		$l= "";	
+		$prijava="";
+		break;
+		
+		case "zdravniki":
+		$s = "";
+		$l= "sorta.php";
+		$n = "domov.php";
+		$prijava="";
+		break;
+		
+		case "razpisovalec":
+		$s = "posta.php";
+		$l= '';		
+		$n = "domov.php";
+		$prijava="";
+		break;
+		
+		case "kuharica":
+		$s = "zahod.php";
+		$direktorij = "../../kardio/besedila/";
+		$l= '../navodila/navodilaKovid.php';
+		$n = "domov.php";
+		$prijava="";
+		break;
+		
+		case "povezave":
+		$s = "";
+		$l= "../linki.php";
+		$n = "domov.php";
+		$prijava="";
+		break;		
+		
+		case "pregled":
+		$s = "";
+//echo '<script>sbFunction("spomin");</script>';
+		echo '<script>window.location="../../pregled";</script>';
+		$n = "domov.php";
+		$prijava="";
+		break;	
+		
+	    case "biznis":
+		echo '<script>window.location="../biznis/biznis.php";</script>';
+		break;
+		
+        case "admin":
 
-$uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
-require_once('sabloni/vkladane/zapati.php'); 
+		  header("Location: ../admin/admin.php");
+		break;			
+					
+		default:
+		$s = "main.php";
+	}
 ?>
+
+	<script type="text/javascript">
+     var direktorij= "<?php echo $GLOBALS ['direktorij'] ?>";
+		
+		function showPDF(a){		
+		var b = '<iframe width="900px" height="900px" name="plugin" src=" '; 
+		    b += direktorij;
+			b += a;  
+			b += '.pdf" type="application/pdf">';
+			b += '</iframe> '		    
+			document.getElementById('tojePdf').innerHTML= b;  			
+		}
+	
+		function showZDR(a){
+		var b = '<iframe width="1400px" height="900px" name="plugin" src=" '; 		
+			b += a;  
+			b += '"';
+			b += ' type="html">';			
+			b += '</iframe> ';
+			document.getElementById('vsebina').innerHTML= b;  			
+		}		
+	</script>
+<!--</head>-->
+<body>
+    <div id="topnav"> <?php if (isset($prijava) and $prijava != "") {include($prijava); }?></div> 
+	<div id="nav">    <?php if (isset($l) and $l != "") {include($l); }?></div>     
+	<div id="vsebina"><?php if (isset($s) and $s != "") {include($s); }?></div>
+	<div id="sos">    <?php if (isset($n) and $n != "") {include($n); }?></div>
+	<div id="tojePdf"></div>
 <script>
-	sbFunction("spomin");
+if("<?= $uname ?>"==""){
+	document.getElementById("uname").innerHTML = "niste prijavljeni ";	
+}else{
+
 	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
+	}
 	document.getElementById("dom").innerHTML = "doma";		
 </script>
-
+</body>
+</html>

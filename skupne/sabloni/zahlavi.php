@@ -5,7 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../skupne/css/zahlavi.css?<?php echo time(); ?>">
-<title>Pregled</title>
+<link rel="stylesheet" href="../admin/css/izbira.css?<?php echo time(); ?>">
+<title>kardiosi</title>
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 </head>
 <body>
@@ -18,7 +19,7 @@ if (isset($_GET['nazaj'])){
       $nazaj = test_input($_POST['nazaj']);	
   	//var_dump($nazaj); 
 }else {
-     $nazaj = "../frontend/menuFile1.php";
+     $nazaj = "../index.php";
 }
 echo '
  <a class="active" href=' .$nazaj.'>Nazaj</a>
