@@ -17,7 +17,7 @@ $p = $_GET['p'];
 	switch($p){
 		case "mespdf":
 		$n = "mespdf.php";
-		$direktorij = "../../kardio/razpis/mespdf/";
+		$direktorij = "../kardio/razpis/mespdf/";
 		$l= "";	
 		$prijava="";
 		break;
