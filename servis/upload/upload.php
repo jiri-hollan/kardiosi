@@ -2,7 +2,7 @@
 <?php
 
 echo "<h2>Tarčna datoteka: " . $_POST["meseci"]. "</h2><br>";
-$target_dir = "../../razpis/mespdf/";
+$target_dir = "../../../kardio/razpis/mespdf/";
 $target_fileIme = $_POST["meseci"];
 $target_file = $target_dir . $target_fileIme;
 //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

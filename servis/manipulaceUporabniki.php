@@ -9,14 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $akce = test_input($_POST["akce"]);
   $priimek = test_input($_POST["priimek"]);
 
-  echo strtoupper($akce) .': ';
-  echo strtoupper($priimek) .'<br>';
+ // echo strtoupper($akce) .': ';
+ // echo strtoupper($priimek) .'<br>';
   
 switch ($akce) {
  case "vyber":
    // echo "to je vyber.<br>";
    if ($priimek == "") {
-	$podminka = "status";
+	$podminka = "upstatus";
 	$vrednosti = array("0","1","2");
 } else {
     $podminka = "priimek";
@@ -34,10 +34,10 @@ case "uredi":
     //$uname=test_input($_POST["uname"]);	
     $ime = test_input($_POST["ime"]);
 	$priimek = test_input($_POST["priimek"]);
-	$status = test_input($_POST["status"]);
+	$upstatus = test_input($_POST["upstatus"]);
 	$pristop = test_input($_POST["pristop"]);	
 	$podminka = array("id"=>$id);
-    $data= array("ime"=>$ime, "priimek"=>$priimek, "status"=>$status, "pristop"=>$pristop);	
+    $data= array("ime"=>$ime, "priimek"=>$priimek, "upstatus"=>$upstatus, "pristop"=>$pristop);	
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
    break;
@@ -73,20 +73,22 @@ case "odstrani":
 
 function vyberFunction($podminka,$vrednosti){
    $tabulka="uporabnikiTbl";
-   $stolpci=["id,email,ime,priimek, status,pristop"];
+   $stolpci=["id,email,ime,priimek, upstatus,pristop"];
    //var_dump($vrednosti);
    $vyber = new database();
    $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
 //echo $vybrano[1];
 //echo var_dump($vybrano);
-   echo "<br>";
-   echo count($vybrano);
+   //echo "<br>";
+   echo 'Število zapisov: '.count($vybrano);
 //$dolzina=count($vybrano);
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
+  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
+  echo'<P><b>pristop:</b> 3=dostop do baze</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
-  echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>status</th><th>pristop</th></tr>";
+  echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -102,7 +104,7 @@ class TableRows extends RecursiveIteratorIterator {
 		$a = 'onclick="' . "izborFunction('uredi')" . '"';
 		$b = 'onclick="' . "izborFunction('odstrani')" . '"';
         echo "<td class='urediCls'  onclick=" . '"izborFunction('. "'uredi'".')"'.'"' . ">uredi</td>
-		<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">odstrani</td>		
+		<!--<td class='odstraniCls' onclick=" . '"izborFunction('. "'odstrani'".')"'.'"' . ">ODSTRANI</td>-->		
 		</tr>" . "\n";
 }//od endChildren
 }// od class TableRows
@@ -139,7 +141,7 @@ function editFunction($podminka){
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    echo "<br>";
-   echo "število vybranych zapisov= " . count($vybrano);
+   echo "število izbranih zapisov= " . count($vybrano);
    $dolzina=count($vybrano);
 //echo $vybrano[1];
    echo "<br>";
@@ -149,8 +151,8 @@ function editFunction($podminka){
       if($key=="id"||$key=="ime"||$key=="priimek"){
 	   echo " $key: <input name=$key value=$value readonly style='background-color:ivory;'\n></input>";	
 }	 
-     if($key=="status"||$key=="pristop"){	
-	  echo " $key: <input name=$key value=$value   pattern='[0,1,2]{1}' \n></input>";
+     if($key=="upstatus"||$key=="pristop"){	
+	  echo " $key: <input name=$key value=$value   pattern='[0,1,2,3]{1}' \n></input>";
 }	
 }//od foreach
    echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
