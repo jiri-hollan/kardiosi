@@ -13,7 +13,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
 <head>
   <meta name="generator" content="HTML Tidy for Windows (vers 13 April 2006), see www.w3.org" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8_general_ci" />
-
+   <meta http-equiv="refresh" content="0;url=frontend/menuFile1.php" />
   <meta name="keywords" content="kardio,hollan" />
   <!--<meta http-equiv="refresh" content="0;url=kardiox2" />-->
 
