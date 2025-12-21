@@ -1,0 +1,85 @@
+//let tabulka="uporabnikiTbl";
+let tabulka_global;
+//alert('definicija tabulke:  '+tabulka_global);
+function izborFunction(akce, tabulka) {
+	console.log(tabulka);
+ tabulka_global=tabulka; 
+	//alert(tabulka);
+  document.getElementById("akceId").value = akce;
+switch(akce) {
+  case "vyber":
+	//alert(tabulka);
+  document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+  document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
+    break; 
+
+    case "vloz":
+	switch(tabulka) {
+		case "uporabnikiTbl":
+	//alert(tabulka);
+    email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
+    uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
+    geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
+    ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
+    priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
+    upstatus= '<input type="int" id="statusId" name="upstatus" value="" placeholder="upstatus" required>';
+    pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
+
+	
+    document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + upstatus + pristop;
+	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
+	        break;
+			case "statusiTbl":
+			//alert(tabulka);	
+	 status= '<input type="text" id="statusId" name="status" value="" placeholder="status" required>';
+     pomen= '<input type="text" id="pomenId" name="pomen" value="" placeholder="pomen" >';    document.getElementById("demo").innerHTML =  status + pomen;		
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
+			
+			break;
+			case "bolnisniceTbl":
+			//alert(tabulka);	
+	 mesto= '<input type="text" id="mestoId" name="mesto" value="" placeholder="mesto" required>';
+     nazivB= '<input type="text" id="nazivBId" name="nazivB" value="" placeholder="nazivB" >';    
+     bolnisnicaStatus= '<input type="text" id="statusBId" name="bolnisnicaStatus" value="" placeholder="bolnisnicaStatus" >'; 	 
+	 document.getElementById("demo").innerHTML = mesto+nazivB+bolnisnicaStatus;		
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
+			
+			break;			
+			
+	}
+    break;
+
+  case "edit":
+//alert("v JS case edit");
+   if(document.getElementById("osebe")!=null){
+     document.getElementById("osebe").addEventListener("click", functionOver);
+}
+    break;
+
+  case "odstrani": 
+   if ( confirm("Odstranim en zapis?") == true) {
+    if(document.getElementById("osebe")!=null){
+    document.getElementById("osebe").addEventListener("click", functionOver);
+      }
+} else {
+  text = "You canceled!";
+}
+    break;	
+  default:
+ }//od switch
+} // od izborFunction
+//----------------------------------------------------------------------------------------
+function functionOver (e) {
+var x = e.target;
+//alert(tabulka_global);
+	//alert("functionOver");
+if (x.nodeName == "TD") {
+var y = event.composedPath()[1];
+row_value = y.cells[0].innerHTML;
+  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+ }//od if 
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
+}//od function(e)
