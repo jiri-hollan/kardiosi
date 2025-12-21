@@ -1,7 +1,7 @@
-
-
+<?php
+echo'
   <p>
-  <span class="izbira" onclick="showPDF('pacemakerji')" >pacemakerji</span>
+  <span class="izbira" onclick="showPDF(\'pacemakerji\')" >pacemakerji</span>
   <span class="izbira" onclick="showPDF('AnestEKC')" >Anestezija za operacije z uporabo ZTO</span>  
   <span class="izbira" onclick="showPDF('protokolHIT')" >protokol HIT</span>
   <span class="izbira" onclick="showPDF('AntibPrev')" >Smernice za uporabo Vankomicina</span>
@@ -10,5 +10,5 @@
   </p>
   
   <!--<div id="izbir"></div>-->
-  
-
+  ';
+  ?>
