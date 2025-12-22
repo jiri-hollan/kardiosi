@@ -112,13 +112,17 @@ $conn = null;
 }//uzavírací zavorky function pokaziTable
 //-------------------konec function pokaziTable-------
 
-public function pokaziStolpce($tabulka) {
+public function pokaziStolpce($imeTable) {
 try {
-   $sql = "select column_name from information_schema.columns where table_name = '$tabulka'";
+	$dbname = $this->conn->query('select database()')->fetchColumn();
+    $sql = "select column_name from information_schema.columns where `TABLE_SCHEMA`='$dbname' and table_name =  '$imeTable'";
+	
+	
+   //$sql = "select column_name from information_schema.columns where table_name = '$imeTable'";
 //echo $sql, "<br>";
 //Prepare our SQL statement,
     $statement = $this->conn->prepare($sql);
-   echo "To so stolpci tabele: " . $tabulka, "<br>";
+   echo "To so stolpci tabele: " . $imeTable, "<br>";
 //Execute the statement.
    $statement->execute(); 
 //Fetch the rows from our statement.
