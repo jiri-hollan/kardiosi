@@ -1,9 +1,24 @@
 <?php
-if (!isset($_SESSION)) session_start();
+@session_start();
 require_once ('sabloni/vkladane/zahlavi.php');
 require_once ('evaluacijaVsi.php');
 require_once('sklepVsi.php');
 require_once('../skupne/database.php');
 require_once ('sabloni/novPolnjenje.php');
+require_once('../otroska/sabloni/formaOtroskaPremedikacija.php');
+require_once('../otroska/otroskaPremedikacija1.php');
 require_once('sabloni/vkladane/zapati.php');
+require_once('../skupne/administrace.php');
+require_once('../koren.php');
+require_once('sabloni/pFormular.php');
+//require_once('../skupne/sessionkontrola.php');
+
+if(!empty($_SESSION["uname"])){
+$uname = "<div id='stanje' class='stanjeDa'>prijavljen je: ".$_SESSION["uname"]."</div>";
+}else{
+$uname = "<div id='stanje' class='stanjeNe'>Niste prijavljeni</div>";	
+
+}
+echo"$uname";
+
 ?>

@@ -1,3 +1,14 @@
+//------------------------otroška premedikacija vklop------------------------
+
+function otroskaVklopFunction(){
+    let teza = document. getElementById('teza').value;
+//alert(teza);
+		if (teza!=0&&teza<45){
+			          document.getElementById('premedikacija').innerHTML='<b class="otroska" onclick="otroskaFunction(teza)">premedikacija otroka</b>';
+		  }else{document.getElementById('premedikacija').innerHTML='Premedikacija';
+		  }
+		  return;
+}
 
 //------------------------------BMI-----------------------------------------
 var visina;
@@ -27,6 +38,7 @@ function bmiFunction()
         BMI = Math.round(teza/(visina*visina));
         //window.alert ("BMI= " + BMI);
         document.getElementById('bmi').value=BMI;
+		otroskaVklopFunction();
     } else {
         // window.alert ("BMI2= " + BMI);
         document.getElementById('bmi').value="";

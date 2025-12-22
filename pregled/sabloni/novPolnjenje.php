@@ -1,5 +1,4 @@
-
-<form id="frm" name="bolnikForma" method="post" action="vnosVrstice.php" autocomplete="off"> 
+<form id="frm" name="bolnikForma" method="post" action="vnosVrstice.php" onclick="administraceFunction()"autocomplete="off"> 
 <fieldset class="novBolnik" id="prva">
     <legend id="novBLegend">Nov bolnik</legend>
     <h2 id="lab6"> </h2>
@@ -28,7 +27,7 @@
     <input id="datPregleda" type = "hidden" name = "datPregleda" readonly  >
     <br>
     <br>  
-    <button class="naprej" id="naprej" ime = naprej  onclick = "return osebniFunction()"><b>Naprej</b></button> 
+    <button class="naprej" id="naprej" ime = naprej  onclick = "return osebniFunction()" onclick = "	 otroskaVklopFunction()"><b>Naprej</b></button> 
  </fieldset>  
 <!-- ______________________________________________________________________________________
 
@@ -64,7 +63,7 @@
     <label for = "teza">Teža:<input id = "teza" type = "text" name = "teza" onkeyup="bmiFunction()" required>kg</label>
     <label for = "visina">Višina:<input id = "visina" type = "text" name = "visina" size="1" onkeyup="bmiFunction()" required>m</label> 
     <label for = "bmi">BMI: <input id = "bmi" type = "text" name = "bmi" id = "bmi" onclick = "bmiFunction()" readonly tabindex="-1"></label>  
-    <label for = "krvniTlak">Krvni Tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
+    <label for = "krTlak">krvni tlak:<input id = "krTlak" type="text" name="krvniTlak" size="1" ></label>    
     <label for = "pulz">Pulz:<input id = "pulz" type="text" name="pulz" size="1" ></label> 
 	<label for = "spo2">SPO2:<input class="lab osnovne" id = "spo2" type="text" name="spo2" pattern="[0-9]{3}" maxlength="3" size="1"onkeypress=" return isNumber(event, allNumb)"  onfocusout=  "laborFunction(name,value)">%</label>
     <br> 
@@ -167,12 +166,13 @@
   listaSklepovFunction(sklepList);
   </script>
 <br><br>
- <fieldset class="zaklucek">premedikacija 
+ <fieldset  class="zaklucek">
+ <span id="premedikacija" style="float:left">premedikacija</span><br>
   <div id="zaklucek">
-	<label for="premedVecer">Zvečer:..<input id="premedVecer" type="textarea" name="premedVecer" ></label>  
+	<label for="premedVecer">Zvečer:..<textarea  id="premedVecer" class="premedikacija"  name="premedVecer" ></textarea></label>  
     <br>
-	<label for="premedPredOp">Pred op.:<input id="premedPredOp" type="textarea" name="premedPredOp" ></label> <br> 
-    <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3" ></textarea>
+	<label for="premedPredOp">Pred op.:<textarea id="premedPredOp" class="premedikacija"  name="premedPredOp" ></textarea></label> <br> 
+    <textarea id="navodila" class="mikro"  name="navodila" placeholder="Navodila" rows="3"  ></textarea>
    </div>
   </fieldset> 	
  </fieldset>	
@@ -183,7 +183,7 @@
 
 ...........................Tretji del TISK................................-->
 
-<div class="celaStran" id="tretja">
+<div class="celaStran" id="tretja" onclick="administraceFunction()"> 
   <!--<div id="logo"><img  id="imgBol" src="logoSBI.png"></div>-->
   <div id="logo">
   </div>  

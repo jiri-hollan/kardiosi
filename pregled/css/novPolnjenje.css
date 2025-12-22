@@ -1,5 +1,16 @@
 /* CSS za novPolnjenje.HTML*/
-
+#prva {
+display: none;	
+}
+#druga {
+display: none;	
+}
+#tretja {
+display: none;	
+}
+#cetrta {
+display: none;	
+}
 
 h1 {
   text-align: center;
@@ -99,7 +110,7 @@ fieldset.zacetek  {
 
 div.glavna {
   position: relative;
-  margin-top: 50px;
+  margin-top: 70px;
   padding: 0px 20px;
   max-width:1000px; 
   background-color: lightblue;  
@@ -243,7 +254,7 @@ textarea.mala {
 
 textarea.mikro {
   width: 60%;
-  height: 80x;
+  height: 90px;
   rows: 3;
   padding: 4px 20px;
   box-sizing: border-box;
@@ -263,6 +274,23 @@ textarea.velka {
   background-color: #f8f8f8;
   resize: none;
 }
+
+  .premedikacija {
+  resize: none;
+  width: 30%;
+  }
+  
+  .otroska {
+  color: red;
+  background-color: #f8f8f8;
+  } 
+   .otroska:hover {
+	border: 3px solid #555;
+    background-color: LightYellow;   
+   } 
+  
+  
+
 #navodila {
   position: absolute;
   bottom: 2px;
@@ -286,9 +314,9 @@ width:95%;
  /* overflow: hidden;*/
   background-color: blue;
   position: fixed;
-  top: 0;
+  top: 20px;
   max-width:1000px;
-  ​​z-index: 60;
+  z-index: 60;
   
 }
 
@@ -363,4 +391,33 @@ border-radius: 12%;
 }
 #buttonDomov:hover {
 background-color: black;	
+}
+.stanjeNe {
+    color: red;	
+    background-color:black;
+    position: fixed;
+    top: 0;
+	z-index: 61;
+	width:200px;
+	height: 20px;
+    text-align: center;
+  animation-name: myAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myAnimation {
+  50%   {background-color:red; }
+
+}
+
+.stanjeDa {
+    color: black;	
+    background-color:white;
+    position: fixed;
+    top: 0;
+	z-index: 61;
+	width:200px;
+	height: 20px;
+
 }

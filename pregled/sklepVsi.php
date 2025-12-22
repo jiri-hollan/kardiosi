@@ -3,17 +3,16 @@
 require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
-	public $zaklad;
 	public $sklepiStatus;
 	public $pristop;
-	public $nameTable;	
+	public $nameTable;
 	public function __construct($bolnisnica) {
  $this->sklepiStatus = '1';
  $this->conn = new Database();	
  $this->nameTable = 'sklepiTbl';
  $stolpci = array('*');
  $poradi = "";
-//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciTbl
+//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
  $podminka = array(""); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $sklep=array();

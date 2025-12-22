@@ -3,20 +3,19 @@
 require_once '../skupne/database.php';
 Class PoberZapis{
 	public $conn;
-	public $zaklad;
-	public $pregledovalciStatus;
 	public $pristop;
 	public $bolnisnica;
-	public $nameTable;	
+	public $nameTable;
 	public function __construct($bolnisnica) {
  $this->bolnisnica = $bolnisnica;
- $this->pregledovalciStatus = '1';
+ //$this->pregledovalciStatus = '1';
  $this->conn = new Database();	
- $this->nameTable = 'pregledovalciTbl';
+ $this->nameTable = 'pregledovalciKomb';
  $stolpci = array('ime','priimek');
  $poradi = "priimek";
-//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciTbl
- $podminka = array("bolnisnica"=>$this->bolnisnica,"pregledovalciStatus"=>$this->pregledovalciStatus);  
+//bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
+ //$podminka = array("bolnisnica"=>$this->bolnisnica,"pregledovalciStatus"=>$this->pregledovalciStatus); 
+ $podminka = array("bolnisnica"=>$this->bolnisnica); 
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $celoIme=array();
 for ($i = 0; $i < count($prebrano); $i++) {

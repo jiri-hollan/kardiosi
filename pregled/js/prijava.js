@@ -3,7 +3,11 @@ function zdravnikFunction() {
 // Check browser support
 if (typeof(Storage) !== "undefined") {
 // Store
-   imeZdravnika = document.getElementById("zdravnik").value || "" ;
+  let imeZdravnika = document.getElementById("zdravnik").value || "" ;
+    //let str = document.getElementById("demo").innerHTML; 
+ imeZdravnika = imeZdravnika.replace(/ /g, "&nbsp;");
+   
+   
    localStorage.setItem("imeZdravnika", imeZdravnika);
 // Retrieve
    document.getElementById("pregledovalec").innerHTML = "izvajalec:  "+"<b>" + localStorage.getItem("imeZdravnika")+"</b>";
@@ -58,7 +62,8 @@ var text = "";
 var naslov="&nbsp;dr.med";
 var i;
 for (i = 0; i < zdravList.length; i++) {
-    text += "<option value='" +  zdravList[i] + naslov + "'>"  +"<br>";
+	let povezano = zdravList[i].replace(/ /g, "&nbsp;");
+    text += "<option value='" +  povezano + naslov + "'>"  +"<br>";
 }
 document.getElementById("zdravniki").innerHTML = text;
 }
@@ -78,3 +83,16 @@ for (i = 0; i < bolList.length; i++) {
 }
 document.getElementById("bolnisnice").innerHTML = text;
 }
+/************************funkcja schovej************************/
+function schovej(a){
+//alert (a);
+document.getElementById(a).style.display='block';
+// Get the modal
+var modal = document.getElementById(a);
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}//od window.onclick
+}//od function schovej
