@@ -1,3 +1,3 @@
 <?php
-$koren='anestiz';
+$koren='kardiosi';
 ?>

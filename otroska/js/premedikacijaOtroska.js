@@ -74,7 +74,7 @@ function ajax_get_premedikacija(elem) {
 function ajax_aktualizuj(ucinkovina, teza, sprememba){
 //alert(window.location.hostname);
 	if(window.location.hostname=="localhost"){
-		koren="anestiz/";		
+		koren="kardiosi/";		
 	}else{
 		koren="";
 	}
