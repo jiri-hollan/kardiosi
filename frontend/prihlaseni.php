@@ -3,18 +3,19 @@ if (!isset($_SESSION)) session_start();
 require_once('../skupne/database.php');
 require_once('sabloni/vkladane/prihlas.php');
 global $r;
-	  require_once('sabloni/prihlasovaci-formular.php');
+require_once('sabloni/prihlasovaci-formular.php');
 Class Prihlaseni {
 	public $conn;
 	public $zaklad;
 	public $upstatus;
 	public $pristop;
-	
+	public $upGdpr;
+	public $koren;	
 	public function __construct() {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/frontend/'; 
+		  $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
@@ -26,12 +27,10 @@ Class Prihlaseni {
 
 //___________________________________- potomstvo_______________________________________________
 Class odjava extends Prihlaseni {
-		
+	public $odhlasi;		
 	public function __construct() {
 		    parent::__construct();
-	
-
-	  //echo 'odhlašovani';
+//echo 'odhlašovani';
 	  if (null !== ($_GET['stav'] || $_GET['stav'] == 'odhlasit')) {
 	  $this->odhlasi();
      }	
@@ -57,7 +56,8 @@ Class odjava extends Prihlaseni {
 
 //____________________________________konec clas odjava_______________________________________
 Class Prijava extends Prihlaseni {
-	
+	public $overUdaje;
+	public $conn;	
 	
 	public function __construct() {
 		    parent::__construct();
@@ -173,6 +173,9 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     $geslo = $this->test_input($_POST["geslo"]);
 	$data['geslo'] = md5($geslo);
   }
+  if (!empty($_POST["stevilkaZdravnika"])) {
+    $data['stevilkaZdravnika'] = $this->test_input($_POST["stevilkaZdravnika"]);
+  } //od if !empty
     $data['upstatus'] = $upstatus;
 	$data['pristop'] = $pristop;
   //echo '<br>upstatus: ' .$upstatus;
@@ -211,7 +214,15 @@ public function overUdaje($nameTable, $data) {
 			//return $this->prihlaseniSelhalo();
 			$ulozeno = $this->conn->vloz($nameTable, $data);
 			echo 'uspešno ste se registrirali,<br> pravice do dostopa vam bodo dodeljene po posvetu <br>z obveščevalnimi agencijami.';
-require_once('../skupne/posta.php');		
+			
+require_once('../skupne/posta.php');
+new Posta($data['ime'], $data['priimek'], $data['email']);
+			echo'
+			<audio id="myVideo" autoplay>
+			<source src="../zvoki/konj.mp3" type="audio/mpeg">			
+			ni našlo zvočne datoteke
+			</audio>
+			';		
 		}   
 	  }
 }
@@ -229,7 +240,7 @@ Class Profil extends Prihlaseni {
 		    parent::__construct();
 			
 			
-//$registracija=true;
+//$registracija=true; 
 //$email=$geslo=$ime=$priimek=$uname=0;
 //$upstatus = 0;
 //$nameTable = "uporabnikiTbl";

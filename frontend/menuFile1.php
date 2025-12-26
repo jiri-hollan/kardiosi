@@ -29,12 +29,12 @@ $p = $_GET['p'];
 		$prijava="";
 		break;
 		
-		case "razpisovalec":
+	/*	case "razpisovalec":
 		$s = "posta.php";
 		$l= '';		
 		$n = "domov.php";
 		$prijava="";
-		break;
+		break;*/
 		
 		case "kuharica":
 		$s = "zahod.php";
