@@ -15,7 +15,6 @@ class Administrace {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/pregled/frontend/';  
 	  }
 		  
-      //$this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/';
 	  //echo $this->zaklad->url;
 	  $casoviLimit = 600;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
