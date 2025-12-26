@@ -11,7 +11,7 @@
       <h1>Registracija</h1>
       <label for="bolnisnicaId"><b>Bolnisnica, ime in priimek</b></label><br>
 	  <span>
-      <input id="bolnisnicaId" type="text" class="imePriimek" placeholder=" Bolnisnica" name="bolnisnica" required>	 	  
+      <input id="bolnisnicaId" type="text" class="imePriimek" placeholder=" Bolnisnica" value="Ljubljana UKC" name="bolnisnica" required>	 	  
       <input type="text" class="imePriimek" placeholder=" Ime" name="ime" required>	  
       <input type="text" class="imePriimek" placeholder="Priimek" name="priimek" required><br>	  
 	  </span>
