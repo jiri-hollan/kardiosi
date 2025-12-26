@@ -13,7 +13,7 @@ require_once 'sabloni/zahlavi.php';
   <label for="besediloNaslov">Naslov besedila: </label><br>
   <input type="text" name="naslov" id="besediloNaslov" value="" placeholder="smiselni naslov"  required><br>
   <br>Izberi pdf ali slikovno datoteko za naložiti:<br>
-  <input type="hidden" name="nameTable" id="nameTable" value="besedilaTbl">
+  <input type="hidden" name="nameTable" id="nameTable" value="besedilaNovaTbl">
   <input type="file" name="fileToUpload" id="fileToUpload" required><br>
   <input type="radio" id="zamenjaj" name="obstojeca" value=1>
   <label for="zamenjaj">Zamenjaj</label><br>

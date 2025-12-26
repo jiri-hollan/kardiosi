@@ -2,7 +2,7 @@
 //----------prijavni podatki za podatkovno bazo odvisno od uporabljenega strežnika------
 
 require_once '../skupne/database.php';
-$tabulka="besedilaTbl";
+$tabulka="besedilaNovaTbl";
 $stolpci=["id", "naslov", "direktorij","fajl"];
 $podminka=[""];
 $vyber = new database();
@@ -11,7 +11,7 @@ $vybrano=$vyber->vyber($tabulka, $stolpci, $podminka );
 //echo var_dump($vybrano);
 echo "<br>";
 try {
-//---------------------prikaže izbiro vnešenega besedila iz podatkov v bazi "biznis" tabela "besedilaTbl"------------------	
+//---------------------prikaže izbiro vnešenega besedila iz podatkov v bazi "biznis" tabela "besedilaNovaTbl"------------------	
 
 /*echo '<ul id= "navodilaId">';
  foreach ($vybrano as $value) {

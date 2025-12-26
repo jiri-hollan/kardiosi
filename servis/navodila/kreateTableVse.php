@@ -47,7 +47,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     direktorij VARCHAR(30) NOT NULL,
 	fajl VARCHAR(30) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP";
-$databaseGloboka->naredi('besedilaTbl', $definice);
+$databaseGloboka->naredi('besedilaNovaTbl', $definice);
 break;
 
 case "uporabniki":
