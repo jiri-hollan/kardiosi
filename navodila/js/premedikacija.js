@@ -28,7 +28,7 @@ function ajax_aktualizuj(ucinkovina, teza, sprememba){
 		//url: "/premedikacijaNavodila/otroskaPremedikacija1.php",
 //za localhost
 		//url: "/anestiz/premedikacijaNavodila/otroskaPremedikacija1.php",
-		url: "/"+koren+"premedikacijaNavodila/otroskaPremedikacija1.php",	
+		url: "/"+koren+"navodila/otroskaPremedikacija1.php",	
 		data: {
 			"ucinkovina": ucinkovina,
 			"teza": teza,
