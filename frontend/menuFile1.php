@@ -53,8 +53,8 @@ $p = $_GET['p'];
 		
 		case "pregled":
 		$s = "";
-//echo '<script>sbFunction("spomin");</script>';
-		echo '<script>window.location="../pregled/zdravnik.php";</script>';
+        echo '<script>sbFunction("spomin");</script>';
+		//echo '<script>window.location="../pregled/zdravnik.php";</script>';
 		$n = "domov.php";
 		$prijava="";
 		break;	
