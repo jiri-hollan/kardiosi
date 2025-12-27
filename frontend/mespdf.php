@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css"  href="css/mespdf.css" >
 <div class="topnav">
+  <a id="dom" class="active" href="../frontend/menuFile1.php">Domov</a>
   <span id="uname">odjavljen</span>
 </div>
 <a class="akce" href="menuFile1.php?p=nic" >domov</a> 
