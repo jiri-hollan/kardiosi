@@ -3,7 +3,7 @@
   <a id="dom" class="active" href="../frontend/menuFile1.php">Domov</a>
   <span id="uname">odjavljen</span>
 </div>
-<a class="akce" href="menuFile1.php?p=nic" >domov</a> 
+<!--<a class="akce" href="menuFile1.php?p=nic" >domov</a>--> 
   <button type="button" class="obarvaj" onclick="showPDF('januar')" >januar</button> 
   <button type="button" class="obarvaj" onclick="showPDF('februar')" >februar</button>  
   <button type="button" class="obarvaj" onclick="showPDF('marec')" >marec</button> 
