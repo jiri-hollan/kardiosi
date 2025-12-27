@@ -109,7 +109,14 @@ if("<?= $uname ?>"==""){
 
 	document.getElementById("uname").innerHTML = "prijavljen je: " + " " + "<?= $uname ?>";
 	}
-	document.getElementById("dom").innerHTML = "doma";		
+	//document.getElementById("dom").innerHTML = "doma";	
+	
+if("<?= $p ?>"==""){
+		document.getElementById("dom").innerHTML = "doma";
+    }	
+		else{
+		document.getElementById("dom").innerHTML = "domov";		
+	}
 </script>
 </body>
 </html>

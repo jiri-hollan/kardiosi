@@ -16,10 +16,9 @@
   <button type="button" class="obarvaj" onclick="showPDF('oktober')" >oktober</button>
   <button type="button" class="obarvaj" onclick="showPDF('november')" >november</button>
   <button type="button" class="obarvaj" onclick="showPDF('december')" >december</button>
- 
-  
+ <script>
 
-  
+ </script>
 
 
 
