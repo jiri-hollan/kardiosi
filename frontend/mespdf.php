@@ -1,4 +1,7 @@
 <link rel="stylesheet" type="text/css"  href="css/mespdf.css" >
+<div class="topnav">
+  <span id="uname">odjavljen</span>
+</div>
 <a class="akce" href="menuFile1.php?p=nic" >domov</a> 
   <button type="button" class="obarvaj" onclick="showPDF('januar')" >januar</button> 
   <button type="button" class="obarvaj" onclick="showPDF('februar')" >februar</button>  
