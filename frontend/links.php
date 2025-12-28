@@ -9,6 +9,7 @@ class MenuBiznis  {
 $a1= '
 <li><a href="menuFile1.php?p=mespdf">RAZPIS</a></li>
 <li><a href="menuFile1.php?p=zdravniki">ZDRAVNIKI</a></li>
+<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
 ';
 $a2= '
 <li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
@@ -17,7 +18,7 @@ $a3= '
 <li><a href="menuFile1.php?p=admin">ADMIN</a></li>
 '; 
 $a4= '
-<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
+//<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
 ';  
 echo '
 <nav id= "glavnaNav">

@@ -31,7 +31,7 @@ echo '
      <span class="navSpan" id="pomoc" onclick="pomocFunction()">pomoč</span>
 	 <!--<span class='knof' id="prijavi" onclick='schovej("id02")' style='width:auto;'>Prijava</span>-->
 <?php
-if($gdpr==1 && $_SESSION["pristop"] && $_SESSION["pristop"] >= 2){
+if($gdpr==1 && isset($_SESSION["pristop"]) && $_SESSION["pristop"] >= 2){
 
  
  echo "<span class='navSpan' id='submitFrm' onmouseover='administraceFunction()' onclick='return reportFunction(\"s\")'>shrani</span>";
