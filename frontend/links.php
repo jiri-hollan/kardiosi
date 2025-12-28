@@ -18,7 +18,7 @@ $a3= '
 <li><a href="menuFile1.php?p=admin">ADMIN</a></li>
 '; 
 $a4= '
-//<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
+<!--<li><a href="menuFile1.php?p=pregled">PREGLED</a></li>-->
 ';  
 echo '
 <nav id= "glavnaNav">
