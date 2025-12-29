@@ -1,8 +1,7 @@
-<?php
+ <?php
 @session_start();
 require_once('../skupne/database.php');
 require_once('../koren.php');
-require_once('sabloni/vkladane/prihlas.php');
 global $r;
 require_once('sabloni/prihlasovaci-formular.php');
 Class Prihlaseni {
@@ -13,10 +12,11 @@ Class Prihlaseni {
 	public $upGdpr;
 	public $koren;	
 	public function __construct($koren) {
+	//echo"('KOREN: '.$koren)";	
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		  $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/'.$koren.'/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  }
@@ -28,7 +28,7 @@ Class Prihlaseni {
 
 //___________________________________- potomstvo_______________________________________________
 Class odjava extends Prihlaseni {
-	public $odhlasi;		
+	public $odhlasi;	
 	public function __construct($koren) {
 		    parent::__construct($koren);
 //echo 'odhlašovani';
@@ -58,7 +58,7 @@ Class odjava extends Prihlaseni {
 //____________________________________konec clas odjava_______________________________________
 Class Prijava extends Prihlaseni {
 	public $overUdaje;
-	public $conn;	
+	public $conn;
 	
 	public function __construct($koren) {
 		    parent::__construct($koren);
@@ -72,11 +72,12 @@ Class Prijava extends Prihlaseni {
 	//od function inicializuj		
 	}
 	
-	public function prihlaseniUspesne($upstatus, $pristop, $uname){
+	public function prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname){
 	   $_SESSION['uporabnikPrihlasen'] = true;
 	   $_SESSION["casova_znamka"] = time();
 	   $_SESSION["upstatus"] = $upstatus;
 	   $_SESSION["pristop"] = $pristop;
+	   $_SESSION["uporabnikGdpr"] = $upGdpr;
 	   $_SESSION["uname"] = $uname;
 	  //echo $upstatus;
 	echo '<script type="text/JavaScript"> 
@@ -91,17 +92,19 @@ Class Prijava extends Prihlaseni {
 	public function overUdaje() {
 		if (!empty($_POST['uname']) && !empty($_POST['geslo'])){
 			$geslo = md5($_POST['geslo']);
-			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('upstatus', 'pristop', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
+			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('upstatus', 'pristop', 'gdpr', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
 
 		if (count($uporabnikiTbl) == 1)	{
 			$upstatus=$uporabnikiTbl[0]['upstatus'];			
 			//echo $upstatus;
 			$pristop=$uporabnikiTbl[0]['pristop'];			
-			//echo $pristop;			
+			//echo $pristop;
+			$upGdpr=$uporabnikiTbl[0]['gdpr'];			
+			echo $upGdpr;			
 			$uname=$uporabnikiTbl[0]['uname'];
 			echo $uname;
 		// echo $upstatus;
-			$this->prihlaseniUspesne($upstatus, $pristop,  $uname);
+			$this->prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname);
 		} else {
 			//echo 'iz funkcije overUdaje';
 			return $this->prihlaseniSelhalo();
@@ -126,10 +129,12 @@ $registracija=true;
 $email=$geslo=$ime=$priimek=$uname=0;
 $upstatus = 0;
 $pristop = 0;
+$upGdpr = 0;
 $nameTable = "uporabnikiTbl";
 
 	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
 		//echo $_POST["bolnisnica"];	
 if (empty($_POST["bolnisnica"])) {
     echo"bolnisnica is required";
@@ -137,7 +142,7 @@ if (empty($_POST["bolnisnica"])) {
   } else {
 	$data['bolnisnica'] = $this->test_input($_POST["bolnisnica"]);
    // $bolnisnica = $this->test_input($_POST["bolnisnica"]);
-  }		
+  }	
 
 	//echo $_POST["ime"];	
 if (empty($_POST["ime"])) {
@@ -177,8 +182,10 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
   if (!empty($_POST["stevilkaZdravnika"])) {
     $data['stevilkaZdravnika'] = $this->test_input($_POST["stevilkaZdravnika"]);
   } //od if !empty
+  
     $data['upstatus'] = $upstatus;
 	$data['pristop'] = $pristop;
+	$data['gdpr'] = $upGdpr;	
   //echo '<br>upstatus: ' .$upstatus;
   //echo'<br>data: '. $data["upstatus"].'<br>';
 }
@@ -214,8 +221,8 @@ public function overUdaje($nameTable, $data) {
 			//echo 'iz funkcije overUdaje';
 			//return $this->prihlaseniSelhalo();
 			$ulozeno = $this->conn->vloz($nameTable, $data);
-			echo 'uspešno ste se registrirali,<br> pravice do dostopa vam bodo dodeljene po posvetu <br>z obveščevalnimi agencijami.';
-			
+			echo 'uspešno ste se registrirali,<br> pravice do dostopa vam bodo dodeljene po posvetu <br>z obveščevalnimi agencijami.<br>';
+
 require_once('../skupne/posta.php');
 new Posta($data['ime'], $data['priimek'], $data['email']);
 			echo'
@@ -223,9 +230,9 @@ new Posta($data['ime'], $data['priimek'], $data['email']);
 			<source src="../zvoki/konj.mp3" type="audio/mpeg">			
 			ni našlo zvočne datoteke
 			</audio>
-			';		
+			';
 		}   
-	  }
+	 }
 }
 
 // od class Registrace	
@@ -241,7 +248,7 @@ Class Profil extends Prihlaseni {
 		    parent::__construct($koren);
 			
 			
-//$registracija=true; 
+//$registracija=true;
 //$email=$geslo=$ime=$priimek=$uname=0;
 //$upstatus = 0;
 //$nameTable = "uporabnikiTbl";
@@ -289,7 +296,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sGeslo = md5($_POST["sGeslo"]);
 	$podminka['geslo'] = $sGeslo;
 	
-	
 	if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     echo "napačen vnos gesla";
 	//$registracija=false;	
@@ -303,19 +309,16 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
 		echo 'Vaše geslo je bilo spremenjeno'; 
-	 }
-  }
-	
+	 }// od if $uporabnikiTbl
+  }//od else
 	}//od if isset session
 	else {
 	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
-	}
-
-	
+	}//od else
 }//od if $ server
 else {
 	echo "nekaj je narobe";
-}	
+}//od else	
  }//od construct
 }//od class spremembaG
 //new SpremembaG;
@@ -357,18 +360,14 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
-		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>';
-; 
-	 }
-  }
-	
+		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>'; 
+	 }//od if $uporabnikiTbl
+  }//od else
 	}//od if isset session
 	else {
 	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
 	}
-
-	
-}//od if $ server
+}//od if $ server request metod
 else {
 	echo "nekaj je narobe";
 }	
@@ -381,6 +380,65 @@ else {
 
 
 //ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+//cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+
+class SpremembaZdr extends Prihlaseni  {
+	public $tabulka;
+    public $data;
+    public $podminka;
+
+ public function __construct($koren) {
+		    parent::__construct($koren);
+			
+    $tabulka = 'uporabnikiTbl';
+	$stevilkaZdravnika=0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	//echo 'v server rekvest';
+	//var_dump($_POST["sStevilkaZdravnika"]);
+	//var_dump($_POST["id"]);
+	if (isset($_SESSION["uname"]) && !empty($_POST["sStevilkaZdravnika"])) {
+	$podminka['uname'] = $_SESSION["uname"];
+	$sStevilkaZdravnika = $_POST["sStevilkaZdravnika"];
+    //var_dump($podminka);
+	//if ($_POST["stevilkaZdravnika"]!=$_POST["unm-repeat"]) {
+    //echo "napačen vnos stevilkaZdravnika";
+	//$registracija=false;	
+     $stevilkaZdravnika = $_POST["sStevilkaZdravnika"];
+	//var_dump($stevilkaZdravnika);
+	$data['stevilkaZdravnika'] = $stevilkaZdravnika;
+	//var_dump($data);
+	new Database;
+$uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
+//aktualizuj($tabulka,$data,$podminka);
+//echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
+     if ($uporabnikiTbl == 1) {
+		echo 'Vaša številka zdravnika je:<bh>'.strtoupper($stevilkaZdravnika).'</b>';
+	 }// od if uporabniki
+	}//od if isset session
+	else {
+	echo 'Niste prijavljeni, ali je vnos gesla napačen';	
+	}
+}//od if $ server
+else {
+	echo "nekaj je narobe";
+}	
+ }//od construct
+}//od class SpremembaZdr
+//new SpremembaZdr;
+
+//_____________________konec clas SpremembaZdr___________________________
+
+
+
+//sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+
+
+
+
+
+
+
 //$prihlaseni = new Prihlaseni;
 if (isset($_GET['r'])) {
 	 // echo 'poskus GET' . $_GET['r'];
@@ -411,9 +469,14 @@ case "spremembaG":
   $prihlaseni = new SpremembaG($koren);
     //echo "V profilu"; 
    break;  
-       
+   
  case "spremembaU":
   $prihlaseni = new SpremembaU($koren);
+    //echo "V profilu"; 
+   break;    
+   
+ case "spremembaZdr":
+  $prihlaseni = new SpremembaZdr($koren);
     //echo "V profilu"; 
    break;    
       

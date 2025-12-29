@@ -1,11 +1,15 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+    height:200vh;
 }
 
 .topnav {
+  position: sticky;
+  top: 0;
   overflow: hidden;
   background-color: #333;
+        z-index: 4;
 }
 
 .topnav a {
