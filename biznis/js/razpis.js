@@ -4,7 +4,7 @@ function aktualRazpis(){
   var x=""
   x=(document.getElementById("letnikx").value);
 if (x!=""){
- window.location="../razpis/msofice/" + x +".xlsx";//zdaj je window.location="biznis.php"
+ window.location="../kardio/razpis/msofice/" + x +".xlsx";//zdaj je window.location="biznis.php"
   } else {
  alert("Vpisi iskano letnico ");
   }
@@ -19,8 +19,8 @@ function arhivRazpis() {
 if (x=="") {
    alert("Vpisi iskano letnico");
   } else {
-	  oo="../razpis/msBackup/arhiv/" + x +".ods";
-	  ms="../razpis/msBackup/arhiv/" + x +".xlsx";
+	  oo="../kardio/razpis/msBackup/arhiv/" + x +".ods";
+	  ms="../kardio/razpis/msBackup/arhiv/" + x +".xlsx";
 	  window.location=ms;
   
 	  
