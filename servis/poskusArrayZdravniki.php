@@ -5,7 +5,7 @@ function person(id,ime,priimek,email)
 var slika = "";
 var celoIme = "";
 var mail = "";
-slika += "<img src='../kardio/podobe/personId" + id + ".jpg' alt='---- ' width='200'/>"
+slika += "<img src='../../kardio/podobe/personId" + id + ".jpg' alt='---- ' width='200'/>"
 celoIme += "<h2>" + ime + " " + priimek  + "</h2>"
 mail += "<p class='obarvaj' >" + "<a href='mailto:" + email + "'" + "target='_top'>" + "E po&#353;ta" + "</a>" + "</p>"
 document.getElementById('desno').innerHTML = slika + "<br>" + celoIme + "<br>" + mail
