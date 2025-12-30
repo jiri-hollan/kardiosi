@@ -5,7 +5,7 @@ $to = "<jiri.hollan@gmail.com>";
 //$to .= ", <dr.maja.sostaric@gmail.com>";
 $subject = "obvestilo kardiosi";
 $from = 'noreply@sender.com';
-$message = "<br>Nov uporabnik: ".$ime." ". $priimek;
+$message = "<br>Nov uporabnik: ".$ime." ". $priimek." ".$email;
 $headers[] = "From: " .($from);
 $headers[] = "Reply-To: ".($email);
 $headers[] = "Return-Path: ".($from);
@@ -18,7 +18,7 @@ $retval = mail($to,$subject,$message,implode("\r\n", $headers));
          if( $retval == true ) {
             echo "Obvestilo poslano adminu...";
          }else {
-            echo "Message could not be sent...";
+            echo "Nekaj je narobe, obvestilo adminu ni bilo poslano!";
          }
 	}//od construct
 }//od class posta
