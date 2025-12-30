@@ -1,6 +1,6 @@
 
 <!--<p>-->
-<a  class="akce" href="menuFile1.php?p=nic">domov</a>
+<a  class="akce" href="menuFile1.php">domov</a>
 <!--</p>
  <div id="dom"></div>--!
 
