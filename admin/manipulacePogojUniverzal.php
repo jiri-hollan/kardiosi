@@ -60,7 +60,7 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "ime", "priimek",  "upstatus", "pristop", "gdpr", "stevilkaZdravnika"]';
+	     $this->dataPreg= '["email", "uname", "geslo", "bolnisnica", "ime", "priimek",  "upstatus", "pristop", "gdpr", "stevilkaZdravnika"]';
 	  break;
 	  case "statusiTbl":
 	     $this->dataPreg= '["status", "pomen"]';
