@@ -74,10 +74,10 @@ if (isset($_REQUEST["pogoj"])){
      case "limitiTbl":
 	     $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
 	  break;
-/*	  case "":
-	     $this->dataPreg= '["", "", "", ""]';	    
+	  case "omejitveTbl":
+	     $this->dataPreg= '["nivo"]';	    
      break;
-	  case "":
+/*	  case "":
 	     $this->dataPreg= '["", "", "", ""]';
 	  break;
 */
