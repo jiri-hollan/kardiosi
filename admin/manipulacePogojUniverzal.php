@@ -65,15 +65,22 @@ if (isset($_REQUEST["pogoj"])){
 	  case "statusiTbl":
 	     $this->dataPreg= '["status", "pomen"]';
 	  break;
-  case "bolnisniceTbl":
-	     $this->dataPreg= '["mesto", "nazivB", "bolnisnicaStatus", "reg_date"]';
+      case "bolnisniceTbl":
+	     $this->dataPreg= '["mesto", "nazivB", "bolnisnicaStatus"]';
 	  break;
-	/*	  case "":
-	     ....
+	  case "pregledovalciTbl":
+	     $this->dataPreg= '["pregledovalciStatus"]';
 	  break;
+     case "limitiTbl":
+	     $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
+	  break;
+/*	  case "":
+	     $this->dataPreg= '["", "", "", ""]';	    
+     break;
 	  case "":
-	     ....
-	  break;*/
+	     $this->dataPreg= '["", "", "", ""]';
+	  break;
+*/
 	  default:
 	  echo "tabulka ni določena";
   }
