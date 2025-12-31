@@ -167,17 +167,19 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 	public function aktualizuj($tabulka,$data,$podminka){
 	  $sloupceHodnoty =array();
       $parametry = array();	
-	  if (is_array($data) && !empty($data)) {
+	  if (is_array($data) && !empty($data)) {	  
 		foreach ($data as $sloupec => $hodnota) {
 		  array_push($sloupceHodnoty, " $sloupec = ?");
           array_push($parametry, $hodnota);		  
 		} //od foreache 
-
+//exit(var_dump($parametry));	
 	  } else {
 		  return 0;
 	  }//od else
+//exit(var_dump($data));
+//exit(var_dump($parametry));		  
 	  $sloupceHodnotySQL = implode(', ', $sloupceHodnoty);
-  //var_dump ($sloupceHodnotySQL);
+//exit(var_dump ($sloupceHodnotySQL));
       $podminkaSQL = '';
 	  if (is_array($podminka)) {
 		$i = 0;
@@ -190,7 +192,7 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 			array_push($parametry, $hodnota);
 		    $i++;
 		}// od foreach
-	//var_dump ($parametry);	
+exit(var_dump ($parametry));	
   //var_dump ($podminkaSQL);		
 	  } else {
 		 // return;
