@@ -76,11 +76,11 @@ Class Apregled {
 
 //___________________________________- potomstvo_______________________________________________
 Class PrviVpis extends Apregled {
-		
+	public $stolpci;
+	public $conn;
+	public $nameTable;
 	public function __construct() {
 		    parent::__construct();
-
-
 if(!empty($_POST)) {
 // define variables and set to empty values
   $najdene = $ime = $priimek = $datRojstva  = $stevMaticna = $EMSO = "";
@@ -117,6 +117,7 @@ if(!empty($_POST)) {
 //-------------------------------------------konec PrviVpis---------------------------
 
 Class SpremeniVpis extends Apregled {
+	public $stolpci;
 	public function __construct() {
 		    parent::__construct();
 //exit("V spremeni Vpis");

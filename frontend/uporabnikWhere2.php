@@ -24,11 +24,10 @@ class TableRows extends RecursiveIteratorIterator {
 
 class UporabnikiWhere {
 	public $data;
-	public $conn;
-	 
-	  function __construct($data) {
+	public $conn;	 
+	function __construct($data) {
 
-echo "<table style='border: solid 1px black;'>";
+ echo "<table style='border: solid 1px black;'>";
  echo "<tr><th>Id</th><th>email</th><th>username</th><th>bolnisnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>GDPR</th><th>številka zdravnika</th></tr>";
 
 try {
