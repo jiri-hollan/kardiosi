@@ -162,7 +162,8 @@ echo "Ni zapisa v bazi";
 
 //________________________________________________________________________________________	
 	class Vloz extends DostopPost {
-
+	public $tabulka;
+	public $data;
   function __construct($pogoj, $tabulka) {
 	parent::__construct($pogoj, $tabulka);
 	echo $tabulka;
