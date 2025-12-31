@@ -45,6 +45,7 @@
     <option value="ORL">
     <option value="RTG">
 	<option value="interna">
+	<option value="KVK">	
   </datalist>
     <label for="imeZdravnika">Zdravnik: <input id="imeZdravnika" type="text" name="imeZdravnika" readonly tabindex="-1"></label>
     <br> 
@@ -127,7 +128,11 @@
      <datalist id="mally">
      <option value='st mall'>
      </datalist>
-	 
+	 <!--euroscore--> 
+	 <label class="zacetekAsa">euroscore:
+	 <input id="euroscore" class="ocena" type="text"  name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
+	 </label> 
+	 <!--konec euroscore-->	 
 	 <!-- odvisnosti-->
 	 <!-- opiati-->
 	 <label class="zacetekAsa" >Opiati:
@@ -214,8 +219,9 @@
     <span style="padding-left:1px;">ASA: </span>
     <span id="asaR" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
-    <span id="mallR" class="kvadrat" >.</span> 
-	
+    <span id="mallR" class="kvadrat" >.</span> 	
+    <span id="euscLabelR"style="padding-left:10px;">Euroscore:</span> 
+    <span id="euscR" class="kvadrat" >.</span> 		
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaR" class="kvadrat" >.</span>
 	
@@ -250,6 +256,8 @@
     <span id="asaPr" class="kvadrat" >.</span>
     <span style="padding-left:10px;">Mallampati:</span> 
     <span id="mallPr" class="kvadrat" >.</span> 
+    <span id="euscLabelPr"style="padding-left:10px;">Euroscore:</span> 
+    <span id="euscPr" class="kvadrat" >.</span> 			
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaPr" class="kvadrat" >.</span>
 	<span id="dovisnostiLabelPr"style="padding-left:10px;">Druge odvisnosti:</span>

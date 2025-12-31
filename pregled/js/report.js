@@ -214,6 +214,20 @@ var mall = document.getElementById("mallampati");
 document.getElementById("mallR").innerHTML= mall.value;
 document.getElementById("mallR").style="font-weight:"+mall.style.fontWeight;
 
+var eusc = document.getElementById("euroscore");
+//alert(eusc);
+document.getElementById("euscR").innerHTML= eusc.value;
+//document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;
+if (eusc.value.length > 0 ){	
+document.getElementById("euscR").style="font-weight:"+eusc.style.fontWeight;	
+document.getElementById("euscLabelR").style.visibility = "visible";
+}
+else{	
+document.getElementById("euscR").style.visibility = "hidden";
+document.getElementById("euscLabelR").style.visibility = "hidden";
+       }//od else
+
+
 var opia = document.getElementById("opiati");
 //alert(opi);
 //console.log("opia: "+opia.value);
