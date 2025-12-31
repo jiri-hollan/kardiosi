@@ -104,59 +104,56 @@ echo "<br>";
 	$data=array();
  function array_push_assoc($data, $key, $value){
    $data[$key] = $value;
-  // var_dump ($data);
+// var_dump ($data);
    return $data;
 }
 foreach (json_decode($this->dataPreg) as $key) {
- //echo "$key <br>";
+//echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
     $data =array_push_assoc($data, $key, $value);
 }	
-    $this->podminka = array("id"=>$this->id);
-	//$this->data = array("pogoj"=>$this->pogoj, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
-	    $this->data = $data;
-    	$aktualizuj = new database();
-		$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
+	$this->podminka = array("id"=>$this->id);
+	$this->data = $data;
+	$aktualizuj = new database();
+	$aktualizovano=$aktualizuj->aktualizuj($this->tabulka,$this->data,$this->podminka);
 }
 }// od class uredi
 //_____________________________________________________________________________________
 
 	class Vyber extends DostopPost{ 
 //najde vse zapise v tabulki za pogoj. Če ni določen, najde vse
-  public $stolpci;
-  public $pogoj; 
-  public $tabulka;
-  public $poradi;
-  public $podminka;
+	  public $stolpci;
+	  public $pogoj; 
+	  public $tabulka;
+	  public $poradi;
+	  public $podminka;
   function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL) {
 	parent::__construct($pogoj, $tabulka);
     $this->stolpci = $stolpci;	
-	//echo "v class vyber";
+//echo "v class vyber";
 	if ($this->pogoj == "") {
-	$this->podminka = NULL;
-   } else {
+	  $this->podminka = NULL;
+  } else {
     $this->podminka = array("pogoj"=>$this->pogoj);
-   }//od else
-   $this->poradi=$poradi;
-   $this->tabulka=$tabulka;
-$vyber = new database();
-$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
-echo "<br>";
-if(count($vybrano)>0){	
-	//var_dump($vybrano);
-	
-	
-foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
-        echo $v;
+  }//od else
+	$this->poradi=$poradi;
+	$this->tabulka=$tabulka;
+	$vyber = new database();
+	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
+	echo "<br>";
+	if(count($vybrano)>0){	
+//var_dump($vybrano);		
+	  foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
+      echo $v;
 //	var_dump($v);
-	       // echo $v;
-}//od foreach
-}//od if(cout)
-else{
-echo "Ni zapisa v bazi";	
-}//od else
-}//od vyberFunction  
+// echo $v;
+	}//od foreach
+  }//od if(cout)
+	else{
+	   echo "Ni zapisa v bazi";	
+	}//od else
+  }//od vyberFunction  
 }//od class vyber
 
 //________________________________________________________________________________________	
@@ -194,18 +191,18 @@ foreach (json_decode($this->dataPreg) as $key) {
 	class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
 		//echo $_REQUEST["tabulka"];
-	echo "<table id='osebe' style='border: solid 1px black;'>";
-	switch ($_REQUEST["tabulka"]){
-	case "uporabnikiTbl":
-	    echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>bolnišnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>gdpr</th><th>številka zd</th></tr>";
-    break;
-	case "bolnisniceTbl":
-	    echo "<tr><th>Id</th><th>mesto</><th>nazivB</th><th>bolnisnicaStatus</th><th>reg_date</th></tr>";
-    break;
-	default:
-	echo "";
-	}
-        parent::__construct($it, self::LEAVES_ONLY);
+		echo "<table id='osebe' style='border: solid 1px black;'>";
+		switch ($_REQUEST["tabulka"]){
+		case "uporabnikiTbl":
+			echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>bolnišnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>gdpr</th><th>številka zd</th></tr>";
+		break;
+		case "bolnisniceTbl":
+			echo "<tr><th>Id</th><th>mesto</><th>nazivB</th><th>bolnisnicaStatus</th><th>reg_date</th></tr>";
+		break;
+		default:
+			echo "";
+		}
+			parent::__construct($it, self::LEAVES_ONLY);
     }
     function current() :mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
@@ -216,8 +213,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     function endChildren() :void {
 		$tabulka = $_REQUEST["tabulka"];
         echo "<td class='urediCls' onclick=\"izborFunction('edit', '$tabulka')\">edit</td>
-		<td class='odstraniCls' onclick=\"izborFunction('odstrani', '$tabulka')\">odstrani</td>
-		
+		<td class='odstraniCls' onclick=\"izborFunction('odstrani', '$tabulka')\">odstrani</td>		
 		</tr>" . "\n";
     }
 	
