@@ -58,8 +58,7 @@ Class odjava extends Prihlaseni {
 //____________________________________konec clas odjava_______________________________________
 Class Prijava extends Prihlaseni {
 	public $overUdaje;
-	public $conn;
-	
+	public $conn;	
 	public function __construct($koren) {
 		    parent::__construct($koren);
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -243,11 +242,9 @@ new Posta($data['ime'], $data['priimek'], $data['email']);
 Class Profil extends Prihlaseni {
     public $data;
     public $nameTable;
-   
+    public $conn;
 	public function __construct($koren) {
-		    parent::__construct($koren);
-			
-			
+		    parent::__construct($koren);			
 //$registracija=true;
 //$email=$geslo=$ime=$priimek=$uname=0;
 //$upstatus = 0;
@@ -387,7 +384,7 @@ class SpremembaZdr extends Prihlaseni  {
 	public $tabulka;
     public $data;
     public $podminka;
-
+	public $conn;
  public function __construct($koren) {
 		    parent::__construct($koren);
 			
