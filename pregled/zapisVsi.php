@@ -6,6 +6,7 @@ Class PoberZapis{
 	public $pristop;
 	public $bolnisnica;
 	public $nameTable;
+	public $bolnisnica;
 	public function __construct($bolnisnica) {
  $this->bolnisnica = $bolnisnica;
  //$this->pregledovalciStatus = '1';
