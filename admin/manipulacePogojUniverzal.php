@@ -53,6 +53,7 @@ if (isset($_REQUEST["pogoj"])){
  class DostopPost{
   public $pogoj;		
   public $tabulka;
+  public $dataPreg;
   function __construct($pogoj="", $tabulka="") {
 	    $pogoj=strtolower($pogoj); 
         $pogoj=ucfirst($pogoj); 
@@ -92,7 +93,8 @@ if (isset($_REQUEST["pogoj"])){
   public $id;
   public $ime;
   public $priimek;
-  //public $status; 
+  public $podminka; 
+  public $data;
   public function __construct($pogoj, $tabulka) {
 	parent::__construct($pogoj, $tabulka);	
 	echo "case uredi <br>";
@@ -111,10 +113,7 @@ foreach (json_decode($this->dataPreg) as $key) {
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
     $data =array_push_assoc($data, $key, $value);
-}
-
-	
-	
+}	
     $this->podminka = array("id"=>$this->id);
 	//$this->data = array("pogoj"=>$this->pogoj, "ime"=>$this->ime, "priimek"=>$this->priimek, "status"=>$this->status);
 	    $this->data = $data;
@@ -130,6 +129,7 @@ foreach (json_decode($this->dataPreg) as $key) {
   public $pogoj; 
   public $tabulka;
   public $poradi;
+  public $podminka;
   function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL) {
 	parent::__construct($pogoj, $tabulka);
     $this->stolpci = $stolpci;	
