@@ -48,8 +48,7 @@ if (isset($_REQUEST["pogoj"])){
 
 //____________________________________________________________________________________________
  
- ?>
-<?php 
+
  class DostopPost{
   public $pogoj;		
   public $tabulka;
