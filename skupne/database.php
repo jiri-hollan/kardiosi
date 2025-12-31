@@ -192,7 +192,7 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 			array_push($parametry, $hodnota);
 		    $i++;
 		}// od foreach
-exit(var_dump ($parametry));	
+//exit(var_dump ($parametry));	
   //var_dump ($podminkaSQL);		
 	  } else {
 		 // return;
@@ -202,7 +202,9 @@ exit(var_dump ($parametry));
 	  $dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupceHodnotySQL".$podminkaSQL);
   //var_dump ($dotaz);	  
 	  try {
+//exit(var_dump ($parametry))		  
 		 $dotaz->execute($parametry);
+//exit(var_dump ($dotaz));		 
          $pocetAktualizovanych = $dotaz->rowCount();		 
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
