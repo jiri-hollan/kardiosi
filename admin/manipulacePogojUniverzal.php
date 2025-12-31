@@ -48,7 +48,7 @@ if (isset($_REQUEST["pogoj"])){
 
 //____________________________________________________________________________________________
  
-
+/*******************class dostopPost določa, kateri stolpci se lahko urejajo********************************************/
  class DostopPost{
   public $pogoj;		
   public $tabulka;
