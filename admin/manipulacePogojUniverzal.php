@@ -224,11 +224,11 @@ foreach (json_decode($this->dataPreg) as $key) {
     class Edit {
 	public $id;	
 	public $tabulka;
-	 function __construct($tabulka, $id) {
-    $id = new test_input($_GET["id"]);
-	$this->id = $id->get_test();
+	function __construct($tabulka, $id) {
+		$id = new test_input($_GET["id"]);
+		$this->id = $id->get_test();
 //echo "id uporabnika= " .  $id;
-	$tabulka = new test_input($_GET["tabulka"]);
+  	 $tabulka = new test_input($_GET["tabulka"]);
 	 $this->tabulka = $tabulka->get_test();	 
 	 $podminka = array("id"=>$this->id);	
 	 $stolpci=["*"];
