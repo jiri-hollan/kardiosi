@@ -202,7 +202,7 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 	  $dotaz = $this->conn->prepare("UPDATE $tabulka SET $sloupceHodnotySQL".$podminkaSQL);
   //var_dump ($dotaz);	  
 	  try {
-//exit(var_dump ($parametry))		  
+//exit(var_dump ($parametry));		  
 		 $dotaz->execute($parametry);
 //exit(var_dump ($dotaz));		 
          $pocetAktualizovanych = $dotaz->rowCount();		 
