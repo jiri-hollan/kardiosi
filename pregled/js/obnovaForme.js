@@ -37,7 +37,7 @@ for (i = 0; i < inputs.length; i++) {
 		 document.getElementsByName(kljuc)[0].value = obj[kljuc];
 //console.log("elze "+kljuc+"="+obj[kljuc]);		 
 	 }
-//alert(kljuc + ": " +person1[kljuc]);
+//console.log(kljuc + ": " +obj[kljuc]);
 } // od if
 } //od for
 starostFunction();
