@@ -140,8 +140,8 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
     $hodnotySQL = implode(',  ', $hodnoty);
 /*	echo '<br>sloupce: '.$sloupceSQL.'<br>';
 	echo 'hodnotySQL: '.$hodnotySQL.'<br>';
-	echo 'parametry: '.var_dump($parametry).'<br>';
-	*/
+	exit(var_dump($parametry));
+*/
     $dotaz = $this->conn->prepare("INSERT INTO $tabulka ($sloupceSQL) VALUES ($hodnotySQL)");
 
   try {

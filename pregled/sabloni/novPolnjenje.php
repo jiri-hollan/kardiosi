@@ -130,11 +130,8 @@
      </datalist>
 	 <!--euroscore--> 
 	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore" class="ocena" type="text"   list="eurosc"  name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
+	 <input id="euroscore" class="ocena" type="text" name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
 	 </label>
-	 <datalist id="eurosc">
-     <option value='st eurosc'>
-     </datalist>
 	 <!--konec euroscore-->	 
 	 <!-- odvisnosti-->
 	 <!-- opiati-->
@@ -257,10 +254,13 @@
 <p class="levo" class="asmalPr">
     <span style="padding-left:1px;">ASA: </span>
     <span id="asaPr" class="kvadrat" >.</span>
+	
     <span style="padding-left:10px;">Mallampati:</span> 
-    <span id="mallPr" class="kvadrat" >.</span> 
-    <span id="euscLabelPr"style="padding-left:10px;">Euroscore:</span> 
-    <span id="euscPr" class="kvadrat" >.</span> 			
+    <span id="mallPr" class="kvadrat" >.</span>
+	
+    <span id="euscLabelPr"style="padding-left:10px;">Euroscore:</span> 	
+    <span id="euscPr" class="kvadrat" >.</span> 
+	
     <span style="padding-left:10px;">Opiati:</span> 
     <span id="opiaPr" class="kvadrat" >.</span>
 	<span id="dovisnostiLabelPr"style="padding-left:10px;">Druge odvisnosti:</span>
