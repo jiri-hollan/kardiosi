@@ -64,7 +64,7 @@ Class Prijava extends Prihlaseni {
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		  $chiba = $this->overUdaje();
 		  //echo var_dump($chiba);
-	  }else if (!empty($_GET['stav'] && $_GET['stav'] == 'neaktivni')){
+	  }else if (isset($_SESSION["uname"]) && !empty($_GET['stav'] && $_GET['stav'] == 'neaktivni')){
 		  $oznameni = 'Ste odjavljeni zaradi neaktivnosti. ' . 'Ponovno se prijavite.';		  
 	  }
 	  require_once('sabloni/prihlasovaci-formular.php');
