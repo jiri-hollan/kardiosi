@@ -58,13 +58,16 @@ function labevalFunction(){
 const iskano =  document.getElementsByClassName("lab osnovne");
 const ocena =  document.getElementsByClassName("ocena");
 const ocenaOvisnosti =  document.getElementsByClassName("ocenaOvisnosti");
+alert('evauacija.js 61');
 for (let i = 0; i < iskano.length; i++) {
 // laborFunction spremeni styl glede na limite
 laborFunction(iskano[i].name,iskano[i].value);  
 }
 for (let i = 0; i < ocena.length; i++) {
 // laborFunction spremeni styl glede na limite
-laborFunction(ocena[i].name,ocena[i].value);  
+laborFunction(ocena[i].name,ocena[i].value); 
+alert(ocena[i].name); 
+alert(ocena[i].value);
 }
 //alert (ocena[1].name + " = " + ocena[1].value);
 for (let i = 0; i < ocenaOvisnosti.length; i++) {

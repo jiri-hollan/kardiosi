@@ -130,7 +130,7 @@
      </datalist>
 	 <!--euroscore--> 
 	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore" class="ocena" type="text"    list="euros"  name="euroscore" size="1" maxlength="5" onfocus="stevilkaFunction(20, 'euroscore', 'euros')"onkeypress=" return isNumber(event, euroscoreVar)" >
+	 <input id="euroscore" class="ocena" type="text"    list="euros"  name="euroscore" size="1" maxlength="5" onfocus="stevilkaFunction(20, 'euroscore', 'euros')" onkeypress=" return isNumber(event, euroscoreVar)" onfocusout=  "laborFunction(name,value)" >
 	 </label>
      <datalist id="euros">
      <option value='st eur'>

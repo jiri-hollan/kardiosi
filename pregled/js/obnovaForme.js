@@ -44,6 +44,7 @@ console.log("elze "+kljuc+"="+obj[kljuc]);
 } //od for
 starostFunction();
 document.getElementById("novBLegend").style.display = "none"; 
+//alert(obnovaForme 47);
 labevalFunction();
 }//od if
 } //od function formNazajFunction
