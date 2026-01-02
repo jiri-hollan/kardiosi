@@ -31,12 +31,13 @@ for (i = 0; i < inputs.length; i++) {
 //alert (kljuc+obj[kljuc]);
 //console.log(kljuc+"="+typeof obj[kljuc]+"-"+obj[kljuc]);
 	 if (obj[kljuc] !== undefined && typeof obj[kljuc]== 'string') {
-//console.log(kljuc+"="+obj[kljuc]);		 
+console.log(kljuc+"="+obj[kljuc]);		 
 		document.getElementsByName(kljuc)[0].value = obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"); 
-//console.log(kljuc+"="+obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"));		
+console.log(kljuc+"="+obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"));
+console.log(document.getElementsByName(kljuc)[0].value);		
 	 }else{
 		 document.getElementsByName(kljuc)[0].value = obj[kljuc];
-//console.log("elze "+kljuc+"="+obj[kljuc]);		 
+console.log("elze "+kljuc+"="+obj[kljuc]);		 
 	 }
 //console.log(kljuc + ": " +obj[kljuc]);
 } // od if
