@@ -33,6 +33,7 @@ for (i = 0; i < inputs.length; i++) {
 	 if (obj[kljuc] !== undefined && typeof obj[kljuc]== 'string') {
 //console.log(kljuc+"="+obj[kljuc]);		 
 		document.getElementsByName(kljuc)[0].value = obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"); 
+//console.log(kljuc+"="+obj[kljuc].replace(/\&quot;/g,'\\"').replace(/\&amp;/g, "&"));		
 	 }else{
 		 document.getElementsByName(kljuc)[0].value = obj[kljuc];
 //console.log("elze "+kljuc+"="+obj[kljuc]);		 
