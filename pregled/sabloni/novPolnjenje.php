@@ -130,7 +130,7 @@
      </datalist>
 	 <!--euroscore--> 
 	 <label class="zacetekAsa">euroscore:
-	 <input id="euroscore"  type="text" name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
+	 <input id="euroscore"  class="ocena" type="text" name="euroscore" size="1" maxlength="5"  onfocus="laborFunction(name, value)" onkeypress=" return isNumber(event, euroscoreVar)" />
 	 </label>
 	 <!--konec euroscore-->	 
 	 <!-- odvisnosti-->
