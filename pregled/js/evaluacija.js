@@ -1,5 +1,6 @@
 function laborFunction(ime,vrednost)
 {
+if(ime!=undefined){
 //console.log(ime);	
 const LIMITIlab = JSON.parse(limitiJson);
 //console.log(LIMITIlab);
@@ -52,6 +53,7 @@ else{
 		pozorFunction(ime, 2);	
 	}//od switch
 }//od else
+}//od if ime
 }//od function laborFunction
 //-------------------------------------------------------------------------------------------------------
 //labevalFunction preveri limite lab. vrednosti pri načitanju bolnika iz baze
