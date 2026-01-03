@@ -31,7 +31,9 @@ switch(akce) {
 		case "statusiTbl":
 //alert(tabulka);	
 			status= '<input type="text" id="statusId" name="status" value="" placeholder="status" required>';
-			pomen= '<input type="text" id="pomenId" name="pomen" value="" placeholder="pomen" >';    document.getElementById("demo").innerHTML =  status + pomen;	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+			pomen= '<input type="text" id="pomenId" name="pomen" value="" placeholder="pomen" >';    
+			document.getElementById("demo").innerHTML =  status + pomen;	
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
 		break;
 		case "bolnisniceTbl":
