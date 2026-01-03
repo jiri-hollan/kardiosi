@@ -4,7 +4,8 @@ function laborFunction(ime,vrednost)
 const LIMITIlab = JSON.parse(limitiJson);
 //console.log(LIMITIlab);
 if(LIMITIlab[ime]!=undefined){
-//console.log(LIMITIlab[ime]);
+console.log(ime);
+console.log(LIMITIlab[ime]);
 	max = LIMITIlab[ime]["max"];
 	max = parseFloat(max);
 //console.log(max);
