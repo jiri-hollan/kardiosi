@@ -2,7 +2,7 @@
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
 function izborFunction(akce, tabulka) {
-	console.log(tabulka);
+//console.log(tabulka);
  tabulka_global=tabulka; 
 	//alert(tabulka);
   document.getElementById("akceId").value = akce;
@@ -42,8 +42,13 @@ switch(akce) {
 			document.getElementById("demo").innerHTML = mesto+nazivB+bolnisnicaStatus;		
 			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
+		break;
+		case "limitiTbl":
+			console.log(tabulka);
+			console.log('za to tabuku ni še napisana koda');
 		break;			
 		default:
+			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 	}
     break;
