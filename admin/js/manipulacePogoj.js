@@ -46,8 +46,17 @@ switch(akce) {
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
 		break;
 		case "limitiTbl":
-			console.log(tabulka);
-			console.log('za to tabuku ni še napisana koda');
+//"bolnisnica", "skupina", "ime", "min", "max"
+//console.log(tabulka);
+			bolnisnica= '<input type="text" id="bolnisnicaId" name="bolnisnica" value="" placeholder="bolnisnica" required>';			
+			skupina= '<input type="text" id="skupinaId" name="skupina" value="" placeholder="skupina" required>';
+			ime= '<input type="text" id="imeId" name="ime" value="" placeholder="ime" required>';
+			min= '<input type="text" id="minId" name="min" value="" placeholder="min" required>';
+			max= '<input type="text" id="maxId" name="max" value="" placeholder="max" required>';
+			document.getElementById("demo").innerHTML = bolnisnica+skupina+ime+min+max;		
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
+//console.log('za to tabuku ni še napisana koda');
 		break;			
 		default:
 			console.log(tabulka);		
