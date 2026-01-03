@@ -55,21 +55,22 @@ switch(akce) {
 		case "limitiTbl":
 //"bolnisnica", "skupina", "ime", "min", "max"
 //console.log(tabulka);		
-			zaUrejat = ["bolnisnica", "skupina", "geslo", "bolnisnica", "ime", "min", "max", "pristop"];
+			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
 			vnosi= "";
 			for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += zaUrejat[i]+'=<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+			vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 			}
 
-			document.getElementById("demo").innerHTML = vnosi;			
-			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
 //console.log('za to tabuku ni še napisana koda');
 		break;			
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 	}
+	
+			document.getElementById("demo").innerHTML = vnosi;			
+			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
     break;
 
 	case "edit":
