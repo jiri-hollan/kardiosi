@@ -19,26 +19,19 @@ switch(akce) {
 		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
-			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
-			vnosi= "";
-			
+			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
 		break;
 		case "statusiTbl":
 //alert(tabulka);	
-			zaUrejat = ["status", "pomen",];
-			vnosi= "";	
-				
+			zaUrejat = ["status", "pomen",];	
 		break;
 		case "bolnisniceTbl":
 //alert(tabulka);	
 			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
-			vnosi= "";
-			
 		break;
 		case "limitiTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
-			vnosi= "";
 		break;			
 		default:
 			console.log(tabulka);		
