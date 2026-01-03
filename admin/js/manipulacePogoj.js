@@ -43,7 +43,8 @@ switch(akce) {
 			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset		
 		break;			
-		default:	
+		default:
+			console.log('za to tabuku ni še napisana koda');
 	}
     break;
 
