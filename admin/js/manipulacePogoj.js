@@ -20,11 +20,14 @@ switch(akce) {
 			email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
 			uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
 			geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
+			bolnisnica= '<input type="int" id="bolnisnicaId" name="bolnisnica" value="" placeholder="bolnisnica" >';			
 			ime= '<input type="int" id="imeId" name="ime" value="" placeholder="ime" required>';	
 			priimek= '<input type="int" id="priimekId" name="priimek" value="" placeholder="priimek" required>';
 			upstatus= '<input type="int" id="statusId" name="upstatus" value="" placeholder="upstatus" required>';
 			pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
-			document.getElementById("demo").innerHTML = email + uname + geslo + ime + priimek + upstatus + pristop;
+			gdpr= '<input type="int" id="gdprId" name="gdpr" value="" placeholder="gdpr" >';
+			stevilkaZdravnika= '<input type="int" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="" placeholder="stevilkaZdravnika" >';			
+			document.getElementById("demo").innerHTML = email + uname + geslo + bolnisnica +ime + priimek + upstatus + pristop+gdpr+stevilkaZdravnika;
 			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
 		break;
