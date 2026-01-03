@@ -17,6 +17,7 @@ switch(akce) {
 	switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
+			const zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
 			email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
 			uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
 			geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
