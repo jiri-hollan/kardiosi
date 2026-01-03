@@ -9,10 +9,10 @@ function izborFunction(akce, tabulka) {
 	let vnosi= "";
   document.getElementById("akceId").value = akce;
 switch(akce) {
-  case "vyber":
-	//alert(tabulka);
-  document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-  document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
+	case "vyber":
+//alert(tabulka);
+		document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
 
     case "vloz":
@@ -36,7 +36,7 @@ switch(akce) {
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
-	}
+		}
 	for (let i = 0; i < zaUrejat.length; i++) {
 	vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 	}
