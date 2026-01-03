@@ -18,7 +18,12 @@ switch(akce) {
 		case "uporabnikiTbl":
 //alert(tabulka);
 			const zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
-			email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
+			let vnosi= "";
+			for (let i = 0; i < zaUrejat.length; i++) {
+			vnosi += zaUrejat[i]+'=<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+				
+			}
+		/*	email= '<input type="text" id="emailId" name="email" value="" placeholder="email" required>';
 			uname= '<input type="text" id="unameId" name="uname" value="" placeholder="uname" >';
 			geslo= '<input type="int" id="gesloId" name="geslo" value="" placeholder="geslo" >';
 			bolnisnica= '<input type="int" id="bolnisnicaId" name="bolnisnica" value="" placeholder="bolnisnica" >';			
@@ -28,7 +33,8 @@ switch(akce) {
 			pristop= '<input type="int" id="pristopId" name="pristop" value="" placeholder="pristop" >';
 			gdpr= '<input type="int" id="gdprId" name="gdpr" value="" placeholder="gdpr" >';
 			stevilkaZdravnika= '<input type="int" id="stevilkaZdravnikaId" name="stevilkaZdravnika" value="" placeholder="stevilkaZdravnika" >';			
-			document.getElementById("demo").innerHTML = email + uname + geslo + bolnisnica +ime + priimek + upstatus + pristop+gdpr+stevilkaZdravnika;
+			document.getElementById("demo").innerHTML = email + uname + geslo + bolnisnica +ime + priimek + upstatus + pristop+gdpr+stevilkaZdravnika;*/
+			document.getElementById("demo").innerHTML = vnosi;
 			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset
 		break;
