@@ -5,8 +5,8 @@ if(ime!=undefined){
 const LIMITIlab = JSON.parse(limitiJson);
 //console.log(LIMITIlab);
 if(LIMITIlab[ime]!=undefined){
-console.log(ime);
-console.log(LIMITIlab[ime]);
+//console.log(ime);
+//console.log(LIMITIlab[ime]);
 	max = LIMITIlab[ime]["max"];
 	max = parseFloat(max);
 //console.log(max);
@@ -54,6 +54,9 @@ else{
 	}//od switch
 }//od else
 }//od if ime
+{else
+	console.log('evaluacija.js linija 58');
+}
 }//od function laborFunction
 //-------------------------------------------------------------------------------------------------------
 //labevalFunction preveri limite lab. vrednosti pri načitanju bolnika iz baze
