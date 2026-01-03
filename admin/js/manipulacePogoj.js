@@ -16,49 +16,40 @@ switch(akce) {
     break; 
 
     case "vloz":
-	switch(tabulka) {
+		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
 			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
 			vnosi= "";
-			for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-			}
+			
 		break;
 		case "statusiTbl":
 //alert(tabulka);	
 			zaUrejat = ["status", "pomen",];
-			vnosi= "";
-			for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-			}	
+			vnosi= "";	
+				
 		break;
 		case "bolnisniceTbl":
 //alert(tabulka);	
 			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
 			vnosi= "";
-			for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-			}
+			
 		break;
 		case "limitiTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
 			vnosi= "";
-			for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-			}
-
-//console.log('za to tabuku ni še napisana koda');
 		break;			
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 	}
-	
-			document.getElementById("demo").innerHTML = vnosi;			
-			document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-			document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
+	for (let i = 0; i < zaUrejat.length; i++) {
+	vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+	}
+	document.getElementById("demo").innerHTML = vnosi;			
+	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
     break;
 
 	case "edit":
