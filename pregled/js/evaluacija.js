@@ -54,7 +54,7 @@ else{
 	}//od switch
 }//od else
 }//od if ime
-{else
+else{
 	console.log('evaluacija.js linija 58');
 }
 }//od function laborFunction
