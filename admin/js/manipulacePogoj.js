@@ -1,11 +1,11 @@
 //let tabulka="uporabnikiTbl";
 let tabulka_global;
+let zaUrejat_global;
 //alert('definicija tabulke:  '+tabulka_global);
 function izborFunction(akce, tabulka) {
 //console.log(tabulka);
  tabulka_global=tabulka; 
 	//alert(tabulka);
-	let  zaUrejat = [];
 	let vnosi= "";
   document.getElementById("akceId").value = akce;
 switch(akce) {
@@ -37,6 +37,8 @@ switch(akce) {
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 		}
+		 zaUrejat_global=zaUrejat; 
+		 //alert(zaUrejat_global);
 	for (let i = 0; i < zaUrejat.length; i++) {
 	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 	}
@@ -74,5 +76,5 @@ var y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 
-  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global + "&zaUrejat" + zaUrejat_global; 
 }//od function(e)
