@@ -1,11 +1,11 @@
 //let tabulka="uporabnikiTbl";
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
-function izborFunction(akce, tabulka) {
+function izborFunction(akce, tabulka, zaUrejat =[]) {
 //console.log(tabulka);
  tabulka_global=tabulka; 
 	//alert(tabulka);
-	let  zaUrejat = [];
+	//let  zaUrejat = [];
 	let vnosi= "";
   document.getElementById("akceId").value = akce;
 switch(akce) {
