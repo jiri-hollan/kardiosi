@@ -5,6 +5,9 @@
  require_once '../skupne/database.php';
 
 //_____________________________________________________________
+if (isset($_REQUEST["zaUrejat"])) {
+	echo('ZA UREJAT: '.$_REQUEST["zaUrejat"]);
+}
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();

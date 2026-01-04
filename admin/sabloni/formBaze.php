@@ -3,7 +3,6 @@ if (isset($_REQUEST["tabulka"])){
   $tab=$_REQUEST["tabulka"];
 //echo "Tabulka je: ".$tab;
  echo strtoupper(rtrim($tab,"Tbl"));
- //echo md5("kvit");
   } 
 ?>
 <br>
@@ -13,6 +12,7 @@ if (isset($_REQUEST["tabulka"])){
 <input type="hidden" id="akceId" name="akce" value="">
 <p id="demo"></p>
 <p id="tabSent"></p>
+<p id="urejatSent"></p>
 <p id="posli"></p>
 </form>
 
