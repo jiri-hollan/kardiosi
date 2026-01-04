@@ -85,7 +85,7 @@ if (isset($_REQUEST["pogoj"])){
   public $podminka; 
   public $data;
   public function __construct($pogoj, $tabulka, $zaUrejat=[]) {
-	parent::__construct($pogoj, $tabulka, $zaUrejat=[]);	
+	parent::__construct($pogoj, $tabulka, $zaUrejat);	
 	echo "case uredi <br>";
 print_r($_POST);
 echo "<br>";
