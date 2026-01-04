@@ -6,8 +6,10 @@
 
 //_____________________________________________________________
 if (isset($_REQUEST["zaUrejat"])) {
-	$zaUrejat=(explode(',',$_REQUEST["zaUrejat"],0));
-	var_dump($zaUrejat);
+	  $zaUrejat = new Test_input($_REQUEST["zaUrejat"]);
+	  $zaUrejat = $zaUrejat->get_test();		
+	  $zaUrejat=(explode(',',$zaUrejat,0));
+	  var_dump($zaUrejat);
 }
 if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
