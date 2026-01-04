@@ -5,7 +5,7 @@ function izborFunction(akce, tabulka) {
 //console.log(tabulka);
  tabulka_global=tabulka; 
 	//alert(tabulka);
-	let  zaUrejat = [];
+	let  dataPreg = [];
 	let vnosi= "";
   document.getElementById("akceId").value = akce;
 switch(akce) {
@@ -19,26 +19,26 @@ switch(akce) {
 		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
-			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
+			dataPreg = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
 		break;
 		case "statusiTbl":
 //alert(tabulka);	
-			zaUrejat = ["status", "pomen",];	
+			dataPreg = ["status", "pomen",];	
 		break;
 		case "bolnisniceTbl":
 //alert(tabulka);	
-			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
+			dataPreg = ["mesto", "nazivB", "bolnisnicaStatus"];
 		break;
 		case "limitiTbl":
 //console.log(tabulka);		
-			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
+			dataPreg = ["bolnisnica", "skupina", "ime", "min", "max"];
 		break;			
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 		}
-	for (let i = 0; i < zaUrejat.length; i++) {
-	vnosi += zaUrejat[i]+'<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+	for (let i = 0; i < dataPreg.length; i++) {
+	vnosi += dataPreg[i]+'<input type=\"text\" id=\"'+dataPreg[i]+'Id\"  name=\"'+dataPreg[i]+'\" value=\"\" placeholder=\"'+dataPreg[i]+'\" required>' ;	
 	}
 	document.getElementById("demo").innerHTML = vnosi;			
 	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
