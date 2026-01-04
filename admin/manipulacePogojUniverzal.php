@@ -52,7 +52,7 @@ if (isset($_REQUEST["pogoj"])){
  class DostopPost{
   public $pogoj;		
   public $tabulka;
-  public $dataPreg;
+  public $zaUrejat;
   function __construct($pogoj="", $tabulka="") {
 	    $pogoj=strtolower($pogoj); 
         $pogoj=ucfirst($pogoj); 
@@ -60,25 +60,25 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 	switch($this->tabulka){
 	  case "uporabnikiTbl":
-	     $this->dataPreg= '["email", "uname", "geslo", "bolnisnica", "ime", "priimek",  "upstatus", "pristop", "gdpr", "stevilkaZdravnika"]';
+	     $this->zaUrejat= '["email", "uname", "geslo", "bolnisnica", "ime", "priimek",  "upstatus", "pristop", "gdpr", "stevilkaZdravnika"]';
 	  break;
 	  case "statusiTbl":
-	     $this->dataPreg= '["status", "pomen"]';
+	     $this->zaUrejat= '["status", "pomen"]';
 	  break;
       case "bolnisniceTbl":
-	     $this->dataPreg= '["mesto", "nazivB", "bolnisnicaStatus"]';
+	     $this->zaUrejat= '["mesto", "nazivB", "bolnisnicaStatus"]';
 	  break;
 	  case "pregledovalciTbl":
-	     $this->dataPreg= '["pregledovalciStatus"]';
+	     $this->zaUrejat= '["pregledovalciStatus"]';
 	  break;
      case "limitiTbl":
-	     $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
+	     $this->zaUrejat= '["bolnisnica", "skupina", "ime", "min", "max"]';
 	  break;
 	  case "omejitveTbl":
-	     $this->dataPreg= '["nivo"]';	    
+	     $this->zaUrejat= '["nivo"]';	    
      break;
 /*	  case "":
-	     $this->dataPreg= '["", "", "", ""]';
+	     $this->zaUrejat= '["", "", "", ""]';
 	  break;
 */
 	  default:
@@ -107,7 +107,7 @@ echo "<br>";
 // var_dump ($data);
    return $data;
 }
-foreach (json_decode($this->dataPreg) as $key) {
+foreach (json_decode($this->zaUrejat) as $key) {
 //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
@@ -169,7 +169,7 @@ foreach (json_decode($this->dataPreg) as $key) {
    $data[$key] = $value;
    return $data;
 }
-foreach (json_decode($this->dataPreg) as $key) {
+foreach (json_decode($this->zaUrejat) as $key) {
  //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	

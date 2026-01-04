@@ -61,18 +61,18 @@ if (isset($_REQUEST["akce"])) {
         $this->tabulka = $tabulka; 
 		 switch($this->tabulka){
 	  case "pregledovalciTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
+	  $this->zaUrejat= '["bolnisnica", "ime", "priimek", "pregledovalciStatus"]';
 	  break;
 	  case "sklepiTbl":
-	  $this->dataPreg= '["bolnisnica", "sklep", "sklepiStatus"]';
+	  $this->zaUrejat= '["bolnisnica", "sklep", "sklepiStatus"]';
 	  break;
 	  
 	  case "ocenaTbl":
-	  $this->dataPreg= '["bolnisnica", "ime", "ocena", "ocenaStatus"]';
+	  $this->zaUrejat= '["bolnisnica", "ime", "ocena", "ocenaStatus"]';
 	  break;
 	  
 	  case "limitiTbl":
-	  $this->dataPreg= '["bolnisnica", "skupina", "ime", "min", "max"]';
+	  $this->zaUrejat= '["bolnisnica", "skupina", "ime", "min", "max"]';
 	  break;
 	  default:
 	  echo "tabulka ni določena";
@@ -98,7 +98,7 @@ echo "<br>";
    $data[$key] = $value;
    return $data;
 }
-foreach (json_decode($this->dataPreg) as $key) {
+foreach (json_decode($this->zaUrejat) as $key) {
  //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
@@ -160,7 +160,7 @@ echo "Za izbrano bolnisnico ni zapisa v bazi";
    $data[$key] = $value;
    return $data;
 }
-foreach (json_decode($this->dataPreg) as $key) {
+foreach (json_decode($this->zaUrejat) as $key) {
  //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
