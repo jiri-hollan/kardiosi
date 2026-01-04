@@ -1,11 +1,11 @@
 //let tabulka="uporabnikiTbl";
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
-function izborFunction(akce, tabulka, zaUrejat =[]) {
+function izborFunction(akce, tabulka) {
 //console.log(tabulka);
  tabulka_global=tabulka; 
 	//alert(tabulka);
-	//let  zaUrejat = [];
+	let  zaUrejat_global;;
 	let vnosi= "";
   document.getElementById("akceId").value = akce;
 switch(akce) {
@@ -19,27 +19,23 @@ switch(akce) {
 		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
-			if(zaUrejat. length === 0){
-			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];	
-			}			
+			
+			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
 		break;
 		case "statusiTbl":
 //alert(tabulka);
-			if(zaUrejat. length === 0){	
-			zaUrejat = ["status", "pomen",];
-			}			
+				
+			zaUrejat = ["status", "pomen",];		
 		break;
 		case "bolnisniceTbl":
 //alert(tabulka);
-			if(zaUrejat. length === 0){	
-			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
-			}			
+				
+			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];			
 		break;
 		case "limitiTbl":
 //console.log(tabulka);
-			if(zaUrejat. length === 0){
+			
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"]; 
-			}
 		break;			
 		default:
 			console.log(tabulka);		
