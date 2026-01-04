@@ -124,8 +124,8 @@ foreach ($this->zaUrejat as $key) {
 	  public $tabulka;
 	  public $poradi;
 	  public $podminka;
-  function __construct($pogoj, $tabulka, $stolpci=["*"], $poradi=NULL) {
-	parent::__construct($pogoj, $tabulka);
+  function __construct($pogoj, $tabulka,  $zaUrejat, $stolpci=["*"], $poradi=NULL) {
+	parent::__construct($pogoj, $tabulka, $zaUrejat);
     $this->stolpci = $stolpci;	
 //echo "v class vyber";
 	if ($this->pogoj == "") {
