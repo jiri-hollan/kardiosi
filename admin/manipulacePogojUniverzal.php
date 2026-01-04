@@ -32,8 +32,8 @@ if (isset($_REQUEST["pogoj"])){
   }else {
 	  echo "ni tabulke v post";
   }
-  var_dump($akce);
-  var_dump($zaUrejat);
+//var_dump($akce);
+//var_dump($zaUrejat);
     echo strtoupper($akce) .': ';
   echo strtoupper($pogoj) .'<br>';
  
@@ -73,9 +73,9 @@ if (isset($_REQUEST["pogoj"])){
 			  exit('linija 72');
 		  }else{
 			 echo('linija 75'); 
-			// var_dump($zaUrejat); 
+// var_dump($zaUrejat); 
 			$this->zaUrejat= $zaUrejat; 
-			// var_dump($this->zaUrejat);
+// var_dump($this->zaUrejat);
 		  }	
 		
   } //od construct
@@ -90,8 +90,8 @@ if (isset($_REQUEST["pogoj"])){
   public function __construct($pogoj, $tabulka, $zaUrejat) {
 	parent::__construct($pogoj, $tabulka, $zaUrejat);	
 	echo "case uredi <br>";
-	echo('linija 92');
-	var_dump($zaUrejat);
+//echo('linija 92');
+//var_dump($zaUrejat);
 print_r($_POST);
 echo "<br>";
     $id= new test_input($_POST["id"]);
@@ -158,7 +158,7 @@ foreach ($this->zaUrejat as $key) {
 	public $data;
   function __construct($pogoj, $tabulka, $zaUrejat) {
 	parent::__construct($pogoj, $tabulka, $zaUrejat);
-	//var_dump($zaUrejat);
+//var_dump($zaUrejat);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
