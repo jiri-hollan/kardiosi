@@ -67,38 +67,13 @@ if (isset($_REQUEST["pogoj"])){
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
         $this->tabulka = $tabulka; 
-	switch($this->tabulka){
-	  case "uporabnikiTbl":
-	     $this->zaUrejat= '["email", "uname", "geslo", "bolnisnica", "ime", "priimek",  "upstatus", "pristop", "gdpr", "stevilkaZdravnika"]';
-	  break;
-	  case "statusiTbl":
-	     $this->zaUrejat= '["status", "pomen"]';
-	  break;
-      case "bolnisniceTbl":
-	     $this->zaUrejat= '["mesto", "nazivB", "bolnisnicaStatus"]';
-	  break;
-	  case "pregledovalciTbl":
-	     $this->zaUrejat= '["pregledovalciStatus"]';
-	  break;
-     case "limitiTbl":
-	      if(sizeof($zaUrejat)===0){
+		
+	 if(sizeof($zaUrejat)===0){
 			  exit('linija 84');
-		   $this->zaUrejat= '["bolnisnica", "skupina", "ime", "min", "max"]';  
 		  }else{
-			// var_dump($zaUrejat); 
+			 var_dump($zaUrejat); 
 			$this->zaUrejat= $zaUrejat; 
-		  }
-	  break;
-	  case "omejitveTbl":
-	     $this->zaUrejat= '["nivo"]';	    
-     break;
-/*	  case "":
-	     $this->zaUrejat= '["", "", "", ""]';
-	  break;
-*/
-	  default:
-	  echo "tabulka ni določena";
-  }
+		  }	
 		
   } //od construct
 }//od class dostopPost
