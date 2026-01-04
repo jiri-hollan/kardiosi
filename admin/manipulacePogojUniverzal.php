@@ -7,9 +7,10 @@
 //_____________________________________________________________
 if (isset($_REQUEST["zaUrejat"])) {
 	  $zaUrejat = new Test_input($_REQUEST["zaUrejat"]);
-	  $zaUrejat = $zaUrejat->get_test();		
-	  $zaUrejat=(explode(',',$zaUrejat,0));
-	  var_dump($zaUrejat);
+	  $zaUrejat = $zaUrejat->get_test();
+	  //var_dump($zaUrejat);	  
+	  $zaUrejat=(explode(',',$zaUrejat));
+	  //var_dump($zaUrejat);
 	}else{
 		$zaUrejat=[];
 	}
@@ -35,7 +36,7 @@ if (isset($_REQUEST["pogoj"])){
     echo strtoupper($akce) .': ';
   echo strtoupper($pogoj) .'<br>';
  
-  new $akce($pogoj, $tabulka);
+  new $akce($pogoj, $tabulka, $zaUrejat);
 
 	  
 }//od if
@@ -61,7 +62,7 @@ if (isset($_REQUEST["pogoj"])){
   public $pogoj;		
   public $tabulka;
   public $zaUrejat;
-  function __construct($pogoj="", $tabulka="") {
+  function __construct($pogoj="", $tabulka="", $zaUrejat=[]) {
 	    $pogoj=strtolower($pogoj); 
         $pogoj=ucfirst($pogoj); 
 	    $this->pogoj = $pogoj;
@@ -80,7 +81,13 @@ if (isset($_REQUEST["pogoj"])){
 	     $this->zaUrejat= '["pregledovalciStatus"]';
 	  break;
      case "limitiTbl":
-	     $this->zaUrejat= '["bolnisnica", "skupina", "ime", "min", "max"]';
+	      if(sizeof($zaUrejat)===0){
+			  exit('linija 84');
+		   $this->zaUrejat= '["bolnisnica", "skupina", "ime", "min", "max"]';  
+		  }else{
+			// var_dump($zaUrejat); 
+			$this->zaUrejat= $zaUrejat; 
+		  }
 	  break;
 	  case "omejitveTbl":
 	     $this->zaUrejat= '["nivo"]';	    
@@ -115,7 +122,8 @@ echo "<br>";
 // var_dump ($data);
    return $data;
 }
-foreach (json_decode($this->zaUrejat) as $key) {
+var_dump($this->zaUrejat);
+foreach ($this->zaUrejat as $key) {
 //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
@@ -168,8 +176,9 @@ foreach (json_decode($this->zaUrejat) as $key) {
 	class Vloz extends DostopPost {
 	public $tabulka;
 	public $data;
-  function __construct($pogoj, $tabulka) {
-	parent::__construct($pogoj, $tabulka);
+  function __construct($pogoj, $tabulka, $zaUrejat) {
+	parent::__construct($pogoj, $tabulka, $zaUrejat);
+	//var_dump($zaUrejat);
 	echo $tabulka;
 	$this->tabulka = $tabulka;
 	$data=array();
@@ -177,7 +186,8 @@ foreach (json_decode($this->zaUrejat) as $key) {
    $data[$key] = $value;
    return $data;
 }
-foreach (json_decode($this->zaUrejat) as $key) {
+var_dump($this->zaUrejat);
+foreach ($this->zaUrejat as $key) {
  //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
