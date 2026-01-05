@@ -8,9 +8,14 @@
 if (isset($_REQUEST["zaUrejat"])) {
 	  $zaUrejat = new Test_input($_REQUEST["zaUrejat"]);
 	  $zaUrejat = $zaUrejat->get_test();
-//var_dump($zaUrejat);	  
-	  $zaUrejat=(explode(',',$zaUrejat));
 //var_dump($zaUrejat);
+		if($zaUrejat==""){
+			$zaUrejat=[];
+		}else{
+			  $zaUrejat=(explode(',',$zaUrejat));
+//var_dump($zaUrejat);
+		}
+
 	}else{
 		$zaUrejat=[];
 	}
@@ -70,7 +75,7 @@ if (isset($_REQUEST["pogoj"])){
         $this->tabulka = $tabulka; 
 		
 	 if(sizeof($zaUrejat)===0){
-			  exit('linija 72');
+			  exit('ni seznama stolpcev za:'.$tabulka);
 		  }else{
 			 echo('linija 75'); 
 // var_dump($zaUrejat); 
