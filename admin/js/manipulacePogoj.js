@@ -1,10 +1,9 @@
-//let tabulka="uporabnikiTbl";
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
 function izborFunction(akce, tabulka) {
 //console.log(tabulka);
- tabulka_global=tabulka; 
-	//alert(tabulka);
+	tabulka_global=tabulka; 
+//alert(tabulka);
 	let  zaUrejat = [];
 	let vnosi= "";
 		switch(tabulka) {
@@ -32,39 +31,38 @@ function izborFunction(akce, tabulka) {
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 		}
-  document.getElementById("akceId").value = akce;
-switch(akce) {
+	document.getElementById("akceId").value = akce;
+	switch(akce) {
 	case "vyber":
-	for (let i = 0; i < zaUrejat.length; i++) {
-		vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=NULL placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-		}
-	document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-	document.getElementById("urejatSent").innerHTML =  '<input type="hidden" name="zaUrejat" value="'+zaUrejat+'">';		
-	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
+		for (let i = 0; i < zaUrejat.length; i++) {
+			vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=NULL placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+			}
+		document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("urejatSent").innerHTML =  '<input type="hidden" name="zaUrejat" value="'+zaUrejat+'">';		
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi">'; //submit
     break; 
 
     case "vloz":
-	for (let i = 0; i < zaUrejat.length; i++) {
-		vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
-		}
-	document.getElementById("demo").innerHTML = vnosi;			
-	document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
-	document.getElementById("urejatSent").innerHTML =  '<input type="hidden" name="zaUrejat" value="'+zaUrejat+'">';	
-	document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
+		for (let i = 0; i < zaUrejat.length; i++) {
+			vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+			}
+		document.getElementById("demo").innerHTML = vnosi;			
+		document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
+		document.getElementById("urejatSent").innerHTML =  '<input type="hidden" name="zaUrejat" value="'+zaUrejat+'">';	
+		document.getElementById("posli").innerHTML = '<input class="submit" type="submit" name="submit" value="potrdi"><input type="reset" name="reset" value="Reset">'; //submit+reset					
     break;
 
 	case "edit":
-//alert("v JS case edit");
 		if(document.getElementById("osebe")!=null){
 			document.getElementById("osebe").addEventListener("click", functionOver);
-		}
+			}
     break;
 
 	case "odstrani": 
 		if ( confirm("Odstranim en zapis?") == true) {
 			if(document.getElementById("osebe")!=null){
 				document.getElementById("osebe").addEventListener("click", functionOver);
-				}
+			}
 		} else {
 			text = "You canceled!";
 		}
@@ -76,11 +74,11 @@ switch(akce) {
 function functionOver (e) {
 var x = e.target;
 //alert(tabulka_global);
-	//alert("functionOver");
+//alert("functionOver");
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
-row_value = y.cells[0].innerHTML;
-  document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
- }//od if 
+	var y = event.composedPath()[1];
+	row_value = y.cells[0].innerHTML;
+	document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
+	}//od if 
   window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
 }//od function(e)
