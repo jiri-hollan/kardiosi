@@ -33,7 +33,7 @@ switch(akce) {
 			console.log('za to tabuku ni še napisana koda');
 		}
 	for (let i = 0; i < zaUrejat.length; i++) {
-	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=NULL placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 	}
 		document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
 		document.getElementById("urejatSent").innerHTML =  '<input type="hidden" name="zaUrejat" value="'+zaUrejat+'">';		

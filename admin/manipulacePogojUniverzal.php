@@ -77,7 +77,7 @@ if (isset($_REQUEST["pogoj"])){
 	 if(sizeof($zaUrejat)===0){
 			  exit('ni seznama stolpcev za:'.$tabulka);
 		  }else{
-			 echo('linija 75'); 
+//echo('linija 75'); 
 // var_dump($zaUrejat); 
 			$this->zaUrejat= $zaUrejat; 
 // var_dump($this->zaUrejat);
