@@ -7,11 +7,7 @@ function izborFunction(akce, tabulka) {
 	//alert(tabulka);
 	let  zaUrejat = [];
 	let vnosi= "";
-  document.getElementById("akceId").value = akce;
-switch(akce) {
-	case "vyber":
-//alert(tabulka);
-	switch(tabulka) {
+		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
 			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
@@ -36,6 +32,9 @@ switch(akce) {
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
 		}
+  document.getElementById("akceId").value = akce;
+switch(akce) {
+	case "vyber":
 	for (let i = 0; i < zaUrejat.length; i++) {
 	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=NULL placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 	}
@@ -45,31 +44,6 @@ switch(akce) {
     break; 
 
     case "vloz":
-		switch(tabulka) {
-		case "uporabnikiTbl":
-//alert(tabulka);
-			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
-		break;
-		case "statusiTbl":
-//alert(tabulka);	
-			zaUrejat = ["status", "pomen",];	
-		break;
-		case "bolnisniceTbl":
-//alert(tabulka);	
-			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
-		break;
-		case "limitiTbl":
-//console.log(tabulka);		
-			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
-		break;
-		case "pregledovalciTbl":
-//console.log(tabulka);		
-			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
-		break;							
-		default:
-			console.log(tabulka);		
-			console.log('za to tabuku ni še napisana koda');
-		}
 	for (let i = 0; i < zaUrejat.length; i++) {
 	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 	}
