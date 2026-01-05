@@ -27,7 +27,11 @@ switch(akce) {
 		case "limitiTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
-		break;			
+		break;
+		case "pregledovalciTbl":
+//console.log(tabulka);		
+			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
+		break;					
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
@@ -57,7 +61,11 @@ switch(akce) {
 		case "limitiTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
-		break;			
+		break;
+		case "pregledovalciTbl":
+//console.log(tabulka);		
+			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
+		break;							
 		default:
 			console.log(tabulka);		
 			console.log('za to tabuku ni še napisana koda');
