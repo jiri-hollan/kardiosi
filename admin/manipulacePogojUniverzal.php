@@ -195,17 +195,13 @@ foreach ($this->zaUrejat as $key) {
     function __construct($vybrano) {
 		//echo $_REQUEST["tabulka"];
 		echo "<table id='osebe' style='border: solid 1px black;'>";
-		print_r(array_keys($vybrano[0]));
-		switch ($_REQUEST["tabulka"]){
-		case "uporabnikiTbl":
-			echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>bolnišnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>gdpr</th><th>številka zd</th></tr>";
-		break;
-		case "bolnisniceTbl":
-			echo "<tr><th>Id</th><th>mesto</><th>nazivB</th><th>bolnisnicaStatus</th><th>reg_date</th></tr>";
-		break;
-		default:
-			echo "";
-		}
+		$glave=(array_keys($vybrano[0]));
+		echo '<tr>';
+		foreach ($glave as $value) {
+  echo "<th>$value </th>";
+}
+		echo '</tr>';
+
 			parent::__construct($vybrano, self::LEAVES_ONLY);
     }
     function current() :mixed { 
