@@ -192,7 +192,7 @@ foreach ($this->zaUrejat as $key) {
 
 //-------------------------iterator-----------------------------------------------------
 	class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
+    function __construct($vybrano) {
 		//echo $_REQUEST["tabulka"];
 		echo "<table id='osebe' style='border: solid 1px black;'>";
 		switch ($_REQUEST["tabulka"]){
@@ -205,7 +205,7 @@ foreach ($this->zaUrejat as $key) {
 		default:
 			echo "";
 		}
-			parent::__construct($it, self::LEAVES_ONLY);
+			parent::__construct($vybrano, self::LEAVES_ONLY);
     }
     function current() :mixed { 
 		 return "<td  >"  . parent::current() . "</td>";
