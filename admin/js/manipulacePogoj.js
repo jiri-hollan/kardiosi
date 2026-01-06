@@ -26,7 +26,11 @@ function izborFunction(akce, tabulka) {
 		case "pregledovalciTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
-		break;					
+		break;	
+		case "omejitveTbl":
+//console.log(tabulka);		
+			zaUrejat = ["razlog", "nivo"];
+		break;		
 		default:
 			zaUrejat = [];		
 			console.log(tabulka);		
