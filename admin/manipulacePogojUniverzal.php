@@ -144,7 +144,9 @@ foreach ($this->zaUrejat as $key) {
 	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
 	echo "<br>";
 	if(count($vybrano)>0){	
-//var_dump($vybrano);		
+//var_dump($vybrano);
+
+print_r(array_keys($vybrano[0]));
 	  foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
       echo $v;
 //	var_dump($v);
@@ -195,6 +197,7 @@ foreach ($this->zaUrejat as $key) {
     function __construct($vybrano) {
 		//echo $_REQUEST["tabulka"];
 		echo "<table id='osebe' style='border: solid 1px black;'>";
+		print_r(array_keys($vybrano[0]));
 		switch ($_REQUEST["tabulka"]){
 		case "uporabnikiTbl":
 			echo "<tr><th>Id</th><th>email</><th>uname</th><th>geslo</th><th>bolnišnica</th><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th><th>gdpr</th><th>številka zd</th></tr>";
