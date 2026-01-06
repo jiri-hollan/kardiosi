@@ -145,8 +145,6 @@ foreach ($this->zaUrejat as $key) {
 	echo "<br>";
 	if(count($vybrano)>0){	
 //var_dump($vybrano);
-
-print_r(array_keys($vybrano[0]));
 	  foreach(new TableRows(new RecursiveArrayIterator($vybrano)) as $k=>$v) {
       echo $v;
 //	var_dump($v);
