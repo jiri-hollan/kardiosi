@@ -49,7 +49,7 @@ function izborFunction(akce, tabulka) {
 
     case "vloz":
 		for (let i = 0; i < zaUrejat.length; i++) {
-			vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=NULL placeholder=\"'+zaUrejat[i]+'\" required>' ;	
+			vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;		
 			}
 		document.getElementById("demo").innerHTML = vnosi;			
 		document.getElementById("tabSent").innerHTML =  '<input type="hidden" name="tabulka" value="'+tabulka+'">';
