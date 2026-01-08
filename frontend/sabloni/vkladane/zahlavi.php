@@ -12,7 +12,7 @@ echo'
 <link rel="stylesheet" href="../css/menuFile.css?'.time().'">
 <script src="../frontend/js/uporabnikiVse.js?'.time().'"></script> 
 <script src="../pregled/js/prijava.js?'.time().'"></script>
-<script src="../frontend/js/seznamBolnisnic.js?'.time().'"></script> 
+<script src="../skupne/js/seznamBolnisnic.js?'.time().'"></script> 
 <link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?'.time().'">
 </head>
 <body>
