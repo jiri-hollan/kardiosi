@@ -4,15 +4,15 @@ if (isset($_REQUEST["tabulka"])){
 //echo "Tabulka je: ".$tab;
  echo strtoupper(rtrim($tab,"Tbl"));
   }
-//echo($spisek->mestoB);
-//$spisek->mestoB
-//$mestoB je iz seznamBolnisnic.php
-//$mestoB=$spisek->mestoB;
-//var_dump ($mestoB);  
+//echo($spisek->bolList);
+//$spisek->bolList
+//$bolList je iz seznamBolnisnic.php
+//$bolList=$spisek->bolList;
+//var_dump ($bolList);  
 ?>
 
 <br>
-<button id="vyberId" onclick="izborFunction('vyber','<?php echo $tab;?>', mestoB)">izberi</button>
+<button id="vyberId" onclick="izborFunction('vyber','<?php echo $tab;?>', bolList)">izberi</button>
 <button id="vlozId" onclick="izborFunction('vloz','<?php echo $tab;?>')">vlož</button>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">

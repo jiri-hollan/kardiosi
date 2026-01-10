@@ -14,7 +14,7 @@
 </select>
 
  <script>
- seznamBolnisnicFunction(mestoB );
+ seznamBolnisnicFunction(bolList );
   </script>
 
 
