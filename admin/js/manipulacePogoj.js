@@ -1,6 +1,6 @@
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
-function izborFunction(akce, tabulka) {
+function izborFunction(akce, tabulka,bolList) {
 //console.log(tabulka);
 	tabulka_global=tabulka; 
 //alert(tabulka);
