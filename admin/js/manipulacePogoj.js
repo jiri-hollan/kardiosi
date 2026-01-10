@@ -39,7 +39,7 @@ function izborFunction(akce, tabulka) {
 	document.getElementById("akceId").value = akce;
 	switch(akce) {
 	case "vyber":
-	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onfocusout="bolnisnicaFunction()" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica"  autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
   let text = "";
   let i;
 	for (i = 0; i < bolList.length; i++) {
