@@ -20,9 +20,6 @@ if (isset($_REQUEST["tabulka"])){
 <p id="tabSent"></p>
 <p id="urejatSent"></p>
 <p id="posli"></p>
- <script>
- seznamBolnisnicFunction(mestoB );
-  </script>
 </form>
 
 <p id="demo3"></p>
