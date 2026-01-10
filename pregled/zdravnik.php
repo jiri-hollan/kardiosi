@@ -57,10 +57,10 @@ echo '<button id="buttonDomov" onclick="window.location.href=' . "'" . $home . "
 	
 ?>
  <script>
-   var seznamBolnisnicx = JSON.parse(seznamBolnisnicJson);
+   const seznamBolnisnic = JSON.parse(seznamBolnisnicJson);
 // alert(seznamBolnisnicJson);
-   var mestoBolnisniceX = JSON.parse(mestoBolnisniceJson);
-   listaBolnisnicFunction(mestoBolnisniceX );
+   const bolList = JSON.parse(mestoBolnisniceJson);
+   listaBolnisnicFunction(bolList );
 // alert("celo ime Json:" + celoImeJson);
   var zdravListX = JSON.parse(celoImeJson);
 //alert(zdravListX);
