@@ -1,8 +1,7 @@
-function seznamBolnisnicFunction(mestoBolnisnice) {
+function seznamBolnisnicFunction(bolList) {
 //alert ("seznamBolnisnicFunction");
 // koda, ki naredi array bolList iz tabele bolnisniceTab	
-//alert(mestoBolnisnice);
-var bolList  = mestoBolnisnice; 
+//alert(bolList);
 var text = "";
 var i;
 for (i = 0; i < bolList.length; i++) {
