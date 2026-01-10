@@ -4,12 +4,13 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin</title>
+<title>kardiosi</title>
 <link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
 <link rel="stylesheet" href="../admin/css/zahlavi.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="../admin/css/menuFile.css?<?php echo time(); ?>">
 <link rel="stylesheet" href="../admin/css/izbira.css?<?php echo time(); ?>">
 <script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script> 
+<script src="../skupne/js/seznamBolnisnic.js?<?php echo time(); ?>"></script> 
 </head>
 <body>
 <div class="topnav">

@@ -3,8 +3,14 @@ if (isset($_REQUEST["tabulka"])){
   $tab=$_REQUEST["tabulka"];
 //echo "Tabulka je: ".$tab;
  echo strtoupper(rtrim($tab,"Tbl"));
-  } 
+  }
+//echo($spisek->mestoB);
+//$spisek->mestoB
+//$mestoB je iz seznamBolnisnic.php
+//$mestoB=$spisek->mestoB;
+//var_dump ($mestoB);  
 ?>
+
 <br>
 <button id="vyberId" onclick="izborFunction('vyber','<?php echo $tab;?>', mestoB)">izberi</button>
 <button id="vlozId" onclick="izborFunction('vloz','<?php echo $tab;?>')">vlož</button>
@@ -14,6 +20,9 @@ if (isset($_REQUEST["tabulka"])){
 <p id="tabSent"></p>
 <p id="urejatSent"></p>
 <p id="posli"></p>
+ <script>
+ seznamBolnisnicFunction(mestoB );
+  </script>
 </form>
 
 <p id="demo3"></p>

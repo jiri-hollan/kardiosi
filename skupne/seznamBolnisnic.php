@@ -28,11 +28,13 @@ $mestoBolnisniceJson = json_encode($mestoBolnisnice, JSON_UNESCAPED_UNICODE);
 $this->mestoB=json_encode( $mestoBolnisniceJson, JSON_UNESCAPED_UNICODE);
 
 //var_dump($mestoBolnisniceJson);
+//var_dump($this->mestoB);
 echo '<script>;
 const mestoB = JSON.parse('. $this->mestoB.');
 //alert(mestoBolnisniceJson);
-</script>';
+ </script>';
 	}//od construct			
 	}//od class spisekBolnisnic
-	new spisekBolnisnic();
+	$spisek=new spisekBolnisnic();
+	//var_dump ($spisek->mestoB);
 ?>
