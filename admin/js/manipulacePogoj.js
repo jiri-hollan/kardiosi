@@ -4,12 +4,17 @@ function izborFunction(akce, tabulka,bolList) {
 //console.log(tabulka);
 	tabulka_global=tabulka; 
 //alert(tabulka);
-	let  zaUrejat = [];
+	let zaUrejat = [];
 	let vnosi= "";
+	let zaPogoj = "";
+	let i;
+	let text = "";
+
 		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
-			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];			
+			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
+			zaPogoj = "bolnisnica";			
 		break;
 		case "statusiTbl":
 //alert(tabulka);	
@@ -22,10 +27,12 @@ function izborFunction(akce, tabulka,bolList) {
 		case "limitiTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "skupina", "ime", "min", "max"];
+			zaPogoj = "bolnisnica";			
 		break;
 		case "pregledovalciTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
+			zaPogoj = "bolnisnica";			
 		break;	
 		case "omejitveTbl":
 //console.log(tabulka);		
@@ -37,17 +44,19 @@ function izborFunction(akce, tabulka,bolList) {
 			console.log('za to tabuku ni še napisana koda');
 		}
 	document.getElementById("akceId").value = akce;
+	
 	switch(akce) {
 	case "vyber":
+		if(zaPogoj=="bolnisnica"){
 	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica"  autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
-  let text = "";
-  let i;
-	for (i = 0; i < bolList.length; i++) {
-		text += "<option value='" +  bolList[i] + "'>"  +"<br>";
-	}
-	
-        document.getElementById("bolnisnice").innerHTML = text;
-	
+
+		for (i = 0; i < bolList.length; i++) {
+			text += "<option value='" +  bolList[i] + "'>"  +"<br>";
+		}
+			document.getElementById("bolnisnice").innerHTML = text;
+		}else{
+			console.log('zaPogoj ni določen');
+		}
 		for (let i = 0; i < zaUrejat.length; i++) {
 	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 			}
