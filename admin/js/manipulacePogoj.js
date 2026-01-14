@@ -6,22 +6,21 @@ function izborFunction(akce, tabulka,bolList) {
 //alert(tabulka);
 	let zaUrejat = [];
 	let vnosi= "";
+	let seznam = "";
 	let zaPogoj = "";
 	let i;
-	let text = "";
-
 		switch(tabulka) {
 		case "uporabnikiTbl":
 //alert(tabulka);
 			zaUrejat = ["email", "uname", "geslo", "bolnisnica", "ime", "priimek", "upstatus", "pristop", "gdpr", "stevilkaZdravnika"];
-			zaPogoj = "bolnisnica";			
+			zaPogoj = "bolnisnica";
 		break;
 		case "statusiTbl":
 //alert(tabulka);	
 			zaUrejat = ["status", "pomen",];	
 		break;
 		case "bolnisniceTbl":
-//alert(tabulka);	
+//alert(tabulka);
 			zaUrejat = ["mesto", "nazivB", "bolnisnicaStatus"];
 		break;
 		case "limitiTbl":
@@ -32,12 +31,33 @@ function izborFunction(akce, tabulka,bolList) {
 		case "pregledovalciTbl":
 //console.log(tabulka);		
 			zaUrejat = ["bolnisnica", "ime", "priimek", "pregledovalciStatus"];
-			zaPogoj = "bolnisnica";			
+			zaPogoj = "bolnisnica";
 		break;	
 		case "omejitveTbl":
 //console.log(tabulka);		
 			zaUrejat = ["razlog", "nivo"];
-		break;		
+		break;
+		case "sklepiTbl":
+//console.log(tabulka);		
+			zaUrejat = ["bolnisnica", "sklep", "sklepiStatus"];
+			zaPogoj = "bolnisnica";			
+		break;
+		case "opravilaTbl":
+//console.log(tabulka);		
+			zaUrejat = ["bolnisnica", "opravilo", "sifraOpravila"];
+		break;	
+		case "premedikacija1Tbl":
+//console.log(tabulka);		
+			zaUrejat = ["ucinkovina", "teza", "doza", "koncentracija", "navodila"];
+		break;	
+/*			case "tabulka":
+//console.log(tabulka);		
+			zaUrejat = ["stolpec", "stolpec"];
+		break;			
+		case "tabulka":
+//console.log(tabulka);		
+			zaUrejat = ["stolpec", "stolpec"];
+		break;	*/				
 		default:
 			zaUrejat = [];		
 			console.log(tabulka);		
@@ -48,16 +68,16 @@ function izborFunction(akce, tabulka,bolList) {
 	switch(akce) {
 	case "vyber":
 		if(zaPogoj=="bolnisnica"){
-	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica"  autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
 
 		for (i = 0; i < bolList.length; i++) {
-			text += "<option value='" +  bolList[i] + "'>"  +"<br>";
-		}
-			document.getElementById("bolnisnice").innerHTML = text;
+			seznam += "<option value='" +  bolList[i] + "'>"  +"<br>";
+		}	
+			document.getElementById("bolnisnice").innerHTML = seznam;
 		}else{
 			console.log('zaPogoj ni določen');
 		}
-		for (let i = 0; i < zaUrejat.length; i++) {
+		for (i = 0; i < zaUrejat.length; i++) {
 	vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;	
 			}
 		document.getElementById("tabSent").innerHTML = '<input type="hidden" name="tabulka" value="'+tabulka+'">';
@@ -66,7 +86,7 @@ function izborFunction(akce, tabulka,bolList) {
     break; 
 
     case "vloz":
-		for (let i = 0; i < zaUrejat.length; i++) {
+		for (i = 0; i < zaUrejat.length; i++) {
 			vnosi += '<input type=\"text\" id=\"'+zaUrejat[i]+'Id\"  name=\"'+zaUrejat[i]+'\" value=\"\" placeholder=\"'+zaUrejat[i]+'\" required>' ;		
 			}
 		document.getElementById("demo").innerHTML = vnosi;			
@@ -95,13 +115,22 @@ function izborFunction(akce, tabulka,bolList) {
 } // od izborFunction
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
-var x = e.target;
-//alert(tabulka_global);
-//alert("functionOver");
+let x = e.target;
 if (x.nodeName == "TD") {
-	var y = event.composedPath()[1];
+	let y = event.composedPath()[1];
 	row_value = y.cells[0].innerHTML;
 	document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
 	}//od if 
   window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
 }//od function(e)
+
+//------------------------------------------------------------------------------------------
+function pogojFunction(name, value){
+	let pogojJs ={};
+	pogojJs[name] = value;
+	console.log(pogojJs);
+	const pogoj = JSON.stringify(pogojJs);
+	console.log(pogoj);
+	
+document.getElementById("pogojSkriti").innerHTML = '<input type="hidden" name="pogoj" value='+pogoj+'>';
+}//od pogojFunction

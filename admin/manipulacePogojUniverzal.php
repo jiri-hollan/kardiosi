@@ -24,9 +24,10 @@ if (isset($_REQUEST["akce"])) {
 	  $akce = new Test_input($_REQUEST["akce"]);
 	  $akce = $akce->get_test();
 if (isset($_REQUEST["pogoj"])){
-	  $pogoj = new Test_input($_REQUEST['pogoj']); 
-      $pogoj = $pogoj->get_test();
-	  
+	 //$pogoj = new Test_input($_REQUEST['pogoj']); 
+      //$pogoj = $pogoj->get_test();
+	  $pogoj = $_REQUEST['pogoj'];
+	 // exit($pogoj);
   }else {
 	 $pogoj = "";   
   } 
@@ -41,8 +42,8 @@ if (isset($_REQUEST["pogoj"])){
 //var_dump($akce);
 //var_dump($zaUrejat);
     echo strtoupper($akce) .': ';
-  echo strtoupper($pogoj) .'<br>';
- 
+    echo strtoupper($pogoj) .'<br>';
+ //exit($pogoj);
   new $akce($pogoj, $tabulka, $zaUrejat);
 
 	  
@@ -132,12 +133,17 @@ foreach ($this->zaUrejat as $key) {
 	  public $podminka;
   function __construct($pogoj, $tabulka,  $zaUrejat, $stolpci=["*"], $poradi=NULL) {
 	parent::__construct($pogoj, $tabulka, $zaUrejat);
-    $this->stolpci = $stolpci;	
+    $this->stolpci = $stolpci;
+	//$this->pogoj = $pogoj;
 //echo "v class vyber";
-	if ($this->pogoj == "") {
+	if ($pogoj == "") {
 	  $this->podminka = NULL;
   } else {
-    $this->podminka = array("pogoj"=>$this->pogoj);
+//var_dump($pogoj);
+	$this->pogoj= json_decode($pogoj, true);	
+//var_dump($this->pogoj);
+//exit('to je exit');	
+    $this->podminka = $this->pogoj;
   }//od else
 	$this->poradi=$poradi;
 	$this->tabulka=$tabulka;
@@ -153,7 +159,7 @@ foreach ($this->zaUrejat as $key) {
 	}//od foreach
   }//od if(cout)
 	else{
-	   echo "Ni zapisa v bazi";	
+	   echo "za izbrano bolnišnico ni zapisa v bazi";	
 	}//od else
   }//od vyberFunction  
 }//od class vyber

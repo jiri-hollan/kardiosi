@@ -14,9 +14,10 @@ if (isset($_REQUEST["tabulka"])){
 <br>
 <button id="vyberId" onclick="izborFunction('vyber','<?php echo $tab;?>', bolList)">izberi</button>
 <button id="vlozId" onclick="izborFunction('vloz','<?php echo $tab;?>')">vlož</button>
+<p id="demo"></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <input type="hidden" id="akceId" name="akce" value="">
-<p id="demo"></p>
+<p id="pogojSkriti"></p>
 <p id="tabSent"></p>
 <p id="urejatSent"></p>
 <p id="posli"></p>
