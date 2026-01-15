@@ -68,9 +68,10 @@ function izborFunction(akce, tabulka,bolList) {
 	switch(akce) {
 	case "vyber":
 		if(zaPogoj=="bolnisnica"){
-	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
-
+	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';			
 		for (i = 0; i < bolList.length; i++) {
+			//alert(bolList[i]);
+			bolList[i] =   bolList[i].replace(/ /g, "&nbsp;");			
 			seznam += "<option value='" +  bolList[i] + "'>"  +"<br>";
 		}	
 			document.getElementById("bolnisnice").innerHTML = seznam;
