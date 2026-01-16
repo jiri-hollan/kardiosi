@@ -1,10 +1,10 @@
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
+let zaUrejat = [];
 function izborFunction(akce, tabulka,bolList) {
 //console.log(tabulka);
 	tabulka_global=tabulka; 
 //alert(tabulka);
-	let zaUrejat = [];
 	let vnosi= "";
 	let seznam = "";
 	let zaPogoj = "";
@@ -68,10 +68,11 @@ function izborFunction(akce, tabulka,bolList) {
 	switch(akce) {
 	case "vyber":
 		if(zaPogoj=="bolnisnica"){
-	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';			
+	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+
 		for (i = 0; i < bolList.length; i++) {
 			//alert(bolList[i]);
-			bolList[i] =   bolList[i].replace(/ /g, "&nbsp;");			
+			bolList[i] =   bolList[i].replace(/ /g, "&nbsp;");
 			seznam += "<option value='" +  bolList[i] + "'>"  +"<br>";
 		}	
 			document.getElementById("bolnisnice").innerHTML = seznam;
@@ -122,7 +123,8 @@ if (x.nodeName == "TD") {
 	row_value = y.cells[0].innerHTML;
 	document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
 	}//od if 
-  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global; 
+//alert(zaUrejat);
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global + "&zaUrejat=" + zaUrejat ; 
 }//od function(e)
 
 //------------------------------------------------------------------------------------------
