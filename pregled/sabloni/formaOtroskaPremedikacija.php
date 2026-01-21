@@ -30,8 +30,8 @@
 </form>
 </div>
 <script>
-var slider = document.getElementById("sprememba");
-var output = document.getElementById("faktorId");
+let slider = document.getElementById("sprememba");
+let output = document.getElementById("faktorId");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {

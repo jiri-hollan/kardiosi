@@ -10,7 +10,7 @@ require_once('otroskaPremedikacija1.php');
 require_once('sabloni/vkladane/zapati.php');
 require_once('../skupne/administrace.php');
 require_once('../koren.php');
-require_once('sabloni/pFormular.php');
+require_once('sabloni/p1Formular.php');
 //require_once('../skupne/sessionkontrola.php');
 
 if(!empty($_SESSION["uname"])){

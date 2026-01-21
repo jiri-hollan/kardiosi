@@ -1,62 +1,56 @@
-function laborFunction(ime,vrednost)
+ function laborFunction(ime,vrednost)
 {
-if(ime!=undefined){
-//console.log(ime);	
-const LIMITIlab = JSON.parse(limitiJson);
+ //console.log(ime);	
+ //const LIMITIlab = JSON.parse(limitiJson);
 //console.log(LIMITIlab);
 if(LIMITIlab[ime]!=undefined){
-//console.log(ime);
 //console.log(LIMITIlab[ime]);
-	max = LIMITIlab[ime]["max"];
-	max = parseFloat(max);
+ max = LIMITIlab[ime]["max"];
+ max = parseFloat(max);
 //console.log(max);
-	min = LIMITIlab[ime]["min"];
-	min = parseFloat(min);
+  min = LIMITIlab[ime]["min"];
+   min = parseFloat(min);
 //console.log(min);
 
-	if(vrednost == ""||vrednost == 0||vrednost=== null) { 
-		pozorFunction(ime, 2);	
-	}else if(vrednost != "" && vrednost>max) {
+if(vrednost == ""||vrednost == 0||vrednost=== null) { 
+	 pozorFunction(ime, 2);	
+  }else if(vrednost != "" && vrednost>max) {
 //alert (ime + " je nad zgornjo mejo mormale");
-		pozorFunction(ime, 1);		  
-	}else if (vrednost !="" && vrednost<min) {
+     pozorFunction(ime, 1);		  
+ }else if (vrednost !="" && vrednost<min) {
 //alert (ime + " je pod spodnjo mejo mormale");
-		pozorFunction(ime, 0);	 
-	}else {
-		pozorFunction(ime, 3);	
-	}
-}//id if limitilab(ime)
+    pozorFunction(ime, 0);	 
+  }else {
+    pozorFunction(ime, 3);	
+ }
+ }//id if limitilab(ime)
 else{
 //console.log("v else");
 //console.log(vrednost);
-	vrednost=vrednost.toUpperCase();
+vrednost=vrednost.toUpperCase();
 //console.log(vrednost);
 	switch (vrednost) {
 	case "NE":
 //console.log("NE");		
-		pozorFunction(ime, 3);	
+    pozorFunction(ime, 3);	
 //console.log(ime +": "+vrednost);
-	break;	
-	case "DA":
+   break;	
+  case "DA":
 // console.log("DA");
-		pozorFunction(ime, 1);	
+     pozorFunction(ime, 1);	
 //console.log(ime +": "+vrednost);  
-	break;
-	case "":
-//console.log(ime +": "+vrednost);  
+   break;
+   case "":
+ //console.log(ime +": "+vrednost);  
 //ne naredi nič
 //console.log("prazen niz");
-	break;
-	default:
-//console.log(ime +": "+vrednost);
+   break;
+  default:
+  //console.log(ime +": "+vrednost);
 //console.log("nekaj je narobe");  
-		pozorFunction(ime, 2);	
-	}//od switch
+    pozorFunction(ime, 2);	
+}//od switch
 }//od else
-}//od if ime
-else{
-	console.log('evaluacija.js linija 58');
-}
 }//od function laborFunction
 //-------------------------------------------------------------------------------------------------------
 //labevalFunction preveri limite lab. vrednosti pri načitanju bolnika iz baze

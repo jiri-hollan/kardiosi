@@ -66,7 +66,6 @@ function validacija(input) {
 
   let dateParts;
   let starost;
-  //let datRojstva;
 
  function starostFunction()
  {
@@ -76,14 +75,14 @@ let leto =  document.getElementById("leto").value ;
 if(dan*mesec*leto >0){
 
  datRojstva = dan + "." + mesec + "." + leto;
-  let dateParts = datRojstva.split(".");  
+   dateParts = datRojstva.split(".");  
 
 /*  datRojstva = document.getElementById("dan").value ;
   datRojstva = datRojstva + "." + document.getElementById("mesec").value ;
   datRojstva = datRojstva + "." +  document.getElementById("leto").value ;*/
 
 
-  //let dateParts = datRojstva.split(".");  
+  // dateParts = datRojstva.split(".");  
 //alert (dateParts);
 
 //............ month is 0-based, that's why we need dataParts[1] - 1  roj = dateObject.......
@@ -95,7 +94,7 @@ if(dan*mesec*leto >0){
   let d3 = d2 - d1;
   let n = 1000*60*60*24*365.25;
 // window.alert ("n= " + n);
-  let starost = ~~(d3 / n);
+   starost = ~~(d3 / n);
  //window.alert (starost);
   document.getElementById("starost").value = starost; 
 }

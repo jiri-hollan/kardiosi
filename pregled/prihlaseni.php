@@ -36,8 +36,8 @@ Class Prihlaseni {
 
 
 Class Prijava extends Prihlaseni {
-	public $overUdaje;
-	public $conn;
+	
+	
 	public function __construct($koren) {
 		    parent::__construct($koren);
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

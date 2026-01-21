@@ -24,11 +24,11 @@ for ($i = 0; $i < count($prebrano); $i++) {
 //echo '<br>var dump celo ime:<br>';
 //var_dump($limiti);
   $limitiJson = json_encode($limiti, JSON_UNESCAPED_UNICODE);
-  echo '<script>';
-  echo 'var limitiJson= ' . json_encode( $limitiJson, JSON_UNESCAPED_UNICODE) . ';';
-//echo 'console.log(limitiJson);';
-//echo  'var limitiJsonx = JSON.parse(limitiJson);';
-  echo '</script>';
+  echo '<script>;
+   var limitiJson= ' . json_encode( $limitiJson, JSON_UNESCAPED_UNICODE) . ';
+  const LIMITIlab = JSON.parse(limitiJson);
+//console.log(limitiJson);
+  </script>';
 	}//od construct	
 	}//od class PoberZapise
 new PoberZapise();

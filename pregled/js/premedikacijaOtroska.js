@@ -1,17 +1,17 @@
 
 function otroskaFunction(){
-	   let teza = document. getElementById('teza').value;
+	let teza = document. getElementById('teza').value;
 //alert('teza'+teza);
 //document.getElementById('tezaPremedikacijaId').setAttribute("value",teza);
-		document.getElementById('tezaPremedikacijaId').value=teza;	
-		document.getElementById('doziranje').style.display='block';
+	document.getElementById('tezaPremedikacijaId').value=teza;	
+	document.getElementById('doziranje').style.display='block';
 // Get the modal
-let modal = document.getElementById('doziranje');
+	let modal = document.getElementById('doziranje');
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
 }//od window.onclick
 }//od function otroska
 	
@@ -56,6 +56,8 @@ function premedikacijaFunction(premedikacija, navodila){
 */
 function ajax_sprememba(){
 	let ucinkovina = $(".ucinkovina:radio:checked").val();		
+//	let ucinkovina = $(":radio:checked").val();	
+//	let ucinkovina = $("input[name='ucinkovina']:checked").val();	
 	let teza = $("#tezaPremedikacijaId").val();
 	let sprememba = $("#sprememba").val();
 	ajax_aktualizuj(ucinkovina, teza, sprememba);	
@@ -72,7 +74,7 @@ function ajax_get_premedikacija(elem) {
 function ajax_aktualizuj(ucinkovina, teza, sprememba){
 //alert(window.location.hostname);
 	if(window.location.hostname=="localhost"){
-		koren="kardiosi/";		
+		koren="anestiz/";		
 	}else{
 		koren="";
 	}
@@ -81,7 +83,7 @@ function ajax_aktualizuj(ucinkovina, teza, sprememba){
 //za web
 		//url: "/otroska/otroskaPremedikacija1.php",
 //za localhost
-		//url: "/kardiosi/otroska/otroskaPremedikacija1.php",
+		//url: "/anestiz/otroska/otroskaPremedikacija1.php",
 url: "/"+koren+"pregled/otroskaPremedikacija1.php",		
 		data: {
 			"ucinkovina": ucinkovina,

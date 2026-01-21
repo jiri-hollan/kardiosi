@@ -23,7 +23,7 @@ function sbFunction(bol="") {
       } else if (!bol=="") {
 // alert(seznamBolnisnicJson);
 //naredi array bolnišnic
-		 bolnisnica=seznamBolnisnic; 
+		 bolnisnica=seznamBol; 
 		 bol = document.getElementById("bolnisnica").value || "" ;
          localStorage.setItem("aktivnaBolnisnica",bolnisnica[bol]);
          localStorage.setItem("mestoBolnisnice",bol);
@@ -44,17 +44,16 @@ function naprejFunction() {
 	 window.open("bolnik.php", "_self"); 
 }
 //______________________________________________________
-function listaZdravnikovFunction(zdravListX) {
+function listaZdravnikovFunction(zdravList) {
 //alert ("lista zdravnikov function");
 document.getElementById("pregledovalec").innerHTML = "izvajalec:  " +"<b>"+ localStorage.getItem("imeZdravnika")+"</b>";
 //alert(localStorage.getItem("imeZdravnika"));
 //  koda, ki naredi array zdravList iz tabele pregledovalci	
-//alert(zdravListX);
- let zdravList  = zdravListX; 
+//alert(zdravList);
  document.getElementById("aktBolnisnica").innerHTML = "<h1>"+localStorage.getItem("mestoBolnisnice")+"</h1> "; 
 //alert (localStorage.getItem("aktivnaBolnisnica"));
  if (localStorage.getItem("aktivnaBolnisnica") === ""||localStorage.getItem("aktivnaBolnisnica") ==="undefined") {
-   zdravList  =[];
+    zdravList  =[];
 document.getElementById("aktBolnisnica").innerHTML = "<h1 style='color:Tomato;'>Bolnišnica ni določena</h1>"; 	
 //alert ("bolnišnica ni določena");
 } 
@@ -69,14 +68,13 @@ document.getElementById("zdravniki").innerHTML = text;
 }
 //__________________________________________________________________________________________
 function listaBolnisnicFunction(bolList) {
-	//alert ("lista bolnisnic function");
-document.getElementById("pregledovalec").innerHTML = "izvajalec:  " + localStorage.getItem("imeZdravnika");
-
-// koda, ki naredi array bolList iz tabele bolnisniceTab	
-
-//alert(bolList);
 let text = "";
 let i;
+//alert ("lista bolnisnic function");
+document.getElementById("pregledovalec").innerHTML = "izvajalec:  " + localStorage.getItem("imeZdravnika");
+// koda, ki naredi array bolList iz tabele bolnisniceTab	
+//alert(bolList);
+
 for (i = 0; i < bolList.length; i++) {
   text += "<option value='" +  bolList[i]  + "'>"  +"<br>";
 }
@@ -85,13 +83,13 @@ document.getElementById("bolnisnice").innerHTML = text;
 /************************funkcja schovej************************/
 function schovej(a){
 //alert (a);
-document.getElementById(a).style.display='block';
+	document.getElementById(a).style.display='block';
 // Get the modal
-let modal = document.getElementById(a);
+	let modal = document.getElementById(a);
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
 }//od window.onclick
 }//od function schovej

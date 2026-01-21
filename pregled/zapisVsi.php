@@ -28,7 +28,7 @@ for ($i = 0; $i < count($prebrano); $i++) {
 //var_dump($celoIme);
   $celoImeJson = json_encode($celoIme, JSON_UNESCAPED_UNICODE);
   echo '<script>';
-    echo 'var celoImeJson= ' . json_encode( $celoImeJson, JSON_UNESCAPED_UNICODE) . ';';
+    echo 'let celoImeJson= ' . json_encode( $celoImeJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
 	}//od construct	
 	}//od class PoberZapis

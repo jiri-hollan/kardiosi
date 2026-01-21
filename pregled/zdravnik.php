@@ -7,7 +7,7 @@ echo'
 <meta http-equiv="cache-control" content="No-Cache">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kardiosi-set</title> 
+<title>Anestiz-set</title> 
 <link rel="shortcut icon" href="../favicon.ico?'.time().'">
 <script src="js/prijava.js?'.time().'"></script> 
 <script src="js/odjava.js?'.time().'"></script>
@@ -52,19 +52,16 @@ $uname = "<span id='stanjeNe'>Niste prijavljeni</span>";
 require_once('../skupne/home.php');
 require_once('zapisVsi.php');
 require_once('bolnisnice.php');
-require_once('sabloni/pFormular.php');
+require_once('sabloni/p1Formular.php');
 echo '<button id="buttonDomov" onclick="window.location.href=' . "'" . $home . "'" . ';"> Domov </button>';
 	
 ?>
  <script>
-   const seznamBolnisnic = JSON.parse(seznamBolnisnicJson);
-//alert('linija61'+seznamBolnisnicJson);
-   const bolList = JSON.parse(mestoBolnisniceJson);
-   listaBolnisnicFunction(bolList );
-//alert(mestoBolnisniceJson);
-  var zdravListX = JSON.parse(celoImeJson);
-//alert(zdravListX);
-  listaZdravnikovFunction(zdravListX);
+   listaBolnisnicFunction(mestoBol );
+// alert("celo ime Json:" + celoImeJson);
+  const zdravList = JSON.parse(celoImeJson);
+//alert(zdravList);
+  listaZdravnikovFunction(zdravList);
 //alert(localStorage.getItem("bazeBolnisnice"));
   </script>
      <span class="" id="odjava" onclick="odjavaFunction()">RESET</span>

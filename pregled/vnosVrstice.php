@@ -62,13 +62,13 @@ Class Apregled {
 	  $this->conn = new Database();
 	  $this->zaklad = new stdClass();
 	  if ($_SERVER['SERVER_NAME']=="localhost"){
-		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/kardiosi/frontend/'; 
+		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/anestiz/frontend/'; 
 	  }else {
 		 $this->zaklad->url = 'http://' . $_SERVER['SERVER_NAME'].'/frontend/';  
 	  } 
 	  $this->nameTable = 'bolnikTbl';
-	 	  
-      $this->stolpci = array("datPregleda", "imeZdravnika", "stevMaticna","ustanova", "EMSO", "dan", "mesec", "leto", "datRojstva", "starost", "ime", "priimek", "oddelek", "dgOperativna", "opNacrtovana", "teza", "visina", "bmi", "krvniTlak", "pulz", "spo2", "hb", "ks", "inr", "aptc", "trombociti", "kreatinin", "laktat", "pbnp", "pct", "crp", "na", "k", "drugiIzvidi", "ekg", "rtg", "dgPridruzene", "terPredhodna", "asa", "mallampati", "euroscore", "opiati", "dovisnosti", "alergija", "izvidiInOpombe", "premedVecer", "premedPredOp", "navodila", "sklep"); 
+	  
+      $this->stolpci = array("datPregleda", "imeZdravnika", "stevMaticna","ustanova", "EMSO", "dan", "mesec", "leto", "datRojstva", "starost", "ime", "priimek", "oddelek", "dgOperativna", "opNacrtovana", "teza", "visina", "bmi", "krvniTlak", "pulz", "spo2", "hb", "ks", "inr", "aptc", "trombociti", "kreatinin", "laktat", "pbnp", "pct", "crp", "na", "k", "drugiIzvidi", "ekg", "rtg", "dgPridruzene", "terPredhodna", "asa", "mallampati", "opiati", "dovisnosti", "alergija", "izvidiInOpombe", "premedVecer", "premedPredOp", "navodila", "sklep"); 
 	  
 	}	
 	
@@ -76,11 +76,11 @@ Class Apregled {
 
 //___________________________________- potomstvo_______________________________________________
 Class PrviVpis extends Apregled {
-	public $stolpci;
-	public $conn;
-	public $nameTable;
+		
 	public function __construct() {
 		    parent::__construct();
+
+
 if(!empty($_POST)) {
 // define variables and set to empty values
   $najdene = $ime = $priimek = $datRojstva  = $stevMaticna = $EMSO = "";
@@ -117,7 +117,6 @@ if(!empty($_POST)) {
 //-------------------------------------------konec PrviVpis---------------------------
 
 Class SpremeniVpis extends Apregled {
-	public $stolpci;
 	public function __construct() {
 		    parent::__construct();
 //exit("V spremeni Vpis");

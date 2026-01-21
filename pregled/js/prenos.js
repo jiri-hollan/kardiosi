@@ -1,5 +1,7 @@
 function prenosFunction(a){
- formFunction(); 
+ formFunction();
+ let i;
+ let videz;	
  let x;	 
  let x1 = document.getElementById("frm")["oddelek"].value;
  let x2 = document.getElementById("frm")["dgOperativna"].value;
@@ -112,7 +114,7 @@ meritve =  meritve +  " " + " krvni tlak:" + "&nbsp" + "<b>" + x + "&nbsp" + "mm
 x = document.getElementById("pulz").value;
 x = xFunction(x);
 meritve =  meritve  +  " " + " pulz:" + "&nbsp" + "<b>" + x + "&nbsp" + "/min " + "</b>" + "&nbsp";
-let videz;
+
 x = document.getElementById("spo2").value;
 videz = document.getElementById("spo2").style.fontWeight;
 //alert(videz);
@@ -122,28 +124,27 @@ document.getElementById("meritvePr").innerHTML=meritve;
 
 //........laboratorij...................................................................................
 let text = "<span class='nadpis'>" + "Lab.: " + "</span>";
-let i;
-//let videz;
+
 let lab = document.getElementById("lab").getElementsByTagName("label");
 let vred =document.getElementById("lab").getElementsByClassName("lab"); 
 for (i = 0; i < lab.length; i++) {  
  if (vred[i].value.length > 0 && vred[i].value!=0){
-	 videz = vred[i].style.fontWeight;	   
+	videz = vred[i].style.fontWeight;	   
    text += '<span style= "font-weight:' + videz + '">' + lab[i].innerHTML + vred[i].value + "</span>," + "&nbsp" + " ";
    }//od if
 }//od for
 document.getElementById("labPr").innerHTML = text;
 //....................EKG....................................................................
 
-//var ekg = document.getElementById("ekg").value;
+//let ekg = document.getElementById("ekg").value;
 //document.getElementById("ekgR").innerHTML= "EKG: " + ekg;
 //...........................RTG................................................................
-//var rtg = document.getElementById("rtg").value;
+//let rtg = document.getElementById("rtg").value;
 //document.getElementById("rtgR").innerHTML= "RTG: " + rtg;
 
 
 //............asa mallampati, alergija.........................................................
-//var asa = document.getElementById("asa").value;
+//let asa = document.getElementById("asa").value;
 //alert(asa);
 let asa = document.getElementById("asa");
 document.getElementById("asaPr").innerHTML= asa.value;
@@ -153,20 +154,6 @@ let mall = document.getElementById("mallampati");
 //alert(mall);
 document.getElementById("mallPr").innerHTML= mall.value;
 document.getElementById("mallPr").style="font-weight:"+mall.style.fontWeight;
-
-let eusc = document.getElementById("euroscore");
-//alert(eusc);
-document.getElementById("euscPr").innerHTML= eusc.value;
-//document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;
-//alert(eusc.value);
-if (eusc.value.length > 0  ){	
-document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;	
-document.getElementById("euscLabelPr").style.visibility = "visible";
-}
-else{	
-document.getElementById("euscPr").style.visibility = "hidden";
-document.getElementById("euscLabelPr").style.visibility = "hidden";
-       }//od else
 
 let opia = document.getElementById("opiati");
 //alert(opi);
