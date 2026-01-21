@@ -102,7 +102,7 @@ switch (x) {
 
 function stevilkaFunction(dolzina,ident,lista) {
 //...dan od 1 do 31.....prikaz številčneizbire v "list".....................
-let ident = "";
+ident = "";
 let i;
 for (i = 1; i < dolzina; i++) {
 ident += "<option value=" +  i + ">"  +"<br>";
