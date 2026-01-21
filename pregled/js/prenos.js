@@ -112,7 +112,7 @@ meritve =  meritve +  " " + " krvni tlak:" + "&nbsp" + "<b>" + x + "&nbsp" + "mm
 x = document.getElementById("pulz").value;
 x = xFunction(x);
 meritve =  meritve  +  " " + " pulz:" + "&nbsp" + "<b>" + x + "&nbsp" + "/min " + "</b>" + "&nbsp";
-
+let videz;
 x = document.getElementById("spo2").value;
 videz = document.getElementById("spo2").style.fontWeight;
 //alert(videz);
@@ -123,7 +123,7 @@ document.getElementById("meritvePr").innerHTML=meritve;
 //........laboratorij...................................................................................
 let text = "<span class='nadpis'>" + "Lab.: " + "</span>";
 let i;
-let videz;
+//let videz;
 let lab = document.getElementById("lab").getElementsByTagName("label");
 let vred =document.getElementById("lab").getElementsByClassName("lab"); 
 for (i = 0; i < lab.length; i++) {  

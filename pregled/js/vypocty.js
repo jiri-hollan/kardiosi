@@ -66,7 +66,7 @@ function validacija(input) {
 
   let dateParts;
   let starost;
-  let datRojstva;
+  //let datRojstva;
 
  function starostFunction()
  {
