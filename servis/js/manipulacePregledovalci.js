@@ -49,9 +49,9 @@ switch(akce) {
 } // od izborFunction
 //----------------------------------------------------------------------------------------
 function functionOver (e) {
-var x = e.target;
+let x = e.target;
 if (x.nodeName == "TD") {
-var y = event.composedPath()[1];
+let y = event.composedPath()[1];
 row_value = y.cells[0].innerHTML;
  /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
   document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */

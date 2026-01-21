@@ -1,19 +1,19 @@
 function prenosFunction(a){
  formFunction(); 
- var x;	 
- var x1 = document.getElementById("frm")["oddelek"].value;
- var x2 = document.getElementById("frm")["dgOperativna"].value;
- var x3 = document.getElementById("frm")["opNacrtovana"].value;
- var x4 = document.getElementById("frm")["teza"].value;
- var x5 = document.getElementById("frm")["visina"].value;
- var x6 = document.getElementById("frm")["izvidiInOpombe"].value;
- var x7 = document.getElementById("frm")["sklep"].value;
- var x8 = document.getElementById("ime").value;
- var x9 = document.getElementById("priimek").value;
- var x10 = datRojstva;
- var x11 = document.getElementById("opiati").value;
-/*var x11 = document.getElementById("frm")[""].value;
-  var x12 = document.getElementById("frm")[""].value;*/
+ let x;	 
+ let x1 = document.getElementById("frm")["oddelek"].value;
+ let x2 = document.getElementById("frm")["dgOperativna"].value;
+ let x3 = document.getElementById("frm")["opNacrtovana"].value;
+ let x4 = document.getElementById("frm")["teza"].value;
+ let x5 = document.getElementById("frm")["visina"].value;
+ let x6 = document.getElementById("frm")["izvidiInOpombe"].value;
+ let x7 = document.getElementById("frm")["sklep"].value;
+ let x8 = document.getElementById("ime").value;
+ let x9 = document.getElementById("priimek").value;
+ let x10 = datRojstva;
+ let x11 = document.getElementById("opiati").value;
+/*let x11 = document.getElementById("frm")[""].value;
+  let x12 = document.getElementById("frm")[""].value;*/
   if (x1 == "") {
     alert("oddelek mora biti vpisan");
     return false;
@@ -121,14 +121,14 @@ meritve =  meritve +'<span style= "font-weight:' + videz + '">'+  " " + " sPO2:"
 document.getElementById("meritvePr").innerHTML=meritve;
 
 //........laboratorij...................................................................................
-var text = "<span class='nadpis'>" + "Lab.: " + "</span>";
-var i;
-var videz;
-var lab = document.getElementById("lab").getElementsByTagName("label");
-var vred =document.getElementById("lab").getElementsByClassName("lab"); 
+let text = "<span class='nadpis'>" + "Lab.: " + "</span>";
+let i;
+let videz;
+let lab = document.getElementById("lab").getElementsByTagName("label");
+let vred =document.getElementById("lab").getElementsByClassName("lab"); 
 for (i = 0; i < lab.length; i++) {  
  if (vred[i].value.length > 0 && vred[i].value!=0){
-	var videz = vred[i].style.fontWeight;	   
+	 videz = vred[i].style.fontWeight;	   
    text += '<span style= "font-weight:' + videz + '">' + lab[i].innerHTML + vred[i].value + "</span>," + "&nbsp" + " ";
    }//od if
 }//od for
@@ -145,16 +145,16 @@ document.getElementById("labPr").innerHTML = text;
 //............asa mallampati, alergija.........................................................
 //var asa = document.getElementById("asa").value;
 //alert(asa);
-var asa = document.getElementById("asa");
+let asa = document.getElementById("asa");
 document.getElementById("asaPr").innerHTML= asa.value;
 document.getElementById("asaPr").style="font-weight:"+asa.style.fontWeight;
 
-var mall = document.getElementById("mallampati");
+let mall = document.getElementById("mallampati");
 //alert(mall);
 document.getElementById("mallPr").innerHTML= mall.value;
 document.getElementById("mallPr").style="font-weight:"+mall.style.fontWeight;
 
-var eusc = document.getElementById("euroscore");
+let eusc = document.getElementById("euroscore");
 //alert(eusc);
 document.getElementById("euscPr").innerHTML= eusc.value;
 //document.getElementById("euscPr").style="font-weight:"+eusc.style.fontWeight;
@@ -168,7 +168,7 @@ document.getElementById("euscPr").style.visibility = "hidden";
 document.getElementById("euscLabelPr").style.visibility = "hidden";
        }//od else
 
-var opia = document.getElementById("opiati");
+let opia = document.getElementById("opiati");
 //alert(opi);
 //console.log("opia: "+opia.value);
 opia.value=opia.value.toUpperCase();
@@ -176,7 +176,7 @@ document.getElementById("opiaPr").innerHTML= opia.value;
 document.getElementById("opiaPr").style="font-weight:"+opia.style.fontWeight;
 
 
-var dovis = document.getElementById("dovisnosti");
+let dovis = document.getElementById("dovisnosti");
 //alert(dovis);
 //console.log("dovis: "+dovis.value);
 dovis.value=dovis.value.toUpperCase();
@@ -192,47 +192,47 @@ document.getElementById("dovisnostiLabelPr").style.visibility = "hidden";
        }//od else
 		   
 
-var alergija = document.getElementById("alergija").value;
+let alergija = document.getElementById("alergija").value;
 //alert(alergija);
 document.getElementById("alergijaPr").innerHTML= alergija;
 
 //....................EKG....................................................................
 
-var ekg = document.getElementById("ekg").value;
+let ekg = document.getElementById("ekg").value;
 ekg = opisFunction(ekg, "<hr>EKG:");
 //alert(ekg);
 //...........................RTG................................................................
-var rtg = document.getElementById("rtg").value;
+let rtg = document.getElementById("rtg").value;
 rtg = opisFunction(rtg, "<hr>RTG:");
 
 //..............pridružene bolezni........................................................
-var prid = document.getElementById("dgPridruzene").value;
+let prid = document.getElementById("dgPridruzene").value;
 prid = opisFunction(prid, "<hr>Pridružene bolezni:" );
 
 //................................... predhodna terapija.........................................
-var pred = document.getElementById("terPredhodna").value;
+let pred = document.getElementById("terPredhodna").value;
 pred = opisFunction(pred, "<hr>Predhodna terapija:" );
 
 //..................Izvidi in opombe...........................................................
-var izvidi = document.getElementById("izvidiInOpombe").value;
+let izvidi = document.getElementById("izvidiInOpombe").value;
 
 izvidi = izvidi.replace(/\n/g, "<br>&emsp;&emsp;");
 izvidi = izvidiFunction(izvidi, "<hr>");
 
 //..................Sklep...........................................................
-var sklep = document.getElementById("sklep").value;
+let sklep = document.getElementById("sklep").value;
 sklep = opisFunction(sklep, "Sklep:" );
 
 
 //......................celi opis................................................................
-var opis = ekg + rtg + prid + pred + izvidi + sklep;
+let opis = ekg + rtg + prid + pred + izvidi + sklep;
 
 //alert(opis);
 document.getElementById("izvidiPr").innerHTML= opis;
 //....................premedikacija..........................................................
-var premedikacija = " ";
-var vecer = document.getElementById("premedVecer").value;
-var jutri = document.getElementById("premedPredOp").value;
+let premedikacija = " ";
+let vecer = document.getElementById("premedVecer").value;
+let jutri = document.getElementById("premedPredOp").value;
 
 if (vecer.length > 0) {
   premedikacija = premedikacija + "  " +  "zvečer " + vecer;
@@ -244,7 +244,7 @@ if (jutri.length > 0) {
 document.getElementById("premedikacijaPr").innerHTML= premedikacija;
 
 //....................navodila................................................................
-var navodila = document.getElementById("navodila").value;
+let navodila = document.getElementById("navodila").value;
 //alert(alergija);
 document.getElementById("navodilaPr").innerHTML= navodila;
 //......................zdravnik...............................................................

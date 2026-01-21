@@ -13,7 +13,7 @@ function klousFunction(){
    close();
 }
 //------shranjevanje v bazo pri prehodu na novega bolnika---
-var izbris;
+let izbris;
 //--------------------------------------------------
 function novBolnikFunction(izbris) {
   switch (izbris) {
@@ -39,7 +39,7 @@ if(localStorage.getItem("gdpr")==1){
 //IF: localStorage.getItem("aktivnaBolnisnica")== bolnišnica s statusom 2
   if(z){
 //alert ('v stariFunction');
-    var r = confirm("Za shranjevanje v podatkovno bazo\n Pritisni v redu ali prekliči.");
+    let r = confirm("Za shranjevanje v podatkovno bazo\n Pritisni v redu ali prekliči.");
     if(r == true){
 //alert ('odjava.js bolnikId: '+sessionStorage.getItem("bolnikId"));  
 // alert ('pred vstavljanjem v bazo');

@@ -11,9 +11,9 @@ function otroskaVklopFunction(){
 }
 
 //------------------------------BMI-----------------------------------------
-var visina;
-var teza;
-var BMI;
+let visina;
+let teza;
+let BMI;
 
 function bmiFunction()
 {
@@ -64,38 +64,38 @@ function validacija(input) {
   //................ Izračun starosti.............
   
 
-  var dateParts;
-  var starost;
-  var datRojstva;
+  let dateParts;
+  let starost;
+  let datRojstva;
 
  function starostFunction()
  {
-var dan = document.getElementById("dan").value ;
-var mesec = document.getElementById("mesec").value ;
-var leto =  document.getElementById("leto").value ;
+let dan = document.getElementById("dan").value ;
+let mesec = document.getElementById("mesec").value ;
+let leto =  document.getElementById("leto").value ;
 if(dan*mesec*leto >0){
 
  datRojstva = dan + "." + mesec + "." + leto;
-  var dateParts = datRojstva.split(".");  
+  let dateParts = datRojstva.split(".");  
 
 /*  datRojstva = document.getElementById("dan").value ;
   datRojstva = datRojstva + "." + document.getElementById("mesec").value ;
   datRojstva = datRojstva + "." +  document.getElementById("leto").value ;*/
 
 
-  //var dateParts = datRojstva.split(".");  
+  //let dateParts = datRojstva.split(".");  
 //alert (dateParts);
 
 //............ month is 0-based, that's why we need dataParts[1] - 1  roj = dateObject.......
  document.getElementById("datRojstva").value = leto + "-" + mesec + "-" + dan; 
-  var roj =  new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+  let roj =  new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
 //alert (datRojstva);
-  var d1 = Date.parse(roj);
-  var d2 = Date.parse(Date());
-  var d3 = d2 - d1;
-  var n = 1000*60*60*24*365.25;
+  let d1 = Date.parse(roj);
+  let d2 = Date.parse(Date());
+  let d3 = d2 - d1;
+  let n = 1000*60*60*24*365.25;
 // window.alert ("n= " + n);
-  var starost = ~~(d3 / n);
+  let starost = ~~(d3 / n);
  //window.alert (starost);
   document.getElementById("starost").value = starost; 
 }

@@ -102,8 +102,8 @@ switch (x) {
 
 function stevilkaFunction(dolzina,ident,lista) {
 //...dan od 1 do 31.....prikaz številčneizbire v "list".....................
-var ident = "";
-var i;
+let ident = "";
+let i;
 for (i = 1; i < dolzina; i++) {
 ident += "<option value=" +  i + ">"  +"<br>";
 }
@@ -111,15 +111,15 @@ document.getElementById(lista).innerHTML = ident;
 }//od sevilkaFunction
 
 //-----dovoljene vrednosti-------------
-var asaVar = ["1", "2", "3", "4", "5"];
-var mallampatiVar = ["1", "2", "3", "4"];
-var allNumb = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-var opiatiVar = ["D", "d", "N", "n", "",  "A", "a", "E", "e"];
-var dovisnostiVar = ["D", "d", "N", "n", "",  "A", "a", "E", "e"];
-var euroscoreVar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ","];
+let asaVar = ["1", "2", "3", "4", "5"];
+let mallampatiVar = ["1", "2", "3", "4"];
+let allNumb = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+let opiatiVar = ["D", "d", "N", "n", "",  "A", "a", "E", "e"];
+let dovisnostiVar = ["D", "d", "N", "n", "",  "A", "a", "E", "e"];
+let euroscoreVar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ","];
 function isNumber(evt, a)
 { 
-    var allowed_characters = a;   
+    let allowed_characters = a;   
     if (allowed_characters.indexOf(evt.key) > -1) {
       return true;
     }
