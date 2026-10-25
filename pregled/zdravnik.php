@@ -14,7 +14,7 @@ echo'
 <link rel="stylesheet" type="text/css" href="css/zdravnik.css?'.time().'">
 <link rel="stylesheet" type="text/css" href="css/uporabnik.css?'.time().'">
 </head>
-<body>';
+<body>'ardiosi;
 
 /************************************************************************************
 ZA DOLOČITEV BOLNIŠNICE JE POTREBNO VPISATI PARAMETR FUNKCIJE sbFunction ZA IZOLO "i" ZA JESENICE "j"
