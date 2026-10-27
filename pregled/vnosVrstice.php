@@ -1,5 +1,14 @@
 <?php
 require_once '../skupne/database.php';
+require_once __DIR__ . '/../skupne/zascita.php';
+// zapisovati v bazo sme samo prijavljen zdravnik (pristop 2 ali več - enako kot gumb "shrani")
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !imaPristop(2)) {
+	echo '<script>';
+	echo 'alert("NI SHRANJENO: niste prijavljeni, seja je potekla ali nimate pravic. Prijavite se in poskusite znova.");';
+	echo 'window.history.back();';
+	echo '</script>';
+	exit();
+}
 require_once('../skupne/aktivace.php');
 //echo"<script>alert('GDPR='.$gdpr);</script>";
 if($gdpr==1){
@@ -20,8 +29,7 @@ switch ($doBaze) {
     break;
   case 'vyber':
     // branje zapisov je dovoljeno samo prijavljenim s pristopom 3 (enako kot v vybere.php)
-    if (session_status() === PHP_SESSION_NONE) { session_start(); }
-    if (!isset($_SESSION["pristop"]) || $_SESSION["pristop"] != 3) {
+    if (!imaPristop(3)) {
         echo 'Za iskanje zapisov nimate pravic.';
         break;
     }

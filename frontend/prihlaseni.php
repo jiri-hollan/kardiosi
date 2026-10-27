@@ -74,6 +74,7 @@ Class Prijava extends Prihlaseni {
 	}
 	
 	public function prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname){
+	   session_regenerate_id(true); // nov ID seje ob prijavi (zaščita pred prevzemom seje)
 	   $_SESSION['uporabnikPrihlasen'] = true;
 	   $_SESSION["casova_znamka"] = time();
 	   $_SESSION["upstatus"] = $upstatus;
@@ -87,6 +88,10 @@ Class Prijava extends Prihlaseni {
 	   exit();
 	}	
 	public function prihlaseniSelhalo() {
+		if (!empty($GLOBALS['prijavaZaklenjena'])) {
+			echo 'Preveč napačnih poskusov prijave. Poskusite znova čez 15 minut. ';
+			return;
+		}
 		echo 'Napačno uporabniško ime ali geslo. ';
 	   return ;
 	}	

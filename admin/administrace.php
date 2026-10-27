@@ -10,7 +10,7 @@ class Administrace {
       $this->zaklad = new stdClass();
 	  // prej: /pregled/admin/ - ta mapa ne obstaja več (napaka 404 ob poteku seje)
 	  $this->zaklad->url = korenAplikacijeUrl() . '/admin/';
-	  $casoviLimit = 600;
+	  $casoviLimit = 1800;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
 		  if ($uplinuliCas > $casoviLimit) {

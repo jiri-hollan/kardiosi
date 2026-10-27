@@ -7,6 +7,15 @@ IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
 </FilesMatch>
 RedirectMatch 404 /\.git
 
+# Vedno HTTPS (razen na XAMPP / localhost)
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+	RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1) [NC]
+	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # PHP nastavitve.
 # Različico PHP izberi v cPanel > MultiPHP Manager (priporočeno PHP 8.3 ali novejši).
 # (prej: ta datoteka je strežnik prisilila na PHP 7.3 - "ea-php73", ki ni podprt od leta 2021)
@@ -17,9 +26,14 @@ RedirectMatch 404 /\.git
    php_value max_input_vars 5000
    php_value memory_limit 128M
    php_value post_max_size 8M
-   php_value session.gc_maxlifetime 1440
+   php_value session.gc_maxlifetime 3600
    # mapa za seje MORA obstajati na strežniku (privzeta mapa za alt-php83 ne obstaja)
    php_value session.save_path "/var/cpanel/php/sessions/ea-php73"
+   # varni piškotki seje
+   php_flag session.cookie_httponly On
+   php_flag session.cookie_secure On
+   php_value session.cookie_samesite Lax
+   php_flag session.use_strict_mode On
    php_value upload_max_filesize 2M
    php_flag zlib.output_compression Off
 </IfModule>

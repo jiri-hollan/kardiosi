@@ -124,7 +124,7 @@ if (x.nodeName == "TD") {
 	document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
 	}//od if 
 //alert(zaUrejat);
-  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global + "&zaUrejat=" + zaUrejat ; 
+  window.location.href = "manipulacePogojUniverzal.php?akce=" + x.innerHTML + "&id=" + row_value + "&tabulka="+ tabulka_global + "&zaUrejat=" + zaUrejat + "&csrf=" + encodeURIComponent((document.querySelector('input[name="csrf"]') || {}).value || ""); 
 }//od function(e)
 
 //------------------------------------------------------------------------------------------

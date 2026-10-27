@@ -14,7 +14,7 @@ class Administrace {
 	  $this->zaklad->url = korenAplikacijeUrl() . '/frontend/';
 		  
 	  //echo $this->zaklad->url;
-	  $casoviLimit = 600;
+	  $casoviLimit = 1800;
 	  if (isset($_SESSION["uporabnikPrihlasen"])) {
 		  $uplinuliCas = time() - $_SESSION["casova_znamka"];
 		  if ($uplinuliCas > $casoviLimit) {

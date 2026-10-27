@@ -1,4 +1,10 @@
 <?php
+// pregledovati zapis bolnika sme samo prijavljen zdravnik s pristopom 3 (enako kot iskanje)
+require_once __DIR__ . '/../skupne/zascita.php';
+if (!imaPristop(3)) {
+	http_response_code(403);
+	exit('<h2>Za pregled zapisov morate biti prijavljeni (pristop 3).</h2>');
+}
 require_once 'sabloni/zahlavi.php';
 require_once '../skupne/database.php';
 $conn = new Database();
