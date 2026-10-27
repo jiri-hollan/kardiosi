@@ -43,8 +43,10 @@ Class odjava extends Prihlaseni {
 	sessionStorage.removeItem("testJSON");	
 	sessionStorage.removeItem("bolnikId"); 
 	</script>';	
-		 session_unset();
-		 session_destroy();
+		 if (session_status() === PHP_SESSION_ACTIVE) {
+			 session_unset();
+			 session_destroy();
+		 }
             echo 'Odjavljen';
 		  $oznameni = 'Ste odjavljeni, ' . 'ponovno se prijavite.';	
 //		header('Location: ' . $this->zaklad->url . 'prihlaseni.php?stav=odhlasit');  
