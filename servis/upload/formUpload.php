@@ -1,4 +1,7 @@
-<body>
+<?php
+require_once __DIR__ . '/../../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
+?><body>
 <h1><form action="upload.php" method="post" enctype="multipart/form-data">
 <label for="meseci">Izberi mesec:</label>
   <select id="meseci" name="meseci" required>

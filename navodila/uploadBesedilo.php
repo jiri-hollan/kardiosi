@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
 //----naloži datoteko besedila pod originalnim imenom----
 $nameTable = $_POST["nameTable"];
 $nalozi['naslov'] = $_POST["naslov"];
@@ -11,6 +13,11 @@ echo "<h2>Naslov prispevka: " . $_POST["naslov"]. "</h2><br>";
 $target_file = $nalozi['direktorij'] . $nalozi['fajl'];
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// varnost: dovoljene so samo končnice dokumentov in slik (prej je bilo mogoče naložiti npr. .php)
+if (!in_array($imageFileType, array('pdf', 'jpg', 'jpeg', 'gif', 'png'), true)) {
+  echo "<h2>Dovoljene so samo datoteke PDF, JPG, GIF in PNG.</h2>";
+  $uploadOk = 0;
+}
 // Check if file already exists
 if (file_exists($target_file)) {
 echo "<h2>" . $target_file . " že obstaja.</h2><br> ";

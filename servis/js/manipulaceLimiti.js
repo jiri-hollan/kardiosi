@@ -39,7 +39,7 @@ switch(akce) {
 function functionOver (e) {
 let x = e.target;
 if (x.nodeName == "TD") {
-let y = event.composedPath()[1];
+let y = e.composedPath()[1];
 row_value = y.cells[0].innerHTML;
   document.getElementById("demo3").innerHTML = "id v bazi je= " + row_value ;  
  }//od if 

@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
  
 /**
  * servis/upload/upload.php
  * Nalaganje mesečnega razpisa dežurstev (PDF).
  *
- * POMEMBNO: ta skripta sama ne preverja, kdo jo kliče. Mapo servis/ zaščiti
- * na strežniku (npr. .htaccess z Basic Auth), sicer lahko nalaga kdorkoli.
+ * Dostop: samo prijavljeni uporabniki z upstatus 3 ali več (skupne/zascita.php).
  */
  
 const MAX_SIZE = 500000; // največja dovoljena velikost v bajtih (500 KB)

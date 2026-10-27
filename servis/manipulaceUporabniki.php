@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../skupne/verzija.php';
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/sabloni/zahlavi.php';
 require_once '../admin1/sabloni/kompetence.php';
@@ -168,7 +171,7 @@ function odstraniFunction($podminka){
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
 ?>
-<script src="js/manipulaceUporabniki.js?<?php echo time(); ?>">
+<script src="js/manipulaceUporabniki.js?<?php echo verzija('js/manipulaceUporabniki.js'); ?>">
 </script>
 <?php
 require_once '../skupne/sabloni/zapati.php';

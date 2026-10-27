@@ -20,7 +20,7 @@ switch ($doBaze) {
     break;
   case 'vyber':
     // branje zapisov je dovoljeno samo prijavljenim s pristopom 3 (enako kot v vybere.php)
-    if (session_status() === PHP_SESSION_NONE) { @session_start(); }
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
     if (!isset($_SESSION["pristop"]) || $_SESSION["pristop"] != 3) {
         echo 'Za iskanje zapisov nimate pravic.';
         break;

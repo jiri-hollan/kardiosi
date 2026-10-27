@@ -1,5 +1,5 @@
 <?php
-@session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 require_once('../skupne/database.php');
 require_once('../skupne/gesla.php');
 require_once('../koren.php');

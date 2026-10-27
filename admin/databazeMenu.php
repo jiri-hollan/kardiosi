@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
 if (isset($_SESSION["upstatus"])&&$_SESSION["upstatus"]==4)  {
 require_once('sabloni/vkladane/zahlavi.php');
 echo 'napredna manipulacija z bazo';

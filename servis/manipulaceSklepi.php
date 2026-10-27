@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../skupne/verzija.php';
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
 <h2>Prednastavljeni sklepi</h2>
@@ -159,7 +162,7 @@ function odstraniFunction($podminka){
 	echo 'Odstranjen je bil '.$odstranjeno.' uporabnik';
 }//od odstraniFunction
 ?>
-<script src="js/manipulaceSklepi.js?<?php echo time(); ?>">
+<script src="js/manipulaceSklepi.js?<?php echo verzija('js/manipulaceSklepi.js'); ?>">
 </script>
 <?php
 require_once '../skupne/sabloni/zapati.php';

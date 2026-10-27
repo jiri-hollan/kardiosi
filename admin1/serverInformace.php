@@ -1,5 +1,6 @@
-
 <?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
 require_once '../skupne/sabloni/zahlavi.php';
 echo 'PHP_SELF: ' . $_SERVER['PHP_SELF'];
 echo "<br>";

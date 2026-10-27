@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) session_start();
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 echo 'napredna manipulacija z bazo';
 require_once('../admin/sabloni/vkladane/zahlavi.php');
 require_once('../admin/administrace.php');

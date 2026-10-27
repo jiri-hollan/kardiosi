@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once __DIR__ . '/../skupne/verzija.php'; ?><!DOCTYPE html>
 
 
 <html lang="sl-SI">
@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="favicon.ico?<?php echo time(); ?>">
+<link rel="shortcut icon" href="favicon.ico?<?php echo verzija('favicon.ico'); ?>">
   <title>Anestezija za operacije srca</title>
 
 </head>

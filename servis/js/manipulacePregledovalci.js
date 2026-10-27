@@ -51,7 +51,7 @@ switch(akce) {
 function functionOver (e) {
 let x = e.target;
 if (x.nodeName == "TD") {
-let y = event.composedPath()[1];
+let y = e.composedPath()[1];
 row_value = y.cells[0].innerHTML;
  /* document.getElementById("demo1").innerHTML = "Triggered by a " + x.nodeName + " element";
   document.getElementById("demo2").innerHTML = "Triggered by a " + x.innerHTML + " element";  */

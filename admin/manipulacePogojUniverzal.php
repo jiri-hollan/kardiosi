@@ -1,4 +1,7 @@
 <?php 
+require_once __DIR__ . '/../skupne/verzija.php';
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
  /* V tom failu so funkcije za spreminjanje tabele databaze*/
  require_once('../skupne/seznamBolnisnic.php');
  require_once('sabloni/vkladane/zahlavi.php');
@@ -45,6 +48,11 @@ if (isset($_REQUEST["pogoj"])){
     echo strtoupper($akce) .': ';
     echo strtoupper($pogoj) .'<br>';
  //exit($pogoj);
+  // varnost: dovoljene so samo znane akcije (prej je bilo mogoče ustvariti katerikoli razred)
+  $dovoljeneAkcije = array('uredi', 'vyber', 'vloz', 'edit', 'odstrani');
+  if (!in_array(strtolower($akce), $dovoljeneAkcije, true)) {
+	  exit('Neznana akcija.');
+  }
   new $akce($pogoj, $tabulka, $zaUrejat);
 
 	  
@@ -100,8 +108,6 @@ if (isset($_REQUEST["pogoj"])){
 	echo "case uredi <br>";
 //echo('linija 92');
 //var_dump($zaUrejat);
-print_r($_POST);
-echo "<br>";
     $id= new test_input($_POST["id"]);
 	$this->id = $id->get_test();
 	$data=array();
@@ -299,13 +305,13 @@ if (isset($_REQUEST["tabulka"])){
 switch($_REQUEST["tabulka"]){
 
 /*case "pregledovalciTbl":
-echo '<script src="js/manipulacePregledovalci.js?'.time().'"></script>'; 
+echo '<script src="js/manipulacePregledovalci.js?'.verzija('js/manipulacePregledovalci.js').'"></script>'; 
 break;*/
 case "statusiTbl":
-/*echo '<script src="js/manipulacePogoj.js?'.time().'"></script>'; */
+/*echo '<script src="js/manipulacePogoj.js?'.verzija('js/manipulacePogoj.js').'"></script>'; */
 break;
 case "uporabnikiTbl":
-/*echo '<script src="js/manipulacePogoj.js?'.time().'"></script>'; */
+/*echo '<script src="js/manipulacePogoj.js?'.verzija('js/manipulacePogoj.js').'"></script>'; */
 break;
 
 

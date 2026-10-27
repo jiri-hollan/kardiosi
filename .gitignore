@@ -1,2 +1,8 @@
 # podatki za bazo (geslo) - ne shranjuj v Git
 skupne/konfiguracija.php
+
+# sistemske in dnevniške datoteke
+.DS_Store
+Thumbs.db
+error_log
+debug.log

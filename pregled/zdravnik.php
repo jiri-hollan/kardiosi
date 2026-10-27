@@ -1,5 +1,6 @@
 <?php
-@session_start();
+require_once __DIR__ . '/../skupne/verzija.php';
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 echo'
 <!DOCTYPE html>
 <html lang="sl-SI">
@@ -8,11 +9,11 @@ echo'
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anestiz-set</title> 
-<link rel="shortcut icon" href="../favicon.ico?'.time().'">
-<script src="js/prijava.js?'.time().'"></script> 
-<script src="js/odjava.js?'.time().'"></script>
-<link rel="stylesheet" type="text/css" href="css/zdravnik.css?'.time().'">
-<link rel="stylesheet" type="text/css" href="css/uporabnik.css?'.time().'">
+<link rel="shortcut icon" href="../favicon.ico?'.verzija('../favicon.ico').'">
+<script src="js/prijava.js?'.verzija('js/prijava.js').'"></script> 
+<script src="js/odjava.js?'.verzija('js/odjava.js').'"></script>
+<link rel="stylesheet" type="text/css" href="css/zdravnik.css?'.verzija('css/zdravnik.css').'">
+<link rel="stylesheet" type="text/css" href="css/uporabnik.css?'.verzija('css/uporabnik.css').'">
 </head>
 <body>';
 

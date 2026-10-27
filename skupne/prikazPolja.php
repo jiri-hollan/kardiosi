@@ -24,8 +24,8 @@ echo '
 <script>
 document.getElementById("vrsticeTabela").addEventListener("click", functionRow);
 function functionRow (e) {
-if (event.composedPath()[1]!=undefined) {	
-var x = event.composedPath()[1];
+if (e.composedPath()[1]!=undefined) {	
+var x = e.composedPath()[1];
 prvaCelica = x.cells[0].innerHTML;
  //alert(prvaCelica);
 celicaFunction(prvaCelica);

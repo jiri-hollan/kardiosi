@@ -1,11 +1,11 @@
-<!doctype html>
+<?php require_once __DIR__ . '/../../../skupne/verzija.php'; ?><!doctype html>
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
-<link rel="stylesheet" href="../frontend/sabloni/css/zahlavi.css?<?php echo time(); ?>">
-<link rel="stylesheet" href="css/pregledovalci.css?<?php echo time(); ?>">
+<link rel="shortcut icon" href="../favicon.ico?<?php echo verzija('../favicon.ico'); ?>">
+<link rel="stylesheet" href="../frontend/sabloni/css/zahlavi.css?<?php echo verzija('../frontend/sabloni/css/zahlavi.css'); ?>">
+<link rel="stylesheet" href="css/pregledovalci.css?<?php echo verzija('css/pregledovalci.css'); ?>">
 <title>Pregled</title>
 </head>
 <body>

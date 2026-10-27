@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
 require_once '../skupne/sabloni/zahlavi.php';
 $nazaj="../servis/servis.php";
 echo'

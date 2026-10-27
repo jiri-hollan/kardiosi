@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="cs-SI">
+<?php require_once __DIR__ . '/../../skupne/verzija.php'; ?><!DOCTYPE html>
+<html lang="sl-SI">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../skupne/css/zahlavi.css?<?php echo time(); ?>">
-<link rel="stylesheet" href="../admin/css/izbira.css?<?php echo time(); ?>">
+<link rel="stylesheet" href="../skupne/css/zahlavi.css?<?php echo verzija('../skupne/css/zahlavi.css'); ?>">
+<link rel="stylesheet" href="../admin/css/izbira.css?<?php echo verzija('../admin/css/izbira.css'); ?>">
 <title>kardiosi</title>
-<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
+<link rel="shortcut icon" href="../favicon.ico?<?php echo verzija('../favicon.ico'); ?>">
 </head>
 <body>
 <div class="topnav">

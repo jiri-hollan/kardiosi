@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="cs-SI">
+<?php require_once __DIR__ . '/../../../skupne/verzija.php'; ?><!DOCTYPE html>
+<html lang="sl-SI">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kardiosi</title>
-<link rel="shortcut icon" href="../favicon.ico?<?php echo time(); ?>">
-<link rel="stylesheet" href="../admin/css/zahlavi.css?<?php echo time(); ?>">
-<link rel="stylesheet" href="../admin/css/menuFile.css?<?php echo time(); ?>">
-<link rel="stylesheet" href="../admin/css/izbira.css?<?php echo time(); ?>">
-<script src="js/manipulacePogoj.js?<?php echo time(); ?>"></script> 
+<link rel="shortcut icon" href="../favicon.ico?<?php echo verzija('../favicon.ico'); ?>">
+<link rel="stylesheet" href="../admin/css/zahlavi.css?<?php echo verzija('../admin/css/zahlavi.css'); ?>">
+<link rel="stylesheet" href="../admin/css/menuFile.css?<?php echo verzija('../admin/css/menuFile.css'); ?>">
+<link rel="stylesheet" href="../admin/css/izbira.css?<?php echo verzija('../admin/css/izbira.css'); ?>">
+<script src="js/manipulacePogoj.js?<?php echo verzija('js/manipulacePogoj.js'); ?>"></script> 
 </head>
 <body>
 <div class="topnav">

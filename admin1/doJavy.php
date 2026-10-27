@@ -1,4 +1,7 @@
-<!doctype html>
+<?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
+?><!doctype html>
 <html>
 <body>
 <?php

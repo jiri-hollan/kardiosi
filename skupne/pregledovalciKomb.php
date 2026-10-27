@@ -1,4 +1,8 @@
 <?php
+/* Pogled (VIEW) pregledovalciKomb združuje uporabnike in pregledovalce.
+   Pogled je trajen objekt v bazi in se sam posodablja, zato ga ustvarimo samo, če še ne obstaja
+   (prej se je ustvarjal ob vsakem odprtju glavnega menija).
+   Če spremeniš definicijo spodaj, pogled enkrat ročno izbriši: DROP VIEW pregledovalciKomb; */
 $kodaSql = "CREATE OR REPLACE VIEW pregledovalciKomb AS
 SELECT bolnisnica, ime, priimek FROM uporabnikiTbl WHERE pristop >=1
 UNION
@@ -7,8 +11,15 @@ SELECT bolnisnica, ime, priimek FROM pregledovalciTbl WHERE pregledovalciStatus 
 mojSql($kodaSql);
 function mojSql($kodaSql) {
 require_once '../skupne/narediTablo.php';	
-$databaseView=new DatabaseView;
-$databaseView->narediSql($kodaSql);
+try {
+	$databaseView=new DatabaseView;
+	if (!$databaseView->pogledObstaja('pregledovalciKomb')) {
+		$databaseView->narediSql($kodaSql);
+	}
+} catch (PDOException $e) {
+	// napaka baze ne sme podreti glavnega menija; zapiše se v error_log
+	error_log('pregledovalciKomb: ' . $e->getMessage());
+}
 }
 
 class DatabaseView {
@@ -25,6 +36,12 @@ class DatabaseView {
 	}//uzavírací zavorky __construct	
 //-----------------konec construct--------------
 
+
+public function pogledObstaja($ime) {
+	$dotaz = $this->conn->prepare("SELECT COUNT(*) FROM information_schema.VIEWS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ?");
+	$dotaz->execute(array($ime));
+	return (int)$dotaz->fetchColumn() > 0;
+}
 
 public function narediSql($kodaSql) {
 try {    

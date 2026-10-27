@@ -1,4 +1,4 @@
-<html>
+<?php require_once __DIR__ . '/../skupne/verzija.php'; ?><html>
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
@@ -18,7 +18,7 @@ a {text-decoration: none}
 p.obarvaj:link {color:blue}
 p.obarvaj:hover {font-size: 120%;background-color:white}
 </style>
-<script src="js/clani.js?v=<?=time();?>" type="text/javascript">
+<script src="js/clani.js?v=<?=verzija('js/clani.js');?>" type="text/javascript">
 </script>
 
 </head>

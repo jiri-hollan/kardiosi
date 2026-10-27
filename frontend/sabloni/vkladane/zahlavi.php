@@ -1,19 +1,20 @@
 <?php
+require_once __DIR__ . '/../../../skupne/verzija.php';
 echo'
 <!DOCTYPE html>
-<html lang="cs-SI">
+<html lang="sl-SI">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kardiosi</title>
-<link rel="shortcut icon" href="../favicon.ico?'.time().'">
-<link rel="stylesheet" href="sabloni/css/zahlavi.css?'.time().'">
-<link rel="stylesheet" href="../css/menuFile.css?'.time().'">
-<script src="../frontend/js/uporabnikiVse.js?'.time().'"></script> 
-<script src="../pregled/js/prijava.js?'.time().'"></script>
-<script src="../skupne/js/seznamBolnisnic.js?'.time().'"></script> 
-<link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?'.time().'">
+<link rel="shortcut icon" href="../favicon.ico?'.verzija('../favicon.ico').'">
+<link rel="stylesheet" href="sabloni/css/zahlavi.css?'.verzija('sabloni/css/zahlavi.css').'">
+<link rel="stylesheet" href="../css/menuFile.css?'.verzija('../css/menuFile.css').'">
+<script src="../frontend/js/uporabnikiVse.js?'.verzija('../frontend/js/uporabnikiVse.js').'"></script> 
+<script src="../pregled/js/prijava.js?'.verzija('../pregled/js/prijava.js').'"></script>
+<script src="../skupne/js/seznamBolnisnic.js?'.verzija('../skupne/js/seznamBolnisnic.js').'"></script> 
+<link rel="stylesheet" href="sabloni/css/uporabnikiNov.css?'.verzija('sabloni/css/uporabnikiNov.css').'">
 </head>
 <body>
 <div class="topnav">

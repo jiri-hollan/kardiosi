@@ -1,6 +1,6 @@
 <?php
 ob_start();
-if (!isset($_SESSION)) session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 /*header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
 require_once('sabloni/zahlaviSkupne.php');

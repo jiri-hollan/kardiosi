@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
+zahtevajPrijavo(4);
 require_once 'sabloni/zahlavi.php';  
 	  if (isset($_POST['imeTable'])){		  
 	   $imeTable = test_input($_POST['imeTable']);		  
