@@ -1,4 +1,4 @@
- <?php
+<?php
 class Database {
 	public $servername = '';
 	public $username = '';

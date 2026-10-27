@@ -181,11 +181,17 @@ foreach ($this->zaUrejat as $key) {
 //var_dump($this->zaUrejat);
 foreach ($this->zaUrejat as $key) {
  //echo "$key <br>";
+    // polja, ki niso bila poslana, preskočimo (prej: opozorila "Undefined array key" in vnos prazne vrstice)
+    if (!isset($_REQUEST[$key])) { continue; }
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
     $data =array_push_assoc($data, $key, $value);
 }
      $this->data = $data;
+     if (count($data) == 0) {
+         echo "Ni podatkov za vnos - nič ni shranjeno.";
+         return;
+     }
      $vloz = new database();
      $vlozeno=$vloz->vloz($this->tabulka,$this->data);
     //echo $vlozeno[1];

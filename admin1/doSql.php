@@ -1,4 +1,3 @@
-
 <?php
 require_once '../skupne/sabloni/zahlavi.php';
 // define variables and set to empty values

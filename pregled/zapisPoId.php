@@ -1,7 +1,9 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa s tem id
 require_once '../skupne/database.php';
-Class PoberZapis{
+Class PoberZapisPoId{
+	public $id;
+	public $nameTable;
 	public $conn;
 	public $upstatus;
 	public $pristop;	
@@ -19,5 +21,5 @@ Class PoberZapis{
  $vrstica = json_encode($prebrano);	
  echo ' Najdeno'.$vrstica.' zapisov';
 }//od construct		
-}//od class PoberZapis
+}//od class PoberZapisPoId
 ?>

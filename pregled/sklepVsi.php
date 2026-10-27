@@ -1,7 +1,7 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa z bolnišnice
 require_once '../skupne/database.php';
-Class PoberZapis{
+Class PoberSklepe{
 	public $conn;
 	public $sklepiStatus;
 	public $pristop;
@@ -13,7 +13,7 @@ Class PoberZapis{
  $stolpci = array('*');
  $poradi = "";
 //bolnisnicapregledId je obsoječa bolnisnica v tabeli pregledovalciKomb
- $podminka = array(""); 
+ $podminka = null; // prej array("") -> SQL "WHERE 0 = ''" (delovalo le po naključju)
  $prebrano = $this->conn->vyber($this->nameTable, $stolpci, $podminka, $poradi);     
  $sklep=array();
  for ($i = 0; $i < count($prebrano); $i++) {
@@ -28,11 +28,11 @@ Class PoberZapis{
   echo 'var sklepJson= ' . json_encode( $sklepJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
 }//od construct	
-}//od class PoberZapis
+}//od class PoberSklepe
   if (isset($_GET['aktivnaBolnisnica'])) {
 	$aktivnaBolnisnica = $_GET['aktivnaBolnisnica'];
   }else {$aktivnaBolnisnica = '';
 }
 //var_dump($aktivnaBolnisnica);
-new PoberZapis($aktivnaBolnisnica); 
+new PoberSklepe($aktivnaBolnisnica); 
 ?>

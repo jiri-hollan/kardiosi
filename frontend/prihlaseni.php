@@ -1,4 +1,4 @@
- <?php
+<?php
 @session_start();
 require_once('../skupne/database.php');
 require_once('../koren.php');
@@ -32,9 +32,8 @@ Class odjava extends Prihlaseni {
 	public function __construct($koren) {
 		    parent::__construct($koren);
 //echo 'odhlašovani';
-	  if (null !== ($_GET['stav'] || $_GET['stav'] == 'odhlasit')) {
+	  // prej: pogoj je bil vedno resničen (in je sprožal opozorilo, če stav ni podan) - odjava se izvede vedno
 	  $this->odhlasi();
-     }	
 		}//od __construct	
 		
 		 public function odhlasi() {
@@ -64,7 +63,7 @@ Class Prijava extends Prihlaseni {
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		  $chiba = $this->overUdaje();
 		  //echo var_dump($chiba);
-	  }else if (isset($_SESSION["uname"]) && !empty($_GET['stav'] && $_GET['stav'] == 'neaktivni')){
+	  }else if (isset($_SESSION["uname"]) && isset($_GET['stav']) && $_GET['stav'] == 'neaktivni'){
 		  $oznameni = 'Ste odjavljeni zaradi neaktivnosti. ' . 'Ponovno se prijavite.';		  
 	  }
 	  require_once('sabloni/prihlasovaci-formular.php');
@@ -130,6 +129,7 @@ $upstatus = 0;
 $pristop = 0;
 $upGdpr = 0;
 $nameTable = "uporabnikiTbl";
+$data = array();
 
 	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -190,7 +190,8 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
 }
 
 
-if ($registracija){
+// registracija samo ob oddaji obrazca (prej tudi ob odprtju strani -> "Undefined variable $data")
+if ($registracija && $_SERVER["REQUEST_METHOD"] == "POST"){
 	//echo $values.'<br>'; 
 	 //echo '<br>'.'V if registracija: '.$nameTable.var_dump($data).'<br>';
   //  $this->registracija($nameTable,$keys,$values);

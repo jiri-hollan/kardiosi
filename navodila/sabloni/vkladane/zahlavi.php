@@ -1,4 +1,3 @@
-
 <?php
 echo'<!DOCTYPE html>
 <html lang="sl-SI">

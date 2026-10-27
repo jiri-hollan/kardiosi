@@ -1,7 +1,7 @@
 <?php
 //------na temelju pregledId pobere podatke iz zapisa z bolnišnice
 require_once '../skupne/database.php';
-Class PoberZapis{
+Class PoberPregledovalce{
 	public $conn;
 	public $pristop;
 	public $bolnisnica;
@@ -31,11 +31,11 @@ for ($i = 0; $i < count($prebrano); $i++) {
     echo 'let celoImeJson= ' . json_encode( $celoImeJson, JSON_UNESCAPED_UNICODE) . ';';
   echo '</script>';
 	}//od construct	
-	}//od class PoberZapis
+	}//od class PoberPregledovalce
 if (isset($_GET['aktivnaBolnisnica'])) {
 	$aktivnaBolnisnica = $_GET['aktivnaBolnisnica'];
 }else {$aktivnaBolnisnica = '';
 }
 //var_dump($aktivnaBolnisnica);
-new PoberZapis($aktivnaBolnisnica); 
+new PoberPregledovalce($aktivnaBolnisnica); 
 ?>

@@ -19,6 +19,12 @@ switch ($doBaze) {
 	}	
     break;
   case 'vyber':
+    // branje zapisov je dovoljeno samo prijavljenim s pristopom 3 (enako kot v vybere.php)
+    if (session_status() === PHP_SESSION_NONE) { @session_start(); }
+    if (!isset($_SESSION["pristop"]) || $_SESSION["pristop"] != 3) {
+        echo 'Za iskanje zapisov nimate pravic.';
+        break;
+    }
     $najdi = new PreberiVpis;
 //var_dump ($najdi ->prebranoFunction());
 	$prebrano = $najdi->prebranoFunction();
@@ -102,8 +108,12 @@ if(!empty($_POST)) {
 //echo '<br>počet vloženych: '.$ulozeno["pocetVlozenych"];
   echo '<br>last id: '.$ulozeno["lastId"];
   $bolnikId = $ulozeno["lastId"];
+  if ($bolnikId === false) {
+    echo '<script>alert("NAPAKA: zapis NI shranjen v bazo"); window.location.href = "bolnik.php";</script>';
+    return;
+  }
   echo '<script>';
-  echo 'sessionStorage.setItem("bolnikId",'. $bolnikId .');';		
+  echo 'sessionStorage.setItem("bolnikId",'. (int)$bolnikId .');';		
 //echo 'alert("vnos vrstice: "+sessionStorage.getItem("bolnikId"));';
   echo 'alert("shranjeno v bazo");';	
   echo 'window.location.href = "bolnik\.php";';
@@ -167,6 +177,7 @@ Class PreberiVpis extends Apregled {
 	public function __construct() {
 		    parent::__construct();
 			//echo 'v preberi vpis';
+	$podminka = array();
 			
  if (!empty($_POST)) {	
 //var_dump($_POST);
@@ -190,7 +201,13 @@ Class PreberiVpis extends Apregled {
  function prebranoFunction() {
 //var_dump($podminka);	
 //var_dump($_POST['data']);
-	$this->stolpci = 	json_decode($_POST['data']);	
+	// varnost: dovoljeni so samo znani stolpci tabele (prej so imena stolpcev prišla neposredno v SQL)
+	$dovoljeni = array_merge(array("pregledId"), $this->stolpci);
+	$zahtevani = isset($_POST['data']) ? json_decode($_POST['data'], true) : null;
+	if (!is_array($zahtevani)) { $zahtevani = array(); }
+	$zahtevani = array_values(array_intersect($zahtevani, $dovoljeni));
+	if (count($zahtevani) == 0) { $zahtevani = array("pregledId", "datPregleda", "imeZdravnika"); }
+	$this->stolpci = $zahtevani;
 	//var_dump($this->stolpci);
 	//$database = new database;
    //var_dump ($database);
