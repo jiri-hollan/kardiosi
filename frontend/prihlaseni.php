@@ -339,10 +339,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//echo 'v server rekvest';
 	//var_dump($_POST["sUname"]);
 	//var_dump($_POST["id"]);
-	if (isset($_SESSION["uname"]) && !empty($_POST["sUname"])) {
+	// varnost: spremeni se lahko samo lastno uporabniško ime (sUname mora biti enako prijavljenemu)
+	if (isset($_SESSION["uname"]) && !empty($_POST["sUname"]) && $_POST["sUname"] === $_SESSION["uname"]) {
 	$podminka['uname'] = $_SESSION["uname"];
-	$sUname = $_POST["sUname"];
-	$podminka['uname'] = $sUname;
 	
 	
 	if ($_POST["uname"]!=$_POST["unm-repeat"]) {
@@ -357,7 +356,8 @@ $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);
 //aktualizuj($tabulka,$data,$podminka);
 //echo 'Število aktualiziranih zapisov: ' . $uporabnikiTbl
      if ($uporabnikiTbl == 1) {
-		echo 'Vaše novo uporabniško ime je:<bh>'.strtoupper($uname).'</b>'; 
+		$_SESSION["uname"] = $uname;
+		echo 'Vaše novo uporabniško ime je:<b>'.strtoupper(htmlspecialchars($uname)).'</b>'; 
 	 }//od if $uporabnikiTbl
   }//od else
 	}//od if isset session

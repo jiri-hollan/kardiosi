@@ -1,6 +1,9 @@
-<?php	
+<?php
 
-if (!empty($_REQUEST['function']) && function_exists($_REQUEST['function'])) {
+// varnost: dovoljene so samo funkcije s tega seznama (prej je bilo mogoče poklicati katerokoli PHP funkcijo)
+$dovoljeneFunkcije = ["premedikacija"];
+
+if (!empty($_REQUEST['function']) && in_array($_REQUEST['function'], $dovoljeneFunkcije, true)) {
 	$function = $_REQUEST['function'];
 	$function();
 } else {
@@ -15,4 +18,3 @@ function premedikacija()
 		"test2" => 123123
 	]);
 }	
-

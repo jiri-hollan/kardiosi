@@ -1,5 +1,5 @@
 <?php
- $this->servername = $_SERVER['SERVER_NAME'];	  
+ $this->servername = "localhost"; // prej: $_SERVER['SERVER_NAME'] - povzročalo napake DNS (getaddrinfo)	  
       $this->username = "kardiosi";
       $this->password = "jebiga";
       $this->dbname = "kardiosi_biznis";

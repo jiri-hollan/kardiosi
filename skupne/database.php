@@ -47,7 +47,7 @@ class Database {
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
@@ -83,7 +83,7 @@ class Database {
 	try {
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
@@ -115,7 +115,7 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//var_dump($zaznamy);
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
@@ -237,7 +237,7 @@ if (is_array($podminka)){
 	try {
 	  $dotaz->execute($parametry);
 	  $pocetOdstranenych = $dotaz->rowCount();	
-	} catch (PDException $e) {
+	} catch (PDOException $e) {
 		echo $e->getMessage();
 		$pocetOdstranenych = false;
 	}//od catch
@@ -302,7 +302,7 @@ $conn = null;
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
@@ -344,7 +344,7 @@ public function suma($tabulka, $sloupce, $podminka = NULL){
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
@@ -364,7 +364,7 @@ try {
     $dotaz->execute();		
     $zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 //echo '<br>v try vyber';
-    }catch (PDException $e) {
+    }catch (PDOException $e) {
     echo $e->getMessage();
     $zaznamy = false;
     }
@@ -407,7 +407,7 @@ public function otroska($tabulka, $sloupce, $podminka, $poradi){
 		$dotaz->execute($parametry);		
 		$zaznamy = $dotaz->fetchAll(PDO::FETCH_ASSOC);
 		//echo '<br>v try vyber';
-	  }catch (PDException $e) {
+	  }catch (PDOException $e) {
 		  echo $e->getMessage();
 		  $zaznamy = false;
 	  }
