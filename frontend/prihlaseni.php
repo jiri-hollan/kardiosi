@@ -1,6 +1,7 @@
 <?php
 @session_start();
 require_once('../skupne/database.php');
+require_once('../skupne/gesla.php');
 require_once('../koren.php');
 global $r;
 require_once('sabloni/prihlasovaci-formular.php');
@@ -89,18 +90,16 @@ Class Prijava extends Prihlaseni {
 	}	
 	public function overUdaje() {
 		if (!empty($_POST['uname']) && !empty($_POST['geslo'])){
-			$geslo = md5($_POST['geslo']);
-			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('upstatus', 'pristop', 'gdpr', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
+			// varna prijava (password_verify); stara md5 gesla se ob prijavi samodejno preshranijo
+			$uporabnik = prijaviUporabnika($this->conn, $_POST['uname'], $_POST['geslo']);
 
-		if (count($uporabnikiTbl) == 1)	{
-			$upstatus=$uporabnikiTbl[0]['upstatus'];			
+		if ($uporabnik !== null)	{
+			$upstatus=$uporabnik['upstatus'];			
 			//echo $upstatus;
-			$pristop=$uporabnikiTbl[0]['pristop'];			
+			$pristop=$uporabnik['pristop'];			
 			//echo $pristop;
-			$upGdpr=$uporabnikiTbl[0]['gdpr'];			
-			echo $upGdpr;			
-			$uname=$uporabnikiTbl[0]['uname'];
-			echo $uname;
+			$upGdpr=$uporabnik['gdpr'];			
+			$uname=$uporabnik['uname'];
 		// echo $upstatus;
 			$this->prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname);
 		} else {
@@ -175,8 +174,7 @@ if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     echo "napačen vnos gesla";
 	$registracija=false;	
   } else {
-    $geslo = $this->test_input($_POST["geslo"]);
-	$data['geslo'] = md5($geslo);
+	$data['geslo'] = zgostiGeslo($_POST["geslo"]); // varno shranjevanje (prej md5)
   }
   if (!empty($_POST["stevilkaZdravnika"])) {
     $data['stevilkaZdravnika'] = $this->test_input($_POST["stevilkaZdravnika"]);
@@ -291,15 +289,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//var_dump($_POST["id"]);
 	if (isset($_SESSION["uname"]) && !empty($_POST["sGeslo"])) {
 	$podminka['uname'] = $_SESSION["uname"];
-	$sGeslo = md5($_POST["sGeslo"]);
-	$podminka['geslo'] = $sGeslo;
-	
-	if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
+	// staro geslo preverimo s password_verify (deluje tudi za stara md5 gesla)
+	$obstojeci = $this->conn->vyber($tabulka, array('geslo'), array('uname'=>$_SESSION["uname"]));
+	if (!is_array($obstojeci) || count($obstojeci) != 1 || !preveriGeslo($_POST["sGeslo"], $obstojeci[0]['geslo'])) {
+    echo "staro geslo ni pravilno";
+  } else if ($_POST["geslo"]!=$_POST["psw-repeat"]) {
     echo "napačen vnos gesla";
 	//$registracija=false;	
   } else {
     $geslo = $_POST["geslo"];
-	$data['geslo'] = md5($geslo);
+	$data['geslo'] = zgostiGeslo($geslo);
 	//var_dump($data);
 	new Database;
 $uporabnikiTbl = $this->conn->aktualizuj($tabulka,$data,$podminka);

@@ -1,11 +1,13 @@
 <?php
- $this->servername = "localhost"; // prej: $_SERVER['SERVER_NAME'] - povzročalo napake DNS (getaddrinfo)	  
-      $this->username = "kardiosi";
-      $this->password = "jebiga";
-      $this->dbname = "kardiosi_biznis";
-          if ( $_SERVER['SERVER_NAME']=="localhost") {
-              $this->username = "root";
-              $this->password = "";
-              $this->dbname = "biznis";
-            }
+// Podatki za povezavo z bazo so v skupne/konfiguracija.php, ki NI v Gitu (glej .gitignore).
+// Vzorec je v skupne/konfiguracija.primer.php
+if (!is_file(__DIR__ . '/konfiguracija.php')) {
+	exit('Manjka datoteka skupne/konfiguracija.php (kopiraj konfiguracija.primer.php in vpiši podatke za bazo).');
+}
+$konfiguracijaBaze = require __DIR__ . '/konfiguracija.php';
+$izbranaBaza = ($_SERVER['SERVER_NAME'] == "localhost") ? $konfiguracijaBaze['lokalno'] : $konfiguracijaBaze['streznik'];
+$this->servername = $izbranaBaza['servername'];
+$this->username   = $izbranaBaza['username'];
+$this->password   = $izbranaBaza['password'];
+$this->dbname     = $izbranaBaza['dbname'];
 ?>

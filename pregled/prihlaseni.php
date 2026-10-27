@@ -1,6 +1,7 @@
 <?php
 @session_start();
 require_once('../skupne/database.php');
+require_once('../skupne/gesla.php');
 require_once('../koren.php');
 //require_once('zdravnik.php');
   	  echo '<script>console.log("prihlaseni 6");</script>';
@@ -43,7 +44,7 @@ Class Prijava extends Prihlaseni {
 	 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		  $chiba = $this->overUdaje();
 		  //echo var_dump($chiba);
-	  }else if (!empty($_GET['stav'] && $_GET['stav'] == 'neaktivni')){
+	  }else if (isset($_GET['stav']) && $_GET['stav'] == 'neaktivni'){
 		  $oznameni = 'Ste odjavljeni zaradi neaktivnosti. ' . 'Ponovno se prijavite.';		  
 	  }
 	  require_once('sabloni/prihlasovaci-formular.php');
@@ -73,18 +74,16 @@ Class Prijava extends Prihlaseni {
 	}	
 	public function overUdaje() {
 		if (!empty($_POST['uname']) && !empty($_POST['geslo'])){
-			$geslo = md5($_POST['geslo']);
-			$uporabnikiTbl = $this->conn->vyber('uporabnikiTbl', array('upstatus', 'pristop', 'gdpr', 'uname'), array('uname'=>$_POST['uname'], 'geslo'=>$geslo));
+			// varna prijava (password_verify); stara md5 gesla se ob prijavi samodejno preshranijo
+			$uporabnik = prijaviUporabnika($this->conn, $_POST['uname'], $_POST['geslo']);
 
-		if (count($uporabnikiTbl) == 1)	{
-			$upstatus=$uporabnikiTbl[0]['upstatus'];			
+		if ($uporabnik !== null)	{
+			$upstatus=$uporabnik['upstatus'];			
 			//echo $upstatus;
-			$pristop=$uporabnikiTbl[0]['pristop'];			
+			$pristop=$uporabnik['pristop'];			
 			//echo $pristop;
-			$upGdpr=$uporabnikiTbl[0]['gdpr'];			
-			echo $upGdpr;			
-			$uname=$uporabnikiTbl[0]['uname'];
-			echo $uname;
+			$upGdpr=$uporabnik['gdpr'];			
+			$uname=$uporabnik['uname'];
 		// echo $upstatus;
 			$this->prihlaseniUspesne($upstatus, $pristop, $upGdpr, $uname);
 		} else {

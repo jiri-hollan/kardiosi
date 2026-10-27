@@ -4,6 +4,7 @@
  require_once('sabloni/vkladane/zahlavi.php');
  require_once('sabloni/formBaze.php');
  require_once '../skupne/database.php';
+ require_once '../skupne/gesla.php';
 
 //_____________________________________________________________
 if (isset($_REQUEST["zaUrejat"])) {
@@ -114,6 +115,10 @@ foreach ($this->zaUrejat as $key) {
 //echo "$key <br>";
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
+	// geslo uporabnika se shrani zgoščeno; že zgoščeno (nespremenjeno pri urejanju) ostane kot je
+	if ($this->tabulka == 'uporabnikiTbl' && $key == 'geslo' && !jeZgoscenoGeslo($_REQUEST[$key])) {
+		$value = zgostiGeslo($_REQUEST[$key]);
+	}
     $data =array_push_assoc($data, $key, $value);
 }	
 	$this->podminka = array("id"=>$this->id);
@@ -185,6 +190,10 @@ foreach ($this->zaUrejat as $key) {
     if (!isset($_REQUEST[$key])) { continue; }
     $value= new Test_input($_REQUEST[$key]); 
 	$value= $value->get_test();	
+	// geslo uporabnika se shrani zgoščeno; že zgoščeno (nespremenjeno pri urejanju) ostane kot je
+	if ($this->tabulka == 'uporabnikiTbl' && $key == 'geslo' && !jeZgoscenoGeslo($_REQUEST[$key])) {
+		$value = zgostiGeslo($_REQUEST[$key]);
+	}
     $data =array_push_assoc($data, $key, $value);
 }
      $this->data = $data;
