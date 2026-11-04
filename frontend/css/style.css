@@ -121,3 +121,20 @@ left:+10px;
 .izbira:hover {
 	font-size: 110%;background-color: #780000
 	}
+/* Telefon: zgornja vrstica (Domov/Prijava/Moj profil) se na ozkem zaslonu
+   prelomi v dve vrstici in prekrije meni, ki je bil fiksno postavljen na top:40px.
+   Na ozkih zaslonih meni in vsebina tečeta normalno pod zgornjo vrstico. */
+@media screen and (max-width: 768px) {
+	#nav {
+		position: static;
+		max-width: none;
+	}
+	#vsebina {
+		position: static;
+		min-width: 0;
+	}
+	#vsebina img {
+		max-width: 100%;
+		height: auto;
+	}
+}
