@@ -133,6 +133,10 @@ left:+10px;
 		position: static;
 		min-width: 0;
 	}
+	/* meni mesecev (RAZPIS) je bil postavljen čez vrh strani in je na telefonu prekrival PDF */
+	#sos {
+		position: static;
+	}
 	#vsebina img {
 		max-width: 100%;
 		height: auto;

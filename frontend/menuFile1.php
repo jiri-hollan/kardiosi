@@ -74,10 +74,17 @@ $p = $_GET['p'];
 	}
 ?>
 
+	<script src="js/pdfPrikaz.js?<?php echo verzija('js/pdfPrikaz.js'); ?>"></script>
 	<script type="text/javascript">
      var direktorij= "<?php echo $GLOBALS ['direktorij'] ?>";
 		
 		function showPDF(a){		
+		// na telefonu PDF narišemo s PDF.js (sicer ga telefon le prenese) - js/pdfPrikaz.js
+		if (jeTelefon()) {
+			document.getElementById('tojePdf').scrollIntoView();
+			prikaziPdfNaTelefonu(direktorij + a + '.pdf', document.getElementById('tojePdf'));
+			return;
+		}
 		var b = '<iframe width="900px" height="900px" name="plugin" src=" '; 
 		    b += direktorij;
 			b += a;  
