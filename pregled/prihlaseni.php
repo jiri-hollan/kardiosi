@@ -47,7 +47,7 @@ Class Prijava extends Prihlaseni {
 	  }else if (isset($_GET['stav']) && $_GET['stav'] == 'neaktivni'){
 		  $oznameni = 'Ste odjavljeni zaradi neaktivnosti. ' . 'Ponovno se prijavite.';		  
 	  }
-	  require_once('sabloni/prihlasovaci-formular.php');
+	  // prej: require_once('sabloni/prihlasovaci-formular.php'); - datoteka v pregled/sabloni ne obstaja (Fatal error v error_log); obrazec je v zdravnik.php
 	//od function inicializuj		
 	}
 	
