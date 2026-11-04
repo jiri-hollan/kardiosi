@@ -1,4 +1,5 @@
 <?php
+ob_start(); // izpis zadržimo, da session_regenerate_id() ob prijavi deluje (prej opozorilo "headers already sent")
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 require_once('../skupne/database.php');
 require_once('../skupne/gesla.php');
