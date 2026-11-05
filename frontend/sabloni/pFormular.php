@@ -73,4 +73,20 @@
   </form>
 </div>
 
+<!-- ___________________________   Pozabljeno geslo   ___________________________________________-->
+<div id="id03" class="modal">
+  <form class="modal-content animate" action="<?php echo $_SERVER['PHP_SELF'] . '?r=pozabljeno'?>" method="post" autocomplete="off">
+    <div class="container">
+      <h1>Pozabljeno geslo</h1>
+      <p>Vpišite e-poštni naslov, s katerim ste se registrirali.<br>Administrator vam bo poslal novo geslo.</p>
+      <label for="email3Id"><b>Email</b></label>
+      <input id="email3Id" type="email" class="imePriimek" placeholder=" Email" name="email" maxlength="255" required><br>
+      <button type="submit" class="signupbtn">Pošlji zahtevo</button>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
 <?php require_once('vkladane/zapati.php'); ?>
