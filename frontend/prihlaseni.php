@@ -29,6 +29,49 @@ Class Prihlaseni {
 }//od class prihlaseni
 
 //___________________________________- potomstvo_______________________________________________
+
+/* Pozabljeno geslo: uporabnik vpiše e-pošto, admin dobi zahtevo za novo geslo.
+   Uporabniku se vedno izpiše enako sporočilo (ne izdamo, ali je naslov registriran).
+   Omejitev: največ 5 zahtev za isti naslov (oz. 20 z istega IP) v 15 minutah. */
+Class PozabljenoGeslo extends Prihlaseni {
+	public function __construct($koren) {
+		parent::__construct($koren);
+		if ($_SERVER["REQUEST_METHOD"] != "POST") {
+			return;
+		}
+		require_once('../skupne/posta.php');
+		$email = trim((string)($_POST['email'] ?? ''));
+		if (!Posta::veljavenEmail($email)) {
+			echo '<p>Vpišite veljaven e-poštni naslov.</p>';
+			return;
+		}
+		$kljuc = 'pozabljeno:' . strtolower($email);
+		$pdo = $this->conn->conn;
+		if (prijavaZaklenjena($pdo, $kljuc)) {
+			echo '<p>Preveč zahtev. Poskusite znova čez 15 minut.</p>';
+			return;
+		}
+		zabeleziPoskus($pdo, $kljuc, false);
+
+		$uporabniki = $this->conn->vyber('uporabnikiTbl', array('uname', 'ime', 'priimek', 'bolnisnica'), array('email' => $email));
+		$h = function ($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8', false); };
+		$vsebina = '<p>Zahteva za novo geslo za naslov: <b>' . $h($email) . '</b></p>';
+		if (is_array($uporabniki) && count($uporabniki) > 0) {
+			$vsebina .= '<p>Uporabniki s tem naslovom:</p><ul>';
+			foreach ($uporabniki as $u) {
+				$vsebina .= '<li>uporabniško ime <b>' . $h($u['uname']) . '</b> - ' . $h($u['ime']) . ' ' . $h($u['priimek']) . ' (' . $h($u['bolnisnica']) . ')</li>';
+			}
+			$vsebina .= '</ul><p>Novo geslo nastavite v ADMIN &gt; upravljanje z uporabniki in ga sporočite uporabniku.</p>';
+		} else {
+			$vsebina .= '<p><b>Ta naslov ni registriran v bazi.</b> Zahteve ni treba upoštevati.</p>';
+		}
+		$vsebina .= '<p>IP: ' . $h($_SERVER['REMOTE_ADDR'] ?? '') . ', čas: ' . (new DateTime('now', new DateTimeZone('Europe/Ljubljana')))->format('d.m.Y H:i') . '</p>';
+		Posta::posljiAdminu('kardiosi: pozabljeno geslo', $vsebina, $email);
+
+		echo '<p>Zahteva je poslana. Če je naslov registriran, vam bo administrator poslal novo geslo.</p>';
+	}
+}//od class PozabljenoGeslo
+
 Class odjava extends Prihlaseni {
 	public $odhlasi;	
 	public function __construct($koren) {
@@ -480,6 +523,10 @@ case "spremembaG":
     //echo "V profilu"; 
    break;    
    
+ case "pozabljeno":
+  $prihlaseni = new PozabljenoGeslo($koren);
+   break;
+
  case "spremembaZdr":
   $prihlaseni = new SpremembaZdr($koren);
     //echo "V profilu"; 
