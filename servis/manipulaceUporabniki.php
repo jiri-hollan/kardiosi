@@ -1,7 +1,11 @@
 <?php
 require_once __DIR__ . '/../skupne/verzija.php';
-require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo admin (upstatus 4)
-zahtevajPrijavo(4);
+require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: upstatus 3 ali več (biznis/servis)
+zahtevajPrijavo(3);
+// Na tej strani se lahko dodelijo samo upstatusi 0, 1 in 2 (tudi adminu) in urejajo samo uporabniki s temi upstatusi.
+// Višje statuse (3, 4) ureja admin v ADMIN > upravljanje z uporabniki.
+const DOVOLJENI_UPSTATUSI = array('0', '1', '2');
+const DOVOLJENI_PRISTOPI = array('0', '1', '2', '3');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/sabloni/zahlavi.php';
 require_once '../admin1/sabloni/kompetence.php';
@@ -32,17 +36,23 @@ case "vloz":
    break; 
 case "uredi":
     $tabulka="uporabnikiTbl";
-    $id=test_input($_POST["id"]);
-    //$email=test_input($_POST["email"]);
-    //$uname=test_input($_POST["uname"]);	
-    $ime = test_input($_POST["ime"]);
-	$priimek = test_input($_POST["priimek"]);
-	$upstatus = test_input($_POST["upstatus"]);
-	$pristop = test_input($_POST["pristop"]);	
+    $id=test_input($_POST["id"] ?? '');
+	$upstatus = test_input($_POST["upstatus"] ?? '');
+	$pristop = test_input($_POST["pristop"] ?? '');	
 	$podminka = array("id"=>$id);
-    $data= array("ime"=>$ime, "priimek"=>$priimek, "upstatus"=>$upstatus, "pristop"=>$pristop);	
+	if (!in_array($upstatus, DOVOLJENI_UPSTATUSI, true) || !in_array($pristop, DOVOLJENI_PRISTOPI, true)) {
+		echo "Dodeliti je mogoče samo upstatus 0, 1 ali 2 in pristop 0 do 3. Nič ni spremenjeno.";
+		break;
+	}
+	if (!uporabnikUredljiv($podminka)) {
+		echo "Tega uporabnika tukaj ni mogoče urejati (upstatus 3 ali 4 ureja admin). Nič ni spremenjeno.";
+		break;
+	}
+	// ime in priimek sta v obrazcu samo za branje, zato ju ne shranjujemo
+    $data= array("upstatus"=>$upstatus, "pristop"=>$pristop);	
 	$aktualizuj = new database($tabulka,$data,$podminka);
 	$aktualizovano=$aktualizuj->aktualizuj($tabulka,$data,$podminka);
+	echo "Shranjeno.";
    break;
 default:
     echo "ni izvelo case";	
@@ -53,26 +63,31 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["akce"])) {
   $akce = test_input($_GET["akce"]);
 switch ($akce) {
 case "uredi":
-     $id = test_input($_GET["id"]);
+     $id = test_input($_GET["id"] ?? '');
 	 echo "id uporabnika= " .  $id;
 	 echo "<br>";
-	// var_dump($id);
-	// echo "<br>"; 
 	 $podminka = array("id"=>$id);
+	 if (!uporabnikUredljiv($podminka)) {
+		 echo "Tega uporabnika tukaj ni mogoče urejati (upstatus 3 ali 4 ureja admin).";
+		 break;
+	 }
      editFunction($podminka);
    break;
 case "odstrani":
-      $id = test_input($_GET["id"]);
-	 echo "id uporabnika= " .  $id;
-	echo "<br>";
-    $podminka = array("id"=>$id);
-	odstraniFunction($podminka);
-    // odstraniFunction();
+	// brisanje uporabnikov na tej strani ni dovoljeno (v vmesniku je bilo že izklopljeno)
+	echo "ni dovoljeno";
     break;	
  default:
     echo "ni izvelo get case"; 
   }//od switch	  
 }//od if
+
+// ali ima uporabnik upstatus 0, 1 ali 2 (samo take je mogoče urejati na tej strani)
+function uporabnikUredljiv($podminka){
+   $vyber = new database();
+   $vybrano = $vyber->vyber("uporabnikiTbl", array("upstatus"), $podminka);
+   return is_array($vybrano) && count($vybrano) == 1 && in_array((string)$vybrano[0]["upstatus"], DOVOLJENI_UPSTATUSI, true);
+}
 
 function vyberFunction($podminka,$vrednosti){
    $tabulka="uporabnikiTbl";
@@ -80,6 +95,10 @@ function vyberFunction($podminka,$vrednosti){
    //var_dump($vrednosti);
    $vyber = new database();
    $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
+   // tudi pri iskanju po priimku prikažemo samo uporabnike z upstatusom 0, 1 ali 2
+   $vybrano = array_values(array_filter(is_array($vybrano) ? $vybrano : array(), function ($v) {
+	   return in_array((string)$v["upstatus"], DOVOLJENI_UPSTATUSI, true);
+   }));
 //echo $vybrano[1];
 //echo var_dump($vybrano);
    //echo "<br>";
@@ -154,8 +173,15 @@ function editFunction($podminka){
       if($key=="id"||$key=="ime"||$key=="priimek"){
 	   echo " $key: <input name=$key value=$value readonly style='background-color:ivory;'\n></input>";	
 }	 
-     if($key=="upstatus"||$key=="pristop"){	
-	  echo " $key: <input name=$key value=$value   pattern='[0,1,2,3]{1}' \n></input>";
+     if($key=="upstatus"){	
+	  echo " $key: <select name='upstatus'>";
+	  foreach (array('0'=>'0 izključen', '1'=>'1 pridruženi', '2'=>'2 član') as $vrednost => $opis) {
+		  echo "<option value='$vrednost'" . ((string)$value === (string)$vrednost ? " selected" : "") . ">$opis</option>";
+	  }
+	  echo "</select>\n";
+}
+     if($key=="pristop"){	
+	  echo " $key: <input name=$key value=$value   pattern='[0-3]{1}' \n></input>";
 }	
 }//od foreach
    echo "<input type='hidden' name='akce' value='uredi'></input><br><br><button type='submit'>submit</button><button type='reset'>reset</button> ";
