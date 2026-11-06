@@ -30,10 +30,10 @@
       <input id="unameId" type="text" placeholder=" Uporabniško ime" name="uname" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" required><br>
 
       <label for="gesloId"><b>Geslo</b></label>
-      <input id="gesloId" type="password" placeholder="geslo" name="geslo" autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Mora vsebovati vsaj številke in male črke skupaj najmanj 8 znakov" required><br>
+      <input id="gesloId" type="text" class="skritoGeslo" placeholder="geslo" name="geslo" autocomplete="off" autocapitalize="off" spellcheck="false" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Mora vsebovati vsaj številke in male črke skupaj najmanj 8 znakov" required><br>
 
       <label for="pswRepeatId"><b>Ponovi geslo</b></label>
-      <input id="pswRepeatId" type="password" placeholder="Ponovi geslo" name="psw-repeat" autocomplete="new-password" required><br>
+      <input id="pswRepeatId" type="text" class="skritoGeslo" placeholder="Ponovi geslo" name="psw-repeat" autocomplete="off" autocapitalize="off" spellcheck="false" required><br>
       <button type="submit" class="signupbtn">Sign Up</button>    
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -45,6 +45,21 @@
 </div>
 
 
+
+<!-- Gesli pri registraciji sta navadni besedilni polji, znaki so skriti s CSS (-webkit-text-security).
+     Tako jih brskalnik ne prepozna kot geslo in ne ponuja shranjenih prijav drugih uporabnikov.
+     Brskalniki, ki tega CSS ne podpirajo (Firefox), dobijo navadno polje za geslo, da geslo ni nikoli vidno. -->
+<style>
+.skritoGeslo { -webkit-text-security: disc; }
+</style>
+<script>
+if (!(window.CSS && CSS.supports && CSS.supports('-webkit-text-security', 'disc'))) {
+  document.querySelectorAll('.skritoGeslo').forEach(function (polje) {
+    polje.type = 'password';
+    polje.setAttribute('autocomplete', 'new-password');
+  });
+}
+</script>
 
 <!-- ___________________________   Prijava       ___________________________________________-->
 <div id="id02" class="modal">
