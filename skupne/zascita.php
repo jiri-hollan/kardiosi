@@ -20,6 +20,16 @@ function korenAplikacijeUrl() {
 }
 
 function preusmeriNaPrijavo($stav) {
+	// stran v podoknu (iframe/frame, npr. ZDRAVNIKI): ne odpiramo prijave v podoknu, izpišemo samo sporočilo
+	$cilj = $_SERVER['HTTP_SEC_FETCH_DEST'] ?? '';
+	if ($cilj === 'iframe' || $cilj === 'frame') {
+		$sporocilo = ($stav === 'neaktivni')
+			? 'Seja je potekla zaradi neaktivnosti. Za ogled te strani se znova prijavite.'
+			: 'Stran je dostopna le prijavljenim uporabnikom. Prosimo, prijavite se.';
+		echo '<!DOCTYPE html><html lang="sl"><head><meta charset="utf-8"></head>'
+			. '<body style="font-family: sans-serif; padding: 20px;"><p><b>' . $sporocilo . '</b></p></body></html>';
+		exit();
+	}
 	$url = korenAplikacijeUrl() . '/frontend/prihlaseni.php?r=login&stav=' . urlencode($stav);
 	if (!headers_sent()) {
 		header('Location: ' . $url);
