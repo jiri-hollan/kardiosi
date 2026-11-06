@@ -82,6 +82,19 @@ function imaPristop($najnizjiPristop) {
 	return true;
 }
 
+// ali je uporabnik prijavljen in seja ni potekla (brez preusmeritve - za strani, ki same izpišejo sporočilo)
+function jePrijavljen() {
+	$casovniLimit = 1800;
+	if (empty($_SESSION['uporabnikPrihlasen'])) {
+		return false;
+	}
+	if (isset($_SESSION['casova_znamka']) && time() - $_SESSION['casova_znamka'] > $casovniLimit) {
+		return false;
+	}
+	$_SESSION['casova_znamka'] = time();
+	return true;
+}
+
 function zahtevajPrijavo($najnizjiUpstatus = null) {
 	$casovniLimit = 1800; // sekund neaktivnosti (30 minut)
 	if (empty($_SESSION['uporabnikPrihlasen'])) {

@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");*/
 require_once('sabloni/zahlaviSkupne.php');
 require_once('../admin/administrace.php');
+require_once(__DIR__ . '/../skupne/zascita.php');
 include_once "../skupne/pregledovalciKomb.php";
 $uname = !empty($_SESSION["uname"]) ? $_SESSION["uname"] : "";
 $direktorij = "";
@@ -17,8 +18,15 @@ $p = $_GET['p'];
 	}
 	switch($p){
 		case "mespdf":
+		// razpis je dostopen le prijavljenim uporabnikom
+		if (!jePrijavljen()) {
+			$s = "samoPrijavljeni.php";
+			$n = "domov.php";
+			break;
+		}
 		$n = "mespdf.php";
-		$direktorij = "../kardio/razpis/mespdf/";
+		// PDF-ji niso več dostopni neposredno; odpre jih razpisPdf.php, ki preveri prijavo
+		$direktorij = "razpisPdf.php?m=";
 		$l= "";	
 		$prijava="";
 		break;
