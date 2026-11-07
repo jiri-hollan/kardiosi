@@ -32,7 +32,7 @@ $p = $_GET['p'];
 		break;
 		
 		case "zdravniki":
-		$s = "";
+		$s = "zdruziteSe.php";
 		$l= "sorta.php";
 		$n = "domov.php";
 		$prijava="";
