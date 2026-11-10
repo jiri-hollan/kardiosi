@@ -42,7 +42,7 @@ color:white
 }
 
 #nav{
-	max-width:150px;
+	max-width:190px; /* prej 150px - prekratko za ORGANIZATOR */
         position:absolute;
 	top:40px;	
 }
@@ -52,7 +52,7 @@ color:white
 	position:relative;
 	top:40px;
 	bottom:0px;
-	left:160px;
+	left:200px; /* prej 160px - za širši meni */
 }
 
 #links{

@@ -12,7 +12,7 @@ $a1= '
 <li><a href="menuFile1.php?p=pregled">PREGLED</a></li>
 ';
 $a2= '
-<li><a href="menuFile1.php?p=biznis">BIZNIS</a></li>
+<li><a href="menuFile1.php?p=biznis">ORGANIZATOR</a></li>
 '; 
 $a3= '
 <li><a href="menuFile1.php?p=admin">ADMIN</a></li>
