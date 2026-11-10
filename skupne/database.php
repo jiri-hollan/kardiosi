@@ -96,18 +96,15 @@ public function vyberIn($tabulka, $sloupce, $podminka = NULL, $vrednosti=NULL){
 	$sloupceSQL = implode(', ', $sloupce);
 	$podminkaSQL = '';
 	$parametry = array();
-   	    if (is_array($vrednosti)){
-		$podminkaSQL .=" WHERE " . $podminka ." IN" . "(";	
-        //var_dump($vrednosti);
-        $i=0;
-		foreach($vrednosti as $i => $val) {
-		if ($i>0){
-				$podminkaSQL .=",";		
-		}	
-        $podminkaSQL .="$vrednosti[$i]";
-} //od foreach
-	$podminkaSQL .=")";	
-	//echo $podminkaSQL;
+	// vrednosti gredo v poizvedbo kot parametri (?), ne neposredno v SQL:
+	// prej je npr. iskanje po priimku dalo "WHERE priimek IN(Novak)" -> MySQL: "Unknown column 'Novak'"
+	if (is_array($vrednosti) && count($vrednosti) > 0){
+		if (!preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', (string)$podminka)) {
+			echo 'Neveljavno ime stolpca.';
+			return false;
+		}
+		$podminkaSQL .= " WHERE " . $podminka . " IN (" . implode(',', array_fill(0, count($vrednosti), '?')) . ")";
+		$parametry = array_values($vrednosti);
 	}//od if array
 	$dotaz = $this->conn->prepare("SELECT $sloupceSQL FROM $tabulka". $podminkaSQL);
 	
