@@ -61,8 +61,9 @@ $p = $_GET['p'];
 		break;		
 		
 		case "pregled":
-		$s = "";
-        echo '<script>sbFunction("spomin");</script>';
+		// stran z gumboma "Pregled bolnika" in "Statistika" (prej je takoj preusmerilo na pregled bolnika)
+		$s = "pregledIzbira.php";
+        //echo '<script>sbFunction("spomin");</script>';
 		//echo '<script>window.location="../pregled/zdravnik.php";</script>';
 		$n = "domov.php";
 		$prijava="";

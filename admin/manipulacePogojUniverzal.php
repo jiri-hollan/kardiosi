@@ -222,6 +222,14 @@ foreach ($this->zaUrejat as $key) {
 	class TableRows extends RecursiveIteratorIterator {
     function __construct($vybrano) {
 		//echo $_REQUEST["tabulka"];
+		// legenda nad tabelo uporabnikov
+		if (($_REQUEST["tabulka"] ?? '') === 'uporabnikiTbl') {
+			echo "<div class='legenda' style='margin: 8px 0;'>"
+				. "<p><b>upstatus:</b> 0=izključen 1=pridruženi 2=član 3=vodstvo 4=admin</p>"
+				. "<p><b>pristop:</b> 0=ni na seznamu pregledovalcev 1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</p>"
+				. "<p><b>GDPR:</b> 0=prevzame nastavitev programa (0 ali 1) 1=baza vedno dostopna 2=baza nedostopna</p>"
+				. "</div>";
+		}
 		echo "<table id='osebe' style='border: solid 1px black;'>";
 		$glave=(array_keys($vybrano[0]));
 		echo '<tr>';
