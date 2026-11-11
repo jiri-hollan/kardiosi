@@ -168,7 +168,8 @@ foreach ($this->zaUrejat as $key) {
 	$this->poradi=$poradi;
 	$this->tabulka=$tabulka;
 	$vyber = new database();
-	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
+	// ime in priimek se iščeta tudi po delnem zadetku (npr. "Nov" najde "Novak")
+	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi, array('ime', 'priimek') );
 	echo "<br>";
 	if(count($vybrano)>0){	
 //var_dump($vybrano);
