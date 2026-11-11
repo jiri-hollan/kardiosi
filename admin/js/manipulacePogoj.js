@@ -1,6 +1,7 @@
 let tabulka_global;
 //alert('definicija tabulke:  '+tabulka_global);
 let zaUrejat = [];
+let pogojJs = {}; // izbrani pogoji (npr. bolnisnica, priimek); prazni se ne pošljejo
 function izborFunction(akce, tabulka,bolList) {
 //console.log(tabulka);
 	tabulka_global=tabulka; 
@@ -67,8 +68,14 @@ function izborFunction(akce, tabulka,bolList) {
 	
 	switch(akce) {
 	case "vyber":
+		pogojJs = {};
+		document.getElementById("pogojSkriti").innerHTML = '';
 		if(zaPogoj=="bolnisnica"){
-	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+	    document.getElementById("demo").innerHTML = '<input id="bolnisnicaId" list="bolnisnice" name="bolnisnica" value="" placeholder="Bolnišnica" onkeyup="pogojFunction(name, value)" onchange="pogojFunction(name, value)" autocomplete="off"><datalist id="bolnisnice"><option value="izbrana bolnisnica"> </datalist>';
+		// pri uporabnikih je mogoče izbirati tudi po priimku (sam ali skupaj z bolnišnico)
+		if (tabulka == "uporabnikiTbl") {
+			document.getElementById("demo").innerHTML += ' <input id="priimekPogojId" name="priimek" value="" placeholder="Priimek" onkeyup="pogojFunction(name, value)" onchange="pogojFunction(name, value)" autocomplete="off">';
+		}
 
 		for (i = 0; i < bolList.length; i++) {
 			//alert(bolList[i]);
@@ -129,11 +136,21 @@ if (x.nodeName == "TD") {
 
 //------------------------------------------------------------------------------------------
 function pogojFunction(name, value){
-	let pogojJs ={};
-	pogojJs[name] = value;
-	console.log(pogojJs);
-	const pogoj = JSON.stringify(pogojJs);
-	console.log(pogoj);
-	
-document.getElementById("pogojSkriti").innerHTML = '<input type="hidden" name="pogoj" value='+pogoj+'>';
+	// presledki iz seznama bolnišnic so zapisani kot &nbsp; - vrnemo jih v navadne presledke
+	value = String(value).replace(/\u00a0/g, " ").trim();
+	if (value === "") {
+		delete pogojJs[name];
+	} else {
+		pogojJs[name] = value;
+	}
+	const skriti = document.getElementById("pogojSkriti");
+	skriti.innerHTML = "";
+	if (Object.keys(pogojJs).length > 0) {
+		// vrednost nastavimo prek DOM, da presledki in narekovaji ne pokvarijo pogoja
+		const polje = document.createElement("input");
+		polje.type = "hidden";
+		polje.name = "pogoj";
+		polje.value = JSON.stringify(pogojJs);
+		skriti.appendChild(polje);
+	}
 }//od pogojFunction
