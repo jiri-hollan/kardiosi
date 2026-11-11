@@ -14,7 +14,8 @@ class Database {
 	}//uzavírací zavorky __construct	
 //-----------------konec construct--------------
 
-	public function vyber($tabulka, $sloupce, $podminka = NULL, $poradi = NULL){
+	// $podobno: seznam stolpcev, ki se iščejo po delnem zadetku (LIKE '%vrednost%'), ostali po enakosti
+	public function vyber($tabulka, $sloupce, $podminka = NULL, $poradi = NULL, $podobno = array()){
 	$sloupceSQL = implode(', ', $sloupce);
 	//echo '<br>'.$sloupceSQL;
 	$podminkaSQL = '';
@@ -23,12 +24,15 @@ class Database {
 	if (is_array($podminka)){
 		$i = 0;
 		foreach ($podminka as $sloupec=>$hodnota){
+			$delno = in_array($sloupec, (array)$podobno, true);
+			$primerjava = $delno ? "$sloupec LIKE ?" : "$sloupec = ?";
 			if ($i == 0){
-				$podminkaSQL .=" WHERE $sloupec = ?";				
+				$podminkaSQL .=" WHERE $primerjava";
 			}else {
-				$podminkaSQL .=" AND $sloupec = ?";
+				$podminkaSQL .=" AND $primerjava";
 			}
-			$parametry[$i] = $hodnota;
+			// pri delnem iskanju znaka % in _ v vpisanem besedilu nista nadomestna znaka
+			$parametry[$i] = $delno ? '%' . addcslashes((string)$hodnota, '\\%_') . '%' : $hodnota;
 			$i++;
 		}
 	}

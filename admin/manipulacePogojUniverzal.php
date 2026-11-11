@@ -46,7 +46,7 @@ if (isset($_REQUEST["pogoj"])){
 //var_dump($akce);
 //var_dump($zaUrejat);
     echo strtoupper($akce) .': ';
-    echo strtoupper($pogoj) .'<br>';
+    echo htmlspecialchars(mb_strtoupper($pogoj, 'UTF-8'), ENT_QUOTES, 'UTF-8') .'<br>';
  //exit($pogoj);
   // varnost: dovoljene so samo znane akcije (prej je bilo mogoče ustvariti katerikoli razred)
   $dovoljeneAkcije = array('uredi', 'vyber', 'vloz', 'edit', 'odstrani');
@@ -151,15 +151,25 @@ foreach ($this->zaUrejat as $key) {
 	  $this->podminka = NULL;
   } else {
 //var_dump($pogoj);
-	$this->pogoj= json_decode($pogoj, true);	
-//var_dump($this->pogoj);
-//exit('to je exit');	
-    $this->podminka = $this->pogoj;
+	$this->pogoj= json_decode(html_entity_decode($pogoj, ENT_QUOTES, 'UTF-8'), true);	
+	// varnost: v pogoju so dovoljeni samo stolpci te tabele (iz zaUrejat) in neprazne vrednosti
+	$this->podminka = array();
+	if (is_array($this->pogoj)) {
+		foreach ($this->pogoj as $stolpec => $vrednost) {
+			if (in_array($stolpec, $this->zaUrejat, true) && is_scalar($vrednost) && trim((string)$vrednost) !== '') {
+				$this->podminka[$stolpec] = trim((string)$vrednost);
+			}
+		}
+	}
+	if (count($this->podminka) == 0) {
+		$this->podminka = NULL;
+	}
   }//od else
 	$this->poradi=$poradi;
 	$this->tabulka=$tabulka;
 	$vyber = new database();
-	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi );
+	// ime in priimek se iščeta tudi po delnem zadetku (npr. "Nov" najde "Novak")
+	$vybrano=$vyber->vyber($this->tabulka, $this->stolpci, $this->podminka, $this->poradi, array('ime', 'priimek') );
 	echo "<br>";
 	if(count($vybrano)>0){	
 //var_dump($vybrano);
@@ -170,7 +180,7 @@ foreach ($this->zaUrejat as $key) {
 	}//od foreach
   }//od if(cout)
 	else{
-	   echo "za izbrano bolnišnico ni zapisa v bazi";	
+	   echo "za izbrani pogoj ni zapisa v bazi";	
 	}//od else
   }//od vyberFunction  
 }//od class vyber
