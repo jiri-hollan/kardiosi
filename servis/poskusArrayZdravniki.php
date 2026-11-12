@@ -2,8 +2,8 @@
 // seznam zdravnikov z e-poštnimi naslovi vidijo samo prijavljeni uporabniki
 require_once __DIR__ . '/../skupne/zascita.php';
 zahtevajPrijavo();
-// uporabniki s statusom 0 (izključeni / še neoverjeni) seznama ne vidijo
-if (!isset($_SESSION['upstatus']) || (int)$_SESSION['upstatus'] < 1) {
+// uporabniki s statusom pod 1 (0 in 0.5) seznama ne vidijo
+if (upstatusUporabnika() < 1) {
 	exit('<!DOCTYPE html><html lang="sl"><head><meta charset="utf-8"></head>'
 		. '<body style="font-family: sans-serif; padding: 20px;"><p><b>Dostop ni omogočen.</b></p></body></html>');
 }

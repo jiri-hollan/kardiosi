@@ -25,25 +25,19 @@ echo '
 <ul id="links">';
   if (isset($_SESSION["upstatus"]))  {
 	  //require_once('../skupne/menu-items.php'); 
-	   switch ($_SESSION["upstatus"]) {
-	case 0; 
-	  echo $a1.$a4.$a0;
-	  echo "<p style='color: black;'>vaša registracija še ni overjena</>";
-	break;  
-	case 1:
-	  echo $a1.$a4.$a0;
-    break;   
-     case 2:
-	   echo $a1.$a4.$a0;
-	 break;	 
-	 case 3:
-	   echo $a1.$a4.$a0.$a2;
-    break;
-	 case 4:
-	   echo $a1.$a4.$a0.$a2.$a3;
-    break;   	
-    default:
-	   } //od switch
+	   // upstatus je lahko decimalen (0.5), zato primerjamo številsko
+	   $up = (float)str_replace(',', '.', (string)$_SESSION["upstatus"]);
+	   if ($up >= 4) {
+		   echo $a1.$a4.$a0.$a2.$a3;
+	   } elseif ($up >= 3) {
+		   echo $a1.$a4.$a0.$a2;
+	   } else {
+		   echo $a1.$a4.$a0;
+	   }
+	   // obvestilo samo za status 0 (status 0.5 ga ne dobi)
+	   if ($up < 0.5) {
+		   echo "<p style='color: black;'>vaša registracija še ni overjena</p>";
+	   }
 	 echo
 	'<script>
     document.getElementById("prij").innerHTML = "Odjava";

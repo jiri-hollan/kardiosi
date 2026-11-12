@@ -82,6 +82,15 @@ function imaPristop($najnizjiPristop) {
 	return true;
 }
 
+// upstatus prijavljenega uporabnika kot število (lahko je decimalen, npr. 0.5; vejica se upošteva kot pika)
+// neprijavljen uporabnik: -1
+function upstatusUporabnika() {
+	if (!isset($_SESSION['upstatus'])) {
+		return -1;
+	}
+	return (float)str_replace(',', '.', (string)$_SESSION['upstatus']);
+}
+
 // ali je uporabnik prijavljen in seja ni potekla (brez preusmeritve - za strani, ki same izpišejo sporočilo)
 function jePrijavljen() {
 	$casovniLimit = 1800;
@@ -106,7 +115,7 @@ function zahtevajPrijavo($najnizjiUpstatus = null) {
 		preusmeriNaPrijavo('neaktivni');
 	}
 	$_SESSION['casova_znamka'] = time();
-	if ($najnizjiUpstatus !== null && (!isset($_SESSION['upstatus']) || (int)$_SESSION['upstatus'] < $najnizjiUpstatus)) {
+	if ($najnizjiUpstatus !== null && upstatusUporabnika() < $najnizjiUpstatus) {
 		http_response_code(403);
 		exit('<h2>Za ta del niste pooblaščeni.</h2>');
 	}

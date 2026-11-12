@@ -9,6 +9,12 @@ if (!jePrijavljen()) {
 	header('Content-Type: text/html; charset=utf-8');
 	exit('<p style="font-family: sans-serif; padding: 20px;"><b>Razpis je dostopen le prijavljenim uporabnikom. Prosimo, prijavite se.</b></p>');
 }
+// status 0 (neoverjena registracija) razpisa ne vidi
+if (upstatusUporabnika() < 0.5) {
+	http_response_code(403);
+	header('Content-Type: text/html; charset=utf-8');
+	exit('<p style="font-family: sans-serif; padding: 20px;"><b>Dostop ni omogočen.</b></p>');
+}
 
 // dovoljeno je samo ime datoteke (npr. "januar", "2026"), brez poti
 $ime = preg_replace('/\.pdf$/i', '', (string)($_GET['m'] ?? ''));

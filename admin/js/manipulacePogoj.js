@@ -77,7 +77,7 @@ function izborFunction(akce, tabulka,bolList) {
 			document.getElementById("demo").innerHTML += ' <input id="priimekPogojId" name="priimek" value="" placeholder="Priimek" onkeyup="pogojFunction(name, value)" onchange="pogojFunction(name, value)" autocomplete="off">'
 				+ ' <input id="imePogojId" name="ime" value="" placeholder="Ime" onkeyup="pogojFunction(name, value)" onchange="pogojFunction(name, value)" autocomplete="off">'
 				+ ' <select id="upstatusPogojId" name="upstatus" onchange="pogojFunction(name, value)">'
-				+ '<option value="">upstatus: vsi</option><option value="0">0 izključen</option><option value="1">1 pridruženi</option>'
+				+ '<option value="">upstatus: vsi</option><option value="0">0 izključen</option><option value="0.5">0,5 dostop do razpisa</option><option value="1">1 pridruženi</option>'
 				+ '<option value="2">2 član</option><option value="3">3 vodstvo</option><option value="4">4 admin</option></select>';
 		}
 

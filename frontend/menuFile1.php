@@ -24,6 +24,12 @@ $p = $_GET['p'];
 			$n = "domov.php";
 			break;
 		}
+		// status 0 (neoverjena registracija) razpisa ne vidi; od statusa 0.5 naprej ga vidi
+		if (upstatusUporabnika() < 0.5) {
+			$s = "dostopNiOmogocen.php";
+			$n = "domov.php";
+			break;
+		}
 		$n = "mespdf.php";
 		// PDF-ji niso več dostopni neposredno; odpre jih razpisPdf.php, ki preveri prijavo
 		$direktorij = "razpisPdf.php?m=";

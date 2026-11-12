@@ -53,7 +53,7 @@ $definice= "id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	`geslo` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
 	`ime` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
 	`priimek` varchar(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
-    `upstatus` int(3) NOT NULL,
+    `upstatus` decimal(3,1) NOT NULL,
     `pristop` int(3) NOT NULL,	
 	UNIQUE (email, uname)";
 $databaseGloboka->naredi('uporabnikiTbl', $definice);

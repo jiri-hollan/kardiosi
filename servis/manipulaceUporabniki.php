@@ -4,7 +4,15 @@ require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: upstatus 3 ali ve
 zahtevajPrijavo(3);
 // Na tej strani se lahko dodelijo samo upstatusi 0, 1 in 2 (tudi adminu) in urejajo samo uporabniki s temi upstatusi.
 // Višje statuse (3, 4) ureja admin v ADMIN > upravljanje z uporabniki.
-const DOVOLJENI_UPSTATUSI = array('0', '1', '2');
+const DOVOLJENI_UPSTATUSI = array('0', '0.5', '1', '2');
+// upstatus iz baze (npr. "1.0", "0.5") ali iz obrazca ("0,5") v enotno obliko: "0", "0.5", "1", ...
+function normUpstatus($v) {
+	$v = str_replace(',', '.', trim((string)$v));
+	if (!is_numeric($v)) {
+		return '';
+	}
+	return rtrim(rtrim(number_format((float)$v, 1, '.', ''), '0'), '.');
+}
 const DOVOLJENI_PRISTOPI = array('0', '1', '2', '3');
 /* V tom failu so funkcije za spreminjanje tabele databaze*/
 require_once '../skupne/sabloni/zahlavi.php';
@@ -24,7 +32,7 @@ switch ($akce) {
    // echo "to je vyber.<br>";
    if ($priimek == "") {
 	$podminka = "upstatus";
-	$vrednosti = array("0","1","2");
+	$vrednosti = array("0","0.5","1","2");
 } else {
     $podminka = "priimek";
 		$vrednosti = array("$priimek");
@@ -37,11 +45,11 @@ case "vloz":
 case "uredi":
     $tabulka="uporabnikiTbl";
     $id=test_input($_POST["id"] ?? '');
-	$upstatus = test_input($_POST["upstatus"] ?? '');
+	$upstatus = normUpstatus(test_input($_POST["upstatus"] ?? ''));
 	$pristop = test_input($_POST["pristop"] ?? '');	
 	$podminka = array("id"=>$id);
 	if (!in_array($upstatus, DOVOLJENI_UPSTATUSI, true) || !in_array($pristop, DOVOLJENI_PRISTOPI, true)) {
-		echo "Dodeliti je mogoče samo upstatus 0, 1 ali 2 in pristop 0 do 3. Nič ni spremenjeno.";
+		echo "Dodeliti je mogoče samo upstatus 0, 0,5, 1 ali 2 in pristop 0 do 3. Nič ni spremenjeno.";
 		break;
 	}
 	if (!uporabnikUredljiv($podminka)) {
@@ -86,7 +94,7 @@ case "odstrani":
 function uporabnikUredljiv($podminka){
    $vyber = new database();
    $vybrano = $vyber->vyber("uporabnikiTbl", array("upstatus"), $podminka);
-   return is_array($vybrano) && count($vybrano) == 1 && in_array((string)$vybrano[0]["upstatus"], DOVOLJENI_UPSTATUSI, true);
+   return is_array($vybrano) && count($vybrano) == 1 && in_array(normUpstatus($vybrano[0]["upstatus"]), DOVOLJENI_UPSTATUSI, true);
 }
 
 function vyberFunction($podminka,$vrednosti){
@@ -97,7 +105,7 @@ function vyberFunction($podminka,$vrednosti){
    $vybrano=$vyber->vyberIn($tabulka, $stolpci, $podminka, $vrednosti);
    // tudi pri iskanju po priimku prikažemo samo uporabnike z upstatusom 0, 1 ali 2
    $vybrano = array_values(array_filter(is_array($vybrano) ? $vybrano : array(), function ($v) {
-	   return in_array((string)$v["upstatus"], DOVOLJENI_UPSTATUSI, true);
+	   return in_array(normUpstatus($v["upstatus"]), DOVOLJENI_UPSTATUSI, true);
    }));
 //echo $vybrano[1];
 //echo var_dump($vybrano);
@@ -107,7 +115,7 @@ function vyberFunction($podminka,$vrednosti){
 //echo $vybrano[1];
 echo "<br>";
 if(count($vybrano)>0){
-  echo'<P><b>upstatus:</b> 0=izključen 1=pridruženi 2=član</P>';
+  echo'<P><b>upstatus:</b> 0=izključen 0,5=dostop do razpisa 1=pridruženi 2=član</P>';
   echo'<P><b>pristop:</b> 3=dostop do baze</P>';
   echo "<table id='osebe' style='border: solid 1px black;'>";
   echo "<tr><th>Id</th><th>e-mail</><th>ime</th><th>priimek</th><th>upstatus</th><th>pristop</th></tr>";
@@ -175,8 +183,8 @@ function editFunction($podminka){
 }	 
      if($key=="upstatus"){	
 	  echo " $key: <select name='upstatus'>";
-	  foreach (array('0'=>'0 izključen', '1'=>'1 pridruženi', '2'=>'2 član') as $vrednost => $opis) {
-		  echo "<option value='$vrednost'" . ((string)$value === (string)$vrednost ? " selected" : "") . ">$opis</option>";
+	  foreach (array('0'=>'0 izključen', '0.5'=>'0,5 dostop do razpisa', '1'=>'1 pridruženi', '2'=>'2 član') as $vrednost => $opis) {
+		  echo "<option value='$vrednost'" . (normUpstatus($value) === (string)$vrednost ? " selected" : "") . ">$opis</option>";
 	  }
 	  echo "</select>\n";
 }

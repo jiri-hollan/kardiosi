@@ -125,6 +125,10 @@ foreach ($this->zaUrejat as $key) {
 	if ($this->tabulka == 'uporabnikiTbl' && $key == 'geslo' && !jeZgoscenoGeslo($_REQUEST[$key])) {
 		$value = zgostiGeslo($_REQUEST[$key]);
 	}
+	// upstatus je lahko decimalen (0,5): baza pričakuje piko
+	if ($this->tabulka == 'uporabnikiTbl' && $key == 'upstatus') {
+		$value = str_replace(',', '.', trim((string)$value));
+	}
     $data =array_push_assoc($data, $key, $value);
 }	
 	$this->podminka = array("id"=>$this->id);
@@ -210,6 +214,10 @@ foreach ($this->zaUrejat as $key) {
 	if ($this->tabulka == 'uporabnikiTbl' && $key == 'geslo' && !jeZgoscenoGeslo($_REQUEST[$key])) {
 		$value = zgostiGeslo($_REQUEST[$key]);
 	}
+	// upstatus je lahko decimalen (0,5): baza pričakuje piko
+	if ($this->tabulka == 'uporabnikiTbl' && $key == 'upstatus') {
+		$value = str_replace(',', '.', trim((string)$value));
+	}
     $data =array_push_assoc($data, $key, $value);
 }
      $this->data = $data;
@@ -235,7 +243,7 @@ foreach ($this->zaUrejat as $key) {
 		// legenda nad tabelo uporabnikov
 		if (($_REQUEST["tabulka"] ?? '') === 'uporabnikiTbl') {
 			echo "<div class='legenda' style='margin: 8px 0;'>"
-				. "<p><b>upstatus:</b> 0=izključen 1=pridruženi 2=član 3=vodstvo 4=admin</p>"
+				. "<p><b>upstatus:</b> 0=izključen 0,5=dostop do razpisa 1=pridruženi 2=član 3=vodstvo 4=admin</p>"
 				. "<p><b>pristop:</b> 0=ni na seznamu pregledovalcev 1=na seznamu 2=vlaganje v bazo 3=pogled v bazo</p>"
 				. "<p><b>GDPR:</b> 0=prevzame nastavitev programa (0 ali 1) 1=baza vedno dostopna 2=baza nedostopna</p>"
 				. "</div>";
