@@ -129,11 +129,11 @@ public function izracunFunction() {
 	 $dozaMg=$this->vybrano[0]["doza"]*$this->teza;
 	  $dozaMl= round($dozaMg/$this->vybrano[0]['koncentracija'],1);
 	  if($dozaMl>=0.6){
-		 $premedikacija = "Dexmedetomidin $dozaMg mg to je $dozaMl ml razpodelimo v obe nosnici"; 
+		 $premedikacija = "Dexmedetomidin $dozaMg mcg to je $dozaMl ml razpodelimo v obe nosnici"; 
 	  }else{
-		 $premedikacija = "Dexmedetomidin $dozaMg mg to je $dozaMl ml";  
+		 $premedikacija = "Dexmedetomidin $dozaMg mcg to je $dozaMl ml";  
 	  }
-	  //$premedikacija = "Dexmedetomidin $dozaMg mg to je $dozaMl ml";	  
+	  //$premedikacija = "Dexmedetomidin $dozaMg mcg to je $dozaMl ml";	  
 	  $navodila=$this->vybrano[0]["navodila"];
 	  $navodila = "$navodila nasalno";
 	  echo json_encode([
