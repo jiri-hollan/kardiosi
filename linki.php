@@ -32,12 +32,7 @@
 
  <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://klinicnaprehrana.si/" >PREHRANA</a></b></p>
 
- <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.ssem-society.si/" >SZUM</a></b></p>
-
- <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.jupsline.net">JUPSLINE</a></b></p>
-
  <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.hnmp.info">HNMP</a></b></p>
 
- <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.maat.si/borut/">Ger&#353;ak</a></b></p>
 </body>
 </html>
