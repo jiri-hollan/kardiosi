@@ -2,6 +2,8 @@
 require_once __DIR__ . '/../skupne/verzija.php';
 require_once __DIR__ . '/../skupne/zascita.php'; // zaščita: samo upstatus 3 ali več (biznis/servis)
 zahtevajPrijavo(3);
+// po oddaji obrazca (POST) ni podatka nazaj: vrnemo se na Servis
+$privzetiNazaj = "../servis/servis.php";
 require_once '../skupne/sabloni/zahlavi.php';
 ?>
 <h2>Urejanje limitov</h2>
