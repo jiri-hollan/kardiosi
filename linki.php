@@ -26,7 +26,7 @@
 <body lang="sl-SI" dir="ltr">
 
 
- <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.emedicine.com/med/topic2956.htm">Medscape</a></b></p>
+ <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="https://emedicine.medscape.com/">Medscape</a></b></p>
 
  <p align="left" style="margin-bottom: 0.5cm"><b><a class="povec" href="http://www.szaim.org/" >SZAIM</a></b></p>
 
