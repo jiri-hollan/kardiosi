@@ -12,17 +12,23 @@
 <body>
 <div class="topnav">
 <?php
+// stran lahko pred vključitvijo te glave določi $privzetiNazaj (kam vodi Nazaj, če ni podano)
+$privzetoNazaj = isset($privzetiNazaj) ? $privzetiNazaj : "../index.php";
 if (isset($_GET['nazaj'])){
-//$nazaj = $_GET['nazaj'];
       $nazaj = test_input($_GET['nazaj']);	
 }elseif (isset($_POST['nazaj'])){		  
       $nazaj = test_input($_POST['nazaj']);	
-  	//var_dump($nazaj); 
 }else {
-     $nazaj = "../index.php";
+     $nazaj = $privzetoNazaj;
 }
+// varnost: dovoljene so samo poti znotraj aplikacije (ne zunanje ali javascript: povezave)
+if ($nazaj === '' || strpos($nazaj, ':') !== false || strpos($nazaj, '//') !== false || strpos($nazaj, '\\') !== false) {
+     $nazaj = $privzetoNazaj;
+}
+// glavni meni se vedno odpre čez celo okno, ne znotraj okna "vsebina" (ORGANIZATOR)
+$cilj = (strpos($nazaj, 'index.php') !== false || strpos($nazaj, 'menuFile1.php') !== false) ? ' target="_top"' : '';
 echo '
- <a class="active" href=' .$nazaj.'>Nazaj</a>
+ <a class="active" href="' . $nazaj . '"' . $cilj . '>Nazaj</a>
  ';
 function test_input($test) {
   $test = trim($test);
