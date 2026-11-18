@@ -15,6 +15,7 @@ echo'
 	  <li class=""><a href="manipulacePregledovalci.php?nazaj='.$nazaj.'">pregledovalci</a></li>
 	  <li class=""><a href="manipulaceSklepi.php?nazaj='.$nazaj.'">prednastavljeni sklepi</a></li>
 	  <li class=""><a href="manipulaceLimiti.php?nazaj='.$nazaj.'">Mejne vrednosti</a></li>	  
+	  <li class=""><a href="koledar.php?nazaj='.$nazaj.'">KOLEDAR</a></li>
     </ul>
  </section>
 ';
